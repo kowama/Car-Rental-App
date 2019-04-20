@@ -58,18 +58,28 @@
     <Compile Include="Core\domain\Role.cs" />
     <Compile Include="Core\domain\Client.cs" />
     <Compile Include="Core\domain\Bill.cs" />
-    <Compile Include="Core\domain\Rent.cs" />
     <Compile Include="Core\domain\User.cs" />
+    <Compile Include="Core\domain\Rent.cs" />
     <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904201954348_InitialMigration.cs" />
+    <Compile Include="Migrations\201904201954348_InitialMigration.Designer.cs">
+      <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CourseConfiguration.cs" />
+    <Compile Include="Persistence\CarRentalAppContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904201954348_InitialMigration.resx">
+      <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,8 +104,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistance\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
