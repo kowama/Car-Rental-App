@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace CarRentalApp.Core.domain
 {
     public class  User
@@ -11,5 +13,6 @@ namespace CarRentalApp.Core.domain
         public string Email  { get; set; }
         public string Phone  { get; set; }
 
+        public virtual ICollection<Rent> Rents { get; set; } = new HashSet<Rent>();
     }
 }

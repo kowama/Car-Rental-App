@@ -70,8 +70,12 @@
     <Compile Include="Migrations\201904201954348_InitialMigration.Designer.cs">
       <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904202138553_SetRentEntityTableConstraint.cs" />
+    <Compile Include="Migrations\201904202138553_SetRentEntityTableConstraint.Designer.cs">
+      <DependentUpon>201904202138553_SetRentEntityTableConstraint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Persistence\EntityConfigurations\CourseConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\RentConfiguration.cs" />
     <Compile Include="Persistence\CarRentalAppContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904201954348_InitialMigration.resx">
       <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904202138553_SetRentEntityTableConstraint.resx">
+      <DependentUpon>201904202138553_SetRentEntityTableConstraint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
