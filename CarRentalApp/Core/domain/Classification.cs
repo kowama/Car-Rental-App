@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CarRentalApp.Core.domain
+﻿namespace CarRentalApp.Core.domain
 {
     public class Classification
     {

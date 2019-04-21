@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CarRentalApp.Core.domain
 {
@@ -14,5 +13,7 @@ namespace CarRentalApp.Core.domain
         public string Phone  { get; set; }
 
         public virtual ICollection<Rent> Rents { get; set; } = new HashSet<Rent>();
+        public virtual ICollection<Role> Roles { get; set; } = new HashSet<Role>();
+
     }
 }

@@ -22,7 +22,13 @@ namespace CarRentalApp.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new BillConfiguration());
+            modelBuilder.Configurations.Add(new CarConfiguration());
+            modelBuilder.Configurations.Add(new ClassificationConfiguration());
+            modelBuilder.Configurations.Add(new ClientConfiguration());
             modelBuilder.Configurations.Add(new RentConfiguration());
+            modelBuilder.Configurations.Add(new RoleConfiguration());
+            modelBuilder.Configurations.Add(new UserConfiguration());
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarRentalApp.Core.domain
 {
@@ -7,9 +7,12 @@ namespace CarRentalApp.Core.domain
     {
         
         public int Id { get; set; }
+
         public string LicensePlate { get; set; }
+
         public string Description { get; set; }
-        public string State { get; set; }
+
+        [Range(0, 99999999)]
         public float PricePerDay { get; set; }
 
         public virtual ICollection<Rent> Rents { get; set; } = new HashSet<Rent>();
