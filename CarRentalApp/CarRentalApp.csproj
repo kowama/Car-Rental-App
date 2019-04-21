@@ -60,6 +60,10 @@
     <Compile Include="Core\domain\Bill.cs" />
     <Compile Include="Core\domain\User.cs" />
     <Compile Include="Core\domain\Rent.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IUserRepository.cs" />
+    <Compile Include="Core\Repositories\IRentRepository.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +111,9 @@
     <Compile Include="Persistence\CarRentalAppContext.cs" />
     <Compile Include="Persistence\EntityConfigurations\RoleConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
+    <Compile Include="Persistence\Repositories\RentRepository.cs" />
+    <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\MainForm.resx">

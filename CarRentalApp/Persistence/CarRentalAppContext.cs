@@ -9,7 +9,7 @@ namespace CarRentalApp.Persistence
         public CarRentalAppContext()
             : base("name=CarRentalAppContext")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+//            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public virtual DbSet<Bill> Bills { get; set; }
