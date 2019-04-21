@@ -6,7 +6,6 @@ namespace CarRentalApp.Persistence.Repositories
 {
     public class RentRepository : Repository<Rent, string>, IRentRepository
     {
-        public CarRentalAppContext CarRentalAppContext => Context as CarRentalAppContext;
 
 
         public RentRepository(CarRentalAppContext context) : base(context)
@@ -18,6 +17,9 @@ namespace CarRentalApp.Persistence.Repositories
         {
            return Find(r => r.State == RentState.Pending);
         }
+
+
+        public CarRentalAppContext CarRentalAppContext => Context as CarRentalAppContext;
     }
 
    
