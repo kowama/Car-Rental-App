@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201904210216410_ClassificationEntityTableConstraintConfiguration.Designer.cs">
       <DependentUpon>201904210216410_ClassificationEntityTableConstraintConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904210239107_FixClassificationEntityConstraint.cs" />
+    <Compile Include="Migrations\201904210239107_FixClassificationEntityConstraint.Designer.cs">
+      <DependentUpon>201904210239107_FixClassificationEntityConstraint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\EntityConfigurations\BillConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CarConfiguration.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904210216410_ClassificationEntityTableConstraintConfiguration.resx">
       <DependentUpon>201904210216410_ClassificationEntityTableConstraintConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210239107_FixClassificationEntityConstraint.resx">
+      <DependentUpon>201904210239107_FixClassificationEntityConstraint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

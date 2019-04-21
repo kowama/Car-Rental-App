@@ -20,6 +20,11 @@ namespace CarRentalApp.Persistence.EntityConfigurations
             Property(c => c.PricePerDay)
                 .IsRequired();
 
+            HasRequired(c => c.Classification)
+                .WithMany(cl => cl.Cars)
+                .Map(m=>m.MapKey("ClassificationId"));
+
+
         }
     }
 }
