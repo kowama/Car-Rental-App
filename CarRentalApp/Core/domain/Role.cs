@@ -2,6 +2,11 @@
 
 namespace CarRentalApp.Core.domain
 {
+    public static class RoleName
+    {
+        public static readonly string ADMINISTRATOR = "ADMINISTRATOR";
+        public static readonly string MANAGER = "MANAGER";
+    }
     public class Role
     {
         public int Id { get; set; }

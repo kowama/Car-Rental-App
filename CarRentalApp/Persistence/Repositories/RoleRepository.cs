@@ -1,4 +1,5 @@
-﻿using CarRentalApp.Core.domain;
+﻿using System.Linq;
+using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Repositories;
 
 namespace CarRentalApp.Persistence.Repositories
@@ -11,5 +12,9 @@ namespace CarRentalApp.Persistence.Repositories
 
         public CarRentalAppContext CarRentalAppContext => Context as CarRentalAppContext;
 
+        public Role GetRoleByName(string roleName)
+        {
+            return Find(role => role.Name == roleName).First();
+        }
     }
 }
