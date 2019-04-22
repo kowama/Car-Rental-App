@@ -3,11 +3,11 @@ using System;
 
 namespace CarRentalApp.Core.domain
 {
-    public enum RentState{ Pending, Validated }
+    public enum RentState{ Pending, Validated, Canceled }
 
     public class  Rent
     {
-        public string RentId { get; set; }
+        public Guid RentId { get; set; }
 
         public virtual Car Car { get; set; }
 

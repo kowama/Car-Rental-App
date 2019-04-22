@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CarRentalApp.Core.domain
 {
@@ -11,6 +12,6 @@ namespace CarRentalApp.Core.domain
         public string Phone  { get; set; }
         public string Address  { get; set; }
 
-        public virtual ICollection<Rent> Rents { get; set; } = new HashSet<Rent>();
+        public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
     }
 }

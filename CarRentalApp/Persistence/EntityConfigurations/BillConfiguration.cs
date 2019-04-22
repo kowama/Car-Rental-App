@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 using CarRentalApp.Core.domain;
 
 
@@ -18,8 +17,6 @@ namespace CarRentalApp.Persistence.EntityConfigurations
                .HasMaxLength(2048);
 
            Property(b => b.BillNumber)
-               .HasMaxLength(8)
-               .IsFixedLength()
                .IsRequired();
   
            HasRequired(b => b.Rent)

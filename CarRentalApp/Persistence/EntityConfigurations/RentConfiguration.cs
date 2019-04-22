@@ -17,8 +17,6 @@ namespace CarRentalApp.Persistence.EntityConfigurations
                 .IsOptional();
 
             Property(r => r.RentId)
-                .HasMaxLength(8)
-                .IsFixedLength()
                 .IsRequired();
 
             Property(r => r.State)

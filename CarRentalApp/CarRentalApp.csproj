@@ -69,10 +69,18 @@
     <Compile Include="Core\Repositories\IUserRepository.cs" />
     <Compile Include="Core\Repositories\IRentRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
-    <Compile Include="Form\MainForm.cs">
+    <Compile Include="Migrations\201904220006374_RefactorSomeEntityDataType.cs" />
+    <Compile Include="Migrations\201904220006374_RefactorSomeEntityDataType.Designer.cs">
+      <DependentUpon>201904220006374_RefactorSomeEntityDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.cs" />
+    <Compile Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.Designer.cs">
+      <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MainForm.Designer.cs">
+    <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201904201954348_InitialMigration.cs" />
@@ -127,7 +135,13 @@
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\MainForm.resx">
+    <EmbeddedResource Include="Migrations\201904220006374_RefactorSomeEntityDataType.resx">
+      <DependentUpon>201904220006374_RefactorSomeEntityDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.resx">
+      <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904201954348_InitialMigration.resx">
