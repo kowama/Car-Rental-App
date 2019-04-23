@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\Bunifu Ui Winform 1.10.0.0\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -42,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,11 +82,11 @@
     <Compile Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.Designer.cs">
       <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\MainForm.cs">
+    <Compile Include="View\Forms\LoginFom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\Forms\LoginFom.Designer.cs">
+      <DependentUpon>LoginFom.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201904201954348_InitialMigration.cs" />
     <Compile Include="Migrations\201904201954348_InitialMigration.Designer.cs">
@@ -135,14 +140,20 @@
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201904220006374_RefactorSomeEntityDataType.resx">
       <DependentUpon>201904220006374_RefactorSomeEntityDataType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.resx">
       <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\LoginFom.resx">
+      <DependentUpon>LoginFom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904201954348_InitialMigration.resx">
       <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
@@ -176,7 +187,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -191,6 +206,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
