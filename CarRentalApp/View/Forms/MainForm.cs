@@ -10,6 +10,7 @@ namespace CarRentalApp.View.Forms
         private readonly int _leftPanelExtendedWidth = 220;
         private readonly int _leftPanelCollapsedWidth = 62;
         private bool _isCollapsed;
+
         public MainForm()
         {
             InitializeComponent();
@@ -27,11 +28,12 @@ namespace CarRentalApp.View.Forms
 
         private void SetPageToContentPanel(Control page)
         {
-            page.Dock= DockStyle.Fill;
+            page.Dock = DockStyle.Fill;
             contentPannel.Controls.Clear();
             contentPannel.Controls.Add(page);
 
         }
+
         /*****************************************
        /        Events handlers                 /
        ****************************************/
@@ -86,42 +88,36 @@ namespace CarRentalApp.View.Forms
         {
             SetPageToContentPanel(new HomePageUserControl());
             MoveSidePanel(homeMenuButton);
-
         }
 
         private void RentsMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new RentsPageUserControl());
             MoveSidePanel(rentsMenuButton);
-
         }
 
         private void CarsMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new CarsPageUserControl());
             MoveSidePanel(carsMenuButton);
-
         }
 
         private void ClientsMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new ClientsPageUserControl());
             MoveSidePanel(clientsMenuButton);
-
         }
 
         private void UsersMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new UsersPageUserControl());
             MoveSidePanel(usersMenuButton);
-
         }
 
         private void SettingsMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new SettingsPageUserControl());
             MoveSidePanel(settingsMenuButton);
-
         }
     }
 }

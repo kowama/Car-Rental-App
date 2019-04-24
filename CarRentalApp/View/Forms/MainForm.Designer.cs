@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.menuPanel = new System.Windows.Forms.Panel();
             this.datetimeLabel = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.settingsMenuButton = new System.Windows.Forms.Button();
             this.homeMenuButton = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.clientsMenuButton = new System.Windows.Forms.Button();
             this.carsMenuButton = new System.Windows.Forms.Button();
             this.rentsMenuButton = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.menuButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.datetimeTimer = new System.Windows.Forms.Timer(this.components);
             this.leftPanel.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.userInfoPanel.SuspendLayout();
@@ -59,21 +61,33 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(50)))), ((int)(((byte)(54)))));
-            this.leftPanel.Controls.Add(this.datetimeLabel);
+            this.leftPanel.Controls.Add(this.menuPanel);
             this.leftPanel.Controls.Add(this.panel5);
-            this.leftPanel.Controls.Add(this.sidePanel);
-            this.leftPanel.Controls.Add(this.settingsMenuButton);
-            this.leftPanel.Controls.Add(this.homeMenuButton);
-            this.leftPanel.Controls.Add(this.usersMenuButton);
-            this.leftPanel.Controls.Add(this.clientsMenuButton);
-            this.leftPanel.Controls.Add(this.carsMenuButton);
-            this.leftPanel.Controls.Add(this.rentsMenuButton);
             this.leftPanel.Controls.Add(this.infoPanel);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(220, 681);
             this.leftPanel.TabIndex = 0;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuPanel.AutoScroll = true;
+            this.menuPanel.AutoScrollMinSize = new System.Drawing.Size(0, 478);
+            this.menuPanel.Controls.Add(this.datetimeLabel);
+            this.menuPanel.Controls.Add(this.sidePanel);
+            this.menuPanel.Controls.Add(this.settingsMenuButton);
+            this.menuPanel.Controls.Add(this.homeMenuButton);
+            this.menuPanel.Controls.Add(this.usersMenuButton);
+            this.menuPanel.Controls.Add(this.clientsMenuButton);
+            this.menuPanel.Controls.Add(this.carsMenuButton);
+            this.menuPanel.Controls.Add(this.rentsMenuButton);
+            this.menuPanel.Location = new System.Drawing.Point(0, 200);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(220, 478);
+            this.menuPanel.TabIndex = 2;
             // 
             // datetimeLabel
             // 
@@ -82,30 +96,20 @@
             this.datetimeLabel.AutoSize = true;
             this.datetimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimeLabel.ForeColor = System.Drawing.Color.Gold;
-            this.datetimeLabel.Location = new System.Drawing.Point(40, 646);
+            this.datetimeLabel.Location = new System.Drawing.Point(40, 445);
             this.datetimeLabel.Name = "datetimeLabel";
             this.datetimeLabel.Size = new System.Drawing.Size(136, 16);
-            this.datetimeLabel.TabIndex = 3;
+            this.datetimeLabel.TabIndex = 11;
             this.datetimeLabel.Text = "Tue 23 2019- 23:52";
             this.datetimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(0, 184);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(220, 10);
-            this.panel5.TabIndex = 1;
             // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.White;
-            this.sidePanel.Location = new System.Drawing.Point(3, 200);
+            this.sidePanel.Location = new System.Drawing.Point(0, 3);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(10, 60);
-            this.sidePanel.TabIndex = 1;
+            this.sidePanel.TabIndex = 4;
             // 
             // settingsMenuButton
             // 
@@ -119,11 +123,11 @@
             this.settingsMenuButton.ForeColor = System.Drawing.Color.White;
             this.settingsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsMenuButton.Image")));
             this.settingsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsMenuButton.Location = new System.Drawing.Point(10, 570);
+            this.settingsMenuButton.Location = new System.Drawing.Point(7, 373);
             this.settingsMenuButton.Name = "settingsMenuButton";
             this.settingsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.settingsMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.settingsMenuButton.TabIndex = 2;
+            this.settingsMenuButton.TabIndex = 5;
             this.settingsMenuButton.Text = "   Settings";
             this.settingsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.settingsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,11 +146,11 @@
             this.homeMenuButton.ForeColor = System.Drawing.Color.White;
             this.homeMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("homeMenuButton.Image")));
             this.homeMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeMenuButton.Location = new System.Drawing.Point(10, 200);
+            this.homeMenuButton.Location = new System.Drawing.Point(7, 3);
             this.homeMenuButton.Name = "homeMenuButton";
             this.homeMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.homeMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.homeMenuButton.TabIndex = 2;
+            this.homeMenuButton.TabIndex = 6;
             this.homeMenuButton.Text = "   Home";
             this.homeMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.homeMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -165,11 +169,11 @@
             this.usersMenuButton.ForeColor = System.Drawing.Color.White;
             this.usersMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("usersMenuButton.Image")));
             this.usersMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usersMenuButton.Location = new System.Drawing.Point(10, 496);
+            this.usersMenuButton.Location = new System.Drawing.Point(7, 299);
             this.usersMenuButton.Name = "usersMenuButton";
             this.usersMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.usersMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.usersMenuButton.TabIndex = 2;
+            this.usersMenuButton.TabIndex = 7;
             this.usersMenuButton.Text = "   Users";
             this.usersMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.usersMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -188,11 +192,11 @@
             this.clientsMenuButton.ForeColor = System.Drawing.Color.White;
             this.clientsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("clientsMenuButton.Image")));
             this.clientsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clientsMenuButton.Location = new System.Drawing.Point(10, 422);
+            this.clientsMenuButton.Location = new System.Drawing.Point(7, 225);
             this.clientsMenuButton.Name = "clientsMenuButton";
             this.clientsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.clientsMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.clientsMenuButton.TabIndex = 2;
+            this.clientsMenuButton.TabIndex = 8;
             this.clientsMenuButton.Text = "   Clients";
             this.clientsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.clientsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -211,11 +215,11 @@
             this.carsMenuButton.ForeColor = System.Drawing.Color.White;
             this.carsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("carsMenuButton.Image")));
             this.carsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.carsMenuButton.Location = new System.Drawing.Point(10, 348);
+            this.carsMenuButton.Location = new System.Drawing.Point(7, 151);
             this.carsMenuButton.Name = "carsMenuButton";
             this.carsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.carsMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.carsMenuButton.TabIndex = 2;
+            this.carsMenuButton.TabIndex = 9;
             this.carsMenuButton.Text = "   Cars";
             this.carsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.carsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -234,16 +238,26 @@
             this.rentsMenuButton.ForeColor = System.Drawing.Color.White;
             this.rentsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("rentsMenuButton.Image")));
             this.rentsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rentsMenuButton.Location = new System.Drawing.Point(10, 274);
+            this.rentsMenuButton.Location = new System.Drawing.Point(7, 77);
             this.rentsMenuButton.Name = "rentsMenuButton";
             this.rentsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rentsMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.rentsMenuButton.TabIndex = 2;
+            this.rentsMenuButton.TabIndex = 10;
             this.rentsMenuButton.Text = "   Rents";
             this.rentsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rentsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rentsMenuButton.UseVisualStyleBackColor = false;
             this.rentsMenuButton.Click += new System.EventHandler(this.RentsMenuButton_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(0, 184);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(220, 10);
+            this.panel5.TabIndex = 1;
             // 
             // infoPanel
             // 
@@ -376,7 +390,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.leftPanel.ResumeLayout(false);
-            this.leftPanel.PerformLayout();
+            this.menuPanel.ResumeLayout(false);
+            this.menuPanel.PerformLayout();
             this.infoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.userInfoPanel.ResumeLayout(false);
@@ -394,18 +409,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label userRoleLabel;
-        private System.Windows.Forms.Button homeMenuButton;
-        private System.Windows.Forms.Button clientsMenuButton;
-        private System.Windows.Forms.Button carsMenuButton;
-        private System.Windows.Forms.Button rentsMenuButton;
-        private System.Windows.Forms.Button settingsMenuButton;
-        private System.Windows.Forms.Button usersMenuButton;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Timer menuTimer;
         private System.Windows.Forms.Panel userInfoPanel;
-        private System.Windows.Forms.Label datetimeLabel;
         private System.Windows.Forms.Timer datetimeTimer;
+        private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.Label datetimeLabel;
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.Button settingsMenuButton;
+        private System.Windows.Forms.Button homeMenuButton;
+        private System.Windows.Forms.Button usersMenuButton;
+        private System.Windows.Forms.Button clientsMenuButton;
+        private System.Windows.Forms.Button carsMenuButton;
+        private System.Windows.Forms.Button rentsMenuButton;
     }
 }
