@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
+using CarRentalApp.View.UserControls;
 
 namespace CarRentalApp.View.Forms
 {
@@ -14,8 +15,26 @@ namespace CarRentalApp.View.Forms
             InitializeComponent();
             _isCollapsed = false;
             datetimeTimer.Start();
+            SetPageToContentPanel(new HomeUserControl());
+
         }
 
+        private void MoveSidePanel(Control control)
+        {
+            sidePanel.Top = control.Top;
+            sidePanel.Height = control.Height;
+        }
+
+        private void SetPageToContentPanel(Control page)
+        {
+            page.Dock= DockStyle.Fill;
+            contentPannel.Controls.Clear();
+            contentPannel.Controls.Add(page);
+
+        }
+        /*****************************************
+       /        Events handlers                 /
+       ****************************************/
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -61,6 +80,48 @@ namespace CarRentalApp.View.Forms
         private void DatetimeTimer_Tick(object sender, EventArgs e)
         {
             datetimeLabel.Text = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void HomeMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(homeMenuButton);
+
+        }
+
+        private void RentsMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(rentsMenuButton);
+
+        }
+
+        private void CarsMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(carsMenuButton);
+
+        }
+
+        private void ClientsMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(clientsMenuButton);
+
+        }
+
+        private void UsersMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(usersMenuButton);
+
+        }
+
+        private void SettingsMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new HomeUserControl());
+            MoveSidePanel(settingsMenuButton);
+
         }
     }
 }

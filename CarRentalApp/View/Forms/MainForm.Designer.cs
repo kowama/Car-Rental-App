@@ -33,7 +33,7 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.datetimeLabel = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.sidePanel = new System.Windows.Forms.Panel();
             this.settingsMenuButton = new System.Windows.Forms.Button();
             this.homeMenuButton = new System.Windows.Forms.Button();
             this.usersMenuButton = new System.Windows.Forms.Button();
@@ -47,8 +47,7 @@
             this.userRoleLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.contentPannel = new System.Windows.Forms.Panel();
             this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.datetimeTimer = new System.Windows.Forms.Timer(this.components);
             this.leftPanel.SuspendLayout();
@@ -62,7 +61,7 @@
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(50)))), ((int)(((byte)(54)))));
             this.leftPanel.Controls.Add(this.datetimeLabel);
             this.leftPanel.Controls.Add(this.panel5);
-            this.leftPanel.Controls.Add(this.panel6);
+            this.leftPanel.Controls.Add(this.sidePanel);
             this.leftPanel.Controls.Add(this.settingsMenuButton);
             this.leftPanel.Controls.Add(this.homeMenuButton);
             this.leftPanel.Controls.Add(this.usersMenuButton);
@@ -100,13 +99,13 @@
             this.panel5.Size = new System.Drawing.Size(220, 10);
             this.panel5.TabIndex = 1;
             // 
-            // panel6
+            // sidePanel
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(3, 200);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 60);
-            this.panel6.TabIndex = 1;
+            this.sidePanel.BackColor = System.Drawing.Color.White;
+            this.sidePanel.Location = new System.Drawing.Point(3, 200);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(10, 60);
+            this.sidePanel.TabIndex = 1;
             // 
             // settingsMenuButton
             // 
@@ -129,6 +128,7 @@
             this.settingsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.settingsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.settingsMenuButton.UseVisualStyleBackColor = false;
+            this.settingsMenuButton.Click += new System.EventHandler(this.SettingsMenuButton_Click);
             // 
             // homeMenuButton
             // 
@@ -151,6 +151,7 @@
             this.homeMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.homeMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homeMenuButton.UseVisualStyleBackColor = false;
+            this.homeMenuButton.Click += new System.EventHandler(this.HomeMenuButton_Click);
             // 
             // usersMenuButton
             // 
@@ -173,6 +174,7 @@
             this.usersMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.usersMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.usersMenuButton.UseVisualStyleBackColor = false;
+            this.usersMenuButton.Click += new System.EventHandler(this.UsersMenuButton_Click);
             // 
             // clientsMenuButton
             // 
@@ -195,6 +197,7 @@
             this.clientsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.clientsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.clientsMenuButton.UseVisualStyleBackColor = false;
+            this.clientsMenuButton.Click += new System.EventHandler(this.ClientsMenuButton_Click);
             // 
             // carsMenuButton
             // 
@@ -217,6 +220,7 @@
             this.carsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.carsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.carsMenuButton.UseVisualStyleBackColor = false;
+            this.carsMenuButton.Click += new System.EventHandler(this.CarsMenuButton_Click);
             // 
             // rentsMenuButton
             // 
@@ -239,6 +243,7 @@
             this.rentsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rentsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rentsMenuButton.UseVisualStyleBackColor = false;
+            this.rentsMenuButton.Click += new System.EventHandler(this.RentsMenuButton_Click);
             // 
             // infoPanel
             // 
@@ -339,20 +344,13 @@
             this.usernameLabel.Text = "Kowama";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
+            // contentPannel
             // 
-            this.panel2.Location = new System.Drawing.Point(468, 358);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(169, 63);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(220, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1044, 63);
-            this.panel4.TabIndex = 1;
+            this.contentPannel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPannel.Location = new System.Drawing.Point(220, 0);
+            this.contentPannel.Name = "contentPannel";
+            this.contentPannel.Size = new System.Drawing.Size(1044, 681);
+            this.contentPannel.TabIndex = 1;
             // 
             // menuTimer
             // 
@@ -367,8 +365,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.contentPannel);
             this.Controls.Add(this.leftPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 576);
@@ -392,8 +389,7 @@
 
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Panel infoPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel contentPannel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label usernameLabel;
@@ -405,7 +401,7 @@
         private System.Windows.Forms.Button settingsMenuButton;
         private System.Windows.Forms.Button usersMenuButton;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Timer menuTimer;
         private System.Windows.Forms.Panel userInfoPanel;
