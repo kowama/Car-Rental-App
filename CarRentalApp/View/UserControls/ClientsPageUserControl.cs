@@ -6,14 +6,17 @@ namespace CarRentalApp.View.UserControls
 {
     public partial class ClientsPageUserControl : UserControl
     {
+        private readonly string _searchTextBoxDefaultText;
         public ClientsPageUserControl()
         {
             InitializeComponent();
+            _searchTextBoxDefaultText = searchTextBox.Text.Trim();
         }
 
         private void PopulateDataGridView()
         {
-            for (int i = 0; i < 100; i++)
+            clientsDataGrid.Rows.Clear();
+            for (int i = 1; i <= 100;i++)
             {
                 clientsDataGrid.Rows.Add(new Object[]
                 {
@@ -42,10 +45,38 @@ namespace CarRentalApp.View.UserControls
             addNewClientForm.Show();
             
         }
+        private void RefreshDataGridButton_Click(object sender, EventArgs e)
+        {
+            PopulateDataGridView();
+        }
 
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+        }
         private void ClientsPageUserControl_Load(object sender, EventArgs e)
         {
             PopulateDataGridView();
+        }
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void SearchTextBox_Enter(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text.Trim() == _searchTextBoxDefaultText)
+            {
+                searchTextBox.Text = string.Empty;
+            }
+        }
+
+        private void SearchTextBox_Leave(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text.Trim() == string.Empty)
+            {
+                searchTextBox.Text = _searchTextBoxDefaultText;
+            }
         }
     }
 }
