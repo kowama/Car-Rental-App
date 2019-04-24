@@ -67,7 +67,7 @@
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(220, 715);
+            this.leftPanel.Size = new System.Drawing.Size(220, 700);
             this.leftPanel.TabIndex = 0;
             // 
             // menuPanel
@@ -85,7 +85,7 @@
             this.menuPanel.Controls.Add(this.rentsMenuButton);
             this.menuPanel.Location = new System.Drawing.Point(2, 200);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(215, 512);
+            this.menuPanel.Size = new System.Drawing.Size(215, 497);
             this.menuPanel.TabIndex = 2;
             // 
             // datetimeLabel
@@ -95,7 +95,7 @@
             this.datetimeLabel.AutoSize = true;
             this.datetimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimeLabel.ForeColor = System.Drawing.Color.Gold;
-            this.datetimeLabel.Location = new System.Drawing.Point(40, 459);
+            this.datetimeLabel.Location = new System.Drawing.Point(40, 444);
             this.datetimeLabel.Margin = new System.Windows.Forms.Padding(0);
             this.datetimeLabel.Name = "datetimeLabel";
             this.datetimeLabel.Size = new System.Drawing.Size(136, 16);
@@ -363,7 +363,7 @@
             this.contentPannel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPannel.Location = new System.Drawing.Point(220, 0);
             this.contentPannel.Name = "contentPannel";
-            this.contentPannel.Size = new System.Drawing.Size(1027, 715);
+            this.contentPannel.Size = new System.Drawing.Size(1027, 700);
             this.contentPannel.TabIndex = 1;
             // 
             // menuTimer
@@ -379,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(1220, 715);
+            this.AutoScrollMinSize = new System.Drawing.Size(1220, 700);
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.contentPannel);
             this.Controls.Add(this.leftPanel);

@@ -86,6 +86,12 @@
     <Compile Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.Designer.cs">
       <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\LoginFom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904220015538_RefactorChangeRentIdToGuid.resx">
       <DependentUpon>201904220015538_RefactorChangeRentIdToGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\LoginFom.resx">
       <DependentUpon>LoginFom.cs</DependentUpon>
