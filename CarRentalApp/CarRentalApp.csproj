@@ -150,11 +150,41 @@
     <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\HomeUserControl.cs">
+    <Compile Include="View\UserControls\HomePageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\HomeUserControl.Designer.cs">
-      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    <Compile Include="View\UserControls\HomePageUserControl.Designer.cs">
+      <DependentUpon>HomePageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\RentsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\RentsPageUserControl.Designer.cs">
+      <DependentUpon>RentsPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\CarsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\CarsPageUserControl.Designer.cs">
+      <DependentUpon>CarsPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\UsersPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\UsersPageUserControl.Designer.cs">
+      <DependentUpon>UsersPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ClientsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\ClientsPageUserControl.Designer.cs">
+      <DependentUpon>ClientsPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\SettingsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\SettingsPageUserControl.Designer.cs">
+      <DependentUpon>SettingsPageUserControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\201904220006374_RefactorSomeEntityDataType.resx">
       <DependentUpon>201904220006374_RefactorSomeEntityDataType.cs</DependentUpon>
@@ -202,8 +232,23 @@
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\HomeUserControl.resx">
-      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\HomePageUserControl.resx">
+      <DependentUpon>HomePageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\RentsPageUserControl.resx">
+      <DependentUpon>RentsPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\CarsPageUserControl.resx">
+      <DependentUpon>CarsPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\UsersPageUserControl.resx">
+      <DependentUpon>UsersPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\ClientsPageUserControl.resx">
+      <DependentUpon>ClientsPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SettingsPageUserControl.resx">
+      <DependentUpon>SettingsPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

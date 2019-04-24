@@ -15,7 +15,7 @@ namespace CarRentalApp.View.Forms
             InitializeComponent();
             _isCollapsed = false;
             datetimeTimer.Start();
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new HomePageUserControl());
 
         }
 
@@ -84,42 +84,42 @@ namespace CarRentalApp.View.Forms
 
         private void HomeMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new HomePageUserControl());
             MoveSidePanel(homeMenuButton);
 
         }
 
         private void RentsMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new RentsPageUserControl());
             MoveSidePanel(rentsMenuButton);
 
         }
 
         private void CarsMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new CarsPageUserControl());
             MoveSidePanel(carsMenuButton);
 
         }
 
         private void ClientsMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new ClientsPageUserControl());
             MoveSidePanel(clientsMenuButton);
 
         }
 
         private void UsersMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new UsersPageUserControl());
             MoveSidePanel(usersMenuButton);
 
         }
 
         private void SettingsMenuButton_Click(object sender, EventArgs e)
         {
-            SetPageToContentPanel(new HomeUserControl());
+            SetPageToContentPanel(new SettingsPageUserControl());
             MoveSidePanel(settingsMenuButton);
 
         }

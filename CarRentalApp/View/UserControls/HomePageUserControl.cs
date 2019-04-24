@@ -5,10 +5,10 @@ using Bunifu.DataViz;
 
 namespace CarRentalApp.View.UserControls
 {
-    public partial class HomeUserControl : UserControl
+    public partial class HomePageUserControl : UserControl
     {
         private readonly Random _rand = new Random();
-        public HomeUserControl()
+        public HomePageUserControl()
         {
             InitializeComponent();
         }
