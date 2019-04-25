@@ -8,9 +8,9 @@ namespace CarRentalApp.Persistence
     {
         private readonly CarRentalAppContext _context;
 
-        public UnitOfWork(CarRentalAppContext context)
+        public UnitOfWork()
         {
-            _context = context;
+            _context = new CarRentalAppContext();
 
             Bills = new BillRepository(_context);
             Cars = new CarRepository(_context);

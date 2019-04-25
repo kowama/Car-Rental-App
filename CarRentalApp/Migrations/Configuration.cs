@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using System.Linq;
 using CarRentalApp.Core.domain;
 
 namespace CarRentalApp.Migrations
@@ -33,8 +32,9 @@ namespace CarRentalApp.Migrations
                 Description = "The manager is the person Who Handle Client and Rents"
             };
 
-            context.Roles.AddOrUpdate(administratorRole);
-            context.Roles.AddOrUpdate(managerRole);
+            context.Roles.AddOrUpdate(r=>r.Name,
+                administratorRole,
+                managerRole);
 
 
             context.Users.AddOrUpdate(u => u.Username,
@@ -49,11 +49,40 @@ namespace CarRentalApp.Migrations
                     Password = "12345",
                     Roles = new ObservableCollection<Role>()
                     {
-//                        context.Roles.Single(r=>r.Name == RoleName.ADMINISTRATOR)
                         administratorRole
                     }
-                });
-        }
+                },
+                new User()
+                {
+                    Username = "Medi1",
+                    FirstName = "Mehdi",
+                    LastName = "Lahk",
+                    Cin = "C002057P",
+                    Email = "l.mehdi@gmail.com",
+                    Phone = "0691889223",
+                    Password = "12345",
+                    Roles = new ObservableCollection<Role>()
+                    {
+                        managerRole
+                    }
+                },
+                new User()
+                {
+                    Username = "KoyeKoye",
+                    FirstName = "Verassou",
+                    LastName = "Koye",
+                    Cin = "L002297P",
+                    Email = "kverassou7@gmail.com",
+                    Phone = "069104223",
+                    Password = "12345",
+                    Roles = new ObservableCollection<Role>()
+                    {
+                        managerRole
+                    }
+                }
+
+        );
+    }
 
     }
 }
