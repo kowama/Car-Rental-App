@@ -43,6 +43,7 @@ namespace CarRentalApp.Migrations
                     Username = "kowama",
                     FirstName = "Latif",
                     LastName = "Karambiri",
+                    Cin = "L002257P",
                     Email = "n.kowama@gmail.com",
                     Phone = "0691025223",
                     Password = "12345",

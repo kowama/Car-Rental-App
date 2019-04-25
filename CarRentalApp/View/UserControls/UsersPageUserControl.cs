@@ -8,5 +8,25 @@ namespace CarRentalApp.View.UserControls
         {
             InitializeComponent();
         }
+
+        private void PopulateUserDataGrid()
+        {
+            usersDataGrid.Rows.Clear();
+        }
+
+
+
+        /*****************************************
+       /        Events handlers                 /
+       ****************************************/
+
+        private void UsersPageUserControl_Load(object sender, System.EventArgs e)
+        {
+        }
+
+        private void searchButton_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

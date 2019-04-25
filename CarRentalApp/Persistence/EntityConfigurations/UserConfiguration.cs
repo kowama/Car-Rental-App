@@ -13,10 +13,16 @@ namespace CarRentalApp.Persistence.EntityConfigurations
             HasIndex(u => u.Username)
                 .IsUnique();
 
+            HasIndex(u => u.Cin)
+                .IsUnique();
+
             HasIndex(u => u.Email)
                 .IsUnique();
 
 
+            Property(u => u.Cin)
+                .IsRequired()
+                .HasMaxLength(32);
 
             Property(u => u.Username)
                 .IsRequired()

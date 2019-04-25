@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -45,9 +44,15 @@
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.carsDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.usersDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.RowIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.addNewCarsButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.addNewUserButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.searchButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.searchTextBox = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.seachFilterDropdown = new Bunifu.Framework.UI.BunifuDropdown();
@@ -55,43 +60,17 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.RowIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuDataViz1 = new Bunifu.DataViz.BunifuDataViz();
-            this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addNewUserButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.BorderRadius = 30;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.Controls.Add(this.bunifuDataViz1);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 110);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(417, 568);
-            this.bunifuCards1.TabIndex = 12;
             // 
             // label12
             // 
@@ -210,9 +189,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.carsDataGrid);
+            this.panel2.Controls.Add(this.usersDataGrid);
             this.panel2.Controls.Add(this.deleteButton);
-            this.panel2.Controls.Add(this.addNewCarsButton);
+            this.panel2.Controls.Add(this.addNewUserButton);
             this.panel2.Controls.Add(this.searchButton);
             this.panel2.Controls.Add(this.searchTextBox);
             this.panel2.Controls.Add(this.seachFilterDropdown);
@@ -223,17 +202,17 @@
             this.panel2.Size = new System.Drawing.Size(621, 577);
             this.panel2.TabIndex = 11;
             // 
-            // carsDataGrid
+            // usersDataGrid
             // 
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.carsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.carsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.usersDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.usersDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.carsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.carsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.carsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.carsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.usersDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usersDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.usersDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,9 +220,9 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.PaleGreen;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.carsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usersDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.usersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RowIndexColumn,
             this.FirstNameColumn,
             this.LastNameColumn,
@@ -257,15 +236,15 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.carsDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
-            this.carsDataGrid.DoubleBuffered = true;
-            this.carsDataGrid.EnableHeadersVisualStyles = false;
-            this.carsDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
-            this.carsDataGrid.HeaderForeColor = System.Drawing.Color.Black;
-            this.carsDataGrid.Location = new System.Drawing.Point(4, 105);
-            this.carsDataGrid.Name = "carsDataGrid";
-            this.carsDataGrid.ReadOnly = true;
-            this.carsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.usersDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            this.usersDataGrid.DoubleBuffered = true;
+            this.usersDataGrid.EnableHeadersVisualStyles = false;
+            this.usersDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
+            this.usersDataGrid.HeaderForeColor = System.Drawing.Color.Black;
+            this.usersDataGrid.Location = new System.Drawing.Point(4, 105);
+            this.usersDataGrid.Name = "usersDataGrid";
+            this.usersDataGrid.ReadOnly = true;
+            this.usersDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,16 +252,57 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.carsDataGrid.RowHeadersWidth = 20;
+            this.usersDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.usersDataGrid.RowHeadersWidth = 20;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.carsDataGrid.RowTemplate.ReadOnly = true;
-            this.carsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carsDataGrid.Size = new System.Drawing.Size(614, 355);
-            this.carsDataGrid.StandardTab = true;
-            this.carsDataGrid.TabIndex = 2;
+            this.usersDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.usersDataGrid.RowTemplate.ReadOnly = true;
+            this.usersDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersDataGrid.Size = new System.Drawing.Size(614, 355);
+            this.usersDataGrid.StandardTab = true;
+            this.usersDataGrid.TabIndex = 2;
+            // 
+            // RowIndexColumn
+            // 
+            this.RowIndexColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RowIndexColumn.FillWeight = 17.7665F;
+            this.RowIndexColumn.HeaderText = "Index";
+            this.RowIndexColumn.MaxInputLength = 4;
+            this.RowIndexColumn.Name = "RowIndexColumn";
+            this.RowIndexColumn.ReadOnly = true;
+            this.RowIndexColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RowIndexColumn.Width = 64;
+            // 
+            // FirstNameColumn
+            // 
+            this.FirstNameColumn.HeaderText = "First Name";
+            this.FirstNameColumn.Name = "FirstNameColumn";
+            this.FirstNameColumn.ReadOnly = true;
+            // 
+            // LastNameColumn
+            // 
+            this.LastNameColumn.HeaderText = "Last Name";
+            this.LastNameColumn.Name = "LastNameColumn";
+            this.LastNameColumn.ReadOnly = true;
+            // 
+            // EmailColumn
+            // 
+            this.EmailColumn.HeaderText = "Email";
+            this.EmailColumn.Name = "EmailColumn";
+            this.EmailColumn.ReadOnly = true;
+            // 
+            // PhoneColumn
+            // 
+            this.PhoneColumn.HeaderText = "Phone";
+            this.PhoneColumn.Name = "PhoneColumn";
+            this.PhoneColumn.ReadOnly = true;
+            // 
+            // RoleColumn
+            // 
+            this.RoleColumn.HeaderText = "Role";
+            this.RoleColumn.Name = "RoleColumn";
+            this.RoleColumn.ReadOnly = true;
             // 
             // deleteButton
             // 
@@ -297,18 +317,18 @@
             this.deleteButton.TabStop = false;
             this.deleteButton.Zoom = 10;
             // 
-            // addNewCarsButton
+            // addNewUserButton
             // 
-            this.addNewCarsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addNewCarsButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewCarsButton.Image")));
-            this.addNewCarsButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("addNewCarsButton.ImageActive")));
-            this.addNewCarsButton.Location = new System.Drawing.Point(485, 57);
-            this.addNewCarsButton.Name = "addNewCarsButton";
-            this.addNewCarsButton.Size = new System.Drawing.Size(32, 32);
-            this.addNewCarsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.addNewCarsButton.TabIndex = 4;
-            this.addNewCarsButton.TabStop = false;
-            this.addNewCarsButton.Zoom = 10;
+            this.addNewUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewUserButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewUserButton.Image")));
+            this.addNewUserButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("addNewUserButton.ImageActive")));
+            this.addNewUserButton.Location = new System.Drawing.Point(485, 57);
+            this.addNewUserButton.Name = "addNewUserButton";
+            this.addNewUserButton.Size = new System.Drawing.Size(32, 32);
+            this.addNewUserButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addNewUserButton.TabIndex = 4;
+            this.addNewUserButton.TabStop = false;
+            this.addNewUserButton.Zoom = 10;
             // 
             // searchButton
             // 
@@ -321,6 +341,7 @@
             this.searchButton.TabIndex = 4;
             this.searchButton.TabStop = false;
             this.searchButton.Zoom = 10;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchTextBox
             // 
@@ -412,91 +433,23 @@
             this.bunifuCustomLabel1.TabIndex = 5;
             this.bunifuCustomLabel1.Text = "Manage Application User";
             // 
-            // RowIndexColumn
-            // 
-            this.RowIndexColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RowIndexColumn.FillWeight = 17.7665F;
-            this.RowIndexColumn.HeaderText = "Index";
-            this.RowIndexColumn.MaxInputLength = 4;
-            this.RowIndexColumn.Name = "RowIndexColumn";
-            this.RowIndexColumn.ReadOnly = true;
-            this.RowIndexColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RowIndexColumn.Width = 64;
-            // 
-            // FirstNameColumn
-            // 
-            this.FirstNameColumn.HeaderText = "First Name";
-            this.FirstNameColumn.Name = "FirstNameColumn";
-            this.FirstNameColumn.ReadOnly = true;
-            // 
-            // LastNameColumn
-            // 
-            this.LastNameColumn.HeaderText = "Last Name";
-            this.LastNameColumn.Name = "LastNameColumn";
-            this.LastNameColumn.ReadOnly = true;
-            // 
-            // EmailColumn
-            // 
-            this.EmailColumn.HeaderText = "Email";
-            this.EmailColumn.Name = "EmailColumn";
-            this.EmailColumn.ReadOnly = true;
-            // 
-            // PhoneColumn
-            // 
-            this.PhoneColumn.HeaderText = "Phone";
-            this.PhoneColumn.Name = "PhoneColumn";
-            this.PhoneColumn.ReadOnly = true;
-            // 
-            // RoleColumn
-            // 
-            this.RoleColumn.HeaderText = "Role";
-            this.RoleColumn.Name = "RoleColumn";
-            this.RoleColumn.ReadOnly = true;
-            // 
-            // bunifuDataViz1
-            // 
-            this.bunifuDataViz1.animationEnabled = false;
-            this.bunifuDataViz1.AxisLineColor = System.Drawing.Color.LightGray;
-            this.bunifuDataViz1.AxisXFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.AxisYFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuDataViz1.Location = new System.Drawing.Point(7, -3);
-            this.bunifuDataViz1.Name = "bunifuDataViz1";
-            this.bunifuDataViz1.Size = new System.Drawing.Size(411, 389);
-            this.bunifuDataViz1.TabIndex = 1;
-            this.bunifuDataViz1.Theme = Bunifu.DataViz.BunifuDataViz._theme.theme1;
-            this.bunifuDataViz1.Title = "";
-            // 
             // UsersPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UsersPageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
-            this.bunifuCards1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.UsersPageUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addNewUserButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -506,8 +459,6 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -518,9 +469,9 @@
         private Bunifu.Framework.UI.BunifuImageButton exportToExelButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid carsDataGrid;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid usersDataGrid;
         private Bunifu.Framework.UI.BunifuImageButton deleteButton;
-        private Bunifu.Framework.UI.BunifuImageButton addNewCarsButton;
+        private Bunifu.Framework.UI.BunifuImageButton addNewUserButton;
         private Bunifu.Framework.UI.BunifuImageButton searchButton;
         private Bunifu.Framework.UI.BunifuMetroTextbox searchTextBox;
         private Bunifu.Framework.UI.BunifuDropdown seachFilterDropdown;
@@ -534,6 +485,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleColumn;
-        private Bunifu.DataViz.BunifuDataViz bunifuDataViz1;
     }
 }
