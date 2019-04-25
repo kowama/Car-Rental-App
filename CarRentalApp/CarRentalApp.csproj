@@ -39,6 +39,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Bunifu Ui Winform 1.10.0.0\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -52,6 +55,9 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,6 +75,7 @@
     <Compile Include="Core\domain\Role.cs" />
     <Compile Include="Core\domain\Client.cs" />
     <Compile Include="Core\domain\Bill.cs" />
+    <Compile Include="Core\domain\SeedData\ResourcePaths.cs" />
     <Compile Include="Core\domain\User.cs" />
     <Compile Include="Core\domain\Rent.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
@@ -269,7 +276,9 @@
     <EmbeddedResource Include="View\UserControls\SettingsPageUserControl.resx">
       <DependentUpon>SettingsPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Core\domain\SeedData\clients.csv" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CarRentalApp.Core.domain.Client.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -52,6 +52,12 @@ namespace CarRentalApp.View.UserControls
             UpdateUiChart();
 
         }
+        private void usersDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in usersDataGrid.Rows)
+                row.HeaderCell.Value = (row.Index + 1).ToString();
+
+        }
         private void searchTextBox_Enter(object sender, EventArgs e)
         {
             if (searchTextBox.Text == _defaultSearchTextBoxText)
@@ -96,6 +102,6 @@ namespace CarRentalApp.View.UserControls
             UpdateUiChart();
         }
 
-      
+       
     }
 }

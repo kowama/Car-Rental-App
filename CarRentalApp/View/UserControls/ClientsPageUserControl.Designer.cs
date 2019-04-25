@@ -32,19 +32,13 @@ namespace CarRentalApp.View.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsPageUserControl));
             this.clientsDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.RowIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CINColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -57,6 +51,14 @@ namespace CarRentalApp.View.UserControls
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.printButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
@@ -66,6 +68,7 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // clientsDataGrid
@@ -75,6 +78,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientsDataGrid.AutoGenerateColumns = false;
             this.clientsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.clientsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.clientsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -89,13 +93,14 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.clientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RowIndexColumn,
-            this.FirstNameColumn,
-            this.LastNameColumn,
-            this.CINColumn,
-            this.EmailColumn,
-            this.PhoneColumn,
-            this.AddressColumn});
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.cinDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn});
+            this.clientsDataGrid.DataSource = this.clientBindingSource;
             this.clientsDataGrid.DoubleBuffered = true;
             this.clientsDataGrid.EnableHeadersVisualStyles = false;
             this.clientsDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
@@ -120,59 +125,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGrid.Size = new System.Drawing.Size(974, 513);
             this.clientsDataGrid.StandardTab = true;
             this.clientsDataGrid.TabIndex = 2;
-            // 
-            // RowIndexColumn
-            // 
-            this.RowIndexColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RowIndexColumn.FillWeight = 17.7665F;
-            this.RowIndexColumn.HeaderText = "Index";
-            this.RowIndexColumn.Name = "RowIndexColumn";
-            this.RowIndexColumn.ReadOnly = true;
-            this.RowIndexColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RowIndexColumn.Width = 63;
-            // 
-            // FirstNameColumn
-            // 
-            this.FirstNameColumn.FillWeight = 113.7056F;
-            this.FirstNameColumn.HeaderText = "First Name";
-            this.FirstNameColumn.Name = "FirstNameColumn";
-            this.FirstNameColumn.ReadOnly = true;
-            this.FirstNameColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // LastNameColumn
-            // 
-            this.LastNameColumn.FillWeight = 113.7056F;
-            this.LastNameColumn.HeaderText = "Last Name";
-            this.LastNameColumn.Name = "LastNameColumn";
-            this.LastNameColumn.ReadOnly = true;
-            // 
-            // CINColumn
-            // 
-            this.CINColumn.FillWeight = 113.7056F;
-            this.CINColumn.HeaderText = "CIN";
-            this.CINColumn.Name = "CINColumn";
-            this.CINColumn.ReadOnly = true;
-            // 
-            // EmailColumn
-            // 
-            this.EmailColumn.FillWeight = 113.7056F;
-            this.EmailColumn.HeaderText = "Email";
-            this.EmailColumn.Name = "EmailColumn";
-            this.EmailColumn.ReadOnly = true;
-            // 
-            // PhoneColumn
-            // 
-            this.PhoneColumn.FillWeight = 113.7056F;
-            this.PhoneColumn.HeaderText = "Phone";
-            this.PhoneColumn.Name = "PhoneColumn";
-            this.PhoneColumn.ReadOnly = true;
-            // 
-            // AddressColumn
-            // 
-            this.AddressColumn.FillWeight = 113.7056F;
-            this.AddressColumn.HeaderText = "Address";
-            this.AddressColumn.Name = "AddressColumn";
-            this.AddressColumn.ReadOnly = true;
+            this.clientsDataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.clientsDataGrid_DataBindingComplete);
             // 
             // panel1
             // 
@@ -357,6 +310,59 @@ namespace CarRentalApp.View.UserControls
             this.panel2.Size = new System.Drawing.Size(1044, 55);
             this.panel2.TabIndex = 5;
             // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Client);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cinDataGridViewTextBoxColumn
+            // 
+            this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
+            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
+            this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
+            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ClientsPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +383,7 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,14 +400,15 @@ namespace CarRentalApp.View.UserControls
         private BunifuSeparator bunifuSeparator1;
         private BunifuImageButton refreshDataGrid;
         private Panel panel2;
-        private DataGridViewTextBoxColumn RowIndexColumn;
-        private DataGridViewTextBoxColumn FirstNameColumn;
-        private DataGridViewTextBoxColumn LastNameColumn;
-        private DataGridViewTextBoxColumn CINColumn;
-        private DataGridViewTextBoxColumn EmailColumn;
-        private DataGridViewTextBoxColumn PhoneColumn;
-        private DataGridViewTextBoxColumn AddressColumn;
         private BunifuImageButton addNewClientButton;
         private BunifuImageButton searchButton;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private BindingSource clientBindingSource;
     }
 }

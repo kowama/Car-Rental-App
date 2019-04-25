@@ -1,7 +1,11 @@
 using System.Collections.ObjectModel;
 using System.Data.Entity.Migrations;
+using System.IO;
+using System.Linq;
 using CarRentalApp.Core.domain;
+using CarRentalApp.Core.domain.SeedData;
 using CarRentalApp.Persistence;
+using CsvHelper;
 
 namespace CarRentalApp.Migrations
 {
@@ -31,7 +35,7 @@ namespace CarRentalApp.Migrations
                 Description = "The manager is the person Who Handle Client and Rents"
             };
 
-            context.Roles.AddOrUpdate(r=>r.Name,
+            context.Roles.AddOrUpdate(r => r.Name,
                 administratorRole,
                 managerRole);
 
@@ -78,10 +82,17 @@ namespace CarRentalApp.Migrations
                     {
                         managerRole
                     }
-                }
+                });
 
-        );
-    }
 
+            using (var reader = new StreamReader(ResourcePaths.Clients))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.RegisterClassMap<ClientMap>();
+                var records = csv.GetRecords<Client>().ToArray();
+
+                context.Clients.AddOrUpdate(c=>c.Id, records);
+            }
+        }
     }
 }

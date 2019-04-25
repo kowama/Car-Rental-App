@@ -9,8 +9,4 @@ namespace CarRentalApp.Core.Utils
             return source?.IndexOf(toCheck, comp) >= 0;
         }
     }
-    public static class Utils
-    {
-
-    }
 }

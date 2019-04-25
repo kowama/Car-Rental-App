@@ -15,13 +15,7 @@ namespace CarRentalApp.View.UserControls
 
         private void PopulateDataGridView()
         {
-            clientsDataGrid.Rows.Clear();
-            for (int i = 1; i <= 100;i++)
-            {
-                clientsDataGrid.Rows.Add(i.ToString(), "John", "Wick", "L00335P", "john.wick@mail.com", "0633553543", " 6 Rue Ch E Paris");
-                clientsDataGrid.DisplayedRowCount(true);
-
-            }
+           
         }
 
 
@@ -68,6 +62,13 @@ namespace CarRentalApp.View.UserControls
             {
                 searchTextBox.Text = _searchTextBoxDefaultText;
             }
+        }
+
+        private void clientsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in clientsDataGrid.Rows)
+                row.HeaderCell.Value = (row.Index + 1).ToString();
+
         }
     }
 }
