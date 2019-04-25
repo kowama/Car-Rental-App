@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Repositories;
 
 namespace CarRentalApp.Persistence.Repositories
 {
-    public class RentRepository : Repository<Rent, string>, IRentRepository
+    public class RentRepository : Repository<Rent, Guid>, IRentRepository
     {
 
 

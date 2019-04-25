@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsPageUserControl));
             this.clientsDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.RowIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +66,8 @@
             // 
             // clientsDataGrid
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.clientsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.clientsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.clientsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -75,14 +75,14 @@
             this.clientsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.clientsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clientsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.clientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RowIndexColumn,
@@ -100,20 +100,20 @@
             this.clientsDataGrid.Name = "clientsDataGrid";
             this.clientsDataGrid.ReadOnly = true;
             this.clientsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.clientsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.clientsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.clientsDataGrid.RowTemplate.ReadOnly = true;
             this.clientsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientsDataGrid.Size = new System.Drawing.Size(949, 513);
+            this.clientsDataGrid.Size = new System.Drawing.Size(974, 513);
             this.clientsDataGrid.StandardTab = true;
             this.clientsDataGrid.TabIndex = 2;
             // 
@@ -218,7 +218,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshDataGrid.Image = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.Image")));
             this.refreshDataGrid.ImageActive = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.ImageActive")));
-            this.refreshDataGrid.Location = new System.Drawing.Point(948, 66);
+            this.refreshDataGrid.Location = new System.Drawing.Point(974, 66);
             this.refreshDataGrid.Name = "refreshDataGrid";
             this.refreshDataGrid.Size = new System.Drawing.Size(32, 32);
             this.refreshDataGrid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +246,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addNewClientButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewClientButton.Image")));
             this.addNewClientButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("addNewClientButton.ImageActive")));
-            this.addNewClientButton.Location = new System.Drawing.Point(836, 66);
+            this.addNewClientButton.Location = new System.Drawing.Point(862, 66);
             this.addNewClientButton.Name = "addNewClientButton";
             this.addNewClientButton.Size = new System.Drawing.Size(32, 32);
             this.addNewClientButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,7 +261,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("deleteButton.ImageActive")));
-            this.deleteButton.Location = new System.Drawing.Point(890, 66);
+            this.deleteButton.Location = new System.Drawing.Point(916, 66);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(32, 32);
             this.deleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,7 +321,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exportToExelButton.Image = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.Image")));
             this.exportToExelButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.ImageActive")));
-            this.exportToExelButton.Location = new System.Drawing.Point(890, 3);
+            this.exportToExelButton.Location = new System.Drawing.Point(916, 3);
             this.exportToExelButton.Name = "exportToExelButton";
             this.exportToExelButton.Size = new System.Drawing.Size(32, 43);
             this.exportToExelButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +335,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("printButton.Image")));
             this.printButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("printButton.ImageActive")));
-            this.printButton.Location = new System.Drawing.Point(948, 0);
+            this.printButton.Location = new System.Drawing.Point(973, 0);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(32, 43);
             this.printButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

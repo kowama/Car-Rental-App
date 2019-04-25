@@ -1,9 +1,10 @@
-﻿using CarRentalApp.Core.domain;
+﻿using System;
+using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Repositories;
 
 namespace CarRentalApp.Persistence.Repositories
 {
-    public class ClientRepository : Repository<Client, int> , IClientRepository
+    public class ClientRepository : Repository<Client, Guid> , IClientRepository
     {
         public ClientRepository(CarRentalAppContext context) : base(context)
         {
