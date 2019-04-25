@@ -20,8 +20,7 @@ namespace CarRentalApp.Persistence
             Roles = new RoleRepository(_context);
             Users = new UserRepository(_context);
         }
-
-
+        
         public IBillRepository Bills { get; private set; }
 
         public ICarRepository Cars { get; private set; }

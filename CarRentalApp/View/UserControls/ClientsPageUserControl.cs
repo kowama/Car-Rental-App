@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Core.Utils;
+using CarRentalApp.Persistence;
 using CarRentalApp.View.Forms;
 
 namespace CarRentalApp.View.UserControls
@@ -7,22 +10,26 @@ namespace CarRentalApp.View.UserControls
     public partial class ClientsPageUserControl : UserControl
     {
         private readonly string _searchTextBoxDefaultText;
+        private readonly UnitOfWork _unitOfWork;
+   
+        
         public ClientsPageUserControl()
         {
             InitializeComponent();
             _searchTextBoxDefaultText = searchTextBox.Text.Trim();
+            _unitOfWork = new UnitOfWork();
         }
 
         private void PopulateDataGridView()
         {
-           
+            var clients = _unitOfWork.Clients.GetAll().ToList();
+            clientBindingSource.DataSource = clients;
+
         }
 
-
-
         /*****************************************
-     /        Events handlers                 /
-     ****************************************/
+                  Events handlers                 
+       ****************************************/
 
         private void AddNewClientButton_Click(object sender, EventArgs e)
         {
@@ -44,7 +51,23 @@ namespace CarRentalApp.View.UserControls
         }
         private void SearchButton_Click(object sender, EventArgs e)
         {
-           
+            string keyWord = searchTextBox.Text;
+
+            var clients = _unitOfWork.Clients.GetAll().ToList();
+            var filteredUsers = clients;
+
+            if (!(keyWord == string.Empty || keyWord == _searchTextBoxDefaultText))
+            {
+                filteredUsers = clients.FindAll(c =>
+                        c.FirstName.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
+                        || c.LastName.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
+                        || c.Cin.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
+                        || c.Email.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                        || c.Phone.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
+                        || c.Address.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
+                );
+            }
+            clientsDataGrid.DataSource = filteredUsers.ToList();
 
         }
 
