@@ -10,12 +10,19 @@ namespace CarRentalApp.Persistence.EntityConfigurations
         {
             HasKey(c => c.Id);
 
+            HasIndex(c => c.CIN)
+                .IsUnique();
+
+
             Property(c => c.Address)
                 .HasMaxLength(256);
+            Property(c => c.CIN)
+                .IsRequired()
+                .HasMaxLength(32);
 
             Property(c => c.Email)
                 .HasMaxLength(64);
-
+           
             Property(c => c.FirstName)
                 .HasMaxLength(32)
                 .IsRequired();

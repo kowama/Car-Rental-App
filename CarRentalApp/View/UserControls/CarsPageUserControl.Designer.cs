@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsPageUserControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -52,15 +52,8 @@
             this.PricePerDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.carImagePictureBox = new System.Windows.Forms.PictureBox();
-            this.carNameLabel = new System.Windows.Forms.Label();
-            this.carDescriptionLabel = new System.Windows.Forms.Label();
-            this.carStatus = new System.Windows.Forms.Label();
-            this.carClassificationLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -69,7 +62,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.printButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.carImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.carNameLabel = new System.Windows.Forms.Label();
+            this.carDescriptionLabel = new System.Windows.Forms.Label();
+            this.carStatus = new System.Windows.Forms.Label();
+            this.carClassificationLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
@@ -78,11 +78,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carImagePictureBox)).BeginInit();
-            this.bunifuCards1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carImagePictureBox)).BeginInit();
+            this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuSeparator1
@@ -218,8 +218,8 @@
             // 
             // carsDataGrid
             // 
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.carsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.carsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.carsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -227,14 +227,14 @@
             this.carsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.carsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.carsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.carsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.carsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RowIndexColumn,
@@ -243,14 +243,14 @@
             this.ClassificationColumn,
             this.PricePerDayColumn,
             this.DescriptionColumn});
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.carsDataGrid.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.carsDataGrid.DefaultCellStyle = dataGridViewCellStyle10;
             this.carsDataGrid.DoubleBuffered = true;
             this.carsDataGrid.EnableHeadersVisualStyles = false;
             this.carsDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
@@ -259,18 +259,18 @@
             this.carsDataGrid.Name = "carsDataGrid";
             this.carsDataGrid.ReadOnly = true;
             this.carsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.carsDataGrid.RowHeadersWidth = 20;
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.carsDataGrid.RowTemplate.ReadOnly = true;
             this.carsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carsDataGrid.Size = new System.Drawing.Size(614, 355);
@@ -309,9 +309,9 @@
             // 
             // PricePerDayColumn
             // 
-            dataGridViewCellStyle51.Format = "C2";
-            dataGridViewCellStyle51.NullValue = null;
-            this.PricePerDayColumn.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.PricePerDayColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.PricePerDayColumn.HeaderText = "Price Per Day";
             this.PricePerDayColumn.Name = "PricePerDayColumn";
             this.PricePerDayColumn.ReadOnly = true;
@@ -340,110 +340,6 @@
             this.panel2.Size = new System.Drawing.Size(621, 577);
             this.panel2.TabIndex = 8;
             // 
-            // carImagePictureBox
-            // 
-            this.carImagePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.carImagePictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carImagePictureBox.BackgroundImage")));
-            this.carImagePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.carImagePictureBox.Location = new System.Drawing.Point(54, 3);
-            this.carImagePictureBox.Name = "carImagePictureBox";
-            this.carImagePictureBox.Size = new System.Drawing.Size(291, 200);
-            this.carImagePictureBox.TabIndex = 1;
-            this.carImagePictureBox.TabStop = false;
-            // 
-            // carNameLabel
-            // 
-            this.carNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.carNameLabel.AutoSize = true;
-            this.carNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carNameLabel.Location = new System.Drawing.Point(97, 230);
-            this.carNameLabel.Name = "carNameLabel";
-            this.carNameLabel.Size = new System.Drawing.Size(205, 25);
-            this.carNameLabel.TabIndex = 2;
-            this.carNameLabel.Text = "JEEP WRANGLER";
-            // 
-            // carDescriptionLabel
-            // 
-            this.carDescriptionLabel.AutoSize = true;
-            this.carDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carDescriptionLabel.Location = new System.Drawing.Point(25, 268);
-            this.carDescriptionLabel.MaximumSize = new System.Drawing.Size(400, 0);
-            this.carDescriptionLabel.Name = "carDescriptionLabel";
-            this.carDescriptionLabel.Size = new System.Drawing.Size(373, 15);
-            this.carDescriptionLabel.TabIndex = 2;
-            this.carDescriptionLabel.Text = "This jeep holds 4 passengers, as well as 2 medium-sized suitcases";
-            this.carDescriptionLabel.UseMnemonic = false;
-            // 
-            // carStatus
-            // 
-            this.carStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.carStatus.AutoSize = true;
-            this.carStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carStatus.ForeColor = System.Drawing.Color.Green;
-            this.carStatus.Location = new System.Drawing.Point(253, 206);
-            this.carStatus.Name = "carStatus";
-            this.carStatus.Size = new System.Drawing.Size(90, 24);
-            this.carStatus.TabIndex = 2;
-            this.carStatus.Text = "Availabe";
-            // 
-            // carClassificationLabel
-            // 
-            this.carClassificationLabel.AutoSize = true;
-            this.carClassificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carClassificationLabel.Location = new System.Drawing.Point(147, 314);
-            this.carClassificationLabel.Name = "carClassificationLabel";
-            this.carClassificationLabel.Size = new System.Drawing.Size(79, 20);
-            this.carClassificationLabel.TabIndex = 3;
-            this.carClassificationLabel.Text = "Model  S";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 423);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Total of Rents";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Magenta;
-            this.label7.Location = new System.Drawing.Point(230, 423);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 31);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "43";
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.BorderRadius = 30;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.Controls.Add(this.label7);
-            this.bunifuCards1.Controls.Add(this.label6);
-            this.bunifuCards1.Controls.Add(this.label1);
-            this.bunifuCards1.Controls.Add(this.carClassificationLabel);
-            this.bunifuCards1.Controls.Add(this.carStatus);
-            this.bunifuCards1.Controls.Add(this.carDescriptionLabel);
-            this.bunifuCards1.Controls.Add(this.carNameLabel);
-            this.bunifuCards1.Controls.Add(this.carImagePictureBox);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 110);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(417, 568);
-            this.bunifuCards1.TabIndex = 9;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bunifuCircleProgressbar1);
@@ -460,6 +356,31 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(621, 100);
             this.panel3.TabIndex = 5;
+            // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 5;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCircleProgressbar1.LabelVisible = true;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
+            this.bunifuCircleProgressbar1.LineThickness = 5;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(310, 9);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Crimson;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(82, 82);
+            this.bunifuCircleProgressbar1.TabIndex = 18;
+            this.bunifuCircleProgressbar1.Value = 43;
             // 
             // label12
             // 
@@ -559,33 +480,122 @@
             this.exportToExelButton.TabStop = false;
             this.exportToExelButton.Zoom = 10;
             // 
-            // bunifuCircleProgressbar1
+            // carImagePictureBox
             // 
-            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.carImagePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.carImagePictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carImagePictureBox.BackgroundImage")));
+            this.carImagePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.carImagePictureBox.Location = new System.Drawing.Point(54, 3);
+            this.carImagePictureBox.Name = "carImagePictureBox";
+            this.carImagePictureBox.Size = new System.Drawing.Size(291, 200);
+            this.carImagePictureBox.TabIndex = 1;
+            this.carImagePictureBox.TabStop = false;
+            // 
+            // carNameLabel
+            // 
+            this.carNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.carNameLabel.AutoSize = true;
+            this.carNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carNameLabel.Location = new System.Drawing.Point(97, 230);
+            this.carNameLabel.Name = "carNameLabel";
+            this.carNameLabel.Size = new System.Drawing.Size(205, 25);
+            this.carNameLabel.TabIndex = 2;
+            this.carNameLabel.Text = "JEEP WRANGLER";
+            // 
+            // carDescriptionLabel
+            // 
+            this.carDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.carDescriptionLabel.AutoSize = true;
+            this.carDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carDescriptionLabel.Location = new System.Drawing.Point(25, 268);
+            this.carDescriptionLabel.MaximumSize = new System.Drawing.Size(400, 0);
+            this.carDescriptionLabel.Name = "carDescriptionLabel";
+            this.carDescriptionLabel.Size = new System.Drawing.Size(373, 15);
+            this.carDescriptionLabel.TabIndex = 2;
+            this.carDescriptionLabel.Text = "This jeep holds 4 passengers, as well as 2 medium-sized suitcases";
+            this.carDescriptionLabel.UseMnemonic = false;
+            // 
+            // carStatus
+            // 
+            this.carStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.carStatus.AutoSize = true;
+            this.carStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carStatus.ForeColor = System.Drawing.Color.Green;
+            this.carStatus.Location = new System.Drawing.Point(253, 206);
+            this.carStatus.Name = "carStatus";
+            this.carStatus.Size = new System.Drawing.Size(90, 24);
+            this.carStatus.TabIndex = 2;
+            this.carStatus.Text = "Availabe";
+            // 
+            // carClassificationLabel
+            // 
+            this.carClassificationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.carClassificationLabel.AutoSize = true;
+            this.carClassificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carClassificationLabel.Location = new System.Drawing.Point(147, 314);
+            this.carClassificationLabel.Name = "carClassificationLabel";
+            this.carClassificationLabel.Size = new System.Drawing.Size(79, 20);
+            this.carClassificationLabel.TabIndex = 3;
+            this.carClassificationLabel.Text = "Model  S";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(50, 423);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Total of Rents";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Magenta;
+            this.label7.Location = new System.Drawing.Point(230, 423);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 31);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "43";
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(310, 9);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Crimson;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(82, 82);
-            this.bunifuCircleProgressbar1.TabIndex = 18;
-            this.bunifuCircleProgressbar1.Value = 43;
+            this.bunifuCards1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuCards1.BorderRadius = 30;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.SystemColors.Control;
+            this.bunifuCards1.Controls.Add(this.label7);
+            this.bunifuCards1.Controls.Add(this.label6);
+            this.bunifuCards1.Controls.Add(this.label1);
+            this.bunifuCards1.Controls.Add(this.carClassificationLabel);
+            this.bunifuCards1.Controls.Add(this.carStatus);
+            this.bunifuCards1.Controls.Add(this.carDescriptionLabel);
+            this.bunifuCards1.Controls.Add(this.carNameLabel);
+            this.bunifuCards1.Controls.Add(this.carImagePictureBox);
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 110);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(417, 568);
+            this.bunifuCards1.TabIndex = 9;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(98, 362);
@@ -611,13 +621,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.carImagePictureBox)).EndInit();
-            this.bunifuCards1.ResumeLayout(false);
-            this.bunifuCards1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carImagePictureBox)).EndInit();
+            this.bunifuCards1.ResumeLayout(false);
+            this.bunifuCards1.PerformLayout();
             this.ResumeLayout(false);
 
         }
