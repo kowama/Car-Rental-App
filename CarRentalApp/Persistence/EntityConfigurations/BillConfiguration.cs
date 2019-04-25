@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using CarRentalApp.Core.domain;
 
-
 namespace CarRentalApp.Persistence.EntityConfigurations
 {
     public class BillConfiguration  : EntityTypeConfiguration<Bill>

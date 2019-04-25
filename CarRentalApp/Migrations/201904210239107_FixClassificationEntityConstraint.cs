@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace CarRentalApp.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class FixClassificationEntityConstraint : DbMigration
     {
         public override void Up()

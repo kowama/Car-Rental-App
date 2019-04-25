@@ -1,11 +1,16 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.DataViz;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class HomePageUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -265,20 +270,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.DataViz.BunifuDataViz reportChartDataViz;
-        private System.Windows.Forms.Button refreshButton;
-        private Bunifu.Framework.UI.BunifuDropdown reportDropdown;
+        private Panel panel3;
+        private PictureBox pictureBox4;
+        private Label label6;
+        private Label label7;
+        private Panel panel2;
+        private PictureBox pictureBox3;
+        private Label label4;
+        private Label label5;
+        private Panel panel1;
+        private PictureBox pictureBox2;
+        private Label label3;
+        private Label label1;
+        private BunifuDataViz reportChartDataViz;
+        private Button refreshButton;
+        private BunifuDropdown reportDropdown;
     }
 }

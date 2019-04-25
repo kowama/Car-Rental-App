@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.Forms
 {
     partial class AddClientForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -338,20 +342,20 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuMetroTextbox fistnameTextbox;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lastnameTextbox;
-        private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox CINTextbox;
-        private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox emailTextbox;
-        private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
-        private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox AddressTextbox;
-        private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuThinButton2 saveButton;
+        private BunifuMetroTextbox fistnameTextbox;
+        private Label label1;
+        private BunifuMetroTextbox lastnameTextbox;
+        private Label label2;
+        private BunifuMetroTextbox CINTextbox;
+        private Label label3;
+        private BunifuMetroTextbox emailTextbox;
+        private Label label4;
+        private BunifuMetroTextbox bunifuMetroTextbox4;
+        private Label label5;
+        private BunifuMetroTextbox AddressTextbox;
+        private Label label6;
+        private BunifuMetroTextbox bunifuMetroTextbox1;
+        private Label label7;
+        private BunifuThinButton2 saveButton;
     }
 }

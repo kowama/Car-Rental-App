@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class CarsPageUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -634,41 +638,41 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuImageButton refreshDataGrid;
-        private Bunifu.Framework.UI.BunifuImageButton searchButton;
-        private Bunifu.Framework.UI.BunifuImageButton addNewCarsButton;
-        private Bunifu.Framework.UI.BunifuImageButton deleteButton;
-        private Bunifu.Framework.UI.BunifuMetroTextbox searchTextBox;
-        private Bunifu.Framework.UI.BunifuDropdown seachFilterDropdown;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid carsDataGrid;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RowIndexColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LicensePlateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClassificationColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PricePerDayColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionColumn;
-        private System.Windows.Forms.PictureBox carImagePictureBox;
-        private System.Windows.Forms.Label carNameLabel;
-        private System.Windows.Forms.Label carDescriptionLabel;
-        private System.Windows.Forms.Label carStatus;
-        private System.Windows.Forms.Label carClassificationLabel;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuImageButton printButton;
-        private Bunifu.Framework.UI.BunifuImageButton exportToExelButton;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
-        private System.Windows.Forms.Label label1;
+        private BunifuSeparator bunifuSeparator1;
+        private Panel panel1;
+        private BunifuCustomLabel bunifuCustomLabel1;
+        private BunifuImageButton refreshDataGrid;
+        private BunifuImageButton searchButton;
+        private BunifuImageButton addNewCarsButton;
+        private BunifuImageButton deleteButton;
+        private BunifuMetroTextbox searchTextBox;
+        private BunifuDropdown seachFilterDropdown;
+        private BunifuCustomDataGrid carsDataGrid;
+        private Panel panel2;
+        private DataGridViewTextBoxColumn RowIndexColumn;
+        private DataGridViewTextBoxColumn NameColumn;
+        private DataGridViewTextBoxColumn LicensePlateColumn;
+        private DataGridViewTextBoxColumn ClassificationColumn;
+        private DataGridViewTextBoxColumn PricePerDayColumn;
+        private DataGridViewTextBoxColumn DescriptionColumn;
+        private PictureBox carImagePictureBox;
+        private Label carNameLabel;
+        private Label carDescriptionLabel;
+        private Label carStatus;
+        private Label carClassificationLabel;
+        private Label label6;
+        private Label label7;
+        private BunifuCards bunifuCards1;
+        private Panel panel3;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label4;
+        private BunifuImageButton printButton;
+        private BunifuImageButton exportToExelButton;
+        private BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Label label1;
     }
 }

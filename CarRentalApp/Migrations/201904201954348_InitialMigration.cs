@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace CarRentalApp.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class InitialMigration : DbMigration
     {
         public override void Up()
@@ -12,7 +11,7 @@ namespace CarRentalApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Amount = c.Single(nullable: false),
+                        Amount = c.Single(nullable: false)
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -24,7 +23,7 @@ namespace CarRentalApp.Migrations
                         LicensePlate = c.String(),
                         Description = c.String(),
                         State = c.String(),
-                        PricePerDay = c.Single(nullable: false),
+                        PricePerDay = c.Single(nullable: false)
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -34,7 +33,7 @@ namespace CarRentalApp.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Description = c.String(),
+                        Description = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -47,7 +46,7 @@ namespace CarRentalApp.Migrations
                         LastName = c.String(),
                         Email = c.String(),
                         Phone = c.String(),
-                        Address = c.String(),
+                        Address = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -61,7 +60,7 @@ namespace CarRentalApp.Migrations
                         RentId = c.String(nullable: false, maxLength: 8, fixedLength: true),
                         DateStart = c.DateTime(nullable: false),
                         DateEnd = c.DateTime(nullable: false),
-                        State = c.Int(nullable: false),
+                        State = c.Int(nullable: false)
                     })
                 .PrimaryKey(t => new { t.ClientId, t.CarId, t.UserId, t.RentId });
             
@@ -71,7 +70,7 @@ namespace CarRentalApp.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Description = c.String(),
+                        Description = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -85,7 +84,7 @@ namespace CarRentalApp.Migrations
                         LastName = c.String(),
                         Password = c.String(),
                         Email = c.String(),
-                        Phone = c.String(),
+                        Phone = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             

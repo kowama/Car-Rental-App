@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace CarRentalApp.Core.domain
 {
@@ -17,5 +16,25 @@ namespace CarRentalApp.Core.domain
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
         public virtual ObservableCollection<Role> Roles { get; set; } = new ObservableCollection<Role>();
 
+        public bool HasRole(string roleName)
+        {
+            foreach (var role in Roles)
+            {
+                if (role.Name == roleName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void AddRole(string roleName)
+        {
+           Roles.Add(new Role
+           {
+               Name = roleName
+           });
+        }
     }
 }

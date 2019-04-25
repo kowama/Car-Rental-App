@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace CarRentalApp.Core.domain
@@ -10,7 +11,7 @@ namespace CarRentalApp.Core.domain
         public static byte[]  ImageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            imageIn.Save(ms, ImageFormat.Gif);
             return ms.ToArray();
         }
 

@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class ClientsPageUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -378,25 +382,25 @@
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuCustomDataGrid clientsDataGrid;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuDropdown seachFilterDropdown;
-        private Bunifu.Framework.UI.BunifuMetroTextbox searchTextBox;
-        private Bunifu.Framework.UI.BunifuImageButton exportToExelButton;
-        private Bunifu.Framework.UI.BunifuImageButton printButton;
-        private Bunifu.Framework.UI.BunifuImageButton deleteButton;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private Bunifu.Framework.UI.BunifuImageButton refreshDataGrid;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RowIndexColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CINColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AddressColumn;
-        private Bunifu.Framework.UI.BunifuImageButton addNewClientButton;
-        private Bunifu.Framework.UI.BunifuImageButton searchButton;
+        private BunifuCustomDataGrid clientsDataGrid;
+        private Panel panel1;
+        private BunifuDropdown seachFilterDropdown;
+        private BunifuMetroTextbox searchTextBox;
+        private BunifuImageButton exportToExelButton;
+        private BunifuImageButton printButton;
+        private BunifuImageButton deleteButton;
+        private BunifuCustomLabel bunifuCustomLabel1;
+        private BunifuSeparator bunifuSeparator1;
+        private BunifuImageButton refreshDataGrid;
+        private Panel panel2;
+        private DataGridViewTextBoxColumn RowIndexColumn;
+        private DataGridViewTextBoxColumn FirstNameColumn;
+        private DataGridViewTextBoxColumn LastNameColumn;
+        private DataGridViewTextBoxColumn CINColumn;
+        private DataGridViewTextBoxColumn EmailColumn;
+        private DataGridViewTextBoxColumn PhoneColumn;
+        private DataGridViewTextBoxColumn AddressColumn;
+        private BunifuImageButton addNewClientButton;
+        private BunifuImageButton searchButton;
     }
 }

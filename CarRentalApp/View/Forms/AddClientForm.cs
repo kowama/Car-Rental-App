@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace CarRentalApp.View.Forms
 {
@@ -19,7 +20,7 @@ namespace CarRentalApp.View.Forms
        
         private void FormTextBox_Enter(object sender, EventArgs e)
         {
-            var senderTextBox = (Bunifu.Framework.UI.BunifuMetroTextbox) sender;
+            var senderTextBox = (BunifuMetroTextbox) sender;
             if (senderTextBox.Text.StartsWith(_defaultTextPref))
             {
                 senderTextBox.Text = string.Empty;
@@ -29,7 +30,7 @@ namespace CarRentalApp.View.Forms
 
         private void FormTextBox_Leave(object sender, EventArgs e)
         {
-            var senderTextBox = (Bunifu.Framework.UI.BunifuMetroTextbox)sender;
+            var senderTextBox = (BunifuMetroTextbox)sender;
             if (senderTextBox.Text.Trim() == string.Empty)
             {
                 senderTextBox.Text = _genericString;

@@ -1,11 +1,14 @@
-﻿namespace CarRentalApp.View.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace CarRentalApp.View.Forms
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -404,26 +407,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel leftPanel;
-        private System.Windows.Forms.Panel infoPanel;
-        private System.Windows.Forms.Panel contentPannel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Label userRoleLabel;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.Timer menuTimer;
-        private System.Windows.Forms.Panel userInfoPanel;
-        private System.Windows.Forms.Timer datetimeTimer;
-        private System.Windows.Forms.Panel menuPanel;
-        private System.Windows.Forms.Label datetimeLabel;
-        private System.Windows.Forms.Panel sidePanel;
-        private System.Windows.Forms.Button settingsMenuButton;
-        private System.Windows.Forms.Button homeMenuButton;
-        private System.Windows.Forms.Button usersMenuButton;
-        private System.Windows.Forms.Button clientsMenuButton;
-        private System.Windows.Forms.Button carsMenuButton;
-        private System.Windows.Forms.Button rentsMenuButton;
+        private Panel leftPanel;
+        private Panel infoPanel;
+        private Panel contentPannel;
+        private PictureBox pictureBox1;
+        private Label label2;
+        private Label usernameLabel;
+        private Label userRoleLabel;
+        private Panel panel5;
+        private Button menuButton;
+        private Timer menuTimer;
+        private Panel userInfoPanel;
+        private Timer datetimeTimer;
+        private Panel menuPanel;
+        private Label datetimeLabel;
+        private Panel sidePanel;
+        private Button settingsMenuButton;
+        private Button homeMenuButton;
+        private Button usersMenuButton;
+        private Button clientsMenuButton;
+        private Button carsMenuButton;
+        private Button rentsMenuButton;
     }
 }

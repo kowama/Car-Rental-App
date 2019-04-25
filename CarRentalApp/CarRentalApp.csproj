@@ -80,6 +80,7 @@
     <Compile Include="Core\Repositories\IUserRepository.cs" />
     <Compile Include="Core\Repositories\IRentRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Utils\Utils.cs" />
     <Compile Include="Migrations\201904220006374_RefactorSomeEntityDataType.cs" />
     <Compile Include="Migrations\201904220006374_RefactorSomeEntityDataType.Designer.cs">
       <DependentUpon>201904220006374_RefactorSomeEntityDataType.cs</DependentUpon>

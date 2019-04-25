@@ -1,11 +1,16 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.DataViz;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class RentsPageUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -438,29 +443,29 @@
 
         #endregion
 
-        private Bunifu.DataViz.BunifuDataViz bunifuDataViz1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuImageButton printButton;
-        private Bunifu.Framework.UI.BunifuImageButton exportToExelButton;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid carsDataGrid;
-        private Bunifu.Framework.UI.BunifuImageButton deleteButton;
-        private Bunifu.Framework.UI.BunifuImageButton addNewCarsButton;
-        private Bunifu.Framework.UI.BunifuImageButton searchButton;
-        private Bunifu.Framework.UI.BunifuMetroTextbox searchTextBox;
-        private Bunifu.Framework.UI.BunifuDropdown seachFilterDropdown;
-        private Bunifu.Framework.UI.BunifuImageButton refreshDataGrid;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RowIndexColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RentIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CarColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateStartColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateEndColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StateColumn;
+        private BunifuDataViz bunifuDataViz1;
+        private BunifuSeparator bunifuSeparator1;
+        private BunifuCustomLabel bunifuCustomLabel1;
+        private Panel panel3;
+        private BunifuImageButton printButton;
+        private BunifuImageButton exportToExelButton;
+        private BunifuCustomDataGrid carsDataGrid;
+        private BunifuImageButton deleteButton;
+        private BunifuImageButton addNewCarsButton;
+        private BunifuImageButton searchButton;
+        private BunifuMetroTextbox searchTextBox;
+        private BunifuDropdown seachFilterDropdown;
+        private BunifuImageButton refreshDataGrid;
+        private BunifuCards bunifuCards1;
+        private Panel panel2;
+        private Panel panel1;
+        private DataGridViewTextBoxColumn RowIndexColumn;
+        private DataGridViewTextBoxColumn RentIdColumn;
+        private DataGridViewTextBoxColumn CarColumn;
+        private DataGridViewTextBoxColumn ClientColumn;
+        private DataGridViewTextBoxColumn UserColumn;
+        private DataGridViewTextBoxColumn DateStartColumn;
+        private DataGridViewTextBoxColumn DateEndColumn;
+        private DataGridViewTextBoxColumn StateColumn;
     }
 }

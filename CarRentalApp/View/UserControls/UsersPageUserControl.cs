@@ -1,23 +1,43 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Core.domain;
+using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.UserControls
 {
     public partial class UsersPageUserControl : UserControl
     {
-        private UnitOfWork _unitOfWork;
+        private readonly UnitOfWork _unitOfWork;
+        private readonly string _defaultSearchTextBoxText;
+
         public UsersPageUserControl()
         {
             InitializeComponent();
             _unitOfWork = new UnitOfWork();
+            _defaultSearchTextBoxText = searchTextBox.Text;
+
         }
 
         private void PopulateUserDataGrid()
         {
            var allUsers = _unitOfWork.Users.GetAll();
-            usersDataGrid.DataSource = allUsers.ToList();
+           userBindingSource.DataSource = allUsers.ToList();
 
+        }
+
+        private void UpdateUiChart()
+        {
+            int usersCount = userBindingSource.Count;
+            int managersCount = userBindingSource.List
+                .OfType<User>()
+                .Count(u => u.HasRole(RoleName.MANAGER));
+            int administratorCount = usersCount - managersCount;
+
+            usersCountLabel.Text = usersCount.ToString();
+            mangerUserCountLabel.Text = managersCount.ToString();
+            administratorUserCountLabel.Text = administratorCount.ToString();
         }
 
 
@@ -26,19 +46,56 @@ namespace CarRentalApp.View.UserControls
        /        Events handlers                 /
        ****************************************/
 
-        private void UsersPageUserControl_Load(object sender, System.EventArgs e)
+        private void UsersPageUserControl_Load(object sender, EventArgs e)
         {
             PopulateUserDataGrid();
-        }
+            UpdateUiChart();
 
-        private void searchButton_Click(object sender, System.EventArgs e)
+        }
+        private void searchTextBox_Enter(object sender, EventArgs e)
         {
+            if (searchTextBox.Text == _defaultSearchTextBoxText)
+            {
+                searchTextBox.Text = string.Empty;
+            }
 
         }
 
-        private void refreshDataGrid_Click(object sender, System.EventArgs e)
+        private void searchTextBox_Leave(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text.Trim() == string.Empty)
+            {
+                searchTextBox.Text = _defaultSearchTextBoxText;
+            }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string keyWord = searchTextBox.Text;
+
+            var users = _unitOfWork.Users.GetAll().ToList();
+            var filteredUsers = users;
+
+            if ( !(keyWord == string.Empty || keyWord == _defaultSearchTextBoxText))
+            {
+                 filteredUsers = users.FindAll(u =>
+                    u.Username.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || u.FirstName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || u.LastName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || u.Cin.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || u.Email.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || u.Phone.Contains(keyWord, StringComparison.OrdinalIgnoreCase));
+            }
+           userBindingSource.DataSource = filteredUsers.ToList();
+
+        }
+
+        private void refreshDataGrid_Click(object sender, EventArgs e)
         {
             PopulateUserDataGrid();
+            UpdateUiChart();
         }
+
+      
     }
 }

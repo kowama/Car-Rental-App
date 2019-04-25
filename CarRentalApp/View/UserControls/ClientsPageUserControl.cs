@@ -18,16 +18,7 @@ namespace CarRentalApp.View.UserControls
             clientsDataGrid.Rows.Clear();
             for (int i = 1; i <= 100;i++)
             {
-                clientsDataGrid.Rows.Add(new Object[]
-                {
-                    i.ToString(),
-                    "John",
-                    "Wick",
-                    "L00335P",
-                    "john.wick@mail.com",
-                    "0633553543",
-                    " 6 Rue Ch E Paris"
-                });
+                clientsDataGrid.Rows.Add(i.ToString(), "John", "Wick", "L00335P", "john.wick@mail.com", "0633553543", " 6 Rue Ch E Paris");
                 clientsDataGrid.DisplayedRowCount(true);
 
             }

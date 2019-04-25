@@ -1,7 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace CarRentalApp.Migrations
 {
-    using System.Data.Entity.Migrations;
-    
     public partial class SetRentEntityTableConstraint : DbMigration
     {
         public override void Up()

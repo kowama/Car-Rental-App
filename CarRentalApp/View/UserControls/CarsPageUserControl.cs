@@ -17,15 +17,7 @@ namespace CarRentalApp.View.UserControls
             carsDataGrid.Rows.Clear();
             for (int i = 1; i <= 50; i++)
             {
-                carsDataGrid.Rows.Add(new Object[]
-                {
-                    i,
-                    "Super Cars",
-                    "BF-0335P",
-                    "Hummer",
-                    1111,
-                    " The best you can find"
-                });
+                carsDataGrid.Rows.Add(i, "Super Cars", "BF-0335P", "Hummer", 1111, " The best you can find");
                 carsDataGrid.DisplayedRowCount(true);
 
             }

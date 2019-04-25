@@ -1,11 +1,16 @@
-﻿namespace CarRentalApp.View.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.Forms
 {
     partial class LoginFom
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -212,15 +217,15 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox Password;
-        private Bunifu.Framework.UI.BunifuMetroTextbox usernameTextBox;
-        private Bunifu.Framework.UI.BunifuFlatButton loginButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox1;
+        private BunifuCards bunifuCards1;
+        private BunifuCustomLabel bunifuCustomLabel2;
+        private BunifuCustomLabel bunifuCustomLabel1;
+        private BunifuMetroTextbox Password;
+        private BunifuMetroTextbox usernameTextBox;
+        private BunifuFlatButton loginButton;
+        private Label label1;
+        private Panel panel1;
+        private BunifuCustomTextbox bunifuCustomTextbox1;
     }
 }
 

@@ -1,6 +1,6 @@
-using CarRentalApp.Persistence.EntityConfigurations;
 using System.Data.Entity;
 using CarRentalApp.Core.domain;
+using CarRentalApp.Persistence.EntityConfigurations;
 
 namespace CarRentalApp.Persistence
 {

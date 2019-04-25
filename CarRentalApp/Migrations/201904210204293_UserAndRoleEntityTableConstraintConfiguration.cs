@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace CarRentalApp.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class UserAndRoleEntityTableConstraintConfiguration : DbMigration
     {
         public override void Up()
@@ -12,7 +11,7 @@ namespace CarRentalApp.Migrations
                 c => new
                     {
                         UserId = c.Int(nullable: false),
-                        RoleId = c.Int(nullable: false),
+                        RoleId = c.Int(nullable: false)
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
