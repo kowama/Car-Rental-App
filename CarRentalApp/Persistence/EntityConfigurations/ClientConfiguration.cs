@@ -35,7 +35,7 @@ namespace CarRentalApp.Persistence.EntityConfigurations
                 .HasMaxLength(32);
 
             Property(c => c.Phone)
-                .HasMaxLength(16);
+                .HasMaxLength(32);
         }
     }
 }

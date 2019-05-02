@@ -48,6 +48,8 @@ namespace CarRentalApp.View.Forms
             this.addressTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.emailTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.driverLicenseTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@ namespace CarRentalApp.View.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(45, 98);
+            this.label2.Location = new System.Drawing.Point(48, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 1;
@@ -77,7 +79,7 @@ namespace CarRentalApp.View.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(45, 172);
+            this.label3.Location = new System.Drawing.Point(291, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 1;
@@ -163,7 +165,7 @@ namespace CarRentalApp.View.Forms
             this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneTextBox.Location = new System.Drawing.Point(273, 292);
-            this.phoneTextBox.Mask = "(+212) 000-000000";
+            this.phoneTextBox.Mask = "+212 000-000000";
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(127, 16);
             this.phoneTextBox.TabIndex = 9;
@@ -177,13 +179,13 @@ namespace CarRentalApp.View.Forms
             this.fistNameTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.fistNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fistNameTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.fistNameTextBox.HintText = "Enter your first name";
+            this.fistNameTextBox.HintText = "Enter client first name";
             this.fistNameTextBox.isPassword = false;
             this.fistNameTextBox.LineFocusedColor = System.Drawing.Color.Blue;
             this.fistNameTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.fistNameTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.fistNameTextBox.LineThickness = 3;
-            this.fistNameTextBox.Location = new System.Drawing.Point(48, 45);
+            this.fistNameTextBox.Location = new System.Drawing.Point(45, 45);
             this.fistNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.fistNameTextBox.MaxLength = 32;
             this.fistNameTextBox.Name = "fistNameTextBox";
@@ -200,7 +202,7 @@ namespace CarRentalApp.View.Forms
             this.lastNameTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lastNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lastNameTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.lastNameTextBox.HintText = "Enter your last name";
+            this.lastNameTextBox.HintText = "Enter client last name";
             this.lastNameTextBox.isPassword = false;
             this.lastNameTextBox.LineFocusedColor = System.Drawing.Color.Blue;
             this.lastNameTextBox.LineIdleColor = System.Drawing.Color.Gray;
@@ -223,17 +225,17 @@ namespace CarRentalApp.View.Forms
             this.cinTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cinTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cinTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.cinTextBox.HintText = "";
+            this.cinTextBox.HintText = "Enter  CIN";
             this.cinTextBox.isPassword = false;
             this.cinTextBox.LineFocusedColor = System.Drawing.Color.Blue;
             this.cinTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.cinTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.cinTextBox.LineThickness = 3;
-            this.cinTextBox.Location = new System.Drawing.Point(48, 199);
+            this.cinTextBox.Location = new System.Drawing.Point(294, 197);
             this.cinTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cinTextBox.MaxLength = 32767;
             this.cinTextBox.Name = "cinTextBox";
-            this.cinTextBox.Size = new System.Drawing.Size(379, 33);
+            this.cinTextBox.Size = new System.Drawing.Size(131, 33);
             this.cinTextBox.TabIndex = 12;
             this.cinTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -246,7 +248,7 @@ namespace CarRentalApp.View.Forms
             this.addressTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.addressTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addressTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.addressTextBox.HintText = "Enter your email address";
+            this.addressTextBox.HintText = "Enter client address (city+city-address)";
             this.addressTextBox.isPassword = false;
             this.addressTextBox.LineFocusedColor = System.Drawing.Color.Blue;
             this.addressTextBox.LineIdleColor = System.Drawing.Color.Gray;
@@ -275,7 +277,7 @@ namespace CarRentalApp.View.Forms
             this.emailTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.emailTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.emailTextBox.LineThickness = 3;
-            this.emailTextBox.Location = new System.Drawing.Point(48, 278);
+            this.emailTextBox.Location = new System.Drawing.Point(45, 278);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.MaxLength = 64;
             this.emailTextBox.Name = "emailTextBox";
@@ -294,6 +296,40 @@ namespace CarRentalApp.View.Forms
             this.label7.TabIndex = 1;
             this.label7.Text = "Phone";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label8.Location = new System.Drawing.Point(48, 170);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 17);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Driver License";
+            // 
+            // driverLicenseTextBox
+            // 
+            this.driverLicenseTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.driverLicenseTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.driverLicenseTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.driverLicenseTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.driverLicenseTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.driverLicenseTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.driverLicenseTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.driverLicenseTextBox.HintText = "Enter Driver License";
+            this.driverLicenseTextBox.isPassword = false;
+            this.driverLicenseTextBox.LineFocusedColor = System.Drawing.Color.Blue;
+            this.driverLicenseTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.driverLicenseTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.driverLicenseTextBox.LineThickness = 3;
+            this.driverLicenseTextBox.Location = new System.Drawing.Point(48, 197);
+            this.driverLicenseTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.driverLicenseTextBox.MaxLength = 32767;
+            this.driverLicenseTextBox.Name = "driverLicenseTextBox";
+            this.driverLicenseTextBox.Size = new System.Drawing.Size(131, 33);
+            this.driverLicenseTextBox.TabIndex = 12;
+            this.driverLicenseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // AddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +338,7 @@ namespace CarRentalApp.View.Forms
             this.ClientSize = new System.Drawing.Size(490, 582);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.addressTextBox);
+            this.Controls.Add(this.driverLicenseTextBox);
             this.Controls.Add(this.cinTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.fistNameTextBox);
@@ -312,6 +349,7 @@ namespace CarRentalApp.View.Forms
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -343,5 +381,7 @@ namespace CarRentalApp.View.Forms
         private BunifuMaterialTextbox addressTextBox;
         private BunifuMaterialTextbox emailTextBox;
         private Label label7;
+        private Label label8;
+        private BunifuMaterialTextbox driverLicenseTextBox;
     }
 }

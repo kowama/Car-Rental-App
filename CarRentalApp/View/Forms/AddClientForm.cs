@@ -56,6 +56,8 @@ namespace CarRentalApp.View.Forms
                 LastName = lastNameTextBox.Text.Trim(),
                 Cin = cinTextBox.Text.Trim(),
                 Email = emailTextBox.Text.Trim(),
+                Phone = phoneTextBox.Text.Trim(),
+                DriverLicense = driverLicenseTextBox.Text.Trim(),
                 Address = addressTextBox.Text.Trim()
             };
         }
@@ -77,9 +79,9 @@ namespace CarRentalApp.View.Forms
                 OnSaveCompleted();
 
             }
-            catch (Exception)
+            catch (FormattedDbEntityValidationException exception)
             {
-                OnValidationError(@"error Unable to Save the Client");
+                OnValidationError(exception.Message);
 
             }
         }

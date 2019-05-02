@@ -43,7 +43,7 @@ namespace CarRentalApp.Persistence.EntityConfigurations
                 .IsRequired();
 
             Property(u => u.Phone)
-                .HasMaxLength(16);
+                .HasMaxLength(32);
 
             HasMany(u => u.Roles)
                 .WithMany(r => r.Users)
