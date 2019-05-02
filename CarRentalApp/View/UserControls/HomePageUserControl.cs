@@ -16,7 +16,7 @@ namespace CarRentalApp.View.UserControls
         private void LoadWeeklyChart()
         {
             var canvas = new Canvas();
-            var dataPoint = new DataPoint(BunifuDataViz._type.Bunifu_splineArea);
+            var dataPoint = new DataPoint(BunifuDataViz._type.Bunifu_column);
             dataPoint.addLabely("JAN",_rand.Next(0,500).ToString());
             dataPoint.addLabely("FEB",_rand.Next(0,500).ToString());
             dataPoint.addLabely("MAR",_rand.Next(0,500).ToString());

@@ -207,8 +207,9 @@ namespace CarRentalApp.View.UserControls
             this.reportChartDataViz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reportChartDataViz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportChartDataViz.Location = new System.Drawing.Point(124, 314);
+            this.reportChartDataViz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportChartDataViz.Name = "reportChartDataViz";
-            this.reportChartDataViz.Size = new System.Drawing.Size(459, 309);
+            this.reportChartDataViz.Size = new System.Drawing.Size(810, 354);
             this.reportChartDataViz.TabIndex = 5;
             this.reportChartDataViz.Theme = Bunifu.DataViz.BunifuDataViz._theme.theme1;
             this.reportChartDataViz.Title = "";
@@ -243,7 +244,7 @@ namespace CarRentalApp.View.UserControls
             this.reportDropdown.Size = new System.Drawing.Size(242, 35);
             this.reportDropdown.TabIndex = 7;
             // 
-            // HomeUserControl
+            // HomePageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +254,7 @@ namespace CarRentalApp.View.UserControls
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "HomeUserControl";
+            this.Name = "HomePageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

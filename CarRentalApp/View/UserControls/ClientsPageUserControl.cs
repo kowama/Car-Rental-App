@@ -27,6 +27,25 @@ namespace CarRentalApp.View.UserControls
 
         }
 
+        private void Search(string keyWord)
+        {
+            var clients = _unitOfWork.Clients.GetAll().ToList();
+            var filteredUsers = clients;
+
+            if (!(keyWord == string.Empty || keyWord == _searchTextBoxDefaultText))
+            {
+                filteredUsers = clients.FindAll(c =>
+                    c.FirstName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || c.LastName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || c.Cin.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || c.Email.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || c.Phone.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                    || c.Address.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
+                );
+            }
+            clientsDataGrid.DataSource = filteredUsers.ToList();
+        }
+
         /*****************************************
                   Events handlers                 
        ****************************************/
@@ -53,21 +72,7 @@ namespace CarRentalApp.View.UserControls
         {
             string keyWord = searchTextBox.Text;
 
-            var clients = _unitOfWork.Clients.GetAll().ToList();
-            var filteredUsers = clients;
-
-            if (!(keyWord == string.Empty || keyWord == _searchTextBoxDefaultText))
-            {
-                filteredUsers = clients.FindAll(c =>
-                        c.FirstName.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
-                        || c.LastName.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
-                        || c.Cin.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
-                        || c.Email.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                        || c.Phone.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
-                        || c.Address.Contains(keyWord,StringComparison.OrdinalIgnoreCase)
-                );
-            }
-            clientsDataGrid.DataSource = filteredUsers.ToList();
+            Search(keyWord);
 
         }
 
@@ -92,6 +97,12 @@ namespace CarRentalApp.View.UserControls
             foreach (DataGridViewRow row in clientsDataGrid.Rows)
                 row.HeaderCell.Value = (row.Index + 1).ToString();
 
+        }
+
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                Search(searchTextBox.Text.Trim());
         }
     }
 }

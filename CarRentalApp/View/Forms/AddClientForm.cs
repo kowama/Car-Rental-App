@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Bunifu.Framework.UI;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Persistence;
 
@@ -9,28 +8,21 @@ namespace CarRentalApp.View.Forms
 {
     public partial class AddClientForm : Form
     {
-        private readonly string _defaultTextPref;
         private readonly UnitOfWork _unitOfWork;
 
         public AddClientForm()
         {
             InitializeComponent();
-            _defaultTextPref = fistNameTextBox.Text.Substring(0, 12);
             _unitOfWork = new UnitOfWork();
         }
 
         private bool ValidateInput()
         {
-           return !(string.IsNullOrEmpty(fistNameTextBox.Text)
-                             || fistNameTextBox.Text.StartsWith(_defaultTextPref)
-                             || string.IsNullOrEmpty(lastNameTextBox.Text)
-                             || lastNameTextBox.Text.StartsWith(_defaultTextPref)
-                             || string.IsNullOrEmpty(cinTextBox.Text)
-                             || cinTextBox.Text.StartsWith(_defaultTextPref)
-                             || string.IsNullOrEmpty(emailTextbox.Text)
-                             || emailTextbox.Text.StartsWith(_defaultTextPref)
-                             || string.IsNullOrEmpty(addressTextBox.Text)
-                             || addressTextBox.Text.StartsWith(_defaultTextPref));
+            return !(string.IsNullOrEmpty(fistNameTextBox.Text)
+                     || string.IsNullOrEmpty(lastNameTextBox.Text)
+                     || string.IsNullOrEmpty(cinTextBox.Text)
+                     || string.IsNullOrEmpty(emailTextBox.Text)
+                     || string.IsNullOrEmpty(addressTextBox.Text));
         }
         private void OnSaveCompleted()
         {
@@ -51,7 +43,7 @@ namespace CarRentalApp.View.Forms
             fistNameTextBox.Text = client.LastName;
             lastNameTextBox.Text = client.LastName;
             cinTextBox.Text = client.Cin;
-            emailTextbox.Text = client.Email;
+            emailTextBox.Text = client.Email;
             phoneTextBox.Text = client.Phone;
             addressTextBox.Text = client.Address;
         }
@@ -63,20 +55,9 @@ namespace CarRentalApp.View.Forms
                 FirstName = fistNameTextBox.Text.Trim(),
                 LastName = lastNameTextBox.Text.Trim(),
                 Cin = cinTextBox.Text.Trim(),
-                Email = emailTextbox.Text.Trim(),
+                Email = emailTextBox.Text.Trim(),
                 Address = addressTextBox.Text.Trim()
             };
-        }
-       private void FormTextBox_Enter(object sender, EventArgs e)
-        {
-            var senderTextBox = (BunifuMetroTextbox) sender;
-            if (senderTextBox.Text.StartsWith(_defaultTextPref)) senderTextBox.Text = string.Empty;
-        }
-
-        private void FormTextBox_Leave(object sender, EventArgs e)
-        {
-            var senderTextBox = (BunifuMetroTextbox) sender;
-            if (senderTextBox.Text.Trim() == string.Empty) senderTextBox.Text = string.Empty;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
