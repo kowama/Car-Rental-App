@@ -8,6 +8,7 @@ namespace CarRentalApp.Core.domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Cin { get; set; }
+        public string DriverLicense { get; set; }
         public string Email  { get; set; }
         public string Phone  { get; set; }
         public string Address  { get; set; }

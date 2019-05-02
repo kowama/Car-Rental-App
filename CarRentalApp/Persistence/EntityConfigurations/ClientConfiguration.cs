@@ -20,6 +20,9 @@ namespace CarRentalApp.Persistence.EntityConfigurations
             Property(c => c.Cin)
                 .IsRequired()
                 .HasMaxLength(32);
+            Property(c => c.DriverLicense)
+                .IsRequired()
+                .HasMaxLength(32);
 
             Property(c => c.Email)
                 .HasMaxLength(64);

@@ -100,6 +100,10 @@
     <Compile Include="Migrations\201904251134156_AddNewPropertiesToClientsUsersCars.Designer.cs">
       <DependentUpon>201904251134156_AddNewPropertiesToClientsUsersCars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905021716564_AddNewPropsEntities.cs" />
+    <Compile Include="Migrations\201905021716564_AddNewPropsEntities.Designer.cs">
+      <DependentUpon>201905021716564_AddNewPropsEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904251134156_AddNewPropertiesToClientsUsersCars.resx">
       <DependentUpon>201904251134156_AddNewPropertiesToClientsUsersCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905021716564_AddNewPropsEntities.resx">
+      <DependentUpon>201905021716564_AddNewPropsEntities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
