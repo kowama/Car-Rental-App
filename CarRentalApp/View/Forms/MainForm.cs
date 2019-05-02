@@ -95,6 +95,11 @@ namespace CarRentalApp.View.Forms
             SetPageToContentPanel(new RentsPageUserControl());
             MoveSidePanel(rentsMenuButton);
         }
+        private void BillsMenuButton_Click(object sender, EventArgs e)
+        {
+            SetPageToContentPanel(new BillsPageUserControl());
+            MoveSidePanel(billsMenuButton);
+        }
 
         private void CarsMenuButton_Click(object sender, EventArgs e)
         {
