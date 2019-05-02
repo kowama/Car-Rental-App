@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
+using CarRentalApp.Properties;
 using CarRentalApp.View.Forms;
 
 namespace CarRentalApp.View.UserControls
@@ -11,8 +14,8 @@ namespace CarRentalApp.View.UserControls
     {
         private readonly string _searchTextBoxDefaultText;
         private readonly UnitOfWork _unitOfWork;
-   
-        
+
+
         public ClientsPageUserControl()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace CarRentalApp.View.UserControls
             _unitOfWork = new UnitOfWork();
         }
 
-        private void PopulateDataGridView()
+        private void RefreshDataGridView()
         {
             var clients = _unitOfWork.Clients.GetAll().ToList();
             clientBindingSource.DataSource = clients;
@@ -43,6 +46,7 @@ namespace CarRentalApp.View.UserControls
                     || c.Address.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
                 );
             }
+
             clientsDataGrid.DataSource = filteredUsers.ToList();
         }
 
@@ -54,25 +58,48 @@ namespace CarRentalApp.View.UserControls
         {
             var addNewClientForm = new AddClientForm();
             addNewClientForm.Show();
-            
+
         }
+
         private void RefreshDataGridButton_Click(object sender, EventArgs e)
         {
-            PopulateDataGridView();
+            RefreshDataGridView();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            var selectedRowCount =
+                clientsDataGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount <= 0) return;
+
+            var clients = new List<Client>() ;
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            for (var i = selectedRowCount - 1; i >= 0; i--)
+            {
+                sb.Append(clientsDataGrid.SelectedRows[i].Index + 1);
+                sb.Append(" ");
+                var client = (Client) clientsDataGrid.SelectedRows[i].DataBoundItem;
+                clients.Add(client);
+                sb.Append(client.Resume());
+                sb.Append(Environment.NewLine);
+            }
+
+            sb.Append("Total: " + selectedRowCount);
+            var dialogResult = MessageBox.Show(sb.ToString(), Resources.client_delete_confirm,MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (dialogResult != DialogResult.Yes) return;
+            _unitOfWork.Clients.RemoveRange(clients);
+            _unitOfWork.Complete();
+            RefreshDataGridView();
         }
+
         private void ClientsPageUserControl_Load(object sender, EventArgs e)
         {
-            PopulateDataGridView();
+            RefreshDataGridView();
         }
+
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            string keyWord = searchTextBox.Text;
-
-            Search(keyWord);
+            Search(searchTextBox.Text);
 
         }
 
@@ -101,7 +128,7 @@ namespace CarRentalApp.View.UserControls
 
         private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 Search(searchTextBox.Text.Trim());
         }
     }

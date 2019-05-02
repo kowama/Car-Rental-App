@@ -187,6 +187,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // searchButton
             // 
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("searchButton.ImageActive")));
             this.searchButton.Location = new System.Drawing.Point(288, 69);

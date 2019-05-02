@@ -14,5 +14,10 @@ namespace CarRentalApp.Core.domain
         public string Address  { get; set; }
 
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
+
+        public string Resume()
+        {
+            return $"{FirstName}, {LastName}, {Cin}";
+        }
     }
 }
