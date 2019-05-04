@@ -36,6 +36,7 @@ namespace CarRentalApp.View.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsPageUserControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,11 +67,11 @@ namespace CarRentalApp.View.UserControls
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.label1 = new System.Windows.Forms.Label();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licensePlateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
@@ -164,7 +165,7 @@ namespace CarRentalApp.View.UserControls
             this.addNewCarsButton.TabIndex = 4;
             this.addNewCarsButton.TabStop = false;
             this.addNewCarsButton.Zoom = 10;
-            this.addNewCarsButton.Click += new System.EventHandler(this.addNewCarsButton_Click);
+            this.addNewCarsButton.Click += new System.EventHandler(this.AddNewCarsButton_Click);
             // 
             // deleteButton
             // 
@@ -179,6 +180,7 @@ namespace CarRentalApp.View.UserControls
             this.deleteButton.TabIndex = 4;
             this.deleteButton.TabStop = false;
             this.deleteButton.Zoom = 10;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // searchTextBox
             // 
@@ -240,6 +242,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // carsDataGridView
             // 
+            this.carsDataGridView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.carsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.carsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -276,6 +279,7 @@ namespace CarRentalApp.View.UserControls
             this.carsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carsDataGridView.Size = new System.Drawing.Size(615, 367);
             this.carsDataGridView.TabIndex = 16;
+            this.carsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CarsDataGridView_CellFormatting);
             // 
             // panel3
             // 
@@ -543,6 +547,10 @@ namespace CarRentalApp.View.UserControls
             this.label1.TabIndex = 3;
             this.label1.Text = "$600/week, $100/day";
             // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -558,6 +566,9 @@ namespace CarRentalApp.View.UserControls
             // pricePerDayDataGridViewTextBoxColumn
             // 
             this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
+            dataGridViewCellStyle3.Format = "0,0.00 MAD";
+            dataGridViewCellStyle3.NullValue = null;
+            this.pricePerDayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price Per Day";
             this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
             // 
@@ -566,10 +577,6 @@ namespace CarRentalApp.View.UserControls
             this.classificationDataGridViewTextBoxColumn.DataPropertyName = "Classification";
             this.classificationDataGridViewTextBoxColumn.HeaderText = "Classification";
             this.classificationDataGridViewTextBoxColumn.Name = "classificationDataGridViewTextBoxColumn";
-            // 
-            // carsBindingSource
-            // 
-            this.carsBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
             // 
             // CarsPageUserControl
             // 

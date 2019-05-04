@@ -194,7 +194,7 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.Text = "Enter a keyword";
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
-            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // seachFilterDropdown
@@ -306,7 +306,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientsDataGridView.Size = new System.Drawing.Size(1044, 522);
             this.clientsDataGridView.TabIndex = 6;
-            this.clientsDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ClientsDataGrid_DataBindingComplete);
+            this.clientsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ClientsDataGridView_CellFormatting);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 

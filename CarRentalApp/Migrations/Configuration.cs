@@ -84,28 +84,23 @@ namespace CarRentalApp.Migrations
                     }
                 });
 
-
+                //Clients
                 var reader = new StreamReader(ResourcePaths.Clients);
                 var csv = new CsvReader(reader);
-                //Clients
                 csv.Configuration.RegisterClassMap<ClientMap>();
                 var clientsRecords = csv.GetRecords<Client>().ToArray();
                 context.Clients.AddOrUpdate(c=>c.Id, clientsRecords);
 
-
                 //Classifications
                 reader = new StreamReader(ResourcePaths.Classifications);
                 csv = new CsvReader(reader);
-
                 csv.Configuration.RegisterClassMap<ClassificationMap>();
                 var classificationsRecords = csv.GetRecords<Classification>().ToArray();
                 context.Classifications.AddOrUpdate(c => c.Id, classificationsRecords);
 
-
                 //Cars
                 reader = new StreamReader(ResourcePaths.Cars);
                 csv = new CsvReader(reader);
-
                 CarMap.Classifications = classificationsRecords.ToList();
                 csv.Configuration.RegisterClassMap<CarMap>();
                 var carsRecords = csv.GetRecords<Car>().ToArray();

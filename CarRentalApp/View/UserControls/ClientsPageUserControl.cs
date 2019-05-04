@@ -119,17 +119,20 @@ namespace CarRentalApp.View.UserControls
             }
         }
 
-        private void ClientsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in clientsDataGridView.Rows)
-                row.HeaderCell.Value = (row.Index + 1).ToString();
-
-        }
-
-        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 Search(searchTextBox.Text.Trim());
         }
+
+        private void ClientsDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (clientsDataGridView.Rows[e.RowIndex].DataBoundItem == null) return;
+
+            //display row index
+            var row = clientsDataGridView.Rows[e.RowIndex];
+            row.HeaderCell.Value = $"{row.Index + 1}";            
+        }
+    
     }
 }
