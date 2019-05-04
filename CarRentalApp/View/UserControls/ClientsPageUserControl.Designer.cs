@@ -33,12 +33,9 @@ namespace CarRentalApp.View.UserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsPageUserControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsPageUserControl));
-            this.clientsDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -51,6 +48,8 @@ namespace CarRentalApp.View.UserControls
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.printButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.clientsDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +58,6 @@ namespace CarRentalApp.View.UserControls
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
@@ -68,65 +66,9 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // clientsDataGrid
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.clientsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.clientsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.clientsDataGrid.AutoGenerateColumns = false;
-            this.clientsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.clientsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.clientsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clientsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.clientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.cinDataGridViewTextBoxColumn,
-            this.driverLicenseDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn});
-            this.clientsDataGrid.DataSource = this.clientBindingSource;
-            this.clientsDataGrid.DoubleBuffered = true;
-            this.clientsDataGrid.EnableHeadersVisualStyles = false;
-            this.clientsDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
-            this.clientsDataGrid.HeaderForeColor = System.Drawing.Color.Black;
-            this.clientsDataGrid.Location = new System.Drawing.Point(31, 110);
-            this.clientsDataGrid.Name = "clientsDataGrid";
-            this.clientsDataGrid.ReadOnly = true;
-            this.clientsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.clientsDataGrid.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.clientsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.clientsDataGrid.RowTemplate.ReadOnly = true;
-            this.clientsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientsDataGrid.Size = new System.Drawing.Size(974, 513);
-            this.clientsDataGrid.StandardTab = true;
-            this.clientsDataGrid.TabIndex = 2;
-            this.clientsDataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.clientsDataGrid_DataBindingComplete);
             // 
             // panel1
             // 
@@ -174,6 +116,7 @@ namespace CarRentalApp.View.UserControls
             // 
             this.refreshDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshDataGrid.Image = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.Image")));
             this.refreshDataGrid.ImageActive = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.ImageActive")));
             this.refreshDataGrid.Location = new System.Drawing.Point(974, 66);
@@ -203,6 +146,7 @@ namespace CarRentalApp.View.UserControls
             // 
             this.addNewClientButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewClientButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewClientButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewClientButton.Image")));
             this.addNewClientButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("addNewClientButton.ImageActive")));
             this.addNewClientButton.Location = new System.Drawing.Point(862, 66);
@@ -218,6 +162,7 @@ namespace CarRentalApp.View.UserControls
             // 
             this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("deleteButton.ImageActive")));
             this.deleteButton.Location = new System.Drawing.Point(916, 66);
@@ -231,9 +176,9 @@ namespace CarRentalApp.View.UserControls
             // 
             // searchTextBox
             // 
-            this.searchTextBox.BorderColorFocused = System.Drawing.Color.Blue;
+            this.searchTextBox.BorderColorFocused = System.Drawing.Color.Crimson;
             this.searchTextBox.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.searchTextBox.BorderColorMouseHover = System.Drawing.Color.DodgerBlue;
+            this.searchTextBox.BorderColorMouseHover = System.Drawing.Color.Maroon;
             this.searchTextBox.BorderThickness = 3;
             this.searchTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -254,7 +199,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // seachFilterDropdown
             // 
-            this.seachFilterDropdown.BackColor = System.Drawing.Color.Transparent;
+            this.seachFilterDropdown.BackColor = System.Drawing.SystemColors.Control;
             this.seachFilterDropdown.BorderRadius = 3;
             this.seachFilterDropdown.DisabledColor = System.Drawing.Color.Gray;
             this.seachFilterDropdown.ForeColor = System.Drawing.Color.White;
@@ -269,8 +214,8 @@ namespace CarRentalApp.View.UserControls
         "All"};
             this.seachFilterDropdown.Location = new System.Drawing.Point(326, 66);
             this.seachFilterDropdown.Name = "seachFilterDropdown";
-            this.seachFilterDropdown.NomalColor = System.Drawing.Color.Teal;
-            this.seachFilterDropdown.onHoverColor = System.Drawing.Color.MediumBlue;
+            this.seachFilterDropdown.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(50)))));
+            this.seachFilterDropdown.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(55)))), ((int)(((byte)(48)))));
             this.seachFilterDropdown.selectedIndex = 7;
             this.seachFilterDropdown.Size = new System.Drawing.Size(123, 35);
             this.seachFilterDropdown.TabIndex = 2;
@@ -279,6 +224,7 @@ namespace CarRentalApp.View.UserControls
             // 
             this.exportToExelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportToExelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exportToExelButton.Image = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.Image")));
             this.exportToExelButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.ImageActive")));
             this.exportToExelButton.Location = new System.Drawing.Point(916, 3);
@@ -293,6 +239,7 @@ namespace CarRentalApp.View.UserControls
             // 
             this.printButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.printButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("printButton.Image")));
             this.printButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("printButton.ImageActive")));
             this.printButton.Location = new System.Drawing.Point(973, 0);
@@ -313,54 +260,95 @@ namespace CarRentalApp.View.UserControls
             this.panel2.Size = new System.Drawing.Size(1044, 55);
             this.panel2.TabIndex = 5;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // clientsDataGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.clientsDataGridView.AutoGenerateColumns = false;
+            this.clientsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientsDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.clientsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clientsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.clientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.cinDataGridViewTextBoxColumn,
+            this.driverLicenseDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn});
+            this.clientsDataGridView.DataSource = this.clientBindingSource;
+            this.clientsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientsDataGridView.DoubleBuffered = true;
+            this.clientsDataGridView.EnableHeadersVisualStyles = false;
+            this.clientsDataGridView.HeaderBgColor = System.Drawing.SystemColors.GrayText;
+            this.clientsDataGridView.HeaderForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clientsDataGridView.Location = new System.Drawing.Point(0, 104);
+            this.clientsDataGridView.Name = "clientsDataGridView";
+            this.clientsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.clientsDataGridView.RowHeadersWidth = 60;
+            this.clientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientsDataGridView.Size = new System.Drawing.Size(1044, 522);
+            this.clientsDataGridView.TabIndex = 6;
+            this.clientsDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ClientsDataGrid_DataBindingComplete);
+            // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cinDataGridViewTextBoxColumn
             // 
             this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
-            this.cinDataGridViewTextBoxColumn.HeaderText = "CIN";
+            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
             this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
-            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // driverLicenseDataGridViewTextBoxColumn
             // 
             this.driverLicenseDataGridViewTextBoxColumn.DataPropertyName = "DriverLicense";
             this.driverLicenseDataGridViewTextBoxColumn.HeaderText = "Driver License";
             this.driverLicenseDataGridViewTextBoxColumn.Name = "driverLicenseDataGridViewTextBoxColumn";
-            this.driverLicenseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientBindingSource
             // 
@@ -370,13 +358,12 @@ namespace CarRentalApp.View.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clientsDataGridView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.clientsDataGrid);
             this.Name = "ClientsPageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
             this.Load += new System.EventHandler(this.ClientsPageUserControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).EndInit();
@@ -386,13 +373,13 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private BunifuCustomDataGrid clientsDataGrid;
         private Panel panel1;
         private BunifuDropdown seachFilterDropdown;
         private BunifuMetroTextbox searchTextBox;
@@ -406,6 +393,8 @@ namespace CarRentalApp.View.UserControls
         private BunifuImageButton addNewClientButton;
         private BunifuImageButton searchButton;
         private BindingSource clientBindingSource;
+        private BunifuDragControl bunifuDragControl1;
+        private BunifuCustomDataGrid clientsDataGridView;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;

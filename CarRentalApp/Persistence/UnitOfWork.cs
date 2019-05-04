@@ -44,7 +44,7 @@ namespace CarRentalApp.Persistence
             {
                 return _context.SaveChanges();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
                 var newException = new FormattedDbEntityValidationException(e);
                 throw newException;

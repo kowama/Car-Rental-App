@@ -108,11 +108,27 @@
     <Compile Include="Migrations\201905022222224_PhoneDataTypeRefactor.Designer.cs">
       <DependentUpon>201905022222224_PhoneDataTypeRefactor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\AddClientForm.cs">
+    <Compile Include="Migrations\201905040816337_UniqueIndexOfLicensePlate.cs" />
+    <Compile Include="Migrations\201905040816337_UniqueIndexOfLicensePlate.Designer.cs">
+      <DependentUpon>201905040816337_UniqueIndexOfLicensePlate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\AddClientForm.Designer.cs">
-      <DependentUpon>AddClientForm.cs</DependentUpon>
+    <Compile Include="View\Forms\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\CarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\CarForm.Designer.cs">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\ClassificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\ClassificationForm.Designer.cs">
+      <DependentUpon>ClassificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\LoginFom.cs">
       <SubType>Form</SubType>
@@ -235,8 +251,17 @@
     <EmbeddedResource Include="Migrations\201905022222224_PhoneDataTypeRefactor.resx">
       <DependentUpon>201905022222224_PhoneDataTypeRefactor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\AddClientForm.resx">
-      <DependentUpon>AddClientForm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905040816337_UniqueIndexOfLicensePlate.resx">
+      <DependentUpon>201905040816337_UniqueIndexOfLicensePlate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\CarForm.resx">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\ClassificationForm.resx">
+      <DependentUpon>ClassificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\LoginFom.resx">
       <DependentUpon>LoginFom.cs</DependentUpon>
@@ -289,6 +314,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\CarsPageUserControl.resx">
       <DependentUpon>CarsPageUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\UsersPageUserControl.resx">
       <DependentUpon>UsersPageUserControl.cs</DependentUpon>
@@ -301,6 +327,8 @@
     </EmbeddedResource>
     <None Include="Core\domain\SeedData\clients.csv" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CarRentalApp.Core.domain.Car.datasource" />
+    <None Include="Properties\DataSources\CarRentalApp.Core.domain.Classification.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.Client.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.User.datasource" />
     <None Include="Properties\Settings.settings">

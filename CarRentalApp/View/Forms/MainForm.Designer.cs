@@ -35,14 +35,15 @@ namespace CarRentalApp.View.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.leftPanel = new System.Windows.Forms.Panel();
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.datetimeLabel = new System.Windows.Forms.Label();
-            this.sidePanel = new System.Windows.Forms.Panel();
+            this.billsMenuButton = new System.Windows.Forms.Button();
             this.settingsMenuButton = new System.Windows.Forms.Button();
             this.homeMenuButton = new System.Windows.Forms.Button();
             this.usersMenuButton = new System.Windows.Forms.Button();
             this.clientsMenuButton = new System.Windows.Forms.Button();
             this.carsMenuButton = new System.Windows.Forms.Button();
             this.rentsMenuButton = new System.Windows.Forms.Button();
+            this.datetimeLabel = new System.Windows.Forms.Label();
+            this.sidePanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.menuButton = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@ namespace CarRentalApp.View.Forms
             this.contentPannel = new System.Windows.Forms.Panel();
             this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.datetimeTimer = new System.Windows.Forms.Timer(this.components);
-            this.billsMenuButton = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
@@ -94,28 +94,28 @@ namespace CarRentalApp.View.Forms
             this.menuPanel.Size = new System.Drawing.Size(215, 509);
             this.menuPanel.TabIndex = 2;
             // 
-            // datetimeLabel
+            // billsMenuButton
             // 
-            this.datetimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.datetimeLabel.AutoSize = true;
-            this.datetimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetimeLabel.ForeColor = System.Drawing.Color.Silver;
-            this.datetimeLabel.Location = new System.Drawing.Point(38, 453);
-            this.datetimeLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.datetimeLabel.Name = "datetimeLabel";
-            this.datetimeLabel.Size = new System.Drawing.Size(136, 16);
-            this.datetimeLabel.TabIndex = 11;
-            this.datetimeLabel.Text = "Tue 23 2019- 23:52";
-            this.datetimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sidePanel
-            // 
-            this.sidePanel.BackColor = System.Drawing.Color.White;
-            this.sidePanel.Location = new System.Drawing.Point(0, 3);
-            this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(10, 60);
-            this.sidePanel.TabIndex = 4;
+            this.billsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.billsMenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.billsMenuButton.FlatAppearance.BorderSize = 0;
+            this.billsMenuButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(122)))), ((int)(((byte)(136)))));
+            this.billsMenuButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
+            this.billsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.billsMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billsMenuButton.ForeColor = System.Drawing.Color.White;
+            this.billsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("billsMenuButton.Image")));
+            this.billsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billsMenuButton.Location = new System.Drawing.Point(5, 125);
+            this.billsMenuButton.Name = "billsMenuButton";
+            this.billsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.billsMenuButton.Size = new System.Drawing.Size(210, 60);
+            this.billsMenuButton.TabIndex = 10;
+            this.billsMenuButton.Text = "   Bills";
+            this.billsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.billsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.billsMenuButton.UseVisualStyleBackColor = false;
+            this.billsMenuButton.Click += new System.EventHandler(this.BillsMenuButton_Click);
             // 
             // settingsMenuButton
             // 
@@ -255,6 +255,29 @@ namespace CarRentalApp.View.Forms
             this.rentsMenuButton.UseVisualStyleBackColor = false;
             this.rentsMenuButton.Click += new System.EventHandler(this.RentsMenuButton_Click);
             // 
+            // datetimeLabel
+            // 
+            this.datetimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datetimeLabel.AutoSize = true;
+            this.datetimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datetimeLabel.ForeColor = System.Drawing.Color.Silver;
+            this.datetimeLabel.Location = new System.Drawing.Point(38, 453);
+            this.datetimeLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.datetimeLabel.Name = "datetimeLabel";
+            this.datetimeLabel.Size = new System.Drawing.Size(136, 16);
+            this.datetimeLabel.TabIndex = 11;
+            this.datetimeLabel.Text = "Tue 23 2019- 23:52";
+            this.datetimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sidePanel
+            // 
+            this.sidePanel.BackColor = System.Drawing.Color.White;
+            this.sidePanel.Location = new System.Drawing.Point(0, 3);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(10, 60);
+            this.sidePanel.TabIndex = 4;
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -379,29 +402,6 @@ namespace CarRentalApp.View.Forms
             // datetimeTimer
             // 
             this.datetimeTimer.Tick += new System.EventHandler(this.DatetimeTimer_Tick);
-            // 
-            // billsMenuButton
-            // 
-            this.billsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.billsMenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.billsMenuButton.FlatAppearance.BorderSize = 0;
-            this.billsMenuButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(122)))), ((int)(((byte)(136)))));
-            this.billsMenuButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
-            this.billsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.billsMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billsMenuButton.ForeColor = System.Drawing.Color.White;
-            this.billsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("billsMenuButton.Image")));
-            this.billsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.billsMenuButton.Location = new System.Drawing.Point(5, 125);
-            this.billsMenuButton.Name = "billsMenuButton";
-            this.billsMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.billsMenuButton.Size = new System.Drawing.Size(210, 60);
-            this.billsMenuButton.TabIndex = 10;
-            this.billsMenuButton.Text = "   Bills";
-            this.billsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.billsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.billsMenuButton.UseVisualStyleBackColor = false;
-            this.billsMenuButton.Click += new System.EventHandler(this.BillsMenuButton_Click);
             // 
             // MainForm
             // 

@@ -1,33 +1,29 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Persistence;
+using CarRentalApp.View.Forms;
 
 namespace CarRentalApp.View.UserControls
 {
     public partial class CarsPageUserControl : UserControl
     {
         private readonly string _searchTextBoxDefaultText;
+        private readonly UnitOfWork _unitOfWork;
         public CarsPageUserControl()
         {
             InitializeComponent();
             _searchTextBoxDefaultText = searchTextBox.Text;
-            PopulateDataGridView();
+            _unitOfWork = new UnitOfWork();
         }
-        private void PopulateDataGridView()
+        private void RefreshDataGridView()
         {
-            carsDataGrid.Rows.Clear();
-            for (int i = 1; i <= 50; i++)
-            {
-                carsDataGrid.Rows.Add(i, "Super Cars", "BF-0335P", "Hummer", 1111, " The best you can find");
-                carsDataGrid.DisplayedRowCount(true);
-
-            }
+            carsBindingSource.DataSource = _unitOfWork.Cars.GetAll().ToList();
         }
-
-
-
-        /*****************************************
-     /        Events handlers                 /
-     ****************************************/
+        protected override void OnLoad(EventArgs e)
+        {
+            RefreshDataGridView();
+        }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
         {
@@ -50,10 +46,17 @@ namespace CarRentalApp.View.UserControls
            
         }
 
+       
         private void RefreshDataGrid_Click(object sender, EventArgs e)
         {
-            PopulateDataGridView();
+            RefreshDataGridView();
 
+        }
+
+        private void addNewCarsButton_Click(object sender, EventArgs e)
+        {
+            var carForm = new CarForm();
+            carForm.Show();
         }
     }
 }

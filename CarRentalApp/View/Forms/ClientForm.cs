@@ -6,11 +6,11 @@ using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.Forms
 {
-    public partial class AddClientForm : Form
+    public partial class ClientForm : Form
     {
         private readonly UnitOfWork _unitOfWork;
 
-        public AddClientForm()
+        public ClientForm()
         {
             InitializeComponent();
             _unitOfWork = new UnitOfWork();
@@ -21,14 +21,22 @@ namespace CarRentalApp.View.Forms
             return !(string.IsNullOrEmpty(fistNameTextBox.Text)
                      || string.IsNullOrEmpty(lastNameTextBox.Text)
                      || string.IsNullOrEmpty(cinTextBox.Text)
+                     || string.IsNullOrEmpty(driverLicenseTextBox.Text)
                      || string.IsNullOrEmpty(emailTextBox.Text)
                      || string.IsNullOrEmpty(addressTextBox.Text));
         }
-        private void OnSaveCompleted()
+        private void OnSaveCompleted(Client client)
         {
+            ClientToFormTextBox(client);
             validationLabel.Text = @"Successfully Saved";
             validationLabel.ForeColor = Color.SeaGreen;
             validationLabel.Visible = true;
+            fistNameTextBox.Enabled = false;
+            lastNameTextBox.Enabled = false;
+            cinTextBox.Enabled = false;
+            emailTextBox.Enabled = false;
+            addressTextBox.Enabled = false;
+            phoneTextBox.Enabled = false;
 
         }
         private void OnValidationError(string message)
@@ -43,6 +51,7 @@ namespace CarRentalApp.View.Forms
             fistNameTextBox.Text = client.LastName;
             lastNameTextBox.Text = client.LastName;
             cinTextBox.Text = client.Cin;
+            driverLicenseTextBox.Text = client.DriverLicense;
             emailTextBox.Text = client.Email;
             phoneTextBox.Text = client.Phone;
             addressTextBox.Text = client.Address;
@@ -75,8 +84,7 @@ namespace CarRentalApp.View.Forms
                 var client = TextBoxToClient();
                 _unitOfWork.Clients.Add(client);
                 _unitOfWork.Complete();
-                ClientToFormTextBox(client);
-                OnSaveCompleted();
+                OnSaveCompleted(client);
 
             }
             catch (FormattedDbEntityValidationException exception)
@@ -86,6 +94,9 @@ namespace CarRentalApp.View.Forms
             }
         }
 
-      
+        private void AddClientForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

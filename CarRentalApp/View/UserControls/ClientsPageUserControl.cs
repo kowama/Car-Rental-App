@@ -47,7 +47,7 @@ namespace CarRentalApp.View.UserControls
                 );
             }
 
-            clientsDataGrid.DataSource = filteredUsers.ToList();
+            clientsDataGridView.DataSource = filteredUsers.ToList();
         }
 
         /*****************************************
@@ -56,7 +56,7 @@ namespace CarRentalApp.View.UserControls
 
         private void AddNewClientButton_Click(object sender, EventArgs e)
         {
-            var addNewClientForm = new AddClientForm();
+            var addNewClientForm = new ClientForm();
             addNewClientForm.Show();
 
         }
@@ -69,16 +69,16 @@ namespace CarRentalApp.View.UserControls
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             var selectedRowCount =
-                clientsDataGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                clientsDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount <= 0) return;
 
             var clients = new List<Client>() ;
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            var sb = new System.Text.StringBuilder();
             for (var i = selectedRowCount - 1; i >= 0; i--)
             {
-                sb.Append(clientsDataGrid.SelectedRows[i].Index + 1);
+                sb.Append(clientsDataGridView.SelectedRows[i].Index + 1);
                 sb.Append(" ");
-                var client = (Client) clientsDataGrid.SelectedRows[i].DataBoundItem;
+                var client = (Client) clientsDataGridView.SelectedRows[i].DataBoundItem;
                 clients.Add(client);
                 sb.Append(client.Resume());
                 sb.Append(Environment.NewLine);
@@ -119,9 +119,9 @@ namespace CarRentalApp.View.UserControls
             }
         }
 
-        private void clientsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void ClientsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow row in clientsDataGrid.Rows)
+            foreach (DataGridViewRow row in clientsDataGridView.Rows)
                 row.HeaderCell.Value = (row.Index + 1).ToString();
 
         }

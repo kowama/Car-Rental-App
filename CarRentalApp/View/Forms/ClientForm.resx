@@ -117,11 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="client_delete_confirm" xml:space="preserve">
-    <value>Are You sure to Delete These Clients</value>
-  </data>
-  <data name="ClassificationForm_DeleteButton_Click_Are_you_Sure_to_Delete" xml:space="preserve">
-    <value>Are you Sure to Delete</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="saveButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAK4AAAA1CAYAAADYrdBuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKRSURBVHhe7d0xa1phFIfxfoBma5Zmaya3ZmuWZqqZdKpZ
+        mmZQv0PTDE0zCH4HQRBcBKGBBhwEBzfBRXAQF8FFF8HF+ZT/ldiKb7PFvAee4QcOr2Z5uBxv8NxXy+XS
+        AG8IFy4RLlwiXLhEuHCJcOHSk+HO53Or1Wr25fLSPqXTlkql7PXBAfAs1Jc6+5zLWaVSsel0GuxS/hvu
+        r/v75IO+Xl1ZvV63drtto9HIVqsV8CzUlzprNptWLBaT/hRwqM+dcFV5Pp+3bDZrk8kk+AeAfZjNZknA
+        mUzGxuPxVqdb4SraD6enVq1Wgx8EvITfDw/28ezMhsNhOFxdaYkWMdIIofl3J1zNtBoPQm8CYvD95sZK
+        pdLfcHX3QIMwMy1itlgsklG23++vw9U3Nw3BocNATMrlsn27vl6Hq/tmugUROgjEpNfrJVfdJNz3Jyc2
+        GAyCB4GYaFx4c3i4Dvft0VFyzyx0EIiN/suWhKsXoQNAjAgXLhEuXCJcuES4cIlw4RLhwiXChUuEC5cI
+        Fy4RLlwiXLhEuHCJcOES4cIlwoVLhAuXCBcuES5cIly4tAlXv5rUrydDh4DYbMLVFhtWiMKLTbha46iN
+        eKFDQEy0/0N7QJJwtUhMC8VCB4GYaJtooVBYh6u9o6qYORexy11cWKPRWIcrP25v7efdXfAwEAM90kHP
+        I1Gvm3C1ajR9fm7dbjf4JuAlaQWupoLHB5pswhXtHdUmPBbgISaKVhfVVqu1aXUrXOl0Okm82kMa+hBg
+        n7T+Vlfaf6OVnXBFY4OW56pyfYtjUzn2SZtDNc/qUWXa3Rx63lkw3EeqXLce3h0fJzd9gX3Q2lt9CdPD
+        IUNdypPhArEiXLhEuHCJcOES4cKhpf0BTxSW/gw2r58AAAAASUVORK5CYII=
+</value>
   </data>
 </root>

@@ -61,6 +61,15 @@ namespace CarRentalApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you Sure to Delete.
+        /// </summary>
+        internal static string ClassificationForm_DeleteButton_Click_Are_you_Sure_to_Delete {
+            get {
+                return ResourceManager.GetString("ClassificationForm_DeleteButton_Click_Are_you_Sure_to_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are You sure to Delete These Clients.
         /// </summary>
         internal static string client_delete_confirm {

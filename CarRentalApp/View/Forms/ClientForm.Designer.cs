@@ -4,7 +4,7 @@ using Bunifu.Framework.UI;
 
 namespace CarRentalApp.View.Forms
 {
-    partial class AddClientForm
+    partial class ClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace CarRentalApp.View.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClientForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label1.Location = new System.Drawing.Point(45, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
@@ -67,7 +67,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label2.Location = new System.Drawing.Point(48, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
@@ -78,7 +78,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label3.Location = new System.Drawing.Point(291, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 17);
@@ -89,7 +89,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label4.Location = new System.Drawing.Point(45, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
@@ -111,7 +111,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label6.Location = new System.Drawing.Point(45, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 17);
@@ -135,7 +135,7 @@ namespace CarRentalApp.View.Forms
             this.saveButton.IdleCornerRadius = 20;
             this.saveButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
             this.saveButton.IdleForecolor = System.Drawing.Color.DimGray;
-            this.saveButton.IdleLineColor = System.Drawing.Color.Turquoise;
+            this.saveButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.saveButton.Location = new System.Drawing.Point(123, 473);
             this.saveButton.Margin = new System.Windows.Forms.Padding(5);
             this.saveButton.Name = "saveButton";
@@ -164,7 +164,7 @@ namespace CarRentalApp.View.Forms
             this.phoneTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTextBox.Location = new System.Drawing.Point(273, 292);
+            this.phoneTextBox.Location = new System.Drawing.Point(273, 295);
             this.phoneTextBox.Mask = "+212 000-000000";
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(127, 16);
@@ -264,14 +264,15 @@ namespace CarRentalApp.View.Forms
             // 
             // emailTextBox
             // 
-            this.emailTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.emailTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.emailTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.emailTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.emailTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.emailTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.emailTextBox.HintForeColor = System.Drawing.Color.Empty;
             this.emailTextBox.HintText = "exemple@email.com";
+            this.emailTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.emailTextBox.isPassword = false;
             this.emailTextBox.LineFocusedColor = System.Drawing.Color.Blue;
             this.emailTextBox.LineIdleColor = System.Drawing.Color.Gray;
@@ -289,7 +290,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label7.Location = new System.Drawing.Point(270, 257);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 17);
@@ -300,7 +301,7 @@ namespace CarRentalApp.View.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label8.Location = new System.Drawing.Point(48, 170);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 17);
@@ -336,13 +337,13 @@ namespace CarRentalApp.View.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(490, 582);
+            this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.driverLicenseTextBox);
             this.Controls.Add(this.cinTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.fistNameTextBox);
-            this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.validationLabel);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label6);
@@ -360,6 +361,7 @@ namespace CarRentalApp.View.Forms
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Add New Client";
+            this.Load += new System.EventHandler(this.AddClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
