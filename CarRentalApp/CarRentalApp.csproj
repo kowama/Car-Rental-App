@@ -325,6 +325,8 @@
     <EmbeddedResource Include="View\UserControls\SettingsPageUserControl.resx">
       <DependentUpon>SettingsPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Core\domain\SeedData\cars.csv" />
+    <None Include="Core\domain\SeedData\classifications.csv" />
     <None Include="Core\domain\SeedData\clients.csv" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.Car.datasource" />

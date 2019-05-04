@@ -38,7 +38,6 @@ namespace CarRentalApp.Core.domain
         public virtual Classification Classification { get; set; }
         [Range(0, 99999999)]
         public decimal PricePerDay { get; set; }
-        
 
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
     }

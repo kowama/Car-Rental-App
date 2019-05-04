@@ -67,7 +67,9 @@ namespace CarRentalApp.View.Forms
             var classificationNames = new List<string>();
             classifications.ForEach(c => classificationNames.Add(c.Name));
             carClassificationDropDown.items = classificationNames.ToArray();
-            carClassificationDropDown.selectedIndex = 0;
+            if (carClassificationDropDown.items.Length != 0)
+                carClassificationDropDown.selectedIndex = 0;
+
         }
 
         private void ClassificationButton_Click(object sender, EventArgs e)
