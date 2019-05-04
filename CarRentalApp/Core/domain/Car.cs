@@ -11,16 +11,16 @@ namespace CarRentalApp.Core.domain
     {
         public static byte[]  ImageToByteArray(Image imageIn)
         {
-            MemoryStream ms = new MemoryStream();
+            var ms = new MemoryStream();
             imageIn.Save(ms, ImageFormat.Gif);
             return ms.ToArray();
         }
 
         public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            var ms = new MemoryStream(byteArrayIn);
+            var image = Image.FromStream(ms);
+            return image;
         }
     }
     public class  Car
@@ -40,5 +40,16 @@ namespace CarRentalApp.Core.domain
         public decimal PricePerDay { get; set; }
 
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
+
+        public bool IsAvailable()
+        {
+            foreach (var rent in Rents)
+            {
+                if (rent.DateEnd <= DateTime.Now)
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

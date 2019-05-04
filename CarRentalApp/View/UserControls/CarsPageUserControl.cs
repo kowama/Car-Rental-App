@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
@@ -19,9 +21,41 @@ namespace CarRentalApp.View.UserControls
             _unitOfWork = new UnitOfWork();
         }
 
+        private void DisplaySelectedCar(Car car = null)
+        {
+            if (car == null && carsDataGridView.RowCount != 0)
+                car = (Car) carsDataGridView.Rows[0].DataBoundItem;
+
+            if (car == null) return;
+            selectedCarNameLabel.Text = car.Name;
+            selectedCarClassificationLabel.Text = car.Classification.Name;
+            selectedCarLicensePlateLabel.Text = car.LicensePlate;
+            selectedCarDescriptionLabel.Text = car.Description;
+            selectedCarPricePerDayLabel.Text = $@"{car.PricePerDay:#,0.00} MAD /Day";
+            selectedCarRentsCountLabel.Text = car.Rents.Count.ToString();
+            selectedCarNextDrainDateLabel.Text = $@"{car.PurchaseDate:D}";
+            selectedCarPurchaseDateLabel.Text = $@"{car.PurchaseDate:MM/dd/yyyy}";
+        }
+
+        private void RefreshCarsIndicator(List<Car> cars)
+        {
+            var total = cars.Count;
+            var available = cars.FindAll(c=>c.IsAvailable()).Count;
+            var unavailable = total - available;
+            var ratio = available / total;
+
+            carsCountLabel.Text = $@"{total:F0}";
+            availableCarsCountLabel.Text = $@"{available:F0}";
+            inavailableCarsCountLabel.Text = $@"{unavailable:F0}";
+            carsAvailableCircleProgressBar.Value = ratio*100;
+
+        }
+
         private void RefreshDataGridView()
         {
-            carsBindingSource.DataSource = _unitOfWork.Cars.GetAll().ToList();
+            var  cars = _unitOfWork.Cars.GetAll().ToList();
+            carsBindingSource.DataSource = cars;
+            RefreshCarsIndicator(cars);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -34,7 +68,7 @@ namespace CarRentalApp.View.UserControls
             if (searchTextBox.Text == _searchTextBoxDefaultText) searchTextBox.Text = string.Empty;
         }
 
-        private void searchTextBox_Leave(object sender, EventArgs e)
+        private void SearchTextBox_Leave(object sender, EventArgs e)
         {
             if (searchTextBox.Text.Trim() == string.Empty) searchTextBox.Text = _searchTextBoxDefaultText;
         }
@@ -71,6 +105,18 @@ namespace CarRentalApp.View.UserControls
             {
                 e.Value = car.Classification.Name;
             }
+        }
+
+        private void CarsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var car = (Car) carsDataGridView.Rows[e.RowIndex].DataBoundItem;
+            DisplaySelectedCar(car);
+        }
+
+        private void SelectedCarDescriptionLabel_Paint(object sender, PaintEventArgs e)
+        {
+            selectedCarDescriptionLabel.MaximumSize = new Size(selectedCarCardPanel.Width,0);
+
         }
     }
 }
