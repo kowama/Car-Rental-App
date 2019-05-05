@@ -256,6 +256,7 @@ namespace CarRentalApp.View.UserControls
             this.Controls.Add(this.panel1);
             this.Name = "HomePageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
+            this.Load += new System.EventHandler(this.HomePageUserControl_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

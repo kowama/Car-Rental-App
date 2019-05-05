@@ -33,74 +33,63 @@ namespace CarRentalApp.View.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentsPageUserControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuDataViz1 = new Bunifu.DataViz.BunifuDataViz();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rentsTabPage = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.printButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
-            this.carsDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.clientsDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manageByUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
             this.deleteButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.addNewCarsButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.refreshDataGrid = new Bunifu.Framework.UI.BunifuImageButton();
             this.searchButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.searchTextBox = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.seachFilterDropdown = new Bunifu.Framework.UI.BunifuDropdown();
-            this.refreshDataGrid = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.rentsTabControl = new System.Windows.Forms.TabControl();
+            this.newRentTabPage = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.RowIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RentIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateStartColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateEndColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1.SuspendLayout();
+            this.rentsTabPage.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).BeginInit();
-            this.bunifuCards1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
+            this.rentsTabControl.SuspendLayout();
+            this.newRentTabPage.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bunifuDataViz1
-            // 
-            this.bunifuDataViz1.animationEnabled = false;
-            this.bunifuDataViz1.AxisLineColor = System.Drawing.Color.LightGray;
-            this.bunifuDataViz1.AxisXFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.AxisYFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuDataViz1.Location = new System.Drawing.Point(7, -3);
-            this.bunifuDataViz1.Name = "bunifuDataViz1";
-            this.bunifuDataViz1.Size = new System.Drawing.Size(411, 389);
-            this.bunifuDataViz1.TabIndex = 1;
-            this.bunifuDataViz1.Theme = Bunifu.DataViz.BunifuDataViz._theme.theme1;
-            this.bunifuDataViz1.Title = "";
             // 
             // bunifuSeparator1
             // 
@@ -128,140 +117,262 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCustomLabel1.TabIndex = 5;
             this.bunifuCustomLabel1.Text = "Manage Rents";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bunifuSeparator1);
+            this.panel1.Controls.Add(this.bunifuCustomLabel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1044, 104);
+            this.panel1.TabIndex = 13;
+            // 
+            // rentsTabPage
+            // 
+            this.rentsTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.rentsTabPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rentsTabPage.Controls.Add(this.panel3);
+            this.rentsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.rentsTabPage.Name = "rentsTabPage";
+            this.rentsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.rentsTabPage.Size = new System.Drawing.Size(1036, 548);
+            this.rentsTabPage.TabIndex = 1;
+            this.rentsTabPage.Text = "Rents";
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.printButton);
-            this.panel3.Controls.Add(this.exportToExelButton);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 508);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(621, 69);
-            this.panel3.TabIndex = 5;
+            this.panel3.Padding = new System.Windows.Forms.Padding(10);
+            this.panel3.Size = new System.Drawing.Size(1026, 538);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(10, 473);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1006, 55);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.printButton);
+            this.panel7.Controls.Add(this.exportToExelButton);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, -9);
+            this.panel7.MaximumSize = new System.Drawing.Size(0, 64);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1006, 64);
+            this.panel7.TabIndex = 20;
             // 
             // printButton
             // 
-            this.printButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.printButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.printButton.Image = ((System.Drawing.Image)(resources.GetObject("printButton.Image")));
             this.printButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("printButton.ImageActive")));
-            this.printButton.Location = new System.Drawing.Point(571, 5);
+            this.printButton.Location = new System.Drawing.Point(933, 29);
+            this.printButton.MaximumSize = new System.Drawing.Size(32, 32);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(32, 32);
             this.printButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.printButton.TabIndex = 10;
+            this.printButton.TabIndex = 18;
             this.printButton.TabStop = false;
             this.printButton.Zoom = 10;
             // 
             // exportToExelButton
             // 
-            this.exportToExelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportToExelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.exportToExelButton.Image = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.Image")));
             this.exportToExelButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("exportToExelButton.ImageActive")));
-            this.exportToExelButton.Location = new System.Drawing.Point(505, 5);
+            this.exportToExelButton.Location = new System.Drawing.Point(971, 29);
+            this.exportToExelButton.MaximumSize = new System.Drawing.Size(32, 32);
             this.exportToExelButton.Name = "exportToExelButton";
             this.exportToExelButton.Size = new System.Drawing.Size(32, 32);
             this.exportToExelButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exportToExelButton.TabIndex = 11;
+            this.exportToExelButton.TabIndex = 19;
             this.exportToExelButton.TabStop = false;
             this.exportToExelButton.Zoom = 10;
             // 
-            // carsDataGrid
+            // panel5
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.carsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.carsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.carsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.carsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.carsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.carsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.carsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RowIndexColumn,
-            this.RentIdColumn,
-            this.CarColumn,
-            this.ClientColumn,
-            this.UserColumn,
-            this.DateStartColumn,
-            this.DateEndColumn,
-            this.StateColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.carsDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
-            this.carsDataGrid.DoubleBuffered = true;
-            this.carsDataGrid.EnableHeadersVisualStyles = false;
-            this.carsDataGrid.HeaderBgColor = System.Drawing.Color.Silver;
-            this.carsDataGrid.HeaderForeColor = System.Drawing.Color.Black;
-            this.carsDataGrid.Location = new System.Drawing.Point(4, 105);
-            this.carsDataGrid.Name = "carsDataGrid";
-            this.carsDataGrid.ReadOnly = true;
-            this.carsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.carsDataGrid.RowHeadersWidth = 20;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.carsDataGrid.RowTemplate.ReadOnly = true;
-            this.carsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carsDataGrid.Size = new System.Drawing.Size(614, 402);
-            this.carsDataGrid.StandardTab = true;
-            this.carsDataGrid.TabIndex = 2;
+            this.panel5.Controls.Add(this.clientsDataGridView);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(10, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1006, 454);
+            this.panel5.TabIndex = 0;
+            // 
+            // clientsDataGridView
+            // 
+            this.clientsDataGridView.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.clientsDataGridView.AutoGenerateColumns = false;
+            this.clientsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientsDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.clientsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clientsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.clientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentIdDataGridViewTextBoxColumn,
+            this.carDataGridViewTextBoxColumn,
+            this.clientDataGridViewTextBoxColumn,
+            this.manageByUserDataGridViewTextBoxColumn,
+            this.billDataGridViewTextBoxColumn,
+            this.dateStartDataGridViewTextBoxColumn,
+            this.dateEndDataGridViewTextBoxColumn,
+            this.stateDataGridViewTextBoxColumn});
+            this.clientsDataGridView.DataSource = this.rentBindingSource;
+            this.clientsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientsDataGridView.DoubleBuffered = true;
+            this.clientsDataGridView.EnableHeadersVisualStyles = false;
+            this.clientsDataGridView.HeaderBgColor = System.Drawing.SystemColors.GrayText;
+            this.clientsDataGridView.HeaderForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clientsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.clientsDataGridView.Name = "clientsDataGridView";
+            this.clientsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.clientsDataGridView.RowHeadersWidth = 60;
+            this.clientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientsDataGridView.Size = new System.Drawing.Size(1006, 454);
+            this.clientsDataGridView.TabIndex = 17;
+            // 
+            // rentIdDataGridViewTextBoxColumn
+            // 
+            this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.HeaderText = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.Name = "rentIdDataGridViewTextBoxColumn";
+            // 
+            // carDataGridViewTextBoxColumn
+            // 
+            this.carDataGridViewTextBoxColumn.DataPropertyName = "Car";
+            this.carDataGridViewTextBoxColumn.HeaderText = "Car";
+            this.carDataGridViewTextBoxColumn.Name = "carDataGridViewTextBoxColumn";
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            // 
+            // manageByUserDataGridViewTextBoxColumn
+            // 
+            this.manageByUserDataGridViewTextBoxColumn.DataPropertyName = "ManageByUser";
+            this.manageByUserDataGridViewTextBoxColumn.HeaderText = "ManageByUser";
+            this.manageByUserDataGridViewTextBoxColumn.Name = "manageByUserDataGridViewTextBoxColumn";
+            // 
+            // billDataGridViewTextBoxColumn
+            // 
+            this.billDataGridViewTextBoxColumn.DataPropertyName = "Bill";
+            this.billDataGridViewTextBoxColumn.HeaderText = "Bill";
+            this.billDataGridViewTextBoxColumn.Name = "billDataGridViewTextBoxColumn";
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            // 
+            // dateEndDataGridViewTextBoxColumn
+            // 
+            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            // 
+            // rentBindingSource
+            // 
+            this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.deleteButton);
+            this.panel4.Controls.Add(this.addNewCarsButton);
+            this.panel4.Controls.Add(this.refreshDataGrid);
+            this.panel4.Controls.Add(this.searchButton);
+            this.panel4.Controls.Add(this.searchTextBox);
+            this.panel4.Controls.Add(this.seachFilterDropdown);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(10, 10);
+            this.panel4.MaximumSize = new System.Drawing.Size(0, 64);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1006, 64);
+            this.panel4.TabIndex = 0;
             // 
             // deleteButton
             // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("deleteButton.ImageActive")));
-            this.deleteButton.Location = new System.Drawing.Point(533, 57);
+            this.deleteButton.Location = new System.Drawing.Point(971, 17);
+            this.deleteButton.MaximumSize = new System.Drawing.Size(32, 32);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(32, 32);
             this.deleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.deleteButton.TabIndex = 4;
+            this.deleteButton.TabIndex = 7;
             this.deleteButton.TabStop = false;
             this.deleteButton.Zoom = 10;
             // 
             // addNewCarsButton
             // 
-            this.addNewCarsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewCarsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.addNewCarsButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewCarsButton.Image")));
             this.addNewCarsButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("addNewCarsButton.ImageActive")));
-            this.addNewCarsButton.Location = new System.Drawing.Point(485, 57);
+            this.addNewCarsButton.Location = new System.Drawing.Point(895, 17);
+            this.addNewCarsButton.MaximumSize = new System.Drawing.Size(32, 32);
             this.addNewCarsButton.Name = "addNewCarsButton";
             this.addNewCarsButton.Size = new System.Drawing.Size(32, 32);
             this.addNewCarsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.addNewCarsButton.TabIndex = 4;
+            this.addNewCarsButton.TabIndex = 8;
             this.addNewCarsButton.TabStop = false;
             this.addNewCarsButton.Zoom = 10;
+            // 
+            // refreshDataGrid
+            // 
+            this.refreshDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.refreshDataGrid.Image = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.Image")));
+            this.refreshDataGrid.ImageActive = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.ImageActive")));
+            this.refreshDataGrid.Location = new System.Drawing.Point(933, 17);
+            this.refreshDataGrid.MaximumSize = new System.Drawing.Size(32, 32);
+            this.refreshDataGrid.Name = "refreshDataGrid";
+            this.refreshDataGrid.Size = new System.Drawing.Size(32, 32);
+            this.refreshDataGrid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.refreshDataGrid.TabIndex = 10;
+            this.refreshDataGrid.TabStop = false;
+            this.refreshDataGrid.Zoom = 10;
             // 
             // searchButton
             // 
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageActive = ((System.Drawing.Image)(resources.GetObject("searchButton.ImageActive")));
-            this.searchButton.Location = new System.Drawing.Point(179, 60);
+            this.searchButton.Location = new System.Drawing.Point(181, 17);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(32, 32);
             this.searchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchButton.TabIndex = 4;
+            this.searchButton.TabIndex = 9;
             this.searchButton.TabStop = false;
             this.searchButton.Zoom = 10;
             // 
@@ -276,12 +387,12 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.searchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.searchTextBox.isPassword = false;
-            this.searchTextBox.Location = new System.Drawing.Point(4, 57);
+            this.searchTextBox.Location = new System.Drawing.Point(6, 14);
             this.searchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchTextBox.MaxLength = 32;
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(168, 35);
-            this.searchTextBox.TabIndex = 1;
+            this.searchTextBox.TabIndex = 5;
             this.searchTextBox.Text = "Enter a keyword";
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -298,174 +409,145 @@ namespace CarRentalApp.View.UserControls
         "Phone",
         "Role",
         "All"};
-            this.seachFilterDropdown.Location = new System.Drawing.Point(217, 57);
+            this.seachFilterDropdown.Location = new System.Drawing.Point(219, 14);
             this.seachFilterDropdown.Name = "seachFilterDropdown";
             this.seachFilterDropdown.NomalColor = System.Drawing.Color.Teal;
             this.seachFilterDropdown.onHoverColor = System.Drawing.Color.MediumBlue;
             this.seachFilterDropdown.selectedIndex = -1;
             this.seachFilterDropdown.Size = new System.Drawing.Size(165, 35);
-            this.seachFilterDropdown.TabIndex = 2;
+            this.seachFilterDropdown.TabIndex = 6;
             // 
-            // refreshDataGrid
+            // rentsTabControl
             // 
-            this.refreshDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshDataGrid.Image = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.Image")));
-            this.refreshDataGrid.ImageActive = ((System.Drawing.Image)(resources.GetObject("refreshDataGrid.ImageActive")));
-            this.refreshDataGrid.Location = new System.Drawing.Point(571, 57);
-            this.refreshDataGrid.Name = "refreshDataGrid";
-            this.refreshDataGrid.Size = new System.Drawing.Size(32, 32);
-            this.refreshDataGrid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.refreshDataGrid.TabIndex = 4;
-            this.refreshDataGrid.TabStop = false;
-            this.refreshDataGrid.Zoom = 10;
+            this.rentsTabControl.Controls.Add(this.newRentTabPage);
+            this.rentsTabControl.Controls.Add(this.rentsTabPage);
+            this.rentsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rentsTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentsTabControl.Location = new System.Drawing.Point(0, 0);
+            this.rentsTabControl.Name = "rentsTabControl";
+            this.rentsTabControl.SelectedIndex = 0;
+            this.rentsTabControl.Size = new System.Drawing.Size(1044, 577);
+            this.rentsTabControl.TabIndex = 7;
             // 
-            // bunifuCards1
+            // newRentTabPage
             // 
-            this.bunifuCards1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.newRentTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.newRentTabPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.newRentTabPage.Controls.Add(this.panel8);
+            this.newRentTabPage.Location = new System.Drawing.Point(4, 25);
+            this.newRentTabPage.Name = "newRentTabPage";
+            this.newRentTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.newRentTabPage.Size = new System.Drawing.Size(1036, 548);
+            this.newRentTabPage.TabIndex = 0;
+            this.newRentTabPage.Text = "New Rent";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Controls.Add(this.contentPanel);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(2);
+            this.panel8.Size = new System.Drawing.Size(1026, 538);
+            this.panel8.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.BorderRadius = 30;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.SystemColors.Control;
-            this.bunifuCards1.Controls.Add(this.bunifuDataViz1);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 110);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(417, 568);
-            this.bunifuCards1.TabIndex = 15;
+            this.panel10.Location = new System.Drawing.Point(524, 5);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(500, 528);
+            this.panel10.TabIndex = 1;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contentPanel.Location = new System.Drawing.Point(5, 5);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Padding = new System.Windows.Forms.Padding(4);
+            this.contentPanel.Size = new System.Drawing.Size(517, 528);
+            this.contentPanel.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.carsDataGrid);
-            this.panel2.Controls.Add(this.deleteButton);
-            this.panel2.Controls.Add(this.addNewCarsButton);
-            this.panel2.Controls.Add(this.searchButton);
-            this.panel2.Controls.Add(this.searchTextBox);
-            this.panel2.Controls.Add(this.seachFilterDropdown);
-            this.panel2.Controls.Add(this.refreshDataGrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(423, 104);
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.rentsTabControl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(621, 577);
+            this.panel2.Size = new System.Drawing.Size(1044, 577);
             this.panel2.TabIndex = 14;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.bunifuSeparator1);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 104);
-            this.panel1.TabIndex = 13;
-            // 
-            // RowIndexColumn
-            // 
-            this.RowIndexColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RowIndexColumn.FillWeight = 17.7665F;
-            this.RowIndexColumn.HeaderText = "Index";
-            this.RowIndexColumn.MaxInputLength = 4;
-            this.RowIndexColumn.Name = "RowIndexColumn";
-            this.RowIndexColumn.ReadOnly = true;
-            this.RowIndexColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RowIndexColumn.Width = 64;
-            // 
-            // RentIdColumn
-            // 
-            this.RentIdColumn.HeaderText = "Rent Id";
-            this.RentIdColumn.Name = "RentIdColumn";
-            this.RentIdColumn.ReadOnly = true;
-            // 
-            // CarColumn
-            // 
-            this.CarColumn.HeaderText = "Car";
-            this.CarColumn.Name = "CarColumn";
-            this.CarColumn.ReadOnly = true;
-            // 
-            // ClientColumn
-            // 
-            this.ClientColumn.HeaderText = "Client";
-            this.ClientColumn.Name = "ClientColumn";
-            this.ClientColumn.ReadOnly = true;
-            // 
-            // UserColumn
-            // 
-            this.UserColumn.HeaderText = "User";
-            this.UserColumn.Name = "UserColumn";
-            this.UserColumn.ReadOnly = true;
-            // 
-            // DateStartColumn
-            // 
-            this.DateStartColumn.HeaderText = "Date Start";
-            this.DateStartColumn.Name = "DateStartColumn";
-            this.DateStartColumn.ReadOnly = true;
-            // 
-            // DateEndColumn
-            // 
-            this.DateEndColumn.HeaderText = "Date End";
-            this.DateEndColumn.Name = "DateEndColumn";
-            this.DateEndColumn.ReadOnly = true;
-            // 
-            // StateColumn
-            // 
-            this.StateColumn.HeaderText = "State";
-            this.StateColumn.Name = "StateColumn";
-            this.StateColumn.ReadOnly = true;
             // 
             // RentsPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "RentsPageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).EndInit();
-            this.bunifuCards1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.rentsTabPage.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.printButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
+            this.rentsTabControl.ResumeLayout(false);
+            this.newRentTabPage.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private BunifuDataViz bunifuDataViz1;
         private BunifuSeparator bunifuSeparator1;
         private BunifuCustomLabel bunifuCustomLabel1;
+        private Panel panel1;
+        private BindingSource rentBindingSource;
+        private TabControl rentsTabControl;
+        private TabPage newRentTabPage;
+        private TabPage rentsTabPage;
+        private Panel panel2;
         private Panel panel3;
-        private BunifuImageButton printButton;
-        private BunifuImageButton exportToExelButton;
-        private BunifuCustomDataGrid carsDataGrid;
+        private Panel panel6;
+        private Panel panel5;
+        private Panel panel4;
         private BunifuImageButton deleteButton;
         private BunifuImageButton addNewCarsButton;
         private BunifuImageButton searchButton;
         private BunifuMetroTextbox searchTextBox;
         private BunifuDropdown seachFilterDropdown;
         private BunifuImageButton refreshDataGrid;
-        private BunifuCards bunifuCards1;
-        private Panel panel2;
-        private Panel panel1;
-        private DataGridViewTextBoxColumn RowIndexColumn;
-        private DataGridViewTextBoxColumn RentIdColumn;
-        private DataGridViewTextBoxColumn CarColumn;
-        private DataGridViewTextBoxColumn ClientColumn;
-        private DataGridViewTextBoxColumn UserColumn;
-        private DataGridViewTextBoxColumn DateStartColumn;
-        private DataGridViewTextBoxColumn DateEndColumn;
-        private DataGridViewTextBoxColumn StateColumn;
+        private BunifuCustomDataGrid clientsDataGridView;
+        private BunifuImageButton printButton;
+        private BunifuImageButton exportToExelButton;
+        private Panel panel7;
+        private DataGridViewTextBoxColumn rentIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn carDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn manageByUserDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn billDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateEndDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private Panel panel8;
+        private Panel panel10;
+        private Panel contentPanel;
     }
 }

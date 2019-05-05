@@ -164,29 +164,8 @@
         QmCC
 </value>
   </data>
-  <metadata name="RowIndexColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RentIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CarColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClientColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="UserColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DateStartColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DateEndColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="StateColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="rentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <data name="deleteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -235,30 +214,6 @@
         QmCC
 </value>
   </data>
-  <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXtJREFUWEft
-        ljlKBEEUQEfFBVQw0MQbuJxDI1FQUTAXFxQ9hAYaeAUNBAO9iKELLrikgmCggrigvtd0wwQyTnX32Ajz
-        4DFd1fV/9cxU/a5Snf9MK87gAV7jQ6zX++g9x9SECbzFr1+8wXHMjQZcx2SCY1zBAeyOHcRVPMFk3BY2
-        YWbW0IRvuIiVknpvCR1rzCZmYhQ/8RWH7KgSxxpj7IgdaWjBK/SbzNoRyDwae4nNdoQyjSY4wkY7AvHv
-        OEVzTNoRyh4avBy10uHCNMdu1ArEn87gvqiVDneHOc6iViBPaHBH1EpHJ5rjMWoF8owGt0etdGR6gDz+
-        AouVOc6jViCFL8JkG1pe05TUzNuwvBBZ+0NZQGNTFyIZQ5N84LAdVZJLKZYevEcf4h1DX0YbmJpevEAT
-        3cWf6uvYxdWPbbGu9lxfx+WTH2IX/tmB5KfJEzxuuTt20BX+Euv1Nk5hpiNZpclrTn3yQiaXpGJ58nHf
-        F8IcFjZ5nT+mVPoGssiGom2D26cAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="searchButton.ImageActive" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAYVJREFUWEft
-        lksrRVEUxy/yKJQBE9/A43MwEoUoc11EfAgGDHwFBsqAL2LokUceU6UMUPLI8v/v/keUrrv2Ofee1PnV
-        r3ta+6y1z71373V2qeAfY61wBu7DK3gveb0HOYZ7aoJNwBtof3gNx5WUBdYA11ScHsFlOAC75SBcgccw
-        uW8TNqlIGmxVBV/hQuWiHLNF3cucDQ3EYqPwA77AIQWrgPeGHOaOKOjFWuAl5DeZVdCBzSn3AjYr6MGm
-        VeAQNiroIPwdJ6oxqaAH21XykgIRhIXJGjsKeAg/HZP7FIgg7A7WOFXAgz0quUOBCKxTNR4U8GBPSm5X
-        IIJ0D5DFX8BmxRpnCnjIfxEm25DtNaKlpt+G3xsRer8Xm1dubCMiNqYi73BYwSrIpBUT64F3kA/xBr0v
-        o3UNxGC98FyFbvVJ+Trm4uqHbZKrPcvX8Y/JD2AXrNeB5LfJE8KRjLtjG3KFP0teb8EpmOZIVmnymlNM
-        nsvk5Ktj8eSDfZ8LVs5x8oJ6Uyp9AsoHYNZuhwvjAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="refreshDataGrid.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAWdJREFUWEft
@@ -283,4 +238,31 @@
         ZB+4Bru1OJGIIMu+AYS0S9EczD9jAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXtJREFUWEft
+        ljlKBEEUQEfFBVQw0MQbuJxDI1FQUTAXFxQ9hAYaeAUNBAO9iKELLrikgmCggrigvtd0wwQyTnX32Ajz
+        4DFd1fV/9cxU/a5Snf9MK87gAV7jQ6zX++g9x9SECbzFr1+8wXHMjQZcx2SCY1zBAeyOHcRVPMFk3BY2
+        YWbW0IRvuIiVknpvCR1rzCZmYhQ/8RWH7KgSxxpj7IgdaWjBK/SbzNoRyDwae4nNdoQyjSY4wkY7AvHv
+        OEVzTNoRyh4avBy10uHCNMdu1ArEn87gvqiVDneHOc6iViBPaHBH1EpHJ5rjMWoF8owGt0etdGR6gDz+
+        AouVOc6jViCFL8JkG1pe05TUzNuwvBBZ+0NZQGNTFyIZQ5N84LAdVZJLKZYevEcf4h1DX0YbmJpevEAT
+        3cWf6uvYxdWPbbGu9lxfx+WTH2IX/tmB5KfJEzxuuTt20BX+Euv1Nk5hpiNZpclrTn3yQiaXpGJ58nHf
+        F8IcFjZ5nT+mVPoGssiGom2D26cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="searchButton.ImageActive" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAYVJREFUWEft
+        lksrRVEUxy/yKJQBE9/A43MwEoUoc11EfAgGDHwFBsqAL2LokUceU6UMUPLI8v/v/keUrrv2Ofee1PnV
+        r3ta+6y1z71373V2qeAfY61wBu7DK3gveb0HOYZ7aoJNwBtof3gNx5WUBdYA11ScHsFlOAC75SBcgccw
+        uW8TNqlIGmxVBV/hQuWiHLNF3cucDQ3EYqPwA77AIQWrgPeGHOaOKOjFWuAl5DeZVdCBzSn3AjYr6MGm
+        VeAQNiroIPwdJ6oxqaAH21XykgIRhIXJGjsKeAg/HZP7FIgg7A7WOFXAgz0quUOBCKxTNR4U8GBPSm5X
+        IIJ0D5DFX8BmxRpnCnjIfxEm25DtNaKlpt+G3xsRer8Xm1dubCMiNqYi73BYwSrIpBUT64F3kA/xBr0v
+        o3UNxGC98FyFbvVJ+Trm4uqHbZKrPcvX8Y/JD2AXrNeB5LfJE8KRjLtjG3KFP0teb8EpmOZIVmnymlNM
+        nsvk5Ktj8eSDfZ8LVs5x8oJ6Uyp9AsoHYNZuhwvjAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
