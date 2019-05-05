@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class RentUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -332,21 +336,21 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private Bunifu.Framework.UI.BunifuFlatButton Check;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown3;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuDatepicker endDatePicker;
-        private Bunifu.Framework.UI.BunifuDatepicker startDatePicker;
+        private BunifuCards bunifuCards1;
+        private BunifuCheckbox bunifuCheckbox1;
+        private BunifuFlatButton Check;
+        private BunifuImageButton bunifuImageButton1;
+        private BunifuDropdown bunifuDropdown3;
+        private BunifuDropdown bunifuDropdown2;
+        private BunifuDropdown bunifuDropdown1;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private BunifuDatepicker endDatePicker;
+        private BunifuDatepicker startDatePicker;
     }
 }

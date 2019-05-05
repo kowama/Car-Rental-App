@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.UserControls
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.UserControls
 {
     partial class RentBillUserControl
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -229,15 +233,15 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuFlatButton Check;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuDatepicker endDatePicker;
-        private System.Windows.Forms.Label label5;
+        private BunifuCards bunifuCards1;
+        private BunifuFlatButton Check;
+        private Label label3;
+        private Label label7;
+        private Label label6;
+        private Label label4;
+        private Label label1;
+        private Label label2;
+        private BunifuDatepicker endDatePicker;
+        private Label label5;
     }
 }

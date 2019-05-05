@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.Forms
 {
     partial class ClassificationForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -278,21 +282,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource classificationBindingSource;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid classificationDataGridView;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.Button newClassificationSaveButton;
-        private System.Windows.Forms.Label validationLabel;
-        private Bunifu.Framework.UI.BunifuImageButton refreshDataGrid;
-        private Bunifu.Framework.UI.BunifuImageButton deleteButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox newClassificationDescriptionTextBox;
-        private System.Windows.Forms.TextBox newClassificationNameTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private BindingSource classificationBindingSource;
+        private BunifuCustomDataGrid classificationDataGridView;
+        private Panel panel1;
+        private Panel panel2;
+        private BunifuCustomLabel bunifuCustomLabel1;
+        private Button newClassificationSaveButton;
+        private Label validationLabel;
+        private BunifuImageButton refreshDataGrid;
+        private BunifuImageButton deleteButton;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private TextBox newClassificationDescriptionTextBox;
+        private TextBox newClassificationNameTextBox;
+        private Label label2;
+        private Label label1;
     }
 }

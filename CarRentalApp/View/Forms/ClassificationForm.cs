@@ -56,7 +56,7 @@ namespace CarRentalApp.View.Forms
             if(!ValidateInput()) return;
             try
             {
-                _unitOfWork.Classifications.Add(new Classification()
+                _unitOfWork.Classifications.Add(new Classification
                 {
                     Name = newClassificationNameTextBox.Text,
                     Description = newClassificationDescriptionTextBox.Text

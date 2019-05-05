@@ -1,11 +1,15 @@
-﻿namespace CarRentalApp.View.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using Bunifu.Framework.UI;
+
+namespace CarRentalApp.View.Forms
 {
     partial class CarForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -307,25 +311,25 @@
         }
 
         #endregion
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
-        private Bunifu.Framework.UI.BunifuImageButton classificationButton;
-        private Bunifu.Framework.UI.BunifuDatepicker carNextDrainDatepicker;
-        private Bunifu.Framework.UI.BunifuDatepicker carPurchaseDatepicker;
-        private Bunifu.Framework.UI.BunifuDropdown carClassificationDropDown;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox carDescriptionTextBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox carNameTextBox;
-        private System.Windows.Forms.TextBox carLicensePlateTextBox;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox carPricePerDayTextBox;
-        private System.Windows.Forms.Label validationLabel;
+        private OpenFileDialog openFileDialog;
+        private BunifuCards bunifuCards1;
+        private BunifuImageButton classificationButton;
+        private BunifuDatepicker carNextDrainDatepicker;
+        private BunifuDatepicker carPurchaseDatepicker;
+        private BunifuDropdown carClassificationDropDown;
+        private PictureBox pictureBox1;
+        private Button saveButton;
+        private Label label1;
+        private Label label2;
+        private TextBox carDescriptionTextBox;
+        private Label label3;
+        private Label label5;
+        private Label label4;
+        private TextBox carNameTextBox;
+        private TextBox carLicensePlateTextBox;
+        private Label NameLabel;
+        private Label label7;
+        private MaskedTextBox carPricePerDayTextBox;
+        private Label validationLabel;
     }
 }

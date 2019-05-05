@@ -47,7 +47,7 @@ namespace CarRentalApp.View.Forms
         }
         private Car InputsToCar()
         {
-            return new Car()
+            return new Car
             {
                 Name = carNameTextBox.Text,
                 LicensePlate = carLicensePlateTextBox.Text,

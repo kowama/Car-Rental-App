@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
-using Bunifu.DataViz;
 using Bunifu.Framework.UI;
 
 namespace CarRentalApp.View.UserControls
@@ -375,6 +374,7 @@ namespace CarRentalApp.View.UserControls
             this.searchButton.TabIndex = 9;
             this.searchButton.TabStop = false;
             this.searchButton.Zoom = 10;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // searchTextBox
             // 
