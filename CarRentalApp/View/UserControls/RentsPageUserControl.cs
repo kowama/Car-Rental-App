@@ -4,8 +4,11 @@ using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.UserControls
 {
+   
     public partial class RentsPageUserControl : UserControl
     {
+        
+
         private readonly UnitOfWork _unitOfWork;
         public RentsPageUserControl()
         {
@@ -24,13 +27,18 @@ namespace CarRentalApp.View.UserControls
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SetPageToContentPanel(new RentUserControl(_unitOfWork));
+            SetPageToContentPanel(new RentUserControl(_unitOfWork,Next));
 
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
 
+        }
+        private void Next(Control nextControl=null)
+        {
+            if(nextControl != null)
+                SetPageToContentPanel(nextControl);
         }
     }
 }

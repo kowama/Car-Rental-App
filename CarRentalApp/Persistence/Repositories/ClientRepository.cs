@@ -12,6 +12,11 @@ namespace CarRentalApp.Persistence.Repositories
 
         public CarRentalAppContext CarRentalAppContext => Context as CarRentalAppContext;
 
+        public Client GetByResume(string resume)
+        {
+           return SingleOrDefault(c => c.Resume == resume);
+        }
+
     }
 
 }

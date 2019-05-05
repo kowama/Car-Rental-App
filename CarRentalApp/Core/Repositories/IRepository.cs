@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using CarRentalApp.Core.domain;
 
 namespace CarRentalApp.Core.Repositories
 {

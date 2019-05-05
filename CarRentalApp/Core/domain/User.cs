@@ -28,13 +28,5 @@ namespace CarRentalApp.Core.domain
 
             return false;
         }
-
-        public void AddRole(string roleName)
-        {
-           Roles.Add(new Role
-           {
-               Name = roleName
-           });
-        }
     }
 }

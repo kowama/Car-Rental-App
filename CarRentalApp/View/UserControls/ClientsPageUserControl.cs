@@ -100,7 +100,7 @@ namespace CarRentalApp.View.UserControls
                 sb.Append(" ");
                 var client = (Client) clientsDataGridView.SelectedRows[i].DataBoundItem;
                 clients.Add(client);
-                sb.Append(client.Resume());
+                sb.Append(client.Resume);
                 sb.Append(Environment.NewLine);
             }
 

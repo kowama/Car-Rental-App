@@ -50,7 +50,7 @@ namespace CarRentalApp.View.UserControls
         private void RefreshCarsIndicator(List<Car> cars)
         {
             var total = cars.Count;
-            var available = cars.FindAll(c => c.IsAvailable()).Count;
+            var available = cars.FindAll(c => c.IsAvailable).Count;
             var unavailable = total - available;
             var ratio = available / total;
 

@@ -38,8 +38,8 @@ namespace CarRentalApp.View.UserControls
             this.nextButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.clientDropDown = new Bunifu.Framework.UI.BunifuDropdown();
+            this.carsDropDown = new Bunifu.Framework.UI.BunifuDropdown();
+            this.clientsDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,8 +63,8 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.Controls.Add(this.nextButton);
             this.bunifuCards1.Controls.Add(this.bunifuImageButton1);
             this.bunifuCards1.Controls.Add(this.bunifuDropdown3);
-            this.bunifuCards1.Controls.Add(this.bunifuDropdown2);
-            this.bunifuCards1.Controls.Add(this.clientDropDown);
+            this.bunifuCards1.Controls.Add(this.carsDropDown);
+            this.bunifuCards1.Controls.Add(this.clientsDropDown);
             this.bunifuCards1.Controls.Add(this.label7);
             this.bunifuCards1.Controls.Add(this.label6);
             this.bunifuCards1.Controls.Add(this.label5);
@@ -119,7 +119,7 @@ namespace CarRentalApp.View.UserControls
             this.nextButton.IconVisible = true;
             this.nextButton.IconZoom = 90D;
             this.nextButton.IsTab = false;
-            this.nextButton.Location = new System.Drawing.Point(63, 427);
+            this.nextButton.Location = new System.Drawing.Point(62, 427);
             this.nextButton.Margin = new System.Windows.Forms.Padding(4);
             this.nextButton.MinimumSize = new System.Drawing.Size(182, 48);
             this.nextButton.Name = "nextButton";
@@ -169,37 +169,37 @@ namespace CarRentalApp.View.UserControls
             this.bunifuDropdown3.Size = new System.Drawing.Size(290, 36);
             this.bunifuDropdown3.TabIndex = 4;
             // 
-            // bunifuDropdown2
+            // carsDropDown
             // 
-            this.bunifuDropdown2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuDropdown2.BorderRadius = 3;
-            this.bunifuDropdown2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.items = new string[0];
-            this.bunifuDropdown2.Location = new System.Drawing.Point(165, 215);
-            this.bunifuDropdown2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.NomalColor = System.Drawing.Color.DimGray;
-            this.bunifuDropdown2.onHoverColor = System.Drawing.Color.Blue;
-            this.bunifuDropdown2.selectedIndex = -1;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(248, 36);
-            this.bunifuDropdown2.TabIndex = 4;
+            this.carsDropDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.carsDropDown.BorderRadius = 3;
+            this.carsDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.carsDropDown.ForeColor = System.Drawing.Color.White;
+            this.carsDropDown.items = new string[0];
+            this.carsDropDown.Location = new System.Drawing.Point(165, 215);
+            this.carsDropDown.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.carsDropDown.Name = "carsDropDown";
+            this.carsDropDown.NomalColor = System.Drawing.Color.DimGray;
+            this.carsDropDown.onHoverColor = System.Drawing.Color.Blue;
+            this.carsDropDown.selectedIndex = -1;
+            this.carsDropDown.Size = new System.Drawing.Size(248, 36);
+            this.carsDropDown.TabIndex = 4;
             // 
-            // clientDropDown
+            // clientsDropDown
             // 
-            this.clientDropDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.clientDropDown.BorderRadius = 3;
-            this.clientDropDown.DisabledColor = System.Drawing.Color.Gray;
-            this.clientDropDown.ForeColor = System.Drawing.Color.White;
-            this.clientDropDown.items = new string[0];
-            this.clientDropDown.Location = new System.Drawing.Point(165, 159);
-            this.clientDropDown.Margin = new System.Windows.Forms.Padding(4);
-            this.clientDropDown.Name = "clientDropDown";
-            this.clientDropDown.NomalColor = System.Drawing.Color.DimGray;
-            this.clientDropDown.onHoverColor = System.Drawing.Color.Blue;
-            this.clientDropDown.selectedIndex = -1;
-            this.clientDropDown.Size = new System.Drawing.Size(248, 36);
-            this.clientDropDown.TabIndex = 4;
+            this.clientsDropDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.clientsDropDown.BorderRadius = 3;
+            this.clientsDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.clientsDropDown.ForeColor = System.Drawing.Color.White;
+            this.clientsDropDown.items = new string[0];
+            this.clientsDropDown.Location = new System.Drawing.Point(165, 159);
+            this.clientsDropDown.Margin = new System.Windows.Forms.Padding(4);
+            this.clientsDropDown.Name = "clientsDropDown";
+            this.clientsDropDown.NomalColor = System.Drawing.Color.DimGray;
+            this.clientsDropDown.onHoverColor = System.Drawing.Color.Blue;
+            this.clientsDropDown.selectedIndex = -1;
+            this.clientsDropDown.Size = new System.Drawing.Size(248, 36);
+            this.clientsDropDown.TabIndex = 4;
             // 
             // label7
             // 
@@ -342,8 +342,8 @@ namespace CarRentalApp.View.UserControls
         private BunifuFlatButton nextButton;
         private BunifuImageButton bunifuImageButton1;
         private BunifuDropdown bunifuDropdown3;
-        private BunifuDropdown bunifuDropdown2;
-        private BunifuDropdown clientDropDown;
+        private BunifuDropdown carsDropDown;
+        private BunifuDropdown clientsDropDown;
         private Label label7;
         private Label label6;
         private Label label5;

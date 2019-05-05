@@ -41,15 +41,20 @@ namespace CarRentalApp.Core.domain
 
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
 
-        public bool IsAvailable()
-        {
-            foreach (var rent in Rents)
-            {
-                if (rent.DateEnd <= DateTime.Now)
-                    return false;
-            }
+        public string Resume => $"{Name}, {LicensePlate}";
 
-            return true;
+        public bool IsAvailable 
+        {
+            get
+            {
+                foreach (var rent in Rents)
+                {
+                    if (rent.DateEnd <= DateTime.Now)
+                        return false;
+                }
+
+                return true;
+            }
         }
     }
 }

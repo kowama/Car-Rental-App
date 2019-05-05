@@ -34,15 +34,18 @@ namespace CarRentalApp.View.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentBillUserControl));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.Check = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.backButtonLabel = new System.Windows.Forms.LinkLabel();
+            this.validateButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.billManageByLabel = new System.Windows.Forms.Label();
+            this.billAmountLabel = new System.Windows.Forms.Label();
+            this.billClientNameLabel = new System.Windows.Forms.Label();
+            this.billNumLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.endDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.billDateDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,15 +55,18 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.BorderRadius = 30;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.DarkSlateGray;
-            this.bunifuCards1.Controls.Add(this.Check);
-            this.bunifuCards1.Controls.Add(this.label5);
-            this.bunifuCards1.Controls.Add(this.label3);
-            this.bunifuCards1.Controls.Add(this.label7);
+            this.bunifuCards1.Controls.Add(this.backButtonLabel);
+            this.bunifuCards1.Controls.Add(this.validateButton);
+            this.bunifuCards1.Controls.Add(this.billManageByLabel);
+            this.bunifuCards1.Controls.Add(this.billAmountLabel);
+            this.bunifuCards1.Controls.Add(this.billClientNameLabel);
+            this.bunifuCards1.Controls.Add(this.billNumLabel);
             this.bunifuCards1.Controls.Add(this.label6);
             this.bunifuCards1.Controls.Add(this.label4);
+            this.bunifuCards1.Controls.Add(this.label8);
             this.bunifuCards1.Controls.Add(this.label1);
             this.bunifuCards1.Controls.Add(this.label2);
-            this.bunifuCards1.Controls.Add(this.endDatePicker);
+            this.bunifuCards1.Controls.Add(this.billDateDatePicker);
             this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuCards1.LeftSahddow = false;
@@ -71,150 +77,189 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.Size = new System.Drawing.Size(499, 510);
             this.bunifuCards1.TabIndex = 2;
             // 
-            // Check
+            // backButtonLabel
             // 
-            this.Check.Active = false;
-            this.Check.Activecolor = System.Drawing.Color.Blue;
-            this.Check.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Check.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Check.BorderRadius = 5;
-            this.Check.ButtonText = "Validate";
-            this.Check.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Check.DisabledColor = System.Drawing.Color.Gray;
-            this.Check.Iconcolor = System.Drawing.Color.Transparent;
-            this.Check.Iconimage = ((System.Drawing.Image)(resources.GetObject("Check.Iconimage")));
-            this.Check.Iconimage_right = null;
-            this.Check.Iconimage_right_Selected = null;
-            this.Check.Iconimage_Selected = null;
-            this.Check.IconMarginLeft = 0;
-            this.Check.IconMarginRight = 0;
-            this.Check.IconRightVisible = true;
-            this.Check.IconRightZoom = 0D;
-            this.Check.IconVisible = true;
-            this.Check.IconZoom = 90D;
-            this.Check.IsTab = false;
-            this.Check.Location = new System.Drawing.Point(146, 431);
-            this.Check.Margin = new System.Windows.Forms.Padding(4);
-            this.Check.MinimumSize = new System.Drawing.Size(182, 48);
-            this.Check.Name = "Check";
-            this.Check.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Check.OnHovercolor = System.Drawing.Color.SpringGreen;
-            this.Check.OnHoverTextColor = System.Drawing.Color.White;
-            this.Check.selected = false;
-            this.Check.Size = new System.Drawing.Size(182, 48);
-            this.Check.TabIndex = 8;
-            this.Check.Text = "Validate";
-            this.Check.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Check.Textcolor = System.Drawing.Color.White;
-            this.Check.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButtonLabel.AutoSize = true;
+            this.backButtonLabel.Location = new System.Drawing.Point(127, 433);
+            this.backButtonLabel.Name = "backButtonLabel";
+            this.backButtonLabel.Size = new System.Drawing.Size(65, 16);
+            this.backButtonLabel.TabIndex = 9;
+            this.backButtonLabel.TabStop = true;
+            this.backButtonLabel.Text = "go Back";
+            this.backButtonLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BackButtonLabel_LinkClicked);
             // 
-            // label7
+            // validateButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Gold;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(171, 42);
-            this.label7.MinimumSize = new System.Drawing.Size(255, 36);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.label7.Size = new System.Drawing.Size(290, 36);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "cd26ccf6-75d6-4521-884f-1693c62ed303";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.validateButton.Active = false;
+            this.validateButton.Activecolor = System.Drawing.Color.Blue;
+            this.validateButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.validateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.validateButton.BorderRadius = 5;
+            this.validateButton.ButtonText = "Validate";
+            this.validateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.validateButton.DisabledColor = System.Drawing.Color.Gray;
+            this.validateButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.validateButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("validateButton.Iconimage")));
+            this.validateButton.Iconimage_right = null;
+            this.validateButton.Iconimage_right_Selected = null;
+            this.validateButton.Iconimage_Selected = null;
+            this.validateButton.IconMarginLeft = 0;
+            this.validateButton.IconMarginRight = 0;
+            this.validateButton.IconRightVisible = true;
+            this.validateButton.IconRightZoom = 0D;
+            this.validateButton.IconVisible = true;
+            this.validateButton.IconZoom = 90D;
+            this.validateButton.IsTab = false;
+            this.validateButton.Location = new System.Drawing.Point(257, 417);
+            this.validateButton.Margin = new System.Windows.Forms.Padding(4);
+            this.validateButton.MinimumSize = new System.Drawing.Size(182, 48);
+            this.validateButton.Name = "validateButton";
+            this.validateButton.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
+            this.validateButton.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.validateButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.validateButton.selected = false;
+            this.validateButton.Size = new System.Drawing.Size(182, 48);
+            this.validateButton.TabIndex = 8;
+            this.validateButton.Text = "Validate";
+            this.validateButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.validateButton.Textcolor = System.Drawing.Color.White;
+            this.validateButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validateButton.Click += new System.EventHandler(this.ValidateButton_Click);
+            // 
+            // billManageByLabel
+            // 
+            this.billManageByLabel.AutoSize = true;
+            this.billManageByLabel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.billManageByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billManageByLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.billManageByLabel.Location = new System.Drawing.Point(180, 312);
+            this.billManageByLabel.MinimumSize = new System.Drawing.Size(290, 36);
+            this.billManageByLabel.Name = "billManageByLabel";
+            this.billManageByLabel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.billManageByLabel.Size = new System.Drawing.Size(290, 36);
+            this.billManageByLabel.TabIndex = 3;
+            this.billManageByLabel.Text = "Latif Karambiri";
+            this.billManageByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // billAmountLabel
+            // 
+            this.billAmountLabel.AutoSize = true;
+            this.billAmountLabel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.billAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billAmountLabel.ForeColor = System.Drawing.Color.SpringGreen;
+            this.billAmountLabel.Location = new System.Drawing.Point(180, 189);
+            this.billAmountLabel.MinimumSize = new System.Drawing.Size(290, 36);
+            this.billAmountLabel.Name = "billAmountLabel";
+            this.billAmountLabel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.billAmountLabel.Size = new System.Drawing.Size(290, 36);
+            this.billAmountLabel.TabIndex = 3;
+            this.billAmountLabel.Text = "678.00 MAD";
+            this.billAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // billClientNameLabel
+            // 
+            this.billClientNameLabel.AutoSize = true;
+            this.billClientNameLabel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.billClientNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billClientNameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.billClientNameLabel.Location = new System.Drawing.Point(180, 254);
+            this.billClientNameLabel.MinimumSize = new System.Drawing.Size(290, 36);
+            this.billClientNameLabel.Name = "billClientNameLabel";
+            this.billClientNameLabel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.billClientNameLabel.Size = new System.Drawing.Size(290, 36);
+            this.billClientNameLabel.TabIndex = 3;
+            this.billClientNameLabel.Text = "Marin Casali";
+            this.billClientNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // billNumLabel
+            // 
+            this.billNumLabel.AutoSize = true;
+            this.billNumLabel.BackColor = System.Drawing.Color.Gold;
+            this.billNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billNumLabel.Location = new System.Drawing.Point(183, 62);
+            this.billNumLabel.MinimumSize = new System.Drawing.Size(290, 36);
+            this.billNumLabel.Name = "billNumLabel";
+            this.billNumLabel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.billNumLabel.Size = new System.Drawing.Size(290, 36);
+            this.billNumLabel.TabIndex = 3;
+            this.billNumLabel.Text = "cd26ccf6-75d6-4521-884f-1693c62ed303";
+            this.billNumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 42);
+            this.label6.Location = new System.Drawing.Point(36, 62);
             this.label6.MinimumSize = new System.Drawing.Size(0, 36);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.label6.Size = new System.Drawing.Size(72, 36);
             this.label6.TabIndex = 3;
             this.label6.Text = "Bill num";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 236);
+            this.label4.Location = new System.Drawing.Point(36, 312);
             this.label4.MinimumSize = new System.Drawing.Size(0, 36);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.label4.Size = new System.Drawing.Size(105, 36);
             this.label4.TabIndex = 3;
             this.label4.Text = "Managed By";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 126);
-            this.label2.MinimumSize = new System.Drawing.Size(0, 36);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.label2.Size = new System.Drawing.Size(51, 36);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Date";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // endDatePicker
-            // 
-            this.endDatePicker.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.endDatePicker.BorderRadius = 3;
-            this.endDatePicker.ForeColor = System.Drawing.Color.White;
-            this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDatePicker.FormatCustom = "dd/MM/yyyy HH:mm";
-            this.endDatePicker.Location = new System.Drawing.Point(162, 126);
-            this.endDatePicker.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.endDatePicker.MaximumSize = new System.Drawing.Size(0, 49);
-            this.endDatePicker.MinimumSize = new System.Drawing.Size(290, 36);
-            this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(290, 36);
-            this.endDatePicker.TabIndex = 2;
-            this.endDatePicker.Value = new System.DateTime(2019, 5, 5, 8, 21, 28, 0);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 189);
+            this.label8.MinimumSize = new System.Drawing.Size(0, 36);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.label8.Size = new System.Drawing.Size(69, 36);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Amount";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 190);
+            this.label1.Location = new System.Drawing.Point(36, 254);
             this.label1.MinimumSize = new System.Drawing.Size(0, 36);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.label1.Size = new System.Drawing.Size(102, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "Client Name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(159, 190);
-            this.label3.MinimumSize = new System.Drawing.Size(255, 36);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.label3.Size = new System.Drawing.Size(255, 36);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Marin Casali";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 126);
+            this.label2.MinimumSize = new System.Drawing.Size(0, 36);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.label2.Size = new System.Drawing.Size(51, 36);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Date";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // billDateDatePicker
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label5.Location = new System.Drawing.Point(159, 236);
-            this.label5.MinimumSize = new System.Drawing.Size(255, 36);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.label5.Size = new System.Drawing.Size(255, 36);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Latif Karambiri";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.billDateDatePicker.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.billDateDatePicker.BorderRadius = 3;
+            this.billDateDatePicker.ForeColor = System.Drawing.Color.White;
+            this.billDateDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.billDateDatePicker.FormatCustom = "dd/MM/yyyy HH:mm";
+            this.billDateDatePicker.Location = new System.Drawing.Point(183, 126);
+            this.billDateDatePicker.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.billDateDatePicker.MaximumSize = new System.Drawing.Size(0, 49);
+            this.billDateDatePicker.MinimumSize = new System.Drawing.Size(290, 36);
+            this.billDateDatePicker.Name = "billDateDatePicker";
+            this.billDateDatePicker.Size = new System.Drawing.Size(290, 36);
+            this.billDateDatePicker.TabIndex = 2;
+            this.billDateDatePicker.Value = new System.DateTime(2019, 5, 5, 8, 21, 28, 0);
             // 
             // RentBillUserControl
             // 
@@ -234,14 +279,17 @@ namespace CarRentalApp.View.UserControls
         #endregion
 
         private BunifuCards bunifuCards1;
-        private BunifuFlatButton Check;
-        private Label label3;
-        private Label label7;
+        private BunifuFlatButton validateButton;
+        private Label billClientNameLabel;
+        private Label billNumLabel;
         private Label label6;
         private Label label4;
         private Label label1;
         private Label label2;
-        private BunifuDatepicker endDatePicker;
-        private Label label5;
+        private BunifuDatepicker billDateDatePicker;
+        private Label billManageByLabel;
+        private LinkLabel backButtonLabel;
+        private Label billAmountLabel;
+        private Label label8;
     }
 }
