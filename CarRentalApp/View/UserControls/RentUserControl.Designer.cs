@@ -35,11 +35,11 @@ namespace CarRentalApp.View.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentUserControl));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.Check = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.nextButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.clientDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,11 +60,11 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.DarkSlateGray;
             this.bunifuCards1.Controls.Add(this.bunifuCheckbox1);
-            this.bunifuCards1.Controls.Add(this.Check);
+            this.bunifuCards1.Controls.Add(this.nextButton);
             this.bunifuCards1.Controls.Add(this.bunifuImageButton1);
             this.bunifuCards1.Controls.Add(this.bunifuDropdown3);
             this.bunifuCards1.Controls.Add(this.bunifuDropdown2);
-            this.bunifuCards1.Controls.Add(this.bunifuDropdown1);
+            this.bunifuCards1.Controls.Add(this.clientDropDown);
             this.bunifuCards1.Controls.Add(this.label7);
             this.bunifuCards1.Controls.Add(this.label6);
             this.bunifuCards1.Controls.Add(this.label5);
@@ -97,42 +97,43 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 9;
             // 
-            // Check
+            // nextButton
             // 
-            this.Check.Active = false;
-            this.Check.Activecolor = System.Drawing.Color.Blue;
-            this.Check.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Check.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Check.BorderRadius = 5;
-            this.Check.ButtonText = "Check";
-            this.Check.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Check.DisabledColor = System.Drawing.Color.Gray;
-            this.Check.Iconcolor = System.Drawing.Color.Transparent;
-            this.Check.Iconimage = ((System.Drawing.Image)(resources.GetObject("Check.Iconimage")));
-            this.Check.Iconimage_right = null;
-            this.Check.Iconimage_right_Selected = null;
-            this.Check.Iconimage_Selected = null;
-            this.Check.IconMarginLeft = 0;
-            this.Check.IconMarginRight = 0;
-            this.Check.IconRightVisible = true;
-            this.Check.IconRightZoom = 0D;
-            this.Check.IconVisible = true;
-            this.Check.IconZoom = 90D;
-            this.Check.IsTab = false;
-            this.Check.Location = new System.Drawing.Point(63, 427);
-            this.Check.Margin = new System.Windows.Forms.Padding(4);
-            this.Check.MinimumSize = new System.Drawing.Size(182, 48);
-            this.Check.Name = "Check";
-            this.Check.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Check.OnHovercolor = System.Drawing.Color.Blue;
-            this.Check.OnHoverTextColor = System.Drawing.Color.White;
-            this.Check.selected = false;
-            this.Check.Size = new System.Drawing.Size(182, 48);
-            this.Check.TabIndex = 8;
-            this.Check.Text = "Check";
-            this.Check.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Check.Textcolor = System.Drawing.Color.White;
-            this.Check.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.Active = false;
+            this.nextButton.Activecolor = System.Drawing.Color.Blue;
+            this.nextButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nextButton.BorderRadius = 5;
+            this.nextButton.ButtonText = "Next";
+            this.nextButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextButton.DisabledColor = System.Drawing.Color.Gray;
+            this.nextButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.nextButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("nextButton.Iconimage")));
+            this.nextButton.Iconimage_right = null;
+            this.nextButton.Iconimage_right_Selected = null;
+            this.nextButton.Iconimage_Selected = null;
+            this.nextButton.IconMarginLeft = 0;
+            this.nextButton.IconMarginRight = 0;
+            this.nextButton.IconRightVisible = true;
+            this.nextButton.IconRightZoom = 0D;
+            this.nextButton.IconVisible = true;
+            this.nextButton.IconZoom = 90D;
+            this.nextButton.IsTab = false;
+            this.nextButton.Location = new System.Drawing.Point(63, 427);
+            this.nextButton.Margin = new System.Windows.Forms.Padding(4);
+            this.nextButton.MinimumSize = new System.Drawing.Size(182, 48);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nextButton.OnHovercolor = System.Drawing.Color.Blue;
+            this.nextButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.nextButton.selected = false;
+            this.nextButton.Size = new System.Drawing.Size(198, 48);
+            this.nextButton.TabIndex = 8;
+            this.nextButton.Text = "Next";
+            this.nextButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nextButton.Textcolor = System.Drawing.Color.White;
+            this.nextButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // bunifuImageButton1
             // 
@@ -184,21 +185,21 @@ namespace CarRentalApp.View.UserControls
             this.bunifuDropdown2.Size = new System.Drawing.Size(248, 36);
             this.bunifuDropdown2.TabIndex = 4;
             // 
-            // bunifuDropdown1
+            // clientDropDown
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.items = new string[0];
-            this.bunifuDropdown1.Location = new System.Drawing.Point(165, 159);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.DimGray;
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.Blue;
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(248, 36);
-            this.bunifuDropdown1.TabIndex = 4;
+            this.clientDropDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.clientDropDown.BorderRadius = 3;
+            this.clientDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.clientDropDown.ForeColor = System.Drawing.Color.White;
+            this.clientDropDown.items = new string[0];
+            this.clientDropDown.Location = new System.Drawing.Point(165, 159);
+            this.clientDropDown.Margin = new System.Windows.Forms.Padding(4);
+            this.clientDropDown.Name = "clientDropDown";
+            this.clientDropDown.NomalColor = System.Drawing.Color.DimGray;
+            this.clientDropDown.onHoverColor = System.Drawing.Color.Blue;
+            this.clientDropDown.selectedIndex = -1;
+            this.clientDropDown.Size = new System.Drawing.Size(248, 36);
+            this.clientDropDown.TabIndex = 4;
             // 
             // label7
             // 
@@ -338,11 +339,11 @@ namespace CarRentalApp.View.UserControls
 
         private BunifuCards bunifuCards1;
         private BunifuCheckbox bunifuCheckbox1;
-        private BunifuFlatButton Check;
+        private BunifuFlatButton nextButton;
         private BunifuImageButton bunifuImageButton1;
         private BunifuDropdown bunifuDropdown3;
         private BunifuDropdown bunifuDropdown2;
-        private BunifuDropdown bunifuDropdown1;
+        private BunifuDropdown clientDropDown;
         private Label label7;
         private Label label6;
         private Label label5;

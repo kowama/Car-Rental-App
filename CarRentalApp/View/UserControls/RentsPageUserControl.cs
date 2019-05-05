@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.UserControls
 {
     public partial class RentsPageUserControl : UserControl
     {
+        private readonly UnitOfWork _unitOfWork;
         public RentsPageUserControl()
         {
             InitializeComponent();
+            _unitOfWork = new UnitOfWork();
         }
 
         private void SetPageToContentPanel(Control page)
@@ -21,7 +24,7 @@ namespace CarRentalApp.View.UserControls
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SetPageToContentPanel(new RentUserControl());
+            SetPageToContentPanel(new RentUserControl(_unitOfWork));
 
         }
 

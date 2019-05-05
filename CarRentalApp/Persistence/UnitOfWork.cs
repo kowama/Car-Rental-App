@@ -3,6 +3,7 @@ using System.Data.Entity.Validation;
 using System.Text;
 using CarRentalApp.Core;
 using CarRentalApp.Core.Repositories;
+using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence.Repositories;
 
 namespace CarRentalApp.Persistence
@@ -22,8 +23,11 @@ namespace CarRentalApp.Persistence
             Rents = new RentRepository(_context);
             Roles = new RoleRepository(_context);
             Users = new UserRepository(_context);
+            _context.Database.Log =  AppLogger.LogSqlInFile;
+
+
         }
-        
+
         public IBillRepository Bills { get; private set; }
 
         public ICarRepository Cars { get; private set; }

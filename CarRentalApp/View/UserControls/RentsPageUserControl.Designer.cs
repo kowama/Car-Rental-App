@@ -47,15 +47,6 @@ namespace CarRentalApp.View.UserControls
             this.exportToExelButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.clientsDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manageByUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.deleteButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.addNewCarsButton = new Bunifu.Framework.UI.BunifuImageButton();
@@ -69,6 +60,16 @@ namespace CarRentalApp.View.UserControls
             this.panel10 = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manageByUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.currentPageLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.rentsTabPage.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,7 +79,6 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).BeginInit();
@@ -88,6 +88,7 @@ namespace CarRentalApp.View.UserControls
             this.newRentTabPage.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuSeparator1
@@ -118,6 +119,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.currentPageLabel);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -167,7 +169,7 @@ namespace CarRentalApp.View.UserControls
             this.panel7.Location = new System.Drawing.Point(0, -9);
             this.panel7.MaximumSize = new System.Drawing.Size(0, 64);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1006, 64);
+            this.panel7.Size = new System.Drawing.Size(0, 64);
             this.panel7.TabIndex = 20;
             // 
             // printButton
@@ -251,58 +253,6 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGridView.Size = new System.Drawing.Size(1006, 454);
             this.clientsDataGridView.TabIndex = 17;
             // 
-            // rentIdDataGridViewTextBoxColumn
-            // 
-            this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
-            this.rentIdDataGridViewTextBoxColumn.HeaderText = "RentId";
-            this.rentIdDataGridViewTextBoxColumn.Name = "rentIdDataGridViewTextBoxColumn";
-            // 
-            // carDataGridViewTextBoxColumn
-            // 
-            this.carDataGridViewTextBoxColumn.DataPropertyName = "Car";
-            this.carDataGridViewTextBoxColumn.HeaderText = "Car";
-            this.carDataGridViewTextBoxColumn.Name = "carDataGridViewTextBoxColumn";
-            // 
-            // clientDataGridViewTextBoxColumn
-            // 
-            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
-            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
-            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-            // 
-            // manageByUserDataGridViewTextBoxColumn
-            // 
-            this.manageByUserDataGridViewTextBoxColumn.DataPropertyName = "ManageByUser";
-            this.manageByUserDataGridViewTextBoxColumn.HeaderText = "ManageByUser";
-            this.manageByUserDataGridViewTextBoxColumn.Name = "manageByUserDataGridViewTextBoxColumn";
-            // 
-            // billDataGridViewTextBoxColumn
-            // 
-            this.billDataGridViewTextBoxColumn.DataPropertyName = "Bill";
-            this.billDataGridViewTextBoxColumn.HeaderText = "Bill";
-            this.billDataGridViewTextBoxColumn.Name = "billDataGridViewTextBoxColumn";
-            // 
-            // dateStartDataGridViewTextBoxColumn
-            // 
-            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            // 
-            // dateEndDataGridViewTextBoxColumn
-            // 
-            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            // 
-            // rentBindingSource
-            // 
-            this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.deleteButton);
@@ -315,7 +265,7 @@ namespace CarRentalApp.View.UserControls
             this.panel4.Location = new System.Drawing.Point(10, 10);
             this.panel4.MaximumSize = new System.Drawing.Size(0, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1006, 64);
+            this.panel4.Size = new System.Drawing.Size(0, 64);
             this.panel4.TabIndex = 0;
             // 
             // deleteButton
@@ -431,6 +381,8 @@ namespace CarRentalApp.View.UserControls
             // 
             // newRentTabPage
             // 
+            this.newRentTabPage.AutoScroll = true;
+            this.newRentTabPage.AutoScrollMinSize = new System.Drawing.Size(0, 520);
             this.newRentTabPage.BackColor = System.Drawing.SystemColors.Control;
             this.newRentTabPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.newRentTabPage.Controls.Add(this.panel8);
@@ -454,12 +406,13 @@ namespace CarRentalApp.View.UserControls
             // 
             // panel10
             // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel10.Location = new System.Drawing.Point(524, 5);
+            this.panel10.MinimumSize = new System.Drawing.Size(500, 520);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(500, 528);
+            this.panel10.Size = new System.Drawing.Size(500, 530);
             this.panel10.TabIndex = 1;
             // 
             // contentPanel
@@ -467,10 +420,11 @@ namespace CarRentalApp.View.UserControls
             this.contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.contentPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.contentPanel.Location = new System.Drawing.Point(5, 5);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Padding = new System.Windows.Forms.Padding(4);
-            this.contentPanel.Size = new System.Drawing.Size(517, 528);
+            this.contentPanel.Size = new System.Drawing.Size(509, 530);
             this.contentPanel.TabIndex = 0;
             // 
             // panel2
@@ -482,6 +436,72 @@ namespace CarRentalApp.View.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1044, 577);
             this.panel2.TabIndex = 14;
+            // 
+            // rentIdDataGridViewTextBoxColumn
+            // 
+            this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.HeaderText = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.Name = "rentIdDataGridViewTextBoxColumn";
+            // 
+            // carDataGridViewTextBoxColumn
+            // 
+            this.carDataGridViewTextBoxColumn.DataPropertyName = "Car";
+            this.carDataGridViewTextBoxColumn.HeaderText = "Car";
+            this.carDataGridViewTextBoxColumn.Name = "carDataGridViewTextBoxColumn";
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            // 
+            // manageByUserDataGridViewTextBoxColumn
+            // 
+            this.manageByUserDataGridViewTextBoxColumn.DataPropertyName = "ManageByUser";
+            this.manageByUserDataGridViewTextBoxColumn.HeaderText = "ManageByUser";
+            this.manageByUserDataGridViewTextBoxColumn.Name = "manageByUserDataGridViewTextBoxColumn";
+            // 
+            // billDataGridViewTextBoxColumn
+            // 
+            this.billDataGridViewTextBoxColumn.DataPropertyName = "Bill";
+            this.billDataGridViewTextBoxColumn.HeaderText = "Bill";
+            this.billDataGridViewTextBoxColumn.Name = "billDataGridViewTextBoxColumn";
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            // 
+            // dateEndDataGridViewTextBoxColumn
+            // 
+            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            // 
+            // rentBindingSource
+            // 
+            this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
+            // 
+            // currentPageLabel
+            // 
+            this.currentPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentPageLabel.AutoSize = true;
+            this.currentPageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentPageLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.currentPageLabel.Location = new System.Drawing.Point(156, 63);
+            this.currentPageLabel.Name = "currentPageLabel";
+            this.currentPageLabel.Size = new System.Drawing.Size(208, 25);
+            this.currentPageLabel.TabIndex = 7;
+            this.currentPageLabel.Text = "Register New Rent";
+            this.currentPageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RentsPageUserControl
             // 
@@ -501,7 +521,6 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.exportToExelButton)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addNewCarsButton)).EndInit();
@@ -511,6 +530,7 @@ namespace CarRentalApp.View.UserControls
             this.newRentTabPage.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +569,6 @@ namespace CarRentalApp.View.UserControls
         private Panel panel8;
         private Panel panel10;
         private Panel contentPanel;
+        private Label currentPageLabel;
     }
 }
