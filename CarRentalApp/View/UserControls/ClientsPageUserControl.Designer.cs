@@ -204,9 +204,9 @@ namespace CarRentalApp.View.UserControls
             this.seachFilterDropdown.DisabledColor = System.Drawing.Color.Gray;
             this.seachFilterDropdown.ForeColor = System.Drawing.Color.White;
             this.seachFilterDropdown.items = new string[] {
-        "First Name",
-        "Last Name",
-        "Name",
+        "FirstName",
+        "LastName",
+        "Driver License",
         "CIN",
         "Phone",
         "Phone",
@@ -217,7 +217,7 @@ namespace CarRentalApp.View.UserControls
             this.seachFilterDropdown.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(50)))));
             this.seachFilterDropdown.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(55)))), ((int)(((byte)(48)))));
             this.seachFilterDropdown.selectedIndex = 7;
-            this.seachFilterDropdown.Size = new System.Drawing.Size(123, 35);
+            this.seachFilterDropdown.Size = new System.Drawing.Size(154, 35);
             this.seachFilterDropdown.TabIndex = 2;
             // 
             // exportToExelButton

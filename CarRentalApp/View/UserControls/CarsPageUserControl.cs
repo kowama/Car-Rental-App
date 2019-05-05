@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
+using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
 using CarRentalApp.View.Forms;
 
@@ -23,10 +25,18 @@ namespace CarRentalApp.View.UserControls
 
         private void DisplaySelectedCar(Car car = null)
         {
-            if (car == null && carsDataGridView.RowCount != 0)
-                car = (Car) carsDataGridView.Rows[0].DataBoundItem;
+            if (car == null)
+            {
+                selectedCarNameLabel.Text
+                    = selectedCarClassificationLabel.Text
+                        = selectedCarLicensePlateLabel.Text
+                            = selectedCarDescriptionLabel.Text
+                                = selectedCarPricePerDayLabel.Text
+                                    = selectedCarNextDrainDateLabel.Text
+                                        = selectedCarPurchaseDateLabel.Text = string.Empty;
+                return;
+            }
 
-            if (car == null) return;
             selectedCarNameLabel.Text = car.Name;
             selectedCarClassificationLabel.Text = car.Classification.Name;
             selectedCarLicensePlateLabel.Text = car.LicensePlate;
@@ -40,20 +50,43 @@ namespace CarRentalApp.View.UserControls
         private void RefreshCarsIndicator(List<Car> cars)
         {
             var total = cars.Count;
-            var available = cars.FindAll(c=>c.IsAvailable()).Count;
+            var available = cars.FindAll(c => c.IsAvailable()).Count;
             var unavailable = total - available;
             var ratio = available / total;
 
             carsCountLabel.Text = $@"{total:F0}";
             availableCarsCountLabel.Text = $@"{available:F0}";
             inavailableCarsCountLabel.Text = $@"{unavailable:F0}";
-            carsAvailableCircleProgressBar.Value = ratio*100;
+            carsAvailableCircleProgressBar.Value = ratio * 100;
+        }
 
+        private void Search(string keyword)
+        {
+            if (keyword == _searchTextBoxDefaultText)
+                keyword = string.Empty;
+
+            var cars = _unitOfWork.Cars.GetAll().ToList();
+            var all = seachFilterDropdown.selectedIndex == seachFilterDropdown.items.Length - 1;
+            var filterBy = seachFilterDropdown.selectedValue;
+
+            var filteredCars = cars.FindAll(c =>
+                c.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                (filterBy == nameDataGridViewTextBoxColumn.HeaderText || all)
+                || c.LicensePlate.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                (filterBy == licensePlateDataGridViewTextBoxColumn.HeaderText || all)
+                || c.Classification.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                (filterBy == classificationDataGridViewTextBoxColumn.HeaderText || all)
+                || c.PricePerDay.ToString(CultureInfo.CurrentCulture)
+                    .Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                (filterBy == pricePerDayDataGridViewTextBoxColumn.HeaderText || all)
+            );
+
+            carsBindingSource.DataSource = filteredCars;
         }
 
         private void RefreshDataGridView()
         {
-            var  cars = _unitOfWork.Cars.GetAll().ToList();
+            var cars = _unitOfWork.Cars.GetAll().ToList();
             carsBindingSource.DataSource = cars;
             RefreshCarsIndicator(cars);
         }
@@ -61,6 +94,15 @@ namespace CarRentalApp.View.UserControls
         protected override void OnLoad(EventArgs e)
         {
             RefreshDataGridView();
+            seachFilterDropdown.items = new[]
+            {
+                nameDataGridViewTextBoxColumn.HeaderText,
+                licensePlateDataGridViewTextBoxColumn.HeaderText,
+                pricePerDayDataGridViewTextBoxColumn.HeaderText,
+                classificationDataGridViewTextBoxColumn.HeaderText,
+                "All"
+            };
+            seachFilterDropdown.selectedIndex = seachFilterDropdown.items.Length - 1;
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
@@ -70,13 +112,13 @@ namespace CarRentalApp.View.UserControls
 
         private void SearchTextBox_Leave(object sender, EventArgs e)
         {
-            if (searchTextBox.Text.Trim() == string.Empty) searchTextBox.Text = _searchTextBoxDefaultText;
+            if (string.IsNullOrWhiteSpace(searchTextBox.Text)) searchTextBox.Text = _searchTextBoxDefaultText;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            Search(searchTextBox.Text.Trim());
         }
-
 
         private void RefreshDataGrid_Click(object sender, EventArgs e)
         {
@@ -88,6 +130,7 @@ namespace CarRentalApp.View.UserControls
             var carForm = new CarForm();
             carForm.Show();
         }
+
         private void DeleteButton_Click(object sender, EventArgs e)
         {
         }
@@ -102,9 +145,7 @@ namespace CarRentalApp.View.UserControls
 
             var car = (Car) carsDataGridView.Rows[e.RowIndex].DataBoundItem;
             if (carsDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.Classification)))
-            {
                 e.Value = car.Classification.Name;
-            }
         }
 
         private void CarsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -115,8 +156,13 @@ namespace CarRentalApp.View.UserControls
 
         private void SelectedCarDescriptionLabel_Paint(object sender, PaintEventArgs e)
         {
-            selectedCarDescriptionLabel.MaximumSize = new Size(selectedCarCardPanel.Width,0);
+            selectedCarDescriptionLabel.MaximumSize = new Size(selectedCarCardPanel.Width, 0);
+        }
 
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Search(searchTextBox.Text.Trim());
         }
     }
 }

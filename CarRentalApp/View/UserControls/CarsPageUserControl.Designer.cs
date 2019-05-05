@@ -34,9 +34,9 @@ namespace CarRentalApp.View.UserControls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsPageUserControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,6 +66,7 @@ namespace CarRentalApp.View.UserControls
             this.panel8 = new System.Windows.Forms.Panel();
             this.selectedCarDescriptionLabel = new System.Windows.Forms.Label();
             this.selectedCarCardPanel = new System.Windows.Forms.Panel();
+            this.selectedCarLicensePlateLabel = new System.Windows.Forms.Label();
             this.selectedCarStatus = new System.Windows.Forms.Label();
             this.carImagePictureBox = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -77,7 +78,6 @@ namespace CarRentalApp.View.UserControls
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.selectedCarRentsCountLabel = new System.Windows.Forms.Label();
-            this.selectedCarLicensePlateLabel = new System.Windows.Forms.Label();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licensePlateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -217,6 +217,7 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.Text = "Enter a keyword";
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
             this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // seachFilterDropdown
@@ -227,9 +228,9 @@ namespace CarRentalApp.View.UserControls
             this.seachFilterDropdown.ForeColor = System.Drawing.Color.White;
             this.seachFilterDropdown.items = new string[] {
         "Name",
-        "License Plate",
-        "Price Per Day",
-        "Description",
+        "LicensePlate",
+        "PricePerDay",
+        "Classification",
         "All"};
             this.seachFilterDropdown.Location = new System.Drawing.Point(217, 57);
             this.seachFilterDropdown.Name = "seachFilterDropdown";
@@ -259,8 +260,8 @@ namespace CarRentalApp.View.UserControls
             // carsDataGridView
             // 
             this.carsDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.carsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.carsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.carsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -269,14 +270,14 @@ namespace CarRentalApp.View.UserControls
             this.carsDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.carsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.carsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.carsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.carsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -386,9 +387,9 @@ namespace CarRentalApp.View.UserControls
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(19, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(215, 20);
+            this.label9.Size = new System.Drawing.Size(225, 20);
             this.label9.TabIndex = 13;
-            this.label9.Text = "Total Rented(unavailable)";
+            this.label9.Text = "Total Rented(unavailable) :";
             // 
             // carsCountLabel
             // 
@@ -496,10 +497,11 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarClassificationLabel.BackColor = System.Drawing.Color.Blue;
             this.selectedCarClassificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectedCarClassificationLabel.ForeColor = System.Drawing.Color.White;
-            this.selectedCarClassificationLabel.Location = new System.Drawing.Point(283, 25);
+            this.selectedCarClassificationLabel.Location = new System.Drawing.Point(285, 20);
             this.selectedCarClassificationLabel.MinimumSize = new System.Drawing.Size(80, 0);
             this.selectedCarClassificationLabel.Name = "selectedCarClassificationLabel";
-            this.selectedCarClassificationLabel.Size = new System.Drawing.Size(80, 20);
+            this.selectedCarClassificationLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.selectedCarClassificationLabel.Size = new System.Drawing.Size(89, 30);
             this.selectedCarClassificationLabel.TabIndex = 3;
             this.selectedCarClassificationLabel.Text = "Model  S";
             // 
@@ -560,15 +562,32 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarCardPanel.Size = new System.Drawing.Size(418, 191);
             this.selectedCarCardPanel.TabIndex = 9;
             // 
+            // selectedCarLicensePlateLabel
+            // 
+            this.selectedCarLicensePlateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.selectedCarLicensePlateLabel.AutoSize = true;
+            this.selectedCarLicensePlateLabel.BackColor = System.Drawing.Color.Gold;
+            this.selectedCarLicensePlateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedCarLicensePlateLabel.ForeColor = System.Drawing.Color.Black;
+            this.selectedCarLicensePlateLabel.Location = new System.Drawing.Point(2, 151);
+            this.selectedCarLicensePlateLabel.MinimumSize = new System.Drawing.Size(80, 0);
+            this.selectedCarLicensePlateLabel.Name = "selectedCarLicensePlateLabel";
+            this.selectedCarLicensePlateLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.selectedCarLicensePlateLabel.Size = new System.Drawing.Size(122, 40);
+            this.selectedCarLicensePlateLabel.TabIndex = 3;
+            this.selectedCarLicensePlateLabel.Text = "38730 E-43";
+            // 
             // selectedCarStatus
             // 
             this.selectedCarStatus.AutoSize = true;
             this.selectedCarStatus.BackColor = System.Drawing.Color.SeaGreen;
             this.selectedCarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectedCarStatus.ForeColor = System.Drawing.SystemColors.Window;
-            this.selectedCarStatus.Location = new System.Drawing.Point(320, 161);
+            this.selectedCarStatus.Location = new System.Drawing.Point(297, 151);
             this.selectedCarStatus.Name = "selectedCarStatus";
-            this.selectedCarStatus.Size = new System.Drawing.Size(95, 24);
+            this.selectedCarStatus.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.selectedCarStatus.Size = new System.Drawing.Size(115, 28);
             this.selectedCarStatus.TabIndex = 2;
             this.selectedCarStatus.Text = "Available";
             // 
@@ -611,6 +630,7 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarPricePerDayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectedCarPricePerDayLabel.ForeColor = System.Drawing.Color.Green;
             this.selectedCarPricePerDayLabel.Location = new System.Drawing.Point(176, 9);
+            this.selectedCarPricePerDayLabel.MinimumSize = new System.Drawing.Size(146, 40);
             this.selectedCarPricePerDayLabel.Name = "selectedCarPricePerDayLabel";
             this.selectedCarPricePerDayLabel.Padding = new System.Windows.Forms.Padding(10);
             this.selectedCarPricePerDayLabel.Size = new System.Drawing.Size(146, 40);
@@ -708,22 +728,6 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarRentsCountLabel.TabIndex = 5;
             this.selectedCarRentsCountLabel.Text = "43";
             // 
-            // selectedCarLicensePlateLabel
-            // 
-            this.selectedCarLicensePlateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.selectedCarLicensePlateLabel.AutoSize = true;
-            this.selectedCarLicensePlateLabel.BackColor = System.Drawing.Color.Gold;
-            this.selectedCarLicensePlateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedCarLicensePlateLabel.ForeColor = System.Drawing.Color.Black;
-            this.selectedCarLicensePlateLabel.Location = new System.Drawing.Point(2, 151);
-            this.selectedCarLicensePlateLabel.MinimumSize = new System.Drawing.Size(80, 0);
-            this.selectedCarLicensePlateLabel.Name = "selectedCarLicensePlateLabel";
-            this.selectedCarLicensePlateLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.selectedCarLicensePlateLabel.Size = new System.Drawing.Size(122, 40);
-            this.selectedCarLicensePlateLabel.TabIndex = 3;
-            this.selectedCarLicensePlateLabel.Text = "38730 E-43";
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -739,9 +743,9 @@ namespace CarRentalApp.View.UserControls
             // pricePerDayDataGridViewTextBoxColumn
             // 
             this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
-            dataGridViewCellStyle9.Format = "0,0.00 MAD";
-            dataGridViewCellStyle9.NullValue = null;
-            this.pricePerDayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Format = "0,0.00 MAD";
+            dataGridViewCellStyle6.NullValue = null;
+            this.pricePerDayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price Per Day";
             this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
             // 
