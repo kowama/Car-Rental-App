@@ -10,5 +10,10 @@ namespace CarRentalApp.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+        protected override void Seed(CarRentalAppContext context)
+        {
+            var initializer = new CarRentalDbInitializer();
+            initializer.InitializeDatabase(context);
+        }
     }
 }

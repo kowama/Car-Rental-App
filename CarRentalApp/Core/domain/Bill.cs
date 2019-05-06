@@ -7,7 +7,7 @@ namespace CarRentalApp.Core.domain
     {
         public Guid BillNumber { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
 
         [Range(0, 99999999)]
         public decimal Amount  { get; set; }

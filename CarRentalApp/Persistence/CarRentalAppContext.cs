@@ -6,12 +6,6 @@ namespace CarRentalApp.Persistence
 {
     public class CarRentalAppContext : DbContext
     {
-        public CarRentalAppContext()
-            : base("name=CarRentalAppContext")
-        {
-            Configuration.LazyLoadingEnabled = true;
-        }
-
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Classification> Classifications { get; set; }
@@ -19,6 +13,14 @@ namespace CarRentalApp.Persistence
         public virtual DbSet<Rent> Rents { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public CarRentalAppContext()
+            : base("name=CarRentalAppContext")
+        {
+            Configuration.LazyLoadingEnabled = true;
+            Database.SetInitializer(new CarRentalDbInitializer());
+            Database.Initialize(true);
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -49,6 +49,17 @@ namespace CarRentalApp.View.UserControls
             validationLabel.Visible = true;
         }
 
+        private bool ValidInputsToBill()
+        {
+
+            _rent.Bill.Amount = billAmountNumericUpDown.Value;
+            _rent.Bill.Details = billDetailsTextBox.Text;
+            _rent.Bill.Date = billDateDatePicker.Value;
+
+            return true;
+        }
+
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -63,7 +74,7 @@ namespace CarRentalApp.View.UserControls
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if(!ValidateBill()) return;
+            if(!ValidInputsToBill()) return;
             try
             {
                 _unitOfWork.Rents.Add(_rent);
@@ -77,14 +88,6 @@ namespace CarRentalApp.View.UserControls
             
         }
 
-        private bool ValidateBill()
-        {
-
-            _rent.Bill.Amount = billAmountNumericUpDown.Value;
-            _rent.Bill.Details = billDetailsTextBox.Text;
-
-            return true;
-        }
 
     }
 }

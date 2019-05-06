@@ -29,7 +29,7 @@ namespace CarRentalApp.Core.domain
         
         public int Id { get; set; }
         public string Name { get; set; }
-        public byte[] CarImage { get; set; }
+        public byte[] CarImage  { get; set; }
         public string LicensePlate { get; set; }
 
         public DateTime? PurchaseDate { get; set; }

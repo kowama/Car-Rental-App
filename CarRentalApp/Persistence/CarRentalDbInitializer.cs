@@ -13,11 +13,7 @@ namespace CarRentalApp.Persistence
     {
         protected override void Seed(CarRentalAppContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
-
+         
             var administratorRole = new Role
             {
                 Name = RoleName.ADMINISTRATOR,

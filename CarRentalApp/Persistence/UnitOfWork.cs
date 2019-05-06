@@ -64,6 +64,7 @@ namespace CarRentalApp.Persistence
         }
     }
 
+    //todo refactor this class
     public class FormattedDbEntityValidationException : Exception
     {
         public FormattedDbEntityValidationException(Exception innerException) :
