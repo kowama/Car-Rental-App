@@ -20,7 +20,7 @@ namespace CarRentalApp.View.UserControls
         {
             InitializeComponent();
             _searchTextBoxDefaultText = searchTextBox.Text;
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = UnitOfWork.Instance;
         }
 
         private void DisplaySelectedCar(Car car = null)

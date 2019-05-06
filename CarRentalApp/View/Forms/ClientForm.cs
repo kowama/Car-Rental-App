@@ -13,7 +13,7 @@ namespace CarRentalApp.View.Forms
         public ClientForm()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = UnitOfWork.Instance;
         }
 
         private bool ValidateInput()

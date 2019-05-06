@@ -10,9 +10,11 @@ namespace CarRentalApp.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {
+        public static UnitOfWork Instance { get; } = new UnitOfWork();
+
         private readonly CarRentalAppContext _context;
 
-        public UnitOfWork()
+        private UnitOfWork()
         {
             _context = new CarRentalAppContext();
 

@@ -13,7 +13,8 @@ namespace CarRentalApp.Persistence.Repositories
 
         public Car GetByResume(string resume)
         {
-            return SingleOrDefault(c => c.Resume == resume);
+            var licensePlate = Car.LicensePlateFromResume(resume);
+            return SingleOrDefault(c => c.LicensePlate == licensePlate);
         }
 
     }

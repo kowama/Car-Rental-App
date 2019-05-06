@@ -15,7 +15,7 @@ namespace CarRentalApp.View.UserControls
         public UsersPageUserControl()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = UnitOfWork.Instance;
             _defaultSearchTextBoxText = searchTextBox.Text;
 
         }

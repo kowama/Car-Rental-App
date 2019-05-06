@@ -20,7 +20,7 @@ namespace CarRentalApp.View.UserControls
         {
             InitializeComponent();
             _searchTextBoxDefaultText = searchTextBox.Text.Trim();
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = UnitOfWork.Instance;
         }
 
         private void RefreshDataGridView()

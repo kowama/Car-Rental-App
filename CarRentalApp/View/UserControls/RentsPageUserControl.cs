@@ -13,7 +13,7 @@ namespace CarRentalApp.View.UserControls
         public RentsPageUserControl()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = UnitOfWork.Instance;
         }
 
         private void SetPageToContentPanel(Control page)

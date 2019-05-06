@@ -14,7 +14,8 @@ namespace CarRentalApp.Persistence.Repositories
 
         public Client GetByResume(string resume)
         {
-           return SingleOrDefault(c => c.Resume == resume);
+            var cin = Client.CinFromResume(resume);
+           return SingleOrDefault(c => c.Cin == cin);
         }
 
     }

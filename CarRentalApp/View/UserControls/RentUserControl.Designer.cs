@@ -34,13 +34,16 @@ namespace CarRentalApp.View.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentUserControl));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.saveButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.nextButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.validationLabel = new System.Windows.Forms.Label();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.nextButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.checkButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.rentStateDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.carsDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.clientsDropDown = new Bunifu.Framework.UI.BunifuDropdown();
-            this.label7 = new System.Windows.Forms.Label();
+            this.rentBillNumLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,13 +62,16 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.BorderRadius = 30;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.DarkSlateGray;
-            this.bunifuCards1.Controls.Add(this.bunifuCheckbox1);
+            this.bunifuCards1.Controls.Add(this.saveButton);
             this.bunifuCards1.Controls.Add(this.nextButton);
+            this.bunifuCards1.Controls.Add(this.validationLabel);
+            this.bunifuCards1.Controls.Add(this.bunifuCheckbox1);
+            this.bunifuCards1.Controls.Add(this.checkButton);
             this.bunifuCards1.Controls.Add(this.bunifuImageButton1);
-            this.bunifuCards1.Controls.Add(this.bunifuDropdown3);
+            this.bunifuCards1.Controls.Add(this.rentStateDropDown);
             this.bunifuCards1.Controls.Add(this.carsDropDown);
             this.bunifuCards1.Controls.Add(this.clientsDropDown);
-            this.bunifuCards1.Controls.Add(this.label7);
+            this.bunifuCards1.Controls.Add(this.rentBillNumLabel);
             this.bunifuCards1.Controls.Add(this.label6);
             this.bunifuCards1.Controls.Add(this.label5);
             this.bunifuCards1.Controls.Add(this.label4);
@@ -84,6 +90,76 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCards1.Size = new System.Drawing.Size(499, 510);
             this.bunifuCards1.TabIndex = 1;
             // 
+            // saveButton
+            // 
+            this.saveButton.ActiveBorderThickness = 1;
+            this.saveButton.ActiveCornerRadius = 20;
+            this.saveButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.saveButton.ActiveForecolor = System.Drawing.Color.White;
+            this.saveButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.saveButton.BackColor = System.Drawing.SystemColors.Window;
+            this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
+            this.saveButton.ButtonText = "Save";
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.saveButton.IdleBorderThickness = 1;
+            this.saveButton.IdleCornerRadius = 20;
+            this.saveButton.IdleFillColor = System.Drawing.Color.White;
+            this.saveButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.saveButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.saveButton.Location = new System.Drawing.Point(373, 444);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(5);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 48);
+            this.saveButton.TabIndex = 12;
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.saveButton.Visible = false;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // nextButton
+            // 
+            this.nextButton.ActiveBorderThickness = 1;
+            this.nextButton.ActiveCornerRadius = 20;
+            this.nextButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.nextButton.ActiveForecolor = System.Drawing.Color.White;
+            this.nextButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.nextButton.BackColor = System.Drawing.SystemColors.Window;
+            this.nextButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextButton.BackgroundImage")));
+            this.nextButton.ButtonText = "Next";
+            this.nextButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.nextButton.IdleBorderThickness = 1;
+            this.nextButton.IdleCornerRadius = 20;
+            this.nextButton.IdleFillColor = System.Drawing.Color.White;
+            this.nextButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.nextButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.nextButton.Location = new System.Drawing.Point(290, 444);
+            this.nextButton.Margin = new System.Windows.Forms.Padding(5);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 48);
+            this.nextButton.TabIndex = 12;
+            this.nextButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nextButton.Visible = false;
+            this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // validationLabel
+            // 
+            this.validationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.validationLabel.AutoSize = true;
+            this.validationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.validationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validationLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.validationLabel.Location = new System.Drawing.Point(34, 412);
+            this.validationLabel.Name = "validationLabel";
+            this.validationLabel.Size = new System.Drawing.Size(229, 16);
+            this.validationLabel.TabIndex = 10;
+            this.validationLabel.Text = "Rent information are not Valides";
+            this.validationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.validationLabel.Visible = false;
+            // 
             // bunifuCheckbox1
             // 
             this.bunifuCheckbox1.BackColor = System.Drawing.Color.Lime;
@@ -97,43 +173,43 @@ namespace CarRentalApp.View.UserControls
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 9;
             // 
-            // nextButton
+            // checkButton
             // 
-            this.nextButton.Active = false;
-            this.nextButton.Activecolor = System.Drawing.Color.Blue;
-            this.nextButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.nextButton.BorderRadius = 5;
-            this.nextButton.ButtonText = "Next";
-            this.nextButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nextButton.DisabledColor = System.Drawing.Color.Gray;
-            this.nextButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.nextButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("nextButton.Iconimage")));
-            this.nextButton.Iconimage_right = null;
-            this.nextButton.Iconimage_right_Selected = null;
-            this.nextButton.Iconimage_Selected = null;
-            this.nextButton.IconMarginLeft = 0;
-            this.nextButton.IconMarginRight = 0;
-            this.nextButton.IconRightVisible = true;
-            this.nextButton.IconRightZoom = 0D;
-            this.nextButton.IconVisible = true;
-            this.nextButton.IconZoom = 90D;
-            this.nextButton.IsTab = false;
-            this.nextButton.Location = new System.Drawing.Point(62, 427);
-            this.nextButton.Margin = new System.Windows.Forms.Padding(4);
-            this.nextButton.MinimumSize = new System.Drawing.Size(182, 48);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.nextButton.OnHovercolor = System.Drawing.Color.Blue;
-            this.nextButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.nextButton.selected = false;
-            this.nextButton.Size = new System.Drawing.Size(198, 48);
-            this.nextButton.TabIndex = 8;
-            this.nextButton.Text = "Next";
-            this.nextButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nextButton.Textcolor = System.Drawing.Color.White;
-            this.nextButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
+            this.checkButton.Active = false;
+            this.checkButton.Activecolor = System.Drawing.Color.Blue;
+            this.checkButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.checkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.checkButton.BorderRadius = 5;
+            this.checkButton.ButtonText = "Check";
+            this.checkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkButton.DisabledColor = System.Drawing.Color.Gray;
+            this.checkButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.checkButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("checkButton.Iconimage")));
+            this.checkButton.Iconimage_right = null;
+            this.checkButton.Iconimage_right_Selected = null;
+            this.checkButton.Iconimage_Selected = null;
+            this.checkButton.IconMarginLeft = 0;
+            this.checkButton.IconMarginRight = 0;
+            this.checkButton.IconRightVisible = true;
+            this.checkButton.IconRightZoom = 0D;
+            this.checkButton.IconVisible = true;
+            this.checkButton.IconZoom = 90D;
+            this.checkButton.IsTab = false;
+            this.checkButton.Location = new System.Drawing.Point(37, 444);
+            this.checkButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.checkButton.MinimumSize = new System.Drawing.Size(182, 48);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
+            this.checkButton.OnHovercolor = System.Drawing.Color.Blue;
+            this.checkButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.checkButton.selected = false;
+            this.checkButton.Size = new System.Drawing.Size(182, 48);
+            this.checkButton.TabIndex = 8;
+            this.checkButton.Text = "Check";
+            this.checkButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkButton.Textcolor = System.Drawing.Color.White;
+            this.checkButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkButton.Click += new System.EventHandler(this.CheckButton_Click);
             // 
             // bunifuImageButton1
             // 
@@ -149,25 +225,25 @@ namespace CarRentalApp.View.UserControls
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
-            // bunifuDropdown3
+            // rentStateDropDown
             // 
-            this.bunifuDropdown3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuDropdown3.BorderRadius = 3;
-            this.bunifuDropdown3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown3.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown3.items = new string[] {
+            this.rentStateDropDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.rentStateDropDown.BorderRadius = 3;
+            this.rentStateDropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.rentStateDropDown.ForeColor = System.Drawing.Color.White;
+            this.rentStateDropDown.items = new string[] {
         "PEDDING",
         "CONFIRMED",
         "CANCELED"};
-            this.bunifuDropdown3.Location = new System.Drawing.Point(165, 295);
-            this.bunifuDropdown3.Margin = new System.Windows.Forms.Padding(9, 6, 9, 6);
-            this.bunifuDropdown3.MinimumSize = new System.Drawing.Size(290, 36);
-            this.bunifuDropdown3.Name = "bunifuDropdown3";
-            this.bunifuDropdown3.NomalColor = System.Drawing.Color.Blue;
-            this.bunifuDropdown3.onHoverColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDropdown3.selectedIndex = -1;
-            this.bunifuDropdown3.Size = new System.Drawing.Size(290, 36);
-            this.bunifuDropdown3.TabIndex = 4;
+            this.rentStateDropDown.Location = new System.Drawing.Point(165, 295);
+            this.rentStateDropDown.Margin = new System.Windows.Forms.Padding(9, 6, 9, 6);
+            this.rentStateDropDown.MinimumSize = new System.Drawing.Size(290, 36);
+            this.rentStateDropDown.Name = "rentStateDropDown";
+            this.rentStateDropDown.NomalColor = System.Drawing.Color.Blue;
+            this.rentStateDropDown.onHoverColor = System.Drawing.Color.SeaGreen;
+            this.rentStateDropDown.selectedIndex = -1;
+            this.rentStateDropDown.Size = new System.Drawing.Size(290, 36);
+            this.rentStateDropDown.TabIndex = 4;
             // 
             // carsDropDown
             // 
@@ -201,19 +277,18 @@ namespace CarRentalApp.View.UserControls
             this.clientsDropDown.Size = new System.Drawing.Size(248, 36);
             this.clientsDropDown.TabIndex = 4;
             // 
-            // label7
+            // rentBillNumLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Gold;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(165, 361);
-            this.label7.MinimumSize = new System.Drawing.Size(255, 36);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.label7.Size = new System.Drawing.Size(290, 36);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "cd26ccf6-75d6-4521-884f-1693c62ed303";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rentBillNumLabel.AutoSize = true;
+            this.rentBillNumLabel.BackColor = System.Drawing.Color.Gold;
+            this.rentBillNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentBillNumLabel.Location = new System.Drawing.Point(165, 361);
+            this.rentBillNumLabel.MinimumSize = new System.Drawing.Size(255, 36);
+            this.rentBillNumLabel.Name = "rentBillNumLabel";
+            this.rentBillNumLabel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.rentBillNumLabel.Size = new System.Drawing.Size(255, 36);
+            this.rentBillNumLabel.TabIndex = 3;
+            this.rentBillNumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -339,12 +414,11 @@ namespace CarRentalApp.View.UserControls
 
         private BunifuCards bunifuCards1;
         private BunifuCheckbox bunifuCheckbox1;
-        private BunifuFlatButton nextButton;
         private BunifuImageButton bunifuImageButton1;
-        private BunifuDropdown bunifuDropdown3;
+        private BunifuDropdown rentStateDropDown;
         private BunifuDropdown carsDropDown;
         private BunifuDropdown clientsDropDown;
-        private Label label7;
+        private Label rentBillNumLabel;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -353,5 +427,9 @@ namespace CarRentalApp.View.UserControls
         private Label label1;
         private BunifuDatepicker endDatePicker;
         private BunifuDatepicker startDatePicker;
+        private Label validationLabel;
+        private BunifuFlatButton checkButton;
+        private BunifuThinButton2 nextButton;
+        private BunifuThinButton2 saveButton;
     }
 }

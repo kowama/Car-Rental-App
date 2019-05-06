@@ -49,9 +49,9 @@ namespace CarRentalApp.View.Forms
             this.menuButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userInfoPanel = new System.Windows.Forms.Panel();
-            this.userRoleLabel = new System.Windows.Forms.Label();
+            this.appUserRoleLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
+            this.appUsernameLabel = new System.Windows.Forms.Label();
             this.contentPannel = new System.Windows.Forms.Panel();
             this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.datetimeTimer = new System.Windows.Forms.Timer(this.components);
@@ -337,27 +337,27 @@ namespace CarRentalApp.View.Forms
             // 
             this.userInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userInfoPanel.Controls.Add(this.userRoleLabel);
+            this.userInfoPanel.Controls.Add(this.appUserRoleLabel);
             this.userInfoPanel.Controls.Add(this.label2);
-            this.userInfoPanel.Controls.Add(this.usernameLabel);
+            this.userInfoPanel.Controls.Add(this.appUsernameLabel);
             this.userInfoPanel.Location = new System.Drawing.Point(0, 115);
             this.userInfoPanel.Name = "userInfoPanel";
             this.userInfoPanel.Size = new System.Drawing.Size(220, 63);
             this.userInfoPanel.TabIndex = 1;
             // 
-            // userRoleLabel
+            // appUserRoleLabel
             // 
-            this.userRoleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.appUserRoleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userRoleLabel.AutoSize = true;
-            this.userRoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userRoleLabel.ForeColor = System.Drawing.Color.White;
-            this.userRoleLabel.Location = new System.Drawing.Point(94, 48);
-            this.userRoleLabel.Name = "userRoleLabel";
-            this.userRoleLabel.Size = new System.Drawing.Size(118, 15);
-            this.userRoleLabel.TabIndex = 3;
-            this.userRoleLabel.Text = "ADMINISTRATOR";
-            this.userRoleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.appUserRoleLabel.AutoSize = true;
+            this.appUserRoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appUserRoleLabel.ForeColor = System.Drawing.Color.White;
+            this.appUserRoleLabel.Location = new System.Drawing.Point(94, 48);
+            this.appUserRoleLabel.Name = "appUserRoleLabel";
+            this.appUserRoleLabel.Size = new System.Drawing.Size(118, 15);
+            this.appUserRoleLabel.TabIndex = 3;
+            this.appUserRoleLabel.Text = "ADMINISTRATOR";
+            this.appUserRoleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -373,19 +373,19 @@ namespace CarRentalApp.View.Forms
             this.label2.Text = "Rent Luxury";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // usernameLabel
+            // appUsernameLabel
             // 
-            this.usernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.appUsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(0, 48);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(66, 16);
-            this.usernameLabel.TabIndex = 3;
-            this.usernameLabel.Text = "Kowama";
-            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.appUsernameLabel.AutoSize = true;
+            this.appUsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appUsernameLabel.ForeColor = System.Drawing.Color.White;
+            this.appUsernameLabel.Location = new System.Drawing.Point(0, 48);
+            this.appUsernameLabel.Name = "appUsernameLabel";
+            this.appUsernameLabel.Size = new System.Drawing.Size(66, 16);
+            this.appUsernameLabel.TabIndex = 3;
+            this.appUsernameLabel.Text = "Kowama";
+            this.appUsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // contentPannel
             // 
@@ -438,8 +438,8 @@ namespace CarRentalApp.View.Forms
         private Panel contentPannel;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label usernameLabel;
-        private Label userRoleLabel;
+        private Label appUsernameLabel;
+        private Label appUserRoleLabel;
         private Panel panel5;
         private Button menuButton;
         private Timer menuTimer;

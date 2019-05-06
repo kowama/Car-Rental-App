@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace CarRentalApp.Core.domain
 {
@@ -16,6 +17,13 @@ namespace CarRentalApp.Core.domain
         public virtual ObservableCollection<Rent> Rents { get; set; } = new ObservableCollection<Rent>();
 
         public string Resume => $"{FirstName}, {LastName}, {Cin}";
+
+        public string FullName => $"{FirstName} {LastName}";
+
+        public static string CinFromResume(string resume)
+        {
+            return resume.Split(',').Last().Trim();
+        }
         
     }
 }

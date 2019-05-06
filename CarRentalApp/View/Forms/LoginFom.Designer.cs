@@ -112,7 +112,7 @@ namespace CarRentalApp.View.Forms
             this.loginButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.loginButton.Textcolor = System.Drawing.Color.White;
             this.loginButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // bunifuCustomLabel2
             // 

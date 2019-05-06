@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using CarRentalApp.Core.domain;
 using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.UserControls
@@ -8,21 +10,81 @@ namespace CarRentalApp.View.UserControls
     {
         private readonly UnitOfWork _unitOfWork;
         private readonly Action<Control> _next;
-        public RentBillUserControl(UnitOfWork unitOfWork, Action<Control> next)
+        private readonly Rent _rent;
+
+        public RentBillUserControl(UnitOfWork unitOfWork, Action<Control> next, Rent rent)
         {
             InitializeComponent();
             _unitOfWork = unitOfWork;
             _next = next;
+            _rent = rent;
         }
 
+        private void GenerateBill()
+        {
+            if (_rent != null && _rent.Bill == null)
+            {
+                _rent.Bill = new Bill
+                {
+                    BillNumber = Guid.NewGuid()
+                };
+            }
+        }
+
+        private void UpdateUi()
+        {
+            if (_rent.Bill == null) GenerateBill();
+            if (_rent.Bill == null) return;
+            billNumLabel.Text = _rent.Bill.BillNumber.ToString("D").ToUpper();
+            billDetailsTextBox.Text = _rent.Bill.Details;
+//          billDateDatePicker = 
+            billClientNameLabel.Text = _rent.Client.FullName;
+            billManageByLabel.Text = _rent.ManageByUser.FullName;
+            billAmountNumericUpDown.Value = _rent.Bill.Amount;
+        }
+        private void OnValidating(string message, bool error = true)
+        {
+            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
+            validationLabel.Text = message;
+            validationLabel.Visible = true;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            UpdateUi();
+        }
+        
         private void BackButtonLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            _next(new RentUserControl(_unitOfWork,_next));
+            _rent.Bill = null;
+            _next(new RentUserControl(_unitOfWork,_next,_rent));
         }
 
-        private void ValidateButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            _next(new RentUserControl(_unitOfWork, _next));
+            if(!ValidateBill()) return;
+            try
+            {
+                _unitOfWork.Rents.Add(_rent);
+                _unitOfWork.Complete();
+                _next(new RentUserControl(_unitOfWork, _next,_rent));
+            }
+            catch (FormattedDbEntityValidationException ex)
+            {
+                OnValidating(ex.Message);
+            }
+            
         }
+
+        private bool ValidateBill()
+        {
+
+            _rent.Bill.Amount = billAmountNumericUpDown.Value;
+            _rent.Bill.Details = billDetailsTextBox.Text;
+
+            return true;
+        }
+
     }
 }

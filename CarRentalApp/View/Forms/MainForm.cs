@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.View.UserControls;
 
@@ -19,6 +20,11 @@ namespace CarRentalApp.View.Forms
             SetPageToContentPanel(new HomePageUserControl());
 
         }
+        private void UpdateAppUi()
+        {
+            appUserRoleLabel.Text = Program.CurrentUser.Username;
+            appUserRoleLabel.Text = Program.CurrentUser.Roles.First().Name;
+        }
 
         private void MoveSidePanel(Control control)
         {
@@ -33,18 +39,15 @@ namespace CarRentalApp.View.Forms
             contentPannel.Controls.Add(page);
 
         }
-
-        /*****************************************
-       /        Events handlers                 /
-       ****************************************/
         private void MainForm_Load(object sender, EventArgs e)
         {
+            UpdateAppUi();
 
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            int step = 20;
+            const int step = 20;
 
             if (_isCollapsed)
             {
