@@ -42,6 +42,7 @@ namespace CarRentalApp.View.UserControls
             billManageByLabel.Text = _rent.ManageBy.FullName;
             billAmountNumericUpDown.Value = _rent.Bill.Amount;
         }
+
         private void OnValidating(string message, bool error = true)
         {
             validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
@@ -58,7 +59,6 @@ namespace CarRentalApp.View.UserControls
 
             return true;
         }
-
 
         protected override void OnLoad(EventArgs e)
         {

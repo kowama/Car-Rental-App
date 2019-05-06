@@ -29,22 +29,16 @@ namespace CarRentalApp.View.UserControls
 
         private void UpdateUiChart()
         {
-            int usersCount = userBindingSource.Count;
-            int managersCount = userBindingSource.List
+            var usersCount = userBindingSource.Count;
+            var managersCount = userBindingSource.List
                 .OfType<User>()
-                .Count(u => u.HasRole(RoleName.MANAGER));
-            int administratorCount = usersCount - managersCount;
+                .Count(u => u.HasRole(RoleName.Manager));
+            var administratorCount = usersCount - managersCount;
 
             usersCountLabel.Text = usersCount.ToString();
             mangerUserCountLabel.Text = managersCount.ToString();
             administratorUserCountLabel.Text = administratorCount.ToString();
         }
-
-
-
-        /*****************************************
-       /        Events handlers                 /
-       ****************************************/
 
         private void UsersPageUserControl_Load(object sender, EventArgs e)
         {
@@ -52,13 +46,15 @@ namespace CarRentalApp.View.UserControls
             UpdateUiChart();
 
         }
-        private void usersDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+
+        private void UsersDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in usersDataGrid.Rows)
                 row.HeaderCell.Value = (row.Index + 1).ToString();
 
         }
-        private void searchTextBox_Enter(object sender, EventArgs e)
+
+        private void SearchTextBox_Enter(object sender, EventArgs e)
         {
             if (searchTextBox.Text == _defaultSearchTextBoxText)
             {
@@ -67,7 +63,7 @@ namespace CarRentalApp.View.UserControls
 
         }
 
-        private void searchTextBox_Leave(object sender, EventArgs e)
+        private void SearchTextBox_Leave(object sender, EventArgs e)
         {
             if (searchTextBox.Text.Trim() == string.Empty)
             {
@@ -96,7 +92,7 @@ namespace CarRentalApp.View.UserControls
 
         }
 
-        private void refreshDataGrid_Click(object sender, EventArgs e)
+        private void RefreshDataGrid_Click(object sender, EventArgs e)
         {
             PopulateUserDataGrid();
             UpdateUiChart();

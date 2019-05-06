@@ -267,8 +267,8 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.Text = "Enter a keyword";
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.searchTextBox.Enter += new System.EventHandler(this.searchTextBox_Enter);
-            this.searchTextBox.Leave += new System.EventHandler(this.searchTextBox_Leave);
+            this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // seachFilterDropdown
             // 
@@ -303,7 +303,7 @@ namespace CarRentalApp.View.UserControls
             this.refreshDataGrid.TabIndex = 4;
             this.refreshDataGrid.TabStop = false;
             this.refreshDataGrid.Zoom = 10;
-            this.refreshDataGrid.Click += new System.EventHandler(this.refreshDataGrid_Click);
+            this.refreshDataGrid.Click += new System.EventHandler(this.RefreshDataGrid_Click);
             // 
             // bunifuSeparator1
             // 
@@ -403,7 +403,7 @@ namespace CarRentalApp.View.UserControls
             this.usersDataGrid.Size = new System.Drawing.Size(614, 355);
             this.usersDataGrid.StandardTab = true;
             this.usersDataGrid.TabIndex = 2;
-            this.usersDataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.usersDataGrid_DataBindingComplete);
+            this.usersDataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.UsersDataGrid_DataBindingComplete);
             // 
             // userBindingSource
             // 

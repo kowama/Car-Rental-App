@@ -20,12 +20,8 @@ namespace CarRentalApp.Core.domain
         public bool HasRole(string roleName)
         {
             foreach (var role in Roles)
-            {
                 if (role.Name == roleName)
-                {
                     return true;
-                }
-            }
 
             return false;
         }

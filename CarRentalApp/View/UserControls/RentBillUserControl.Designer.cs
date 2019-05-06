@@ -35,6 +35,7 @@ namespace CarRentalApp.View.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentBillUserControl));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.billDetailsTextBox = new System.Windows.Forms.RichTextBox();
+            this.validationLabel = new System.Windows.Forms.Label();
             this.billAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.billManageByLabel = new System.Windows.Forms.Label();
             this.backButtonLabel = new System.Windows.Forms.LinkLabel();
@@ -49,7 +50,6 @@ namespace CarRentalApp.View.UserControls
             this.label2 = new System.Windows.Forms.Label();
             this.billDateDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.currencySymbolLabel = new System.Windows.Forms.Label();
-            this.validationLabel = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billAmountNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,22 @@ namespace CarRentalApp.View.UserControls
             this.billDetailsTextBox.Size = new System.Drawing.Size(287, 64);
             this.billDetailsTextBox.TabIndex = 13;
             this.billDetailsTextBox.Text = "";
+            // 
+            // validationLabel
+            // 
+            this.validationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.validationLabel.AutoSize = true;
+            this.validationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.validationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validationLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.validationLabel.Location = new System.Drawing.Point(36, 385);
+            this.validationLabel.Name = "validationLabel";
+            this.validationLabel.Size = new System.Drawing.Size(229, 16);
+            this.validationLabel.TabIndex = 12;
+            this.validationLabel.Text = "Rent information are not Valides";
+            this.validationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.validationLabel.Visible = false;
             // 
             // billAmountNumericUpDown
             // 
@@ -167,7 +183,7 @@ namespace CarRentalApp.View.UserControls
             this.saveButton.IconZoom = 90D;
             this.saveButton.IsTab = false;
             this.saveButton.Location = new System.Drawing.Point(256, 417);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.MinimumSize = new System.Drawing.Size(182, 48);
             this.saveButton.Name = "saveButton";
             this.saveButton.Normalcolor = System.Drawing.SystemColors.ControlDarkDark;
@@ -313,22 +329,6 @@ namespace CarRentalApp.View.UserControls
             this.currencySymbolLabel.TabIndex = 3;
             this.currencySymbolLabel.Text = "MAD";
             this.currencySymbolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // validationLabel
-            // 
-            this.validationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.validationLabel.AutoSize = true;
-            this.validationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.validationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validationLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.validationLabel.Location = new System.Drawing.Point(36, 385);
-            this.validationLabel.Name = "validationLabel";
-            this.validationLabel.Size = new System.Drawing.Size(229, 16);
-            this.validationLabel.TabIndex = 12;
-            this.validationLabel.Text = "Rent information are not Valides";
-            this.validationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.validationLabel.Visible = false;
             // 
             // RentBillUserControl
             // 

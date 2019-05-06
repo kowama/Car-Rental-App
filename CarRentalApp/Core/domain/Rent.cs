@@ -16,7 +16,6 @@ namespace CarRentalApp.Core.domain
         public virtual  User ManageBy { get; set; }
 
 
-
         public virtual Bill Bill { get; set; }
 
         public DateTime DateStart { get; set; }

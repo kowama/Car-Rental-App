@@ -29,6 +29,8 @@ namespace CarRentalApp.Core.Utils
             return image;
         }
     }
+
+
     public class AppLogger
     {
         private static readonly string FilePath = AppDomain.CurrentDomain.BaseDirectory
