@@ -13,7 +13,7 @@ namespace CarRentalApp.Core.domain
 
         public virtual Client Client { get; set; }
 
-        public virtual  User ManageByUser { get; set; }
+        public virtual  User ManageBy { get; set; }
 
 
 

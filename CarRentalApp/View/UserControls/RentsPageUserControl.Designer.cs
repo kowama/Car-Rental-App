@@ -457,8 +457,8 @@ namespace CarRentalApp.View.UserControls
             // 
             // manageByUserDataGridViewTextBoxColumn
             // 
-            this.manageByUserDataGridViewTextBoxColumn.DataPropertyName = "ManageByUser";
-            this.manageByUserDataGridViewTextBoxColumn.HeaderText = "ManageByUser";
+            this.manageByUserDataGridViewTextBoxColumn.DataPropertyName = "ManageBy";
+            this.manageByUserDataGridViewTextBoxColumn.HeaderText = "ManageBy";
             this.manageByUserDataGridViewTextBoxColumn.Name = "manageByUserDataGridViewTextBoxColumn";
             // 
             // billDataGridViewTextBoxColumn

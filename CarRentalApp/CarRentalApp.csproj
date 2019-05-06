@@ -112,6 +112,11 @@
     <Compile Include="Migrations\201905040816337_UniqueIndexOfLicensePlate.Designer.cs">
       <DependentUpon>201905040816337_UniqueIndexOfLicensePlate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905060149311_RefactorEntitiesProps.cs" />
+    <Compile Include="Migrations\201905060149311_RefactorEntitiesProps.Designer.cs">
+      <DependentUpon>201905060149311_RefactorEntitiesProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\CarRentalDbInitializer.cs" />
     <Compile Include="View\Forms\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905040816337_UniqueIndexOfLicensePlate.resx">
       <DependentUpon>201905040816337_UniqueIndexOfLicensePlate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905060149311_RefactorEntitiesProps.resx">
+      <DependentUpon>201905060149311_RefactorEntitiesProps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>

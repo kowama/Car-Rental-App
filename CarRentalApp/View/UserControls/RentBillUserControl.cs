@@ -39,7 +39,7 @@ namespace CarRentalApp.View.UserControls
             billDetailsTextBox.Text = _rent.Bill.Details;
 //          billDateDatePicker = 
             billClientNameLabel.Text = _rent.Client.FullName;
-            billManageByLabel.Text = _rent.ManageByUser.FullName;
+            billManageByLabel.Text = _rent.ManageBy.FullName;
             billAmountNumericUpDown.Value = _rent.Bill.Amount;
         }
         private void OnValidating(string message, bool error = true)

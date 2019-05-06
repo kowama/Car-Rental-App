@@ -42,7 +42,7 @@ namespace CarRentalApp.Persistence.EntityConfigurations
              .Map(m => m.MapKey("ClientId"));
 
 
-            HasRequired(r => r.ManageByUser)
+            HasRequired(r => r.ManageBy)
                 .WithMany(u => u.Rents)
                 .Map(m => m.MapKey("UserId"));
 

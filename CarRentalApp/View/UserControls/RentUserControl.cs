@@ -96,7 +96,7 @@ namespace CarRentalApp.View.UserControls
             Enum.TryParse(rentStateDropDown.selectedValue, out RentState rentState);
             _rent.Client = selectedClient;
             _rent.Car = selectedCar;
-            _rent.ManageByUser = Program.CurrentUser;
+            _rent.ManageBy = Program.CurrentUser;
             _rent.DateStart = startDatePicker.Value;
             _rent.DateEnd = endDatePicker.Value;
             _rent.State = rentState;
