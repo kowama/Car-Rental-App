@@ -68,9 +68,9 @@ namespace CarRentalApp.View.Forms
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label1.Location = new System.Drawing.Point(45, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "First Name";
+            this.label1.Text = "First Name *";
             // 
             // label2
             // 
@@ -79,9 +79,9 @@ namespace CarRentalApp.View.Forms
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label2.Location = new System.Drawing.Point(48, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.Size = new System.Drawing.Size(92, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Last Name";
+            this.label2.Text = "Last Name *";
             // 
             // label3
             // 
@@ -90,9 +90,9 @@ namespace CarRentalApp.View.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label3.Location = new System.Drawing.Point(291, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 16);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 1;
-            this.label3.Text = "CIN";
+            this.label3.Text = "CIN *";
             // 
             // label4
             // 
@@ -294,9 +294,9 @@ namespace CarRentalApp.View.Forms
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.label8.Location = new System.Drawing.Point(48, 170);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 16);
+            this.label8.Size = new System.Drawing.Size(118, 16);
             this.label8.TabIndex = 1;
-            this.label8.Text = "Driver License";
+            this.label8.Text = "Driver License *";
             // 
             // driverLicenseTextBox
             // 
@@ -455,7 +455,7 @@ namespace CarRentalApp.View.Forms
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add New Client";
+            this.Text = "Client Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.AddClientForm_Load);
             this.bunifuCards1.ResumeLayout(false);

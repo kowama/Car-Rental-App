@@ -12,7 +12,7 @@ namespace CarRentalApp.View.Forms
         private const int AddModeWidth = 484;
         private readonly UnitOfWork _unitOfWork;
         private readonly Client _client;
-        private readonly FormMode _mode;
+        private  FormMode _mode;
         private readonly Action<Client> _onCloseCallBack;
         private bool _saved;
 
@@ -23,6 +23,9 @@ namespace CarRentalApp.View.Forms
             _mode = mode;
             _onCloseCallBack = onCloseCallBack;
             _client = client ?? new Client();
+            if (_mode == FormMode.AddNew)
+                Width = AddModeWidth;
+
         }
 
         private void OnValidating(string message, bool error = true)
@@ -110,13 +113,10 @@ namespace CarRentalApp.View.Forms
 
         private void AddClientForm_Load(object sender, EventArgs e)
         {
-            if (_mode != FormMode.New)
+            if (_mode != FormMode.AddNew)
                 UpdateUi();
-            else
-                Width = AddModeWidth;
 
         }
-
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
@@ -142,7 +142,7 @@ namespace CarRentalApp.View.Forms
 
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _onCloseCallBack(_mode == FormMode.New && _saved ? _client : null);
+            _onCloseCallBack(_mode == FormMode.AddNew && _saved ? _client : null);
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

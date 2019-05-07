@@ -34,9 +34,9 @@ namespace CarRentalApp.View.UserControls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsPageUserControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -217,7 +217,7 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.Text = "Enter a keyword";
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
-            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // seachFilterDropdown
@@ -259,9 +259,10 @@ namespace CarRentalApp.View.UserControls
             // 
             // carsDataGridView
             // 
+            this.carsDataGridView.AllowUserToAddRows = false;
             this.carsDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.carsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.carsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.carsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,14 +271,14 @@ namespace CarRentalApp.View.UserControls
             this.carsDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.carsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.carsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.carsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.carsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -286,6 +287,7 @@ namespace CarRentalApp.View.UserControls
             this.classificationDataGridViewTextBoxColumn});
             this.carsDataGridView.DataSource = this.carsBindingSource;
             this.carsDataGridView.DoubleBuffered = true;
+            this.carsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.carsDataGridView.EnableHeadersVisualStyles = false;
             this.carsDataGridView.HeaderBgColor = System.Drawing.SystemColors.GrayText;
             this.carsDataGridView.HeaderForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -296,6 +298,7 @@ namespace CarRentalApp.View.UserControls
             this.carsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carsDataGridView.Size = new System.Drawing.Size(610, 357);
             this.carsDataGridView.TabIndex = 16;
+            this.carsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataGridView_CellDoubleClick);
             this.carsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CarsDataGridView_CellFormatting);
             this.carsDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarsDataGridView_RowEnter);
             // 
@@ -733,27 +736,31 @@ namespace CarRentalApp.View.UserControls
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // licensePlateDataGridViewTextBoxColumn
             // 
             this.licensePlateDataGridViewTextBoxColumn.DataPropertyName = "LicensePlate";
             this.licensePlateDataGridViewTextBoxColumn.HeaderText = "License Plate";
             this.licensePlateDataGridViewTextBoxColumn.Name = "licensePlateDataGridViewTextBoxColumn";
+            this.licensePlateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pricePerDayDataGridViewTextBoxColumn
             // 
             this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
-            dataGridViewCellStyle6.Format = "0,0.00 MAD";
-            dataGridViewCellStyle6.NullValue = null;
-            this.pricePerDayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "0,0.00 MAD";
+            dataGridViewCellStyle3.NullValue = null;
+            this.pricePerDayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price Per Day";
             this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
+            this.pricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // classificationDataGridViewTextBoxColumn
             // 
             this.classificationDataGridViewTextBoxColumn.DataPropertyName = "Classification";
             this.classificationDataGridViewTextBoxColumn.HeaderText = "Classification";
             this.classificationDataGridViewTextBoxColumn.Name = "classificationDataGridViewTextBoxColumn";
+            this.classificationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // carsBindingSource
             // 

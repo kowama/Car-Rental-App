@@ -33,6 +33,7 @@ namespace CarRentalApp.View.UserControls
                             = selectedCarDescriptionLabel.Text
                                 = selectedCarPricePerDayLabel.Text
                                     = selectedCarNextDrainDateLabel.Text
+                                        =selectedCarRentsCountLabel.Text
                                         = selectedCarPurchaseDateLabel.Text = string.Empty;
                 return;
             }
@@ -49,15 +50,15 @@ namespace CarRentalApp.View.UserControls
 
         private void RefreshCarsIndicator(List<Car> cars)
         {
-            var total = cars.Count;
-            var available = cars.FindAll(c => c.IsAvailable).Count;
+            float total = cars.Count;
+            float available = cars.FindAll(c => c.IsAvailable).Count;
             var unavailable = total - available;
             var ratio = available / total;
 
             carsCountLabel.Text = $@"{total:F0}";
             availableCarsCountLabel.Text = $@"{available:F0}";
             inavailableCarsCountLabel.Text = $@"{unavailable:F0}";
-            carsAvailableCircleProgressBar.Value = ratio * 100;
+            carsAvailableCircleProgressBar.Value = (int)(ratio * 100);
         }
 
         private void Search(string keyword)
@@ -90,6 +91,20 @@ namespace CarRentalApp.View.UserControls
             carsBindingSource.DataSource = cars;
             RefreshCarsIndicator(cars);
         }
+
+        private void OnChildFromClosed(Car theCar)
+        {
+            if (theCar == null) return;
+
+            RefreshDataGridView();
+            foreach (DataGridViewRow row in carsDataGridView.Rows)
+            {
+                var car = (Car)row.DataBoundItem;
+                if (theCar.Id == car.Id)
+                    row.Selected = true;
+            }
+        }
+
 
         protected override void OnLoad(EventArgs e)
         {
@@ -127,7 +142,7 @@ namespace CarRentalApp.View.UserControls
 
         private void AddNewCarsButton_Click(object sender, EventArgs e)
         {
-            var carForm = new CarForm();
+            var carForm = new CarForm(FormMode.AddNew, OnChildFromClosed);
             carForm.Show();
         }
 
@@ -159,10 +174,19 @@ namespace CarRentalApp.View.UserControls
             selectedCarDescriptionLabel.MaximumSize = new Size(selectedCarCardPanel.Width, 0);
         }
 
-        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 Search(searchTextBox.Text.Trim());
+        }
+
+        private void carsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var car = (Car)carsDataGridView.Rows[e.RowIndex].DataBoundItem;
+            if (car == null) return;
+            var carForm = new CarForm(FormMode.View, OnChildFromClosed, car);
+            carForm.Show();
+
         }
     }
 }

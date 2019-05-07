@@ -281,6 +281,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // clientsDataGridView
             // 
+            this.clientsDataGridView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.clientsDataGridView.AutoGenerateColumns = false;

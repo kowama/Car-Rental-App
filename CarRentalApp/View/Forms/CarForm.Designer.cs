@@ -35,8 +35,11 @@ namespace CarRentalApp.View.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarForm));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.validationLabel = new System.Windows.Forms.Label();
-            this.carPricePerDayTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.closeButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.saveButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.editButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.carNameTextBox = new System.Windows.Forms.TextBox();
             this.carLicensePlateTextBox = new System.Windows.Forms.TextBox();
             this.carDescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -47,15 +50,21 @@ namespace CarRentalApp.View.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.classificationButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.addNewClassificationButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.carNextDrainDatepicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.carPurchaseDatepicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.carClassificationDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.carPricePerDayNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.currencySymbolLabel = new System.Windows.Forms.Label();
+            this.validationLabel = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classificationButton)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addNewClassificationButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bunifuCards2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carPricePerDayNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -69,8 +78,10 @@ namespace CarRentalApp.View.Forms
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Transparent;
-            this.bunifuCards1.Controls.Add(this.validationLabel);
-            this.bunifuCards1.Controls.Add(this.carPricePerDayTextBox);
+            this.bunifuCards1.Controls.Add(this.closeButton);
+            this.bunifuCards1.Controls.Add(this.panel1);
+            this.bunifuCards1.Controls.Add(this.saveButton);
+            this.bunifuCards1.Controls.Add(this.editButton);
             this.bunifuCards1.Controls.Add(this.carNameTextBox);
             this.bunifuCards1.Controls.Add(this.carLicensePlateTextBox);
             this.bunifuCards1.Controls.Add(this.carDescriptionTextBox);
@@ -81,12 +92,12 @@ namespace CarRentalApp.View.Forms
             this.bunifuCards1.Controls.Add(this.label5);
             this.bunifuCards1.Controls.Add(this.label4);
             this.bunifuCards1.Controls.Add(this.label1);
-            this.bunifuCards1.Controls.Add(this.saveButton);
-            this.bunifuCards1.Controls.Add(this.classificationButton);
+            this.bunifuCards1.Controls.Add(this.addNewClassificationButton);
             this.bunifuCards1.Controls.Add(this.carNextDrainDatepicker);
             this.bunifuCards1.Controls.Add(this.carPurchaseDatepicker);
             this.bunifuCards1.Controls.Add(this.carClassificationDropDown);
             this.bunifuCards1.Controls.Add(this.pictureBox1);
+            this.bunifuCards1.Controls.Add(this.bunifuCards2);
             this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCards1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCards1.LeftSahddow = false;
@@ -94,28 +105,103 @@ namespace CarRentalApp.View.Forms
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(483, 632);
+            this.bunifuCards1.Size = new System.Drawing.Size(868, 632);
             this.bunifuCards1.TabIndex = 9;
             // 
-            // validationLabel
+            // closeButton
             // 
-            this.validationLabel.AutoSize = true;
-            this.validationLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validationLabel.ForeColor = System.Drawing.Color.Red;
-            this.validationLabel.Location = new System.Drawing.Point(20, 512);
-            this.validationLabel.Name = "validationLabel";
-            this.validationLabel.Size = new System.Drawing.Size(94, 17);
-            this.validationLabel.TabIndex = 23;
-            this.validationLabel.Text = "input not valid";
-            this.validationLabel.Visible = false;
+            this.closeButton.ActiveBorderThickness = 1;
+            this.closeButton.ActiveCornerRadius = 20;
+            this.closeButton.ActiveFillColor = System.Drawing.Color.Crimson;
+            this.closeButton.ActiveForecolor = System.Drawing.Color.White;
+            this.closeButton.ActiveLineColor = System.Drawing.Color.Chartreuse;
+            this.closeButton.BackColor = System.Drawing.SystemColors.Control;
+            this.closeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeButton.BackgroundImage")));
+            this.closeButton.ButtonText = "Close";
+            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.closeButton.IdleBorderThickness = 1;
+            this.closeButton.IdleCornerRadius = 20;
+            this.closeButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
+            this.closeButton.IdleForecolor = System.Drawing.Color.DimGray;
+            this.closeButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.closeButton.Location = new System.Drawing.Point(285, 545);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(120, 40);
+            this.closeButton.TabIndex = 19;
+            this.closeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // carPricePerDayTextBox
+            // panel1
             // 
-            this.carPricePerDayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carPricePerDayTextBox.Location = new System.Drawing.Point(264, 213);
-            this.carPricePerDayTextBox.Name = "carPricePerDayTextBox";
-            this.carPricePerDayTextBox.Size = new System.Drawing.Size(165, 22);
-            this.carPricePerDayTextBox.TabIndex = 22;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(457, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(404, 528);
+            this.panel1.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(136, 270);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 14);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Car extra info";
+            // 
+            // saveButton
+            // 
+            this.saveButton.ActiveBorderThickness = 1;
+            this.saveButton.ActiveCornerRadius = 20;
+            this.saveButton.ActiveFillColor = System.Drawing.Color.ForestGreen;
+            this.saveButton.ActiveForecolor = System.Drawing.Color.White;
+            this.saveButton.ActiveLineColor = System.Drawing.Color.Chartreuse;
+            this.saveButton.BackColor = System.Drawing.SystemColors.Control;
+            this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
+            this.saveButton.ButtonText = "Save";
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.saveButton.IdleBorderThickness = 1;
+            this.saveButton.IdleCornerRadius = 20;
+            this.saveButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
+            this.saveButton.IdleForecolor = System.Drawing.Color.DimGray;
+            this.saveButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.saveButton.Location = new System.Drawing.Point(153, 545);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(120, 40);
+            this.saveButton.TabIndex = 20;
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.ActiveBorderThickness = 1;
+            this.editButton.ActiveCornerRadius = 20;
+            this.editButton.ActiveFillColor = System.Drawing.Color.Blue;
+            this.editButton.ActiveForecolor = System.Drawing.Color.White;
+            this.editButton.ActiveLineColor = System.Drawing.Color.Chartreuse;
+            this.editButton.BackColor = System.Drawing.SystemColors.Control;
+            this.editButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editButton.BackgroundImage")));
+            this.editButton.ButtonText = "Edit";
+            this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.editButton.IdleBorderThickness = 1;
+            this.editButton.IdleCornerRadius = 20;
+            this.editButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
+            this.editButton.IdleForecolor = System.Drawing.Color.DimGray;
+            this.editButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.editButton.Location = new System.Drawing.Point(11, 545);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(120, 40);
+            this.editButton.TabIndex = 21;
+            this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // carNameTextBox
             // 
@@ -169,9 +255,9 @@ namespace CarRentalApp.View.Forms
             this.NameLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.Location = new System.Drawing.Point(20, 40);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(48, 17);
+            this.NameLabel.Size = new System.Drawing.Size(58, 17);
             this.NameLabel.TabIndex = 19;
-            this.NameLabel.Text = "Name";
+            this.NameLabel.Text = "Name *";
             // 
             // label7
             // 
@@ -179,9 +265,9 @@ namespace CarRentalApp.View.Forms
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(20, 99);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 17);
+            this.label7.Size = new System.Drawing.Size(101, 17);
             this.label7.TabIndex = 19;
-            this.label7.Text = "License Plate";
+            this.label7.Text = "License Plate *";
             // 
             // label5
             // 
@@ -189,9 +275,9 @@ namespace CarRentalApp.View.Forms
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(20, 182);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 17);
+            this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Classification";
+            this.label5.Text = "Classification *";
             // 
             // label4
             // 
@@ -199,9 +285,9 @@ namespace CarRentalApp.View.Forms
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(261, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
+            this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 19;
-            this.label4.Text = "Price Per Day";
+            this.label4.Text = "Price Per Day *";
             // 
             // label1
             // 
@@ -213,32 +299,18 @@ namespace CarRentalApp.View.Forms
             this.label1.TabIndex = 19;
             this.label1.Text = "Purchase date";
             // 
-            // saveButton
+            // addNewClassificationButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.saveButton.Location = new System.Drawing.Point(163, 529);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(138, 42);
-            this.saveButton.TabIndex = 18;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // classificationButton
-            // 
-            this.classificationButton.Image = ((System.Drawing.Image)(resources.GetObject("classificationButton.Image")));
-            this.classificationButton.ImageActive = null;
-            this.classificationButton.Location = new System.Drawing.Point(207, 203);
-            this.classificationButton.Name = "classificationButton";
-            this.classificationButton.Size = new System.Drawing.Size(32, 32);
-            this.classificationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.classificationButton.TabIndex = 17;
-            this.classificationButton.TabStop = false;
-            this.classificationButton.Zoom = 10;
-            this.classificationButton.Click += new System.EventHandler(this.ClassificationButton_Click);
+            this.addNewClassificationButton.Image = ((System.Drawing.Image)(resources.GetObject("addNewClassificationButton.Image")));
+            this.addNewClassificationButton.ImageActive = null;
+            this.addNewClassificationButton.Location = new System.Drawing.Point(207, 203);
+            this.addNewClassificationButton.Name = "addNewClassificationButton";
+            this.addNewClassificationButton.Size = new System.Drawing.Size(32, 32);
+            this.addNewClassificationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addNewClassificationButton.TabIndex = 17;
+            this.addNewClassificationButton.TabStop = false;
+            this.addNewClassificationButton.Zoom = 10;
+            this.addNewClassificationButton.Click += new System.EventHandler(this.AddNewClassificationButton_Click);
             // 
             // carNextDrainDatepicker
             // 
@@ -289,23 +361,90 @@ namespace CarRentalApp.View.Forms
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.SystemColors.ControlDarkDark;
+            this.bunifuCards2.Controls.Add(this.carPricePerDayNumericUpDown);
+            this.bunifuCards2.Controls.Add(this.currencySymbolLabel);
+            this.bunifuCards2.Controls.Add(this.validationLabel);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(3, 10);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(457, 528);
+            this.bunifuCards2.TabIndex = 25;
+            // 
+            // carPricePerDayNumericUpDown
+            // 
+            this.carPricePerDayNumericUpDown.BackColor = System.Drawing.SystemColors.Window;
+            this.carPricePerDayNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.carPricePerDayNumericUpDown.DecimalPlaces = 2;
+            this.carPricePerDayNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carPricePerDayNumericUpDown.ForeColor = System.Drawing.Color.Green;
+            this.carPricePerDayNumericUpDown.Location = new System.Drawing.Point(250, 198);
+            this.carPricePerDayNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.carPricePerDayNumericUpDown.Name = "carPricePerDayNumericUpDown";
+            this.carPricePerDayNumericUpDown.Size = new System.Drawing.Size(121, 29);
+            this.carPricePerDayNumericUpDown.TabIndex = 13;
+            this.carPricePerDayNumericUpDown.ThousandsSeparator = true;
+            // 
+            // currencySymbolLabel
+            // 
+            this.currencySymbolLabel.AutoSize = true;
+            this.currencySymbolLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.currencySymbolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currencySymbolLabel.ForeColor = System.Drawing.Color.Green;
+            this.currencySymbolLabel.Location = new System.Drawing.Point(377, 200);
+            this.currencySymbolLabel.Name = "currencySymbolLabel";
+            this.currencySymbolLabel.Size = new System.Drawing.Size(55, 24);
+            this.currencySymbolLabel.TabIndex = 12;
+            this.currencySymbolLabel.Text = "MAD";
+            this.currencySymbolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // validationLabel
+            // 
+            this.validationLabel.AutoSize = true;
+            this.validationLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validationLabel.ForeColor = System.Drawing.Color.Red;
+            this.validationLabel.Location = new System.Drawing.Point(17, 505);
+            this.validationLabel.Name = "validationLabel";
+            this.validationLabel.Size = new System.Drawing.Size(169, 16);
+            this.validationLabel.TabIndex = 23;
+            this.validationLabel.Text = "* car information are invalid";
+            this.validationLabel.Visible = false;
+            // 
             // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 632);
+            this.ClientSize = new System.Drawing.Size(868, 632);
             this.Controls.Add(this.bunifuCards1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CarForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CarForm_FormClosing);
             this.Load += new System.EventHandler(this.CarForm_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classificationButton)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addNewClassificationButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.bunifuCards2.ResumeLayout(false);
+            this.bunifuCards2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carPricePerDayNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,12 +452,11 @@ namespace CarRentalApp.View.Forms
         #endregion
         private OpenFileDialog openFileDialog;
         private BunifuCards bunifuCards1;
-        private BunifuImageButton classificationButton;
+        private BunifuImageButton addNewClassificationButton;
         private BunifuDatepicker carNextDrainDatepicker;
         private BunifuDatepicker carPurchaseDatepicker;
         private BunifuDropdown carClassificationDropDown;
         private PictureBox pictureBox1;
-        private Button saveButton;
         private Label label1;
         private Label label2;
         private TextBox carDescriptionTextBox;
@@ -329,7 +467,14 @@ namespace CarRentalApp.View.Forms
         private TextBox carLicensePlateTextBox;
         private Label NameLabel;
         private Label label7;
-        private MaskedTextBox carPricePerDayTextBox;
         private Label validationLabel;
+        private Panel panel1;
+        private BunifuCards bunifuCards2;
+        private Label label6;
+        private BunifuThinButton2 closeButton;
+        private BunifuThinButton2 saveButton;
+        private BunifuThinButton2 editButton;
+        private NumericUpDown carPricePerDayNumericUpDown;
+        private Label currencySymbolLabel;
     }
 }

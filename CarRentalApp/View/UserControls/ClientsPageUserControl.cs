@@ -58,15 +58,15 @@ namespace CarRentalApp.View.UserControls
             clientsDataGridView.DataSource = filteredUsers.ToList();
         }
 
-        private void OnChildFromClosed(Client client)
+        private void OnChildFromClosed(Client theClient)
         {
-            if (client == null) return;
+            if (theClient == null) return;
 
             RefreshDataGridView();
             foreach (DataGridViewRow row in clientsDataGridView.Rows)
             {
-                var c = (Client) row.DataBoundItem;
-                if (client.Cin == c.Cin)
+                var client = (Client) row.DataBoundItem;
+                if (theClient.Id == client.Id)
                     row.Selected = true;
             }
         }
@@ -90,7 +90,7 @@ namespace CarRentalApp.View.UserControls
 
         private void AddNewClientButton_Click(object sender, EventArgs e)
         {
-            var addNewClientForm = new ClientForm(FormMode.New, OnChildFromClosed);
+            var addNewClientForm = new ClientForm(FormMode.AddNew, OnChildFromClosed);
             addNewClientForm.Show();
         }
 

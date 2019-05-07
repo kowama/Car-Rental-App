@@ -30,6 +30,8 @@ namespace CarRentalApp.View.UserControls
                 dataPoint.addLabely("AUG", _rand.Next(0, 500).ToString());
                 dataPoint.addLabely("SEPT", _rand.Next(0, 500).ToString());
                 dataPoint.addLabely("OCT", _rand.Next(0, 500).ToString());
+                dataPoint.addLabely("NOV", _rand.Next(0, 500).ToString());
+                dataPoint.addLabely("DEC", _rand.Next(0, 500).ToString());
 
                 canvas.addData(dataPoint);
                 reportChartDataViz.colorSet.Add(Color.Coral);

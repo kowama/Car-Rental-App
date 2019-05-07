@@ -12,11 +12,16 @@ namespace CarRentalApp.View.Forms
     public partial class ClassificationForm : Form
     {
         private readonly UnitOfWork _unitOfWork;
+        private readonly Action<bool> _onCloseCallBack;
+        private bool _refreshParent;
+        private Classification _classification;
 
-        public ClassificationForm()
+        public ClassificationForm(Action<bool> onCloseCallBack)
         {
             InitializeComponent();
             _unitOfWork = UnitOfWork.Instance;
+            _onCloseCallBack = onCloseCallBack;
+            _classification = new Classification();
         }
 
         private void OnValidation(string message,bool error = true)
@@ -25,8 +30,8 @@ namespace CarRentalApp.View.Forms
             validationLabel.Text = message;
             validationLabel.Visible = true;
         }
-
-        private bool ValidateInput()
+       
+        private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(newClassificationNameTextBox.Text))
             {
@@ -34,11 +39,24 @@ namespace CarRentalApp.View.Forms
                 return false;
             }
 
-            if (!string.IsNullOrWhiteSpace(newClassificationDescriptionTextBox.Text)) return true;
+            if (string.IsNullOrWhiteSpace(newClassificationDescriptionTextBox.Text))
+            {
+                OnValidation("Description not valid");
+                return false;
+            }
 
-            OnValidation("Description not valid");
 
-            return false;
+            return true;
+        }
+
+        private bool ValidateInputsToClassification()
+        {
+            if (!ValidateInputs()) return false;
+
+            _classification.Name = newClassificationNameTextBox.Text;
+            _classification.Description = newClassificationDescriptionTextBox.Text;
+
+            return true;
 
         }
 
@@ -46,31 +64,23 @@ namespace CarRentalApp.View.Forms
         {
             classificationBindingSource.DataSource = _unitOfWork.Classifications.GetAll().ToList();
         }
+        private void Reset()
+        {
+            _classification = new Classification();
+            UpdateUi();
+        }
+        private void UpdateUi()
+        {
+            newClassificationNameTextBox.Text = _classification.Name;
+            newClassificationDescriptionTextBox.Text = _classification.Description;
+        }
+      
+
         private void ClassificationForm_Load(object sender, EventArgs e)
         {
             RefreshDataGridView();
         }
 
-        private void NewClassificationSaveButton_Click(object sender, EventArgs e)
-        {
-            if(!ValidateInput()) return;
-            try
-            {
-                _unitOfWork.Classifications.Add(new Classification
-                {
-                    Name = newClassificationNameTextBox.Text,
-                    Description = newClassificationDescriptionTextBox.Text
-                });
-                _unitOfWork.Complete();
-                OnValidation("Successfully saved",false);
-                RefreshDataGridView();
-            }
-            catch (FormattedDbEntityValidationException exception)
-            {
-                OnValidation(exception.Message);
-            }
-            
-        }
         private void RefreshDataGrid_Click(object sender, EventArgs e)
         {
             RefreshDataGridView();
@@ -90,6 +100,34 @@ namespace CarRentalApp.View.Forms
             _unitOfWork.Classifications.Remove(classification);
             _unitOfWork.Complete();
             RefreshDataGridView();
+        }
+
+        private void ClassificationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _onCloseCallBack(_refreshParent);
+        }
+
+        private void saveButton_Click_1(object sender, EventArgs e)
+        {
+            if (!ValidateInputsToClassification()) return;
+            try
+            {
+                _unitOfWork.Classifications.Add(_classification);
+                _unitOfWork.Complete();
+                Reset();
+                OnValidation("Successfully saved", false);
+                _refreshParent = true;
+                RefreshDataGridView();
+            }
+            catch (FormattedDbEntityValidationException exception)
+            {
+                OnValidation(exception.Message);
+            }
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
