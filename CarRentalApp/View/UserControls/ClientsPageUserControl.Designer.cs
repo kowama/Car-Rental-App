@@ -37,6 +37,7 @@ namespace CarRentalApp.View.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.refreshDataGrid = new Bunifu.Framework.UI.BunifuImageButton();
@@ -72,6 +73,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.refreshDataGrid);
@@ -85,6 +87,16 @@ namespace CarRentalApp.View.UserControls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1044, 104);
             this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(535, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 39);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Double click on cell to view more details\r\nF2 to enter on Edit mode\r\nFill to add " +
+    "new";
             // 
             // bunifuSeparator1
             // 
@@ -296,6 +308,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGridView.DataSource = this.clientBindingSource;
             this.clientsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientsDataGridView.DoubleBuffered = true;
+            this.clientsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.clientsDataGridView.EnableHeadersVisualStyles = false;
             this.clientsDataGridView.HeaderBgColor = System.Drawing.SystemColors.GrayText;
             this.clientsDataGridView.HeaderForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -306,6 +319,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientsDataGridView.Size = new System.Drawing.Size(1044, 522);
             this.clientsDataGridView.TabIndex = 6;
+            this.clientsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientsDataGridView_CellDoubleClick);
             this.clientsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ClientsDataGridView_CellFormatting);
             // 
             // firstNameDataGridViewTextBoxColumn
@@ -402,5 +416,6 @@ namespace CarRentalApp.View.UserControls
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private Label label1;
     }
 }

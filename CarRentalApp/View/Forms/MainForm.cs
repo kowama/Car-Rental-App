@@ -2,16 +2,16 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Persistence;
 using CarRentalApp.View.UserControls;
 
 namespace CarRentalApp.View.Forms
 {
     public partial class MainForm : Form
     {
-        private readonly int _leftPanelExtendedWidth = 220;
-        private readonly int _leftPanelCollapsedWidth = 62;
+        private const int LeftPanelExtendedWidth = 220;
+        private const int LeftPanelCollapsedWidth = 62;
         private bool _isCollapsed;
-
         public MainForm()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace CarRentalApp.View.Forms
             if (_isCollapsed)
             {
                 leftPanel.Width += step;
-                if (leftPanel.Width > _leftPanelExtendedWidth)
+                if (leftPanel.Width > LeftPanelExtendedWidth)
                 {
                     menuTimer.Stop();
                     _isCollapsed = false;
@@ -67,7 +67,7 @@ namespace CarRentalApp.View.Forms
                 leftPanel.Width -= step;
                 userInfoPanel.Visible = false;
                 datetimeLabel.Visible = false;
-                if (leftPanel.Width < _leftPanelCollapsedWidth)
+                if (leftPanel.Width < LeftPanelCollapsedWidth)
                 {
                     menuTimer.Stop();
                     _isCollapsed = true;
@@ -126,6 +126,12 @@ namespace CarRentalApp.View.Forms
         {
             SetPageToContentPanel(new SettingsPageUserControl());
             MoveSidePanel(settingsMenuButton);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnitOfWork.Instance.Dispose();
+            Application.Exit();
         }
     }
 }

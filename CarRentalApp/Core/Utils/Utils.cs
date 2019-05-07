@@ -41,4 +41,6 @@ namespace CarRentalApp.Core.Utils
             File.AppendAllText(FilePath, logInfo);
         }
     }
+    public enum FormMode{View, Edit, New}
+
 }

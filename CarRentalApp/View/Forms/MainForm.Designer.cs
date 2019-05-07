@@ -419,6 +419,7 @@ namespace CarRentalApp.View.Forms
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Rent Luxury";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.leftPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
