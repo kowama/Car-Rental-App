@@ -102,7 +102,7 @@ namespace CarRentalApp.View.Forms
 
         private void UpdateUi()
         {
-            firstNameTextBox.Text = _client.LastName;
+            firstNameTextBox.Text = _client.FirstName;
             lastNameTextBox.Text = _client.LastName;
             cinTextBox.Text = _client.Cin;
             driverLicenseTextBox.Text = _client.DriverLicense;

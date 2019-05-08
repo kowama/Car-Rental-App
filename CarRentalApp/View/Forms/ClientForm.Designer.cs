@@ -42,7 +42,6 @@ namespace CarRentalApp.View.Forms
             this.saveButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.validationLabel = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.firstNameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lastNameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cinTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.emailTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -52,11 +51,10 @@ namespace CarRentalApp.View.Forms
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.editButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.closeButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.bunifuCards1.SuspendLayout();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -134,7 +132,7 @@ namespace CarRentalApp.View.Forms
             this.saveButton.ActiveFillColor = System.Drawing.Color.ForestGreen;
             this.saveButton.ActiveForecolor = System.Drawing.Color.White;
             this.saveButton.ActiveLineColor = System.Drawing.Color.Chartreuse;
-            this.saveButton.BackColor = System.Drawing.Color.Transparent;
+            this.saveButton.BackColor = System.Drawing.SystemColors.Control;
             this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
             this.saveButton.ButtonText = "Save";
             this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -145,7 +143,7 @@ namespace CarRentalApp.View.Forms
             this.saveButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
             this.saveButton.IdleForecolor = System.Drawing.Color.DimGray;
             this.saveButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.saveButton.Location = new System.Drawing.Point(151, 469);
+            this.saveButton.Location = new System.Drawing.Point(197, 481);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(120, 40);
@@ -178,30 +176,6 @@ namespace CarRentalApp.View.Forms
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(127, 15);
             this.phoneTextBox.TabIndex = 6;
-            // 
-            // firstNameTextBox
-            // 
-            this.firstNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.firstNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.firstNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.firstNameTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.firstNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.firstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.firstNameTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.firstNameTextBox.HintText = "Enter client first name";
-            this.firstNameTextBox.isPassword = false;
-            this.firstNameTextBox.LineFocusedColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.firstNameTextBox.LineIdleColor = System.Drawing.Color.Transparent;
-            this.firstNameTextBox.LineMouseHoverColor = System.Drawing.SystemColors.ControlDark;
-            this.firstNameTextBox.LineThickness = 3;
-            this.firstNameTextBox.Location = new System.Drawing.Point(45, 42);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.firstNameTextBox.MaxLength = 32;
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(379, 31);
-            this.firstNameTextBox.TabIndex = 1;
-            this.firstNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lastNameTextBox
             // 
@@ -363,7 +337,7 @@ namespace CarRentalApp.View.Forms
             this.closeButton.ActiveFillColor = System.Drawing.Color.Crimson;
             this.closeButton.ActiveForecolor = System.Drawing.Color.White;
             this.closeButton.ActiveLineColor = System.Drawing.Color.Chartreuse;
-            this.closeButton.BackColor = System.Drawing.Color.Transparent;
+            this.closeButton.BackColor = System.Drawing.SystemColors.Control;
             this.closeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeButton.BackgroundImage")));
             this.closeButton.ButtonText = "Close";
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -374,7 +348,7 @@ namespace CarRentalApp.View.Forms
             this.closeButton.IdleFillColor = System.Drawing.Color.WhiteSmoke;
             this.closeButton.IdleForecolor = System.Drawing.Color.DimGray;
             this.closeButton.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.closeButton.Location = new System.Drawing.Point(279, 469);
+            this.closeButton.Location = new System.Drawing.Point(325, 481);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(120, 40);
@@ -382,25 +356,12 @@ namespace CarRentalApp.View.Forms
             this.closeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCards1.BorderRadius = 5;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.Tomato;
-            this.bunifuCards1.Controls.Add(this.closeButton);
-            this.bunifuCards1.Controls.Add(this.saveButton);
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(28, 12);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(420, 534);
-            this.bunifuCards1.TabIndex = 0;
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.firstNameTextBox);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -424,6 +385,13 @@ namespace CarRentalApp.View.Forms
             this.label9.TabIndex = 0;
             this.label9.Text = "User more datails";
             // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.Location = new System.Drawing.Point(51, 52);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(376, 20);
+            this.firstNameTextBox.TabIndex = 1;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,7 +404,6 @@ namespace CarRentalApp.View.Forms
             this.Controls.Add(this.driverLicenseTextBox);
             this.Controls.Add(this.cinTextBox);
             this.Controls.Add(this.lastNameTextBox);
-            this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.validationLabel);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.label6);
@@ -447,7 +414,6 @@ namespace CarRentalApp.View.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -458,8 +424,8 @@ namespace CarRentalApp.View.Forms
             this.Text = "Client Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.AddClientForm_Load);
-            this.bunifuCards1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -477,7 +443,6 @@ namespace CarRentalApp.View.Forms
         private BunifuThinButton2 saveButton;
         private Label validationLabel;
         private MaskedTextBox phoneTextBox;
-        private BunifuMaterialTextbox firstNameTextBox;
         private BunifuMaterialTextbox lastNameTextBox;
         private BunifuMaterialTextbox cinTextBox;
         private BunifuMaterialTextbox emailTextBox;
@@ -487,9 +452,9 @@ namespace CarRentalApp.View.Forms
         private TextBox addressTextBox;
         private BunifuThinButton2 editButton;
         private BunifuThinButton2 closeButton;
-        private BunifuCards bunifuCards1;
         private Panel panel1;
         private Panel panel2;
         private Label label9;
+        private TextBox firstNameTextBox;
     }
 }
