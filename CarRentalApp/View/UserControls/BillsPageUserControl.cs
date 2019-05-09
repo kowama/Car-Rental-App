@@ -8,5 +8,10 @@ namespace CarRentalApp.View.UserControls
         {
             InitializeComponent();
         }
+
+        private void BillsPageUserControl_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,46 +31,46 @@ namespace CarRentalApp.View.Forms
 
         private void OnValidation(string message, bool error = true)
         {
-            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
-            validationLabel.Text = message;
-            validationLabel.Visible = true;
+//            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
+//            validationLabel.Text = message;
+//            validationLabel.Visible = true;
         }
 
-        private bool ValidateInput()
+        private bool ValidateInputs()
         {
-            if (string.IsNullOrWhiteSpace(carNameTextBox.Text))
-            {
-                OnValidation("Car Name not Valid");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(carDescriptionTextBox.Text) || carDescriptionTextBox.Text.Trim().Length < 3)
-            {
-                OnValidation("Car Description may be a least 3 chars");
-                return false;
-            }
-
-            if (carPricePerDayNumericUpDown.Value == 0)
-            {
-                OnValidation("Price Not Valid");
-                return false;
-            }
-
+//            if (string.IsNullOrWhiteSpace(carNameTextBox.Text))
+//            {
+//                OnValidation("Car Name not Valid");
+//                return false;
+//            }
+//
+//            if (string.IsNullOrWhiteSpace(carDescriptionTextBox.Text) || carDescriptionTextBox.Text.Trim().Length < 3)
+//            {
+//                OnValidation("Car Description may be a least 3 chars");
+//                return false;
+//            }
+//
+//            if (carPricePerDayNumericUpDown.Value == 0)
+//            {
+//                OnValidation("Price Not Valid");
+//                return false;
+//            }
+//
             return true;
         }
 
         private bool ValidateInputsToCar()
         {
-            if (!ValidateInput()) return false;
-
-            _car.Name = carNameTextBox.Text;
-            _car.LicensePlate = carLicensePlateTextBox.Text;
-            _car.Classification =
-                _unitOfWork.Classifications.SingleOrDefault(c => c.Name == carClassificationDropDown.selectedValue);
-            _car.PricePerDay = carPricePerDayNumericUpDown.Value;
-            _car.PurchaseDate = carPurchaseDatepicker.Value;
-            _car.NextDrainDate = carNextDrainDatepicker.Value;
-            _car.Description = carDescriptionTextBox.Text;
+//            if (!ValidateInput()) return false;
+//
+//            _car.Name = carNameTextBox.Text;
+//            _car.LicensePlate = carLicensePlateTextBox.Text;
+//            _car.Classification =
+//                _unitOfWork.Classifications.SingleOrDefault(c => c.Name == carClassificationDropDown.selectedValue);
+//            _car.PricePerDay = carPricePerDayNumericUpDown.Value;
+//            _car.PurchaseDate = carPurchaseDatepicker.Value;
+//            _car.NextDrainDate = carNextDrainDatepicker.Value;
+//            _car.Description = carDescriptionTextBox.Text;
 
             return true;
         }
@@ -83,25 +83,25 @@ namespace CarRentalApp.View.Forms
 
         private void UpdateUi()
         {
-            carNameTextBox.Text = _car.Name;
-            carLicensePlateTextBox.Text = _car.LicensePlate;
-            carPricePerDayNumericUpDown.Value = _car.PricePerDay;
-            carClassificationDropDown.SelectedItem(_car.Classification.Name);
-            carDescriptionTextBox.Text = _car.Description;
-            if (_car.NextDrainDate != null) carNextDrainDatepicker.Value = (DateTime) _car.NextDrainDate;
-            if (_car.PurchaseDate != null) carPurchaseDatepicker.Value = (DateTime) _car.PurchaseDate;
+//            carNameTextBox.Text = _car.Name;
+//            carLicensePlateTextBox.Text = _car.LicensePlate;
+//            carPricePerDayNumericUpDown.Value = _car.PricePerDay;
+//            carClassificationDropDown.SelectedItem(_car.Classification.Name);
+//            carDescriptionTextBox.Text = _car.Description;
+//            if (_car.NextDrainDate != null) carNextDrainDatepicker.Value = (DateTime) _car.NextDrainDate;
+//            if (_car.PurchaseDate != null) carPurchaseDatepicker.Value = (DateTime) _car.PurchaseDate;
         }
 
         private void RefreshClassificationsDropDown()
         {
-            var classifications = _unitOfWork.Classifications.GetAll().ToList();
-            var classificationNames = new List<string>();
-            classifications.ForEach(c => classificationNames.Add(c.Name));
-            carClassificationDropDown.items = classificationNames.ToArray();
-            if (carClassificationDropDown.items.Length != 0)
-                carClassificationDropDown.SelectedItem(_car.Classification != null
-                    ? _car.Classification.Name
-                    : classificationNames.First());
+//            var classifications = _unitOfWork.Classifications.GetAll().ToList();
+//            var classificationNames = new List<string>();
+//            classifications.ForEach(c => classificationNames.Add(c.Name));
+//            carClassificationDropDown.items = classificationNames.ToArray();
+//            if (carClassificationDropDown.items.Length != 0)
+//                carClassificationDropDown.SelectedItem(_car.Classification != null
+//                    ? _car.Classification.Name
+//                    : classificationNames.First());
         }
 
         private void AddNewClassificationButton_Click(object sender, EventArgs e)

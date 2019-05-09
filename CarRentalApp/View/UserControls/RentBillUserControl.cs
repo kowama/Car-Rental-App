@@ -33,30 +33,30 @@ namespace CarRentalApp.View.UserControls
 
         private void UpdateUi()
         {
-            if (_rent.Bill == null) GenerateBill();
-            if (_rent.Bill == null) return;
-            billNumLabel.Text = _rent.Bill.BillNumber.ToString("D").ToUpper();
-            billDetailsTextBox.Text = _rent.Bill.Details;
-//          billDateDatePicker = 
-            billClientNameLabel.Text = _rent.Client.FullName;
-            billManageByLabel.Text = _rent.ManageBy.FullName;
-            billAmountNumericUpDown.Value = _rent.Bill.Amount;
+//            if (_rent.Bill == null) GenerateBill();
+//            if (_rent.Bill == null) return;
+//            billNumLabel.Text = _rent.Bill.BillNumber.ToString("D").ToUpper();
+//            billDetailsTextBox.Text = _rent.Bill.Details;
+////          billDateDatePicker = 
+//            billClientNameLabel.Text = _rent.Client.FullName;
+//            billManageByLabel.Text = _rent.ManageBy.FullName;
+//            billAmountNumericUpDown.Value = _rent.Bill.Amount;
         }
 
         private void OnValidating(string message, bool error = true)
         {
-            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
-            validationLabel.Text = message;
-            validationLabel.Visible = true;
+//            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
+//            validationLabel.Text = message;
+//            validationLabel.Visible = true;
         }
 
         private bool ValidInputsToBill()
         {
 
-            _rent.Bill.Amount = billAmountNumericUpDown.Value;
-            _rent.Bill.Details = billDetailsTextBox.Text;
-            _rent.Bill.Date = billDateDatePicker.Value;
-
+//            _rent.Bill.Amount = billAmountNumericUpDown.Value;
+//            _rent.Bill.Details = billDetailsTextBox.Text;
+//            _rent.Bill.Date = billDateDatePicker.Value;
+//
             return true;
         }
 
@@ -74,20 +74,23 @@ namespace CarRentalApp.View.UserControls
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if(!ValidInputsToBill()) return;
-            try
-            {
-                _unitOfWork.Rents.Add(_rent);
-                _unitOfWork.Complete();
-                _next(new RentUserControl(_unitOfWork, _next,_rent));
-            }
-            catch (FormattedDbEntityValidationException ex)
-            {
-                OnValidating(ex.Message);
-            }
+//            if(!ValidInputsToBill()) return;
+//            try
+//            {
+//                _unitOfWork.Rents.Add(_rent);
+//                _unitOfWork.Complete();
+//                _next(new RentUserControl(_unitOfWork, _next,_rent));
+//            }
+//            catch (FormattedDbEntityValidationException ex)
+//            {
+//                OnValidating(ex.Message);
+//            }
             
         }
 
+        private void RentBillUserControl_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

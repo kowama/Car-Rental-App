@@ -20,5 +20,10 @@ namespace CarRentalApp.View.Forms
             mainForm.Show();
             Hide();
         }
+
+        private void LoginFom_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

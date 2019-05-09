@@ -8,5 +8,10 @@ namespace CarRentalApp.View.Forms
         {
             InitializeComponent();
         }
+
+        private void RentsForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

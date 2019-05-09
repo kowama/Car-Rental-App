@@ -39,6 +39,7 @@ namespace CarRentalApp.View.Forms
             this.ClientSize = new System.Drawing.Size(460, 634);
             this.Name = "RentsForm";
             this.Text = "RentsForm";
+            this.Load += new System.EventHandler(this.RentsForm_Load);
             this.ResumeLayout(false);
 
         }

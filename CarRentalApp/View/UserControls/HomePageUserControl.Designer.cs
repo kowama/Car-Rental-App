@@ -1,8 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
-using Bunifu.DataViz;
-using Bunifu.Framework.UI;
-
 namespace CarRentalApp.View.UserControls
 {
     partial class HomePageUserControl
@@ -46,9 +43,7 @@ namespace CarRentalApp.View.UserControls
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportChartDataViz = new Bunifu.DataViz.BunifuDataViz();
             this.refreshButton = new System.Windows.Forms.Button();
-            this.reportDropdown = new Bunifu.Framework.UI.BunifuDropdown();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -185,34 +180,7 @@ namespace CarRentalApp.View.UserControls
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customers";
-            // 
-            // reportChartDataViz
-            // 
-            this.reportChartDataViz.animationEnabled = false;
-            this.reportChartDataViz.AxisLineColor = System.Drawing.Color.LightGray;
-            this.reportChartDataViz.AxisXFontColor = System.Drawing.Color.Gray;
-            this.reportChartDataViz.AxisXGridColor = System.Drawing.Color.Gray;
-            this.reportChartDataViz.AxisXGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reportChartDataViz.AxisYFontColor = System.Drawing.Color.Gray;
-            this.reportChartDataViz.AxisYGridColor = System.Drawing.Color.Gray;
-            this.reportChartDataViz.AxisYGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reportChartDataViz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reportChartDataViz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportChartDataViz.Location = new System.Drawing.Point(124, 314);
-            this.reportChartDataViz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.reportChartDataViz.Name = "reportChartDataViz";
-            this.reportChartDataViz.Size = new System.Drawing.Size(810, 354);
-            this.reportChartDataViz.TabIndex = 5;
-            this.reportChartDataViz.Theme = Bunifu.DataViz.BunifuDataViz._theme.theme1;
-            this.reportChartDataViz.Title = "";
+          
             // 
             // refreshButton
             // 
@@ -225,32 +193,13 @@ namespace CarRentalApp.View.UserControls
             this.refreshButton.TabIndex = 6;
             this.refreshButton.UseVisualStyleBackColor = false;
             this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
-            // 
-            // reportDropdown
-            // 
-            this.reportDropdown.BackColor = System.Drawing.Color.Transparent;
-            this.reportDropdown.BorderRadius = 3;
-            this.reportDropdown.DisabledColor = System.Drawing.Color.Gray;
-            this.reportDropdown.ForeColor = System.Drawing.Color.White;
-            this.reportDropdown.items = new string[] {
-        "Weekly report",
-        "Monthly report",
-        "Yearly report"};
-            this.reportDropdown.Location = new System.Drawing.Point(124, 273);
-            this.reportDropdown.Name = "reportDropdown";
-            this.reportDropdown.NomalColor = System.Drawing.Color.MediumSeaGreen;
-            this.reportDropdown.onHoverColor = System.Drawing.Color.SpringGreen;
-            this.reportDropdown.selectedIndex = 0;
-            this.reportDropdown.Size = new System.Drawing.Size(242, 35);
-            this.reportDropdown.TabIndex = 7;
+       
             // 
             // HomePageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.reportDropdown);
             this.Controls.Add(this.refreshButton);
-            this.Controls.Add(this.reportChartDataViz);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -284,8 +233,5 @@ namespace CarRentalApp.View.UserControls
         private PictureBox pictureBox2;
         private Label label3;
         private Label label1;
-        private BunifuDataViz reportChartDataViz;
-        private Button refreshButton;
-        private BunifuDropdown reportDropdown;
-    }
+        private Button refreshButton;    }
 }

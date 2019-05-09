@@ -38,6 +38,7 @@ namespace CarRentalApp.View.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "BillsPageUserControl";
             this.Size = new System.Drawing.Size(1044, 681);
+            this.Load += new System.EventHandler(this.BillsPageUserControl_Load);
             this.ResumeLayout(false);
 
         }
