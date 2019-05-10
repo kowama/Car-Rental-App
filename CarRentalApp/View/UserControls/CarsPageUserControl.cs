@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace CarRentalApp.View.UserControls
     {
         private readonly string _searchTextBoxDefaultText;
         private readonly UnitOfWork _unitOfWork;
+        private Car _selectedCar;
 
         public CarsPageUserControl()
         {
@@ -22,43 +24,34 @@ namespace CarRentalApp.View.UserControls
             _unitOfWork = UnitOfWork.Instance;
         }
 
-        private void DisplaySelectedCar(Car car = null)
+        private void DisplaySelectedCar()
         {
-//            if (car == null)
-//            {
-//                selectedCarNameLabel.Text
-//                    = selectedCarClassificationLabel.Text
-//                        = selectedCarLicensePlateLabel.Text
-//                            = selectedCarDescriptionLabel.Text
-//                                = selectedCarPricePerDayLabel.Text
-//                                    = selectedCarNextDrainDateLabel.Text
-//                                        =selectedCarRentsCountLabel.Text
-//                                        = selectedCarPurchaseDateLabel.Text = string.Empty;
-//                return;
-//            }
-//
-//            selectedCarNameLabel.Text = car.Name;
-//            selectedCarClassificationLabel.Text = car.Classification.Name;
-//            selectedCarLicensePlateLabel.Text = car.LicensePlate;
-//            selectedCarDescriptionLabel.Text = car.Description;
-//            selectedCarPricePerDayLabel.Text = $@"{car.PricePerDay:#,0.00} MAD /Day";
-//            selectedCarRentsCountLabel.Text = car.Rents.Count.ToString();
-//            selectedCarNextDrainDateLabel.Text = $@"{car.PurchaseDate:D}";
-//            selectedCarPurchaseDateLabel.Text = $@"{car.PurchaseDate:MM/dd/yyyy}";
+            if (_selectedCar == null)
+            {
+                selectedCarNameLabel.Text
+                    = selectedCarClassificationLabel.Text
+                        = selectedCarLicensePlateLabel.Text
+                            = selectedCarDescriptionLabel.Text
+                                = selectedCarPricePerDayLabel.Text
+                                    = selectedCarNextDrainDateLabel.Text
+                                        = selectedCarRentsCountLabel.Text
+                                            = selectedCarAvailabilityLabel.Text
+                                                = selectedCarPurchaseDateLabel.Text = string.Empty;
+                return;
+            }
+
+            selectedCarNameLabel.Text = _selectedCar.Name;
+            selectedCarClassificationLabel.Text = _selectedCar.Classification.Name;
+            selectedCarLicensePlateLabel.Text = _selectedCar.LicensePlate;
+            selectedCarDescriptionLabel.Text = _selectedCar.Description;
+            selectedCarPricePerDayLabel.Text = $@"{_selectedCar.PricePerDay:#,0.00} MAD /Day";
+            selectedCarRentsCountLabel.Text = _selectedCar.Rents.Count.ToString();
+            selectedCarNextDrainDateLabel.Text = $@"{_selectedCar.NextDrainDate:dd/MM/yyyy}";
+            selectedCarPurchaseDateLabel.Text = $@"{_selectedCar.PurchaseDate:dd/MM/yyyy}";
+            selectedCarAvailabilityLabel.Text = _selectedCar.IsAvailable ? "Available" : "Unavailable";
+            selectedCarAvailabilityLabel.BackColor = _selectedCar.IsAvailable ? Color.Green : Color.Red;
         }
 
-        private void RefreshCarsIndicator(List<Car> cars)
-        {
-//            float total = cars.Count;
-//            float available = cars.FindAll(c => c.IsAvailable).Count;
-//            var unavailable = total - available;
-//            var ratio = available / total;
-//
-//            carsCountLabel.Text = $@"{total:F0}";
-//            availableCarsCountLabel.Text = $@"{available:F0}";
-//            inavailableCarsCountLabel.Text = $@"{unavailable:F0}";
-//            carsAvailableCircleProgressBar.Value = (int)(ratio * 100);
-        }
 
         private void Search(string keyword)
         {
@@ -68,18 +61,22 @@ namespace CarRentalApp.View.UserControls
             var cars = _unitOfWork.Cars.GetAll().ToList();
             var all = searchFilterComboBox.SelectedIndex == searchFilterComboBox.Items.Count - 1;
             var filterBy = searchFilterComboBox.SelectedText;
+            List<Car> filteredCars;
 
-            var filteredCars = cars.FindAll(c =>
-                c.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == nameDataGridViewTextBoxColumn.HeaderText || all)
-                || c.LicensePlate.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == licensePlateDataGridViewTextBoxColumn.HeaderText || all)
-                || c.Classification.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == classificationDataGridViewTextBoxColumn.HeaderText || all)
-                || c.PricePerDay.ToString(CultureInfo.CurrentCulture)
-                    .Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == pricePerDayDataGridViewTextBoxColumn.HeaderText || all)
-            );
+            if (!string.IsNullOrEmpty(keyword))
+                filteredCars = cars.FindAll(c =>
+                    c.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == nameDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.LicensePlate.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == licensePlateDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.Classification.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == classificationDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.PricePerDay.ToString(CultureInfo.CurrentCulture)
+                        .Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == pricePerDayDataGridViewTextBoxColumn.HeaderText || all)
+                );
+            else
+                filteredCars = cars;
 
             carBindingSource.DataSource = filteredCars;
         }
@@ -88,7 +85,6 @@ namespace CarRentalApp.View.UserControls
         {
             var cars = _unitOfWork.Cars.GetAll().ToList();
             carBindingSource.DataSource = cars;
-            RefreshCarsIndicator(cars);
         }
 
         private void OnChildFromClosed(Car theCar)
@@ -98,7 +94,7 @@ namespace CarRentalApp.View.UserControls
             RefreshDataGridView();
             foreach (DataGridViewRow row in carDataGridView.Rows)
             {
-                var car = (Car)row.DataBoundItem;
+                var car = (Car) row.DataBoundItem;
                 if (theCar.Id == car.Id)
                     row.Selected = true;
             }
@@ -160,12 +156,17 @@ namespace CarRentalApp.View.UserControls
                 e.Value = selectedCarPictureBox.Image;
             if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.Classification)))
                 e.Value = car.Classification.Name;
+            if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.NextDrainDate)))
+                e.Value = string.Format($"{car.NextDrainDate:dd/MM/yyyy}");
+            if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.PricePerDay)))
+                e.Value = string.Format($"{car.PricePerDay:N} MAD");
         }
 
         private void CarsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             var car = (Car) carDataGridView.Rows[e.RowIndex].DataBoundItem;
-            DisplaySelectedCar(car);
+            _selectedCar = car;
+            DisplaySelectedCar();
         }
 
         private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -174,20 +175,15 @@ namespace CarRentalApp.View.UserControls
                 Search(searchTextBox.Text.Trim());
         }
 
-        private void carsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var car = (Car)carDataGridView.Rows[e.RowIndex].DataBoundItem;
-            if (car == null) return;
-            var carForm = new CarForm(FormMode.View, OnChildFromClosed, car);
-            carForm.Show();
-
-        }
-
         private void CarsPageUserControl_Load(object sender, EventArgs e)
         {
-
         }
 
-        
+        private void SelectedCarEditButton_Click(object sender, EventArgs e)
+        {
+            if (_selectedCar == null) return;
+            var carForm = new CarForm(FormMode.View, OnChildFromClosed, _selectedCar);
+            carForm.Show();
+        }
     }
 }

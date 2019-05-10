@@ -139,6 +139,14 @@
         MOBxosGT4iz9SolEIpFIJNJMpfIXB9T2jE+aeBAAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="selectedCarDescriptionLabel.Text" xml:space="preserve">
+    <value>Maecenas leo odio, condimentum id, luctus nec, 
+molestie sed, justo. Pellentesque viverra pede ac diam.
+molestie sed, justo. Pellentesque viverra pede ac diam.
+molestie sed, justo. Pellentesque viverra pede ac diam.
+
+ Cras pellentesque volutpat dui.</value>
+  </data>
   <data name="selectedCarPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASMAAADICAYAAACj1IfYAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

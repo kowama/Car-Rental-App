@@ -34,25 +34,25 @@ namespace CarRentalApp.View.UserControls
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersPageUserControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.mangerUserCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.usersCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.administratorUserCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.userDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.deleteUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.addUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.usersCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.administratorUserCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.mangerUserCountLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,13 +60,13 @@ namespace CarRentalApp.View.UserControls
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,28 @@ namespace CarRentalApp.View.UserControls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1044, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 80);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderPrimary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1044, 10);
+            this.kryptonPanel1.TabIndex = 3;
+            // 
+            // kryptonHeader1
+            // 
+            this.kryptonHeader1.Location = new System.Drawing.Point(23, 10);
+            this.kryptonHeader1.Name = "kryptonHeader1";
+            this.kryptonHeader1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
+            this.kryptonHeader1.Size = new System.Drawing.Size(237, 56);
+            this.kryptonHeader1.TabIndex = 2;
+            this.kryptonHeader1.Values.Description = "";
+            this.kryptonHeader1.Values.Heading = "Manage your Users";
+            this.kryptonHeader1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader1.Values.Image")));
             // 
             // panel4
             // 
@@ -95,6 +117,63 @@ namespace CarRentalApp.View.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(430, 581);
             this.panel4.TabIndex = 1;
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.kryptonLabel3.Location = new System.Drawing.Point(25, 526);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(155, 20);
+            this.kryptonLabel3.TabIndex = 5;
+            this.kryptonLabel3.Values.Text = "Total number of managers";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.kryptonLabel2.Location = new System.Drawing.Point(25, 500);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(180, 20);
+            this.kryptonLabel2.TabIndex = 5;
+            this.kryptonLabel2.Values.Text = "Total number of administrators";
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.kryptonLabel1.Location = new System.Drawing.Point(25, 474);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(130, 20);
+            this.kryptonLabel1.TabIndex = 5;
+            this.kryptonLabel1.Values.Text = "Total number of users ";
+            // 
+            // mangerUserCountLabel
+            // 
+            this.mangerUserCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.mangerUserCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.mangerUserCountLabel.Location = new System.Drawing.Point(231, 526);
+            this.mangerUserCountLabel.Name = "mangerUserCountLabel";
+            this.mangerUserCountLabel.Size = new System.Drawing.Size(18, 20);
+            this.mangerUserCountLabel.TabIndex = 0;
+            this.mangerUserCountLabel.Values.Text = "7";
+            // 
+            // usersCountLabel
+            // 
+            this.usersCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.usersCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.usersCountLabel.Location = new System.Drawing.Point(231, 474);
+            this.usersCountLabel.Name = "usersCountLabel";
+            this.usersCountLabel.Size = new System.Drawing.Size(18, 20);
+            this.usersCountLabel.TabIndex = 0;
+            this.usersCountLabel.Values.Text = "9";
+            // 
+            // administratorUserCountLabel
+            // 
+            this.administratorUserCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.administratorUserCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.administratorUserCountLabel.Location = new System.Drawing.Point(231, 500);
+            this.administratorUserCountLabel.Name = "administratorUserCountLabel";
+            this.administratorUserCountLabel.Size = new System.Drawing.Size(18, 20);
+            this.administratorUserCountLabel.TabIndex = 0;
+            this.administratorUserCountLabel.Values.Text = "2";
             // 
             // refreshDataGridViewButton
             // 
@@ -129,42 +208,8 @@ namespace CarRentalApp.View.UserControls
             this.panel3.Size = new System.Drawing.Size(608, 581);
             this.panel3.TabIndex = 1;
             // 
-            // searchComboBox
-            // 
-            this.searchComboBox.DropDownWidth = 121;
-            this.searchComboBox.Location = new System.Drawing.Point(262, 28);
-            this.searchComboBox.Name = "searchComboBox";
-            this.searchComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.searchComboBox.Size = new System.Drawing.Size(121, 21);
-            this.searchComboBox.TabIndex = 3;
-            this.searchComboBox.Text = "All";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(166, 26);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.searchButton.Size = new System.Drawing.Size(90, 25);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.Values.Text = "Search";
-            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 26);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
-            this.searchTextBox.Size = new System.Drawing.Size(148, 23);
-            this.searchTextBox.TabIndex = 1;
-            this.searchTextBox.Text = "Enter a Keyword";
-            this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
-            this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
-            // 
             // userDataGridView
             // 
-            this.userDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.userDataGridView.AutoGenerateColumns = false;
             this.userDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -196,6 +241,26 @@ namespace CarRentalApp.View.UserControls
             this.panel5.Size = new System.Drawing.Size(608, 61);
             this.panel5.TabIndex = 4;
             // 
+            // searchComboBox
+            // 
+            this.searchComboBox.DropDownWidth = 121;
+            this.searchComboBox.Location = new System.Drawing.Point(262, 28);
+            this.searchComboBox.Name = "searchComboBox";
+            this.searchComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.searchComboBox.Size = new System.Drawing.Size(121, 21);
+            this.searchComboBox.TabIndex = 3;
+            this.searchComboBox.Text = "All";
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(166, 26);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.searchButton.Size = new System.Drawing.Size(90, 25);
+            this.searchButton.TabIndex = 2;
+            this.searchButton.Values.Text = "Search";
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // deleteUserButton
             // 
             this.deleteUserButton.Location = new System.Drawing.Point(477, 26);
@@ -205,6 +270,17 @@ namespace CarRentalApp.View.UserControls
             this.deleteUserButton.TabIndex = 0;
             this.deleteUserButton.Values.Text = "delete";
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(12, 26);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
+            this.searchTextBox.Size = new System.Drawing.Size(148, 23);
+            this.searchTextBox.TabIndex = 1;
+            this.searchTextBox.Text = "Enter a Keyword";
+            this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
+            // 
             // addUserButton
             // 
             this.addUserButton.Location = new System.Drawing.Point(414, 26);
@@ -213,85 +289,6 @@ namespace CarRentalApp.View.UserControls
             this.addUserButton.Size = new System.Drawing.Size(57, 25);
             this.addUserButton.TabIndex = 0;
             this.addUserButton.Values.Text = "add";
-            // 
-            // usersCountLabel
-            // 
-            this.usersCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.usersCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.usersCountLabel.Location = new System.Drawing.Point(231, 474);
-            this.usersCountLabel.Name = "usersCountLabel";
-            this.usersCountLabel.Size = new System.Drawing.Size(18, 20);
-            this.usersCountLabel.TabIndex = 0;
-            this.usersCountLabel.Values.Text = "9";
-            // 
-            // administratorUserCountLabel
-            // 
-            this.administratorUserCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.administratorUserCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.administratorUserCountLabel.Location = new System.Drawing.Point(231, 500);
-            this.administratorUserCountLabel.Name = "administratorUserCountLabel";
-            this.administratorUserCountLabel.Size = new System.Drawing.Size(18, 20);
-            this.administratorUserCountLabel.TabIndex = 0;
-            this.administratorUserCountLabel.Values.Text = "2";
-            // 
-            // mangerUserCountLabel
-            // 
-            this.mangerUserCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.mangerUserCountLabel.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.mangerUserCountLabel.Location = new System.Drawing.Point(231, 526);
-            this.mangerUserCountLabel.Name = "mangerUserCountLabel";
-            this.mangerUserCountLabel.Size = new System.Drawing.Size(18, 20);
-            this.mangerUserCountLabel.TabIndex = 0;
-            this.mangerUserCountLabel.Values.Text = "7";
-            // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.kryptonLabel1.Location = new System.Drawing.Point(25, 474);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(130, 20);
-            this.kryptonLabel1.TabIndex = 5;
-            this.kryptonLabel1.Values.Text = "Total number of users ";
-            // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.kryptonLabel2.Location = new System.Drawing.Point(25, 500);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(180, 20);
-            this.kryptonLabel2.TabIndex = 5;
-            this.kryptonLabel2.Values.Text = "Total number of administrators";
-            // 
-            // kryptonLabel3
-            // 
-            this.kryptonLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.kryptonLabel3.Location = new System.Drawing.Point(25, 526);
-            this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(155, 20);
-            this.kryptonLabel3.TabIndex = 5;
-            this.kryptonLabel3.Values.Text = "Total number of managers";
-            // 
-            // kryptonPanel1
-            // 
-            this.kryptonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 80);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
-            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderPrimary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(1044, 10);
-            this.kryptonPanel1.TabIndex = 3;
-            // 
-            // kryptonHeader1
-            // 
-            this.kryptonHeader1.Location = new System.Drawing.Point(23, 10);
-            this.kryptonHeader1.Name = "kryptonHeader1";
-            this.kryptonHeader1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.kryptonHeader1.Size = new System.Drawing.Size(237, 56);
-            this.kryptonHeader1.TabIndex = 2;
-            this.kryptonHeader1.Values.Description = "";
-            this.kryptonHeader1.Values.Heading = "Manage your Users";
-            this.kryptonHeader1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeader1.Values.Image")));
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -343,15 +340,15 @@ namespace CarRentalApp.View.UserControls
             this.Load += new System.EventHandler(this.UsersPageUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
