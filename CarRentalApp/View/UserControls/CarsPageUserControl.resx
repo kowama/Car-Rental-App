@@ -117,16 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="selectedCarDescriptionLabel.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- Fusce ultrices justo eget pulvinar tincidunt. 
-Donec convallis ultrices ullamcorper.
- Cras purus ex, consectetur sit amet orci a, laoreet auctor lorem. Quisque rutrum sodales lorem, 
-ut consectetur quam porttitor eu. Sed mollis purus diam,
- et vehicula dolor semper non. Ut rhoncus bibendum hendrerit.</value>
-  </data>
+  <metadata name="carBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="carImagePictureBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kryptonHeader1.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAuxJREFUaEPt
+        mL1rFFEUxdegRYJNIkaITawUUmlh0omN/gWWSmwUE8uI2qgYGxVj0EYJQhQrQbANFvmoFSIEJFpopWiR
+        2CiKH+s5955ZN7uZZcZ9M2zxfnDIzrsf577szs7MViKRSCQSifwH1Wq1GxqF7kJPAos92btbdsUAgxHo
+        I1Q0H6AR2YYFjXdD63QpCXoNyD4caHrb2jvfIB6fD6xpiL0TpmQfBjTsgvh2J5xWKDjofcYtDHpuUah9
+        0IznRsJPqFeh4KB3nzwShhVqHzS75j2NBS0XBjwW3cqY1HL7oNkr72lMaLkw4HHOrYxlLbcHGg16vxp7
+        FSoMeOxzqxqDCuUDhdv1kq/HrZWzquXCgdcbtzTGtLxhtpYgcSf0A3oBXYHqP6+3lFY48JpyS2MB4iyc
+        6Tu0Q2npIOkklAYbPS9JL6E0RjVuOkia9dyOZlbjtgaJQxDfyi+s6hB4y8KZhjRmNlDAq/knKOEBdKpk
+        0TOBs3RpvOygaNjKHV5p+xQqDXrKO+GgQtlB0aTXGotaOwDx4sj/zn1oqyUHgL2gGegztAzt1/oSlHDV
+        kvOAojmvNS5obdUPawS7eUSvMW9Z47XWL/qhMWfJeUDRvNcafGrbBv2yo39MK71t0OuOt6zBjxQ96Z0w
+        r/TssMhrDfvext9nfmj8hg5ZcgDQ6zD0h43FU60XspEe6DL0EDpiiQLHA9CxnNrwBIjjoxB7X4LsuR1/
+        w2+kFcjhyZ+XeypPBTnlbQTxXuirZeaDNS0f0hAvdSNnPc3gcLwna6X6TY+rzaYgXs5GEOMdwFvLcq4r
+        lApybniqwdrUKzZipW2EXwD1J/AuhVJhTkNNj0JNINb2RuqvqBPQngbx9oHnRkixZ6MPvROWNF52UFTm
+        j3FZWdd42UHRmtd2FGsaLzsoWvHajmJF42UHRY+9tol3ULhf/xpgb+g9jTbhkdKyg6J+6CbEK3a9jiul
+        MOBxosGT4iz9SolEIpFIJNJMpfIXB9T2jE+aeBAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="selectedCarPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASMAAADICAYAAACj1IfYAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAIxCSURBVHhe7d0HuC5VeT78F0tAkaKAvYAFsSsqShFQ
@@ -731,9 +744,6 @@ ut consectetur quam porttitor eu. Sed mollis purus diam,
         ufi01wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="carsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

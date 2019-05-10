@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using CarRentalApp.Persistence;
 
@@ -13,17 +14,49 @@ namespace CarRentalApp.View.Forms
             _unitOfWork =UnitOfWork.Instance;
 
         }
-        private void LoginButton_Click_1(object sender, EventArgs e)
+        private void OnValidating(string message, bool error = true)
         {
-            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "kowama");
-            var mainForm = new MainForm { Location = Location, StartPosition = FormStartPosition.Manual };
+            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
+            validationLabel.Text = message;
+            validationLabel.Visible = true;
+        }
+
+        private bool ValidateInputs()
+        {
+//            if (string.IsNullOrWhiteSpace(usernameTextBox.Text))
+//            {
+//                OnValidating("* Username is required");
+//                return false;
+//
+//            }
+//            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+//            {
+//                OnValidating("* Password is required");
+//                return false;
+//
+//            }
+
+            return true;
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            if (!AuthUser()) return;
+
+            var mainForm = new MainForm() { Location = Location, StartPosition = FormStartPosition.Manual };
             mainForm.Show();
             Hide();
+
         }
 
-        private void LoginFom_Load(object sender, EventArgs e)
+        private bool AuthUser()
         {
+            if (!ValidateInputs()) return false;
 
+            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "kowama");
+
+            return true;
         }
+        
     }
 }

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using CarRentalApp.Core.domain;
 using CarRentalApp.Persistence;
 using CarRentalApp.View.UserControls;
 
@@ -12,14 +13,17 @@ namespace CarRentalApp.View.Forms
         private const int LeftPanelExtendedWidth = 220;
         private const int LeftPanelCollapsedWidth = 62;
         private bool _isCollapsed;
+
         public MainForm()
         {
             InitializeComponent();
             _isCollapsed = false;
             datetimeTimer.Start();
             SetPageToContentPanel(new HomePageUserControl());
-
+            var userIsAdmin = Program.CurrentUser.HasRole(RoleName.Administrator);
+            usersMenuButton.Visible = userIsAdmin;
         }
+
         private void UpdateAppUi()
         {
             appUserRoleLabel.Text = Program.CurrentUser.Username;
@@ -37,12 +41,11 @@ namespace CarRentalApp.View.Forms
             page.Dock = DockStyle.Fill;
             contentPannel.Controls.Clear();
             contentPannel.Controls.Add(page);
-
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             UpdateAppUi();
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -59,7 +62,6 @@ namespace CarRentalApp.View.Forms
                     userInfoPanel.Visible = true;
                     datetimeLabel.Visible = true;
                     Refresh();
-
                 }
             }
             else
@@ -73,7 +75,6 @@ namespace CarRentalApp.View.Forms
                     _isCollapsed = true;
                     Refresh();
                 }
-
             }
         }
 
@@ -98,6 +99,7 @@ namespace CarRentalApp.View.Forms
             SetPageToContentPanel(new RentsPageUserControl());
             MoveSidePanel(rentsMenuButton);
         }
+
         private void BillsMenuButton_Click(object sender, EventArgs e)
         {
             SetPageToContentPanel(new BillsPageUserControl());
