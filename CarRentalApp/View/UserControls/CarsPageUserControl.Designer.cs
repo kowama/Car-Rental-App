@@ -63,6 +63,7 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarAvailabilityLabel = new System.Windows.Forms.Label();
             this.selectedCarNameLabel = new System.Windows.Forms.Label();
             this.selectedCarPictureBox = new System.Windows.Forms.PictureBox();
+            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licensePlateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +71,6 @@ namespace CarRentalApp.View.UserControls
             this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAvailableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nextDrainDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carDataGridView)).BeginInit();
             this.panel5.SuspendLayout();
@@ -448,11 +448,15 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarPictureBox.TabIndex = 10;
             this.selectedCarPictureBox.TabStop = false;
             // 
+            // carBindingSource
+            // 
+            this.carBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
+            // 
             // carImageDataGridViewImageColumn
             // 
             this.carImageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.carImageDataGridViewImageColumn.DataPropertyName = "CarImage";
-            this.carImageDataGridViewImageColumn.HeaderText = "CarImage";
+            this.carImageDataGridViewImageColumn.HeaderText = "Car Image";
             this.carImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.carImageDataGridViewImageColumn.MinimumWidth = 149;
             this.carImageDataGridViewImageColumn.Name = "carImageDataGridViewImageColumn";
@@ -506,10 +510,6 @@ namespace CarRentalApp.View.UserControls
             this.nextDrainDateDataGridViewTextBoxColumn.Name = "nextDrainDateDataGridViewTextBoxColumn";
             this.nextDrainDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.nextDrainDateDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // carBindingSource
-            // 
-            this.carBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
             // 
             // CarsPageUserControl
             // 

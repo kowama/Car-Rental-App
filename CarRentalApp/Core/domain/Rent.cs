@@ -7,6 +7,7 @@ namespace CarRentalApp.Core.domain
 
     public class  Rent
     {
+
         public Guid RentId { get; set; }
 
         public virtual Car Car { get; set; }
@@ -23,5 +24,20 @@ namespace CarRentalApp.Core.domain
         public DateTime? DateEnd { get; set; }
 
         public RentState State { get; set; }
+
+        public double NumberOfDays
+        {
+            get
+            {
+                if (DateEnd == null)
+                {
+                    return 0;
+                }
+
+                return ((TimeSpan)(DateEnd - DateStart)).TotalDays;
+
+            }
+        }
+
     }
 }

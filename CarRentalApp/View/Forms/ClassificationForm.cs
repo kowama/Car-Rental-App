@@ -24,7 +24,7 @@ namespace CarRentalApp.View.Forms
             _classification = new Classification();
         }
 
-        private void OnValidation(string message,bool error = true)
+        private void OnValidating(string message,bool error = true)
         {
 //            validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
 //            validationLabel.Text = message;
