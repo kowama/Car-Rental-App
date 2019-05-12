@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="client_delete_confirm" xml:space="preserve">
     <value>Are You sure to Delete These Clients</value>
   </data>
-  <data name="ClassificationForm_DeleteButton_Click_Are_you_Sure_to_Delete" xml:space="preserve">
+  <data name="Are_you_Sure_to_Delete" xml:space="preserve">
     <value>Are you Sure to Delete</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="car_picture_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_picture_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="database_Error" xml:space="preserve">
+    <value>Database Error</value>
+  </data>
+  <data name="Have_Rents_Delete_Them_First" xml:space="preserve">
+    <value>{0} Have {1} rent(s) delete them first !</value>
+  </data>
+  <data name="Unauthorized_delete_action" xml:space="preserve">
+    <value>Unauthorized delete action</value>
   </data>
 </root>

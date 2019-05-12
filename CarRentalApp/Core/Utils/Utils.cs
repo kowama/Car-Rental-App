@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -18,7 +17,7 @@ namespace CarRentalApp.Core.Utils
         public static byte[] ImageToByteArray(Image imageIn)
         {
             var ms = new MemoryStream();
-            imageIn.Save(ms, ImageFormat.Gif);
+            imageIn.Save(ms, imageIn.RawFormat);
             return ms.ToArray();
         }
 

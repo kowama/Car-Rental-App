@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
+using CarRentalApp.Properties;
 using CarRentalApp.View.Forms;
 
 namespace CarRentalApp.View.UserControls
@@ -37,6 +38,7 @@ namespace CarRentalApp.View.UserControls
                                         = selectedCarRentsCountLabel.Text
                                             = selectedCarAvailabilityLabel.Text
                                                 = selectedCarPurchaseDateLabel.Text = string.Empty;
+                selectedCarPictureBox.Image = Resources.car_picture_default;
                 return;
             }
 
@@ -50,6 +52,9 @@ namespace CarRentalApp.View.UserControls
             selectedCarPurchaseDateLabel.Text = $@"{_selectedCar.PurchaseDate:dd/MM/yyyy}";
             selectedCarAvailabilityLabel.Text = _selectedCar.IsAvailable ? "Available" : "Unavailable";
             selectedCarAvailabilityLabel.BackColor = _selectedCar.IsAvailable ? Color.Green : Color.Red;
+            selectedCarPictureBox.Image = _selectedCar.GetPicture() != null
+                ? _selectedCar.GetPicture()
+                : Resources.car_picture_default;
         }
 
 
@@ -153,7 +158,7 @@ namespace CarRentalApp.View.UserControls
 
             var car = (Car) carDataGridView.Rows[e.RowIndex].DataBoundItem;
             if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.CarImage)))
-                e.Value = selectedCarPictureBox.Image;
+                e.Value = car.GetPicture() != null ? car.GetPicture() : Resources.car_picture_default;
             if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.Classification)))
                 e.Value = car.Classification.Name;
             if (carDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Car.NextDrainDate)))
@@ -182,7 +187,56 @@ namespace CarRentalApp.View.UserControls
         private void SelectedCarEditButton_Click(object sender, EventArgs e)
         {
             if (_selectedCar == null) return;
-            var carForm = new CarForm(FormMode.View, OnChildFromClosed, _selectedCar);
+            var carForm = new CarForm(FormMode.Edit, OnChildFromClosed, _selectedCar);
+            carForm.Show();
+        }
+
+        private void CarDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            RefreshDataGridView();
+        }
+
+        private void CarDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+                var car = (Car)carDataGridView.Rows[e.Row.Index].DataBoundItem;
+
+            var result = MessageBox.Show(car.Resume, Resources.Are_you_Sure_to_Delete, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            if (car.Rents.Count != 0)
+            {
+                e.Cancel = true;
+                MessageBox.Show(string.Format(Resources.Have_Rents_Delete_Them_First, car.Resume,car.Rents.Count),
+                    Resources.Unauthorized_delete_action, 
+                    MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                _unitOfWork.Cars.Remove(car);
+                _unitOfWork.Complete();
+            }
+            catch (FormattedDbEntityValidationException exception)
+            {
+                MessageBox.Show(exception.Message,
+                    Resources.database_Error,
+                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void CarDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex < 0 || e.RowIndex > carBindingSource.Count) return;
+
+            var selectedCar =(Car) carDataGridView.Rows[e.RowIndex].DataBoundItem;
+            var carForm = new CarForm(FormMode.Edit, OnChildFromClosed, selectedCar);
             carForm.Show();
         }
     }

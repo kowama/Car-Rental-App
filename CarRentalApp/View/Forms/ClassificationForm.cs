@@ -94,7 +94,7 @@ namespace CarRentalApp.View.Forms
 //            var text = new StringBuilder();
 //            text.Append($"{classification.Id}, {classification.Name}, {classification.Description}");
 //
-//            var dialogResult = MessageBox.Show(text.ToString(),Resources.ClassificationForm_DeleteButton_Click_Are_you_Sure_to_Delete , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+//            var dialogResult = MessageBox.Show(text.ToString(),Resources.Are_you_Sure_to_Delete , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 //            if (dialogResult != DialogResult.Yes) return;
 //
 //            _unitOfWork.Classifications.Remove(classification);

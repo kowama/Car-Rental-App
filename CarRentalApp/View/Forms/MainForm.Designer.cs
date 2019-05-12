@@ -51,7 +51,7 @@ namespace CarRentalApp.View.Forms
             this.userInfoPanel = new System.Windows.Forms.Panel();
             this.appUserRoleLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.appUsernameLabel = new System.Windows.Forms.Label();
+            this.appUserNameLabel = new System.Windows.Forms.Label();
             this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.datetimeTimer = new System.Windows.Forms.Timer(this.components);
             this.contentPannel = new System.Windows.Forms.Panel();
@@ -340,7 +340,7 @@ namespace CarRentalApp.View.Forms
             this.userInfoPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.userInfoPanel.Controls.Add(this.appUserRoleLabel);
             this.userInfoPanel.Controls.Add(this.label2);
-            this.userInfoPanel.Controls.Add(this.appUsernameLabel);
+            this.userInfoPanel.Controls.Add(this.appUserNameLabel);
             this.userInfoPanel.Location = new System.Drawing.Point(0, 115);
             this.userInfoPanel.Name = "userInfoPanel";
             this.userInfoPanel.Size = new System.Drawing.Size(220, 63);
@@ -353,7 +353,8 @@ namespace CarRentalApp.View.Forms
             this.appUserRoleLabel.AutoSize = true;
             this.appUserRoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appUserRoleLabel.ForeColor = System.Drawing.Color.White;
-            this.appUserRoleLabel.Location = new System.Drawing.Point(94, 48);
+            this.appUserRoleLabel.Location = new System.Drawing.Point(96, 48);
+            this.appUserRoleLabel.MinimumSize = new System.Drawing.Size(118, 15);
             this.appUserRoleLabel.Name = "appUserRoleLabel";
             this.appUserRoleLabel.Size = new System.Drawing.Size(118, 15);
             this.appUserRoleLabel.TabIndex = 3;
@@ -374,19 +375,19 @@ namespace CarRentalApp.View.Forms
             this.label2.Text = "Rent Luxury";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // appUsernameLabel
+            // appUserNameLabel
             // 
-            this.appUsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.appUserNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.appUsernameLabel.AutoSize = true;
-            this.appUsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appUsernameLabel.ForeColor = System.Drawing.Color.White;
-            this.appUsernameLabel.Location = new System.Drawing.Point(0, 48);
-            this.appUsernameLabel.Name = "appUsernameLabel";
-            this.appUsernameLabel.Size = new System.Drawing.Size(66, 16);
-            this.appUsernameLabel.TabIndex = 3;
-            this.appUsernameLabel.Text = "Kowama";
-            this.appUsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.appUserNameLabel.AutoSize = true;
+            this.appUserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appUserNameLabel.ForeColor = System.Drawing.Color.White;
+            this.appUserNameLabel.Location = new System.Drawing.Point(0, 48);
+            this.appUserNameLabel.Name = "appUserNameLabel";
+            this.appUserNameLabel.Size = new System.Drawing.Size(66, 16);
+            this.appUserNameLabel.TabIndex = 3;
+            this.appUserNameLabel.Text = "Kowama";
+            this.appUserNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuTimer
             // 
@@ -440,7 +441,7 @@ namespace CarRentalApp.View.Forms
         private Panel infoPanel;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label appUsernameLabel;
+        private Label appUserNameLabel;
         private Label appUserRoleLabel;
         private Panel panel5;
         private Button menuButton;

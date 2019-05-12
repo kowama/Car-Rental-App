@@ -35,6 +35,14 @@ namespace CarRentalApp.View.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarsPageUserControl));
             this.panel2 = new System.Windows.Forms.Panel();
             this.carDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.carImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licensePlateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAvailableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nextDrainDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.searchFilterComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -63,16 +71,9 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarAvailabilityLabel = new System.Windows.Forms.Label();
             this.selectedCarNameLabel = new System.Windows.Forms.Label();
             this.selectedCarPictureBox = new System.Windows.Forms.PictureBox();
-            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.licensePlateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAvailableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nextDrainDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -81,7 +82,6 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedCarPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -123,8 +123,74 @@ namespace CarRentalApp.View.UserControls
             this.carDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carDataGridView.Size = new System.Drawing.Size(583, 510);
             this.carDataGridView.TabIndex = 6;
+            this.carDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarDataGridView_CellDoubleClick);
             this.carDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CarsDataGridView_CellFormatting);
             this.carDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarsDataGridView_RowEnter);
+            this.carDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.CarDataGridView_UserDeletedRow);
+            this.carDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.CarDataGridView_UserDeletingRow);
+            // 
+            // carImageDataGridViewImageColumn
+            // 
+            this.carImageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.carImageDataGridViewImageColumn.DataPropertyName = "CarImage";
+            this.carImageDataGridViewImageColumn.HeaderText = "Car Image";
+            this.carImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.carImageDataGridViewImageColumn.MinimumWidth = 149;
+            this.carImageDataGridViewImageColumn.Name = "carImageDataGridViewImageColumn";
+            this.carImageDataGridViewImageColumn.ReadOnly = true;
+            this.carImageDataGridViewImageColumn.Width = 149;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // licensePlateDataGridViewTextBoxColumn
+            // 
+            this.licensePlateDataGridViewTextBoxColumn.DataPropertyName = "LicensePlate";
+            this.licensePlateDataGridViewTextBoxColumn.HeaderText = "License Plate";
+            this.licensePlateDataGridViewTextBoxColumn.Name = "licensePlateDataGridViewTextBoxColumn";
+            this.licensePlateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.licensePlateDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // classificationDataGridViewTextBoxColumn
+            // 
+            this.classificationDataGridViewTextBoxColumn.DataPropertyName = "Classification";
+            this.classificationDataGridViewTextBoxColumn.HeaderText = "Classification";
+            this.classificationDataGridViewTextBoxColumn.Name = "classificationDataGridViewTextBoxColumn";
+            this.classificationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.classificationDataGridViewTextBoxColumn.Width = 106;
+            // 
+            // pricePerDayDataGridViewTextBoxColumn
+            // 
+            this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
+            this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price Per Day";
+            this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
+            this.pricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pricePerDayDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // isAvailableDataGridViewCheckBoxColumn
+            // 
+            this.isAvailableDataGridViewCheckBoxColumn.DataPropertyName = "IsAvailable";
+            this.isAvailableDataGridViewCheckBoxColumn.HeaderText = "Availability";
+            this.isAvailableDataGridViewCheckBoxColumn.Name = "isAvailableDataGridViewCheckBoxColumn";
+            this.isAvailableDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isAvailableDataGridViewCheckBoxColumn.Width = 75;
+            // 
+            // nextDrainDateDataGridViewTextBoxColumn
+            // 
+            this.nextDrainDateDataGridViewTextBoxColumn.DataPropertyName = "NextDrainDate";
+            this.nextDrainDateDataGridViewTextBoxColumn.HeaderText = "Next Drain Date";
+            this.nextDrainDateDataGridViewTextBoxColumn.Name = "nextDrainDateDataGridViewTextBoxColumn";
+            this.nextDrainDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nextDrainDateDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // carBindingSource
+            // 
+            this.carBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
             // 
             // panel5
             // 
@@ -361,11 +427,13 @@ namespace CarRentalApp.View.UserControls
             this.selectedCarPricePerDayLabel.BackColor = System.Drawing.Color.Cornsilk;
             this.selectedCarPricePerDayLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectedCarPricePerDayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedCarPricePerDayLabel.Location = new System.Drawing.Point(264, 240);
+            this.selectedCarPricePerDayLabel.Location = new System.Drawing.Point(232, 238);
+            this.selectedCarPricePerDayLabel.MinimumSize = new System.Drawing.Size(121, 18);
             this.selectedCarPricePerDayLabel.Name = "selectedCarPricePerDayLabel";
-            this.selectedCarPricePerDayLabel.Size = new System.Drawing.Size(89, 18);
+            this.selectedCarPricePerDayLabel.Size = new System.Drawing.Size(121, 18);
             this.selectedCarPricePerDayLabel.TabIndex = 14;
-            this.selectedCarPricePerDayLabel.Text = "919.41 MAD";
+            this.selectedCarPricePerDayLabel.Text = "2000000.00 MAD";
+            this.selectedCarPricePerDayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // selectedCarNextDrainDateLabel
             // 
@@ -441,75 +509,13 @@ namespace CarRentalApp.View.UserControls
             // 
             // selectedCarPictureBox
             // 
-            this.selectedCarPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("selectedCarPictureBox.Image")));
+            this.selectedCarPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.selectedCarPictureBox.Image = global::CarRentalApp.Properties.Resources.car_picture_default;
             this.selectedCarPictureBox.Location = new System.Drawing.Point(58, 0);
             this.selectedCarPictureBox.Name = "selectedCarPictureBox";
             this.selectedCarPictureBox.Size = new System.Drawing.Size(291, 172);
             this.selectedCarPictureBox.TabIndex = 10;
             this.selectedCarPictureBox.TabStop = false;
-            // 
-            // carBindingSource
-            // 
-            this.carBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Car);
-            // 
-            // carImageDataGridViewImageColumn
-            // 
-            this.carImageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.carImageDataGridViewImageColumn.DataPropertyName = "CarImage";
-            this.carImageDataGridViewImageColumn.HeaderText = "Car Image";
-            this.carImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.carImageDataGridViewImageColumn.MinimumWidth = 149;
-            this.carImageDataGridViewImageColumn.Name = "carImageDataGridViewImageColumn";
-            this.carImageDataGridViewImageColumn.ReadOnly = true;
-            this.carImageDataGridViewImageColumn.Width = 149;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // licensePlateDataGridViewTextBoxColumn
-            // 
-            this.licensePlateDataGridViewTextBoxColumn.DataPropertyName = "LicensePlate";
-            this.licensePlateDataGridViewTextBoxColumn.HeaderText = "License Plate";
-            this.licensePlateDataGridViewTextBoxColumn.Name = "licensePlateDataGridViewTextBoxColumn";
-            this.licensePlateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.licensePlateDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // classificationDataGridViewTextBoxColumn
-            // 
-            this.classificationDataGridViewTextBoxColumn.DataPropertyName = "Classification";
-            this.classificationDataGridViewTextBoxColumn.HeaderText = "Classification";
-            this.classificationDataGridViewTextBoxColumn.Name = "classificationDataGridViewTextBoxColumn";
-            this.classificationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.classificationDataGridViewTextBoxColumn.Width = 106;
-            // 
-            // pricePerDayDataGridViewTextBoxColumn
-            // 
-            this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
-            this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price Per Day";
-            this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
-            this.pricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pricePerDayDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // isAvailableDataGridViewCheckBoxColumn
-            // 
-            this.isAvailableDataGridViewCheckBoxColumn.DataPropertyName = "IsAvailable";
-            this.isAvailableDataGridViewCheckBoxColumn.HeaderText = "Availability";
-            this.isAvailableDataGridViewCheckBoxColumn.Name = "isAvailableDataGridViewCheckBoxColumn";
-            this.isAvailableDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isAvailableDataGridViewCheckBoxColumn.Width = 75;
-            // 
-            // nextDrainDateDataGridViewTextBoxColumn
-            // 
-            this.nextDrainDateDataGridViewTextBoxColumn.DataPropertyName = "NextDrainDate";
-            this.nextDrainDateDataGridViewTextBoxColumn.HeaderText = "Next Drain Date";
-            this.nextDrainDateDataGridViewTextBoxColumn.Name = "nextDrainDateDataGridViewTextBoxColumn";
-            this.nextDrainDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nextDrainDateDataGridViewTextBoxColumn.Width = 118;
             // 
             // CarsPageUserControl
             // 
@@ -524,6 +530,7 @@ namespace CarRentalApp.View.UserControls
             this.Load += new System.EventHandler(this.CarsPageUserControl_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.carDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).EndInit();
@@ -535,7 +542,6 @@ namespace CarRentalApp.View.UserControls
             this.kryptonPanel2.ResumeLayout(false);
             this.kryptonPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedCarPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

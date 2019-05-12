@@ -120,6 +120,11 @@
       <DependentUpon>201905060149311_RefactorEntitiesProps.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\CarRentalDbInitializer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +302,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904201954348_InitialMigration.resx">
       <DependentUpon>201904201954348_InitialMigration.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904202138553_SetRentEntityTableConstraint.resx">
       <DependentUpon>201904202138553_SetRentEntityTableConstraint.cs</DependentUpon>
@@ -321,14 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,8 +386,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\car_picture_default.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

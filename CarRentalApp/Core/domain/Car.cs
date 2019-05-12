@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Linq;
+using CarRentalApp.Core.Utils;
 
 namespace CarRentalApp.Core.domain
 {
@@ -43,6 +45,17 @@ namespace CarRentalApp.Core.domain
         public static string LicensePlateFromResume(string resume)
         {
             return resume.Split(',').Last().Trim();
+        }
+
+        public void SetPicture(Image picture)
+        {
+            if(picture == null) return;
+            CarImage = ImageUtils.ImageToByteArray(picture);
+        }
+
+        public Image GetPicture()
+        {
+            return CarImage == null ? null : ImageUtils.ByteArrayToImage(CarImage);
         }
     }
 }

@@ -22,6 +22,9 @@ namespace CarRentalApp.View.Forms
             SetPageToContentPanel(new HomePageUserControl());
             var userIsAdmin = Program.CurrentUser.HasRole(RoleName.Administrator);
             usersMenuButton.Visible = userIsAdmin;
+            appUserNameLabel.Text = Program.CurrentUser.Username;
+            appUserRoleLabel.Text = userIsAdmin ? RoleName.Administrator: RoleName.Manager;
+
         }
 
         private void UpdateAppUi()
