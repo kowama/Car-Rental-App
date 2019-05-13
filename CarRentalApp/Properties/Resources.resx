@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="client_delete_confirm" xml:space="preserve">
-    <value>Are You sure to Delete These Clients</value>
+    <value>Are You sure to delete this client ?</value>
   </data>
   <data name="Are_you_Sure_to_Delete" xml:space="preserve">
     <value>Are you Sure to Delete</value>
@@ -135,5 +135,11 @@
   </data>
   <data name="Unauthorized_delete_action" xml:space="preserve">
     <value>Unauthorized delete action</value>
+  </data>
+  <data name="Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first" xml:space="preserve">
+    <value>Client {0} have {1} Rents can't be deleted{2} Delete Rents first</value>
+  </data>
+  <data name="Client____0__will_be_deleted" xml:space="preserve">
+    <value>Client : {0} will be deleted !</value>
   </data>
 </root>

@@ -36,9 +36,6 @@ namespace CarRentalApp.View.UserControls
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.clientDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.deleteClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.addClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +45,12 @@ namespace CarRentalApp.View.UserControls
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resumeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.addClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.searchFilterComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
@@ -92,6 +92,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // clientDataGridView
             // 
+            this.clientDataGridView.AllowUserToAddRows = false;
             this.clientDataGridView.AllowUserToOrderColumns = true;
             this.clientDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -109,98 +110,67 @@ namespace CarRentalApp.View.UserControls
             this.addressDataGridViewTextBoxColumn,
             this.resumeDataGridViewTextBoxColumn});
             this.clientDataGridView.DataSource = this.clientBindingSource;
+            this.clientDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.clientDataGridView.Location = new System.Drawing.Point(23, 149);
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientDataGridView.Size = new System.Drawing.Size(1002, 502);
             this.clientDataGridView.TabIndex = 2;
-            this.clientDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientsDataGridView_CellDoubleClick);
+            this.clientDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientsDataGridView_CellDoubleClick);
             this.clientDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ClientsDataGridView_CellFormatting);
-            // 
-            // refreshDataGridViewButton
-            // 
-            this.refreshDataGridViewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshDataGridViewButton.Location = new System.Drawing.Point(936, 116);
-            this.refreshDataGridViewButton.Name = "refreshDataGridViewButton";
-            this.refreshDataGridViewButton.OverrideFocus.Back.Color1 = System.Drawing.Color.Orange;
-            this.refreshDataGridViewButton.OverrideFocus.Back.Color2 = System.Drawing.Color.Orange;
-            this.refreshDataGridViewButton.OverrideFocus.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.refreshDataGridViewButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.refreshDataGridViewButton.Size = new System.Drawing.Size(57, 25);
-            this.refreshDataGridViewButton.TabIndex = 4;
-            this.refreshDataGridViewButton.Values.Text = "refresh";
-            this.refreshDataGridViewButton.Click += new System.EventHandler(this.RefreshDataGridButton_Click);
-            // 
-            // deleteClientButton
-            // 
-            this.deleteClientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteClientButton.Location = new System.Drawing.Point(873, 116);
-            this.deleteClientButton.Name = "deleteClientButton";
-            this.deleteClientButton.OverrideFocus.Back.Color1 = System.Drawing.Color.Red;
-            this.deleteClientButton.OverrideFocus.Back.Color2 = System.Drawing.Color.Red;
-            this.deleteClientButton.OverrideFocus.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.deleteClientButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.deleteClientButton.Size = new System.Drawing.Size(57, 25);
-            this.deleteClientButton.TabIndex = 5;
-            this.deleteClientButton.Values.Text = "delete";
-            this.deleteClientButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // addClientButton
-            // 
-            this.addClientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addClientButton.Location = new System.Drawing.Point(810, 116);
-            this.addClientButton.Name = "addClientButton";
-            this.addClientButton.OverrideFocus.Back.Color1 = System.Drawing.Color.Green;
-            this.addClientButton.OverrideFocus.Back.Color2 = System.Drawing.Color.Green;
-            this.addClientButton.OverrideFocus.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
-            this.addClientButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.addClientButton.Size = new System.Drawing.Size(57, 25);
-            this.addClientButton.TabIndex = 6;
-            this.addClientButton.Values.Text = "add";
-            this.addClientButton.Click += new System.EventHandler(this.AddNewClientButton_Click);
+            this.clientDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.ClientDataGridView_UserDeletedRow);
+            this.clientDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.ClientDataGridView_UserDeletingRow);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cinDataGridViewTextBoxColumn
             // 
             this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
             this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
             this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
+            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // driverLicenseDataGridViewTextBoxColumn
             // 
             this.driverLicenseDataGridViewTextBoxColumn.DataPropertyName = "DriverLicense";
             this.driverLicenseDataGridViewTextBoxColumn.HeaderText = "Driver License";
             this.driverLicenseDataGridViewTextBoxColumn.Name = "driverLicenseDataGridViewTextBoxColumn";
+            this.driverLicenseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // resumeDataGridViewTextBoxColumn
             // 
@@ -212,6 +182,34 @@ namespace CarRentalApp.View.UserControls
             // clientBindingSource
             // 
             this.clientBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Client);
+            // 
+            // refreshDataGridViewButton
+            // 
+            this.refreshDataGridViewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshDataGridViewButton.Location = new System.Drawing.Point(936, 116);
+            this.refreshDataGridViewButton.Name = "refreshDataGridViewButton";
+            this.refreshDataGridViewButton.OverrideFocus.Back.Color1 = System.Drawing.Color.Orange;
+            this.refreshDataGridViewButton.OverrideFocus.Back.Color2 = System.Drawing.Color.Orange;
+            this.refreshDataGridViewButton.OverrideFocus.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.refreshDataGridViewButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.refreshDataGridViewButton.Size = new System.Drawing.Size(57, 25);
+            this.refreshDataGridViewButton.TabIndex = 4;
+            this.refreshDataGridViewButton.Values.Text = "refresh";
+            this.refreshDataGridViewButton.Click += new System.EventHandler(this.RefreshDataGridButton_Click);
+            // 
+            // addClientButton
+            // 
+            this.addClientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addClientButton.Location = new System.Drawing.Point(859, 116);
+            this.addClientButton.Name = "addClientButton";
+            this.addClientButton.OverrideFocus.Back.Color1 = System.Drawing.Color.Green;
+            this.addClientButton.OverrideFocus.Back.Color2 = System.Drawing.Color.Green;
+            this.addClientButton.OverrideFocus.Back.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.True;
+            this.addClientButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.addClientButton.Size = new System.Drawing.Size(57, 25);
+            this.addClientButton.TabIndex = 6;
+            this.addClientButton.Values.Text = "add";
+            this.addClientButton.Click += new System.EventHandler(this.AddNewClientButton_Click);
             // 
             // searchTextBox
             // 
@@ -248,14 +246,25 @@ namespace CarRentalApp.View.UserControls
             this.searchFilterComboBox.TabIndex = 9;
             this.searchFilterComboBox.Text = "All";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(550, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 45);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "* Double click for more details\r\n* F2 to enter on edit mode\r\n* key del or suppr t" +
+    "o delete a client\r\n";
+            // 
             // ClientsPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.searchFilterComboBox);
             this.Controls.Add(this.refreshDataGridViewButton);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.deleteClientButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.addClientButton);
             this.Controls.Add(this.clientDataGridView);
@@ -277,6 +286,14 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonHeader kryptonHeader1;
         private Panel panel1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView clientDataGridView;
+        private BindingSource clientBindingSource;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton refreshDataGridViewButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton addClientButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchTextBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton searchButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchFilterComboBox;
+        private Label label1;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;
@@ -285,13 +302,5 @@ namespace CarRentalApp.View.UserControls
         private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn resumeDataGridViewTextBoxColumn;
-        private BindingSource clientBindingSource;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton refreshDataGridViewButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton deleteClientButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton addClientButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchTextBox;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton searchButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchFilterComboBox;
     }
 }

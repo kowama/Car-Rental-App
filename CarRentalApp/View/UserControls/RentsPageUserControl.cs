@@ -59,7 +59,7 @@ namespace CarRentalApp.View.UserControls
             var row = rentDataGridView.Rows[e.RowIndex];
             row.HeaderCell.Value = $"{row.Index + 1}";
 
-            var rent = (Rent) rentDataGridView.Rows[e.RowIndex].DataBoundItem;
+            var rent = (Rent)rentDataGridView.Rows[e.RowIndex].DataBoundItem;
 
             if (rent == null) return;
 
@@ -86,6 +86,8 @@ namespace CarRentalApp.View.UserControls
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.DateEnd)))
                 e.Value = rent.DateEnd != null ? rent.DateStart.ToString("dd/MM/yyyy") : string.Empty;
+            if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.NumberOfDays)))
+                e.Value = rent.NumberOfDays.ToString("N0");
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -106,13 +108,13 @@ namespace CarRentalApp.View.UserControls
         private void AddNewCarButton_Click(object sender, EventArgs e)
         {
         }
-
-        private void RentDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void RentDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex < 0 || e.RowIndex > rentDataGridView.RowCount)
                 return;
 
-            var rent = (Rent) rentDataGridView.Rows[e.RowIndex].DataBoundItem;
+            var rent = (Rent)rentDataGridView.Rows[e.RowIndex].DataBoundItem;
             pageContentNavigator.SelectedPage = viewRentPage;
             ViewRent(rent);
         }
@@ -122,5 +124,7 @@ namespace CarRentalApp.View.UserControls
             SetPageContentPanel(viewRentContenPanel, new RentUserControl(FormMode.View,rent ,OnActionCompleted));
             SetPageContentPanel(viewRentBillContenPanel, new RentBillUserControl(FormMode.View,rent, OnActionCompleted));
         }
+
+        
     }
 }

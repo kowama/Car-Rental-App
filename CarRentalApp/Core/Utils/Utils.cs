@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CarRentalApp.Core.Utils
@@ -12,6 +13,18 @@ namespace CarRentalApp.Core.Utils
             return source?.IndexOf(toCheck, comp) >= 0;
         }
     }
+
+    public static class EmailUtils
+    {
+        public static bool IsValidEmail(string emailAddress)
+        {
+            return !string.IsNullOrWhiteSpace(emailAddress) 
+                   && Regex.IsMatch(emailAddress,
+                       @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
+    }
+
+
     public static class ImageUtils
     {
         public static byte[] ImageToByteArray(Image imageIn)

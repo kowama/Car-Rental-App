@@ -80,7 +80,25 @@ namespace CarRentalApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are You sure to Delete These Clients.
+        ///   Looks up a localized string similar to Client : {0} will be deleted !.
+        /// </summary>
+        internal static string Client__0__will_be_deleted {
+            get {
+                return ResourceManager.GetString("Client____0__will_be_deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client {0} have {1} Rents can&apos;t be deleted{2} Delete Rents first.
+        /// </summary>
+        internal static string Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first {
+            get {
+                return ResourceManager.GetString("Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are You sure to delete this client ?.
         /// </summary>
         internal static string client_delete_confirm {
             get {

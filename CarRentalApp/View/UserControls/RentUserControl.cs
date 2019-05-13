@@ -271,9 +271,29 @@ namespace CarRentalApp.View.UserControls
             UpdateControlsUi();
         }
 
+        private void OnClientFormClosed(Client theClient)
+        {
+            if(theClient== null) return;
+            RefreshDataBind();
+            rentClientComboBox.Text = theClient.Resume;
+        }
+
+        private void OnCarFormClosed(Car theCar)
+        {
+            if(theCar == null) return;
+
+        }
+
         private void AddNewClient_Click(object sender, EventArgs e)
         {
-            var clientForm = new ClientForm(FormMode.AddNew);
+            var clientForm = new ClientForm(FormMode.AddNew,OnClientFormClosed);
+            clientForm.Show();
+        }
+
+        private void ViewSelectedCarButton_Click(object sender, EventArgs e)
+        {
+            var car = _unitOfWork.Cars.GetByResume(rentCarComboBox.Text);
+            var clientForm = new CarForm(FormMode.View,OnCarFormClosed ,car);
             clientForm.Show();
         }
 

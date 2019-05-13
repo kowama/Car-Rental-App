@@ -233,11 +233,13 @@ namespace CarRentalApp.View.UserControls
 
         private void CarDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex < 0 || e.RowIndex > carBindingSource.Count) return;
+            if (e.RowIndex < 0 || e.RowIndex > carBindingSource.Count) return;
 
-            var selectedCar =(Car) carDataGridView.Rows[e.RowIndex].DataBoundItem;
-            var carForm = new CarForm(FormMode.Edit, OnChildFromClosed, selectedCar);
+            var selectedCar = (Car)carDataGridView.Rows[e.RowIndex].DataBoundItem;
+            var carForm = new CarForm(FormMode.View, OnChildFromClosed, selectedCar);
             carForm.Show();
         }
+
+        
     }
 }
