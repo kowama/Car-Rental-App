@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Persistence;
-using CarRentalApp.Properties;
 
 namespace CarRentalApp.View.Forms
 {

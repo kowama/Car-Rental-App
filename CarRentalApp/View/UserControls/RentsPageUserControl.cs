@@ -125,6 +125,9 @@ namespace CarRentalApp.View.UserControls
             SetPageContentPanel(viewRentBillContenPanel, new RentBillUserControl(FormMode.View,rent, OnActionCompleted));
         }
 
-        
+        private void RefreshDataGridViewButton_Click(object sender, EventArgs e)
+        {
+            RefreshDataGridView();
+        }
     }
 }

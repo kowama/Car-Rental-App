@@ -142,4 +142,10 @@
   <data name="Client____0__will_be_deleted" xml:space="preserve">
     <value>Client : {0} will be deleted !</value>
   </data>
+  <data name="User_0_has_managed_1_rents_2_Delete_Them_First" xml:space="preserve">
+    <value>User:{0} has managed {1} rents {2} Delete Them First</value>
+  </data>
+  <data name="User_0_1_2__Will_be_deleted" xml:space="preserve">
+    <value>User : {0}, {1} {2} Will be deleted</value>
+  </data>
 </root>

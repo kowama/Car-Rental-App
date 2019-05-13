@@ -31,7 +31,7 @@ namespace CarRentalApp.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -82,7 +82,7 @@ namespace CarRentalApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Client : {0} will be deleted !.
         /// </summary>
-        internal static string Client__0__will_be_deleted {
+        internal static string Client____0__will_be_deleted {
             get {
                 return ResourceManager.GetString("Client____0__will_be_deleted", resourceCulture);
             }
@@ -130,6 +130,24 @@ namespace CarRentalApp.Properties {
         internal static string Unauthorized_delete_action {
             get {
                 return ResourceManager.GetString("Unauthorized_delete_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User : {0}, {1} {2} Will be deleted.
+        /// </summary>
+        internal static string User_0_1_2__Will_be_deleted {
+            get {
+                return ResourceManager.GetString("User_0_1_2__Will_be_deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User:{0} has managed {1} rents {2} Delete Them First.
+        /// </summary>
+        internal static string User_0_has_managed_1_rents_2_Delete_Them_First {
+            get {
+                return ResourceManager.GetString("User_0_has_managed_1_rents_2_Delete_Them_First", resourceCulture);
             }
         }
     }

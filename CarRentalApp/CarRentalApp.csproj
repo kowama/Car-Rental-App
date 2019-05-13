@@ -70,6 +70,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -213,11 +214,23 @@
     <Compile Include="View\Forms\RentsForm.Designer.cs">
       <DependentUpon>RentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\BillsPageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UserControls\BillsPageUserControl.Designer.cs">
       <DependentUpon>BillsPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Components\UserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Components\UserUserControl.Designer.cs">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\HomePageUserControl.cs">
       <SubType>UserControl</SubType>
@@ -225,10 +238,10 @@
     <Compile Include="View\UserControls\HomePageUserControl.Designer.cs">
       <DependentUpon>HomePageUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\RentBillUserControl.cs">
+    <Compile Include="View\UserControls\Components\RentBillUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\RentBillUserControl.Designer.cs">
+    <Compile Include="View\UserControls\Components\RentBillUserControl.Designer.cs">
       <DependentUpon>RentBillUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\RentsPageUserControl.cs">
@@ -243,10 +256,10 @@
     <Compile Include="View\UserControls\CarsPageUserControl.Designer.cs">
       <DependentUpon>CarsPageUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\RentUserControl.cs">
+    <Compile Include="View\UserControls\Components\RentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\RentUserControl.Designer.cs">
+    <Compile Include="View\UserControls\Components\RentUserControl.Designer.cs">
       <DependentUpon>RentUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\UsersPageUserControl.cs">
@@ -336,13 +349,19 @@
     <EmbeddedResource Include="View\Forms\RentsForm.resx">
       <DependentUpon>RentsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\BillsPageUserControl.resx">
       <DependentUpon>BillsPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Components\UserUserControl.resx">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\HomePageUserControl.resx">
       <DependentUpon>HomePageUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\RentBillUserControl.resx">
+    <EmbeddedResource Include="View\UserControls\Components\RentBillUserControl.resx">
       <DependentUpon>RentBillUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\RentsPageUserControl.resx">
@@ -352,7 +371,7 @@
       <DependentUpon>CarsPageUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\RentUserControl.resx">
+    <EmbeddedResource Include="View\UserControls\Components\RentUserControl.resx">
       <DependentUpon>RentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\UsersPageUserControl.resx">

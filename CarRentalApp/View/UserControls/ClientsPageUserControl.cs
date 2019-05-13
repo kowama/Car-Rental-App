@@ -56,7 +56,7 @@ namespace CarRentalApp.View.UserControls
             clientDataGridView.DataSource = filteredUsers.ToList();
         }
 
-        private void OnChildFromClosed(Client theClient)
+        private void OnClientFromClosed(Client theClient)
         {
             if (theClient == null) return;
 
@@ -117,7 +117,7 @@ namespace CarRentalApp.View.UserControls
 
         private void AddNewClientButton_Click(object sender, EventArgs e)
         {
-            var addNewClientForm = new ClientForm(FormMode.AddNew, OnChildFromClosed);
+            var addNewClientForm = new ClientForm(FormMode.AddNew, OnClientFromClosed);
             addNewClientForm.Show();
         }
 
@@ -150,7 +150,7 @@ namespace CarRentalApp.View.UserControls
 
             if (client == null) return;
 
-            var clientForm = new ClientForm(FormMode.View, OnChildFromClosed, client);
+            var clientForm = new ClientForm(FormMode.View, OnClientFromClosed, client);
             clientForm.Show();
         }
 
@@ -176,7 +176,7 @@ namespace CarRentalApp.View.UserControls
             }
 
             var dialogResult = MessageBox.Show(
-                string.Format(Resources.Client__0__will_be_deleted, client.Resume,
+                string.Format(Resources.Client____0__will_be_deleted, client.Resume,
                     Environment.NewLine), Resources.client_delete_confirm, MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
             if (dialogResult != DialogResult.Yes)

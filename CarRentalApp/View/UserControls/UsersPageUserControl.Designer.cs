@@ -50,11 +50,12 @@ namespace CarRentalApp.View.UserControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.deleteUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.addUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,29 +211,38 @@ namespace CarRentalApp.View.UserControls
             // 
             // userDataGridView
             // 
+            this.userDataGridView.AllowUserToAddRows = false;
+            this.userDataGridView.AllowUserToOrderColumns = true;
             this.userDataGridView.AutoGenerateColumns = false;
-            this.userDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.userDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastNameDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
             this.cinDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn});
+            this.phoneDataGridViewTextBoxColumn,
+            this.RoleDataGridViewTextBoxColumn});
             this.userDataGridView.DataSource = this.userBindingSource;
             this.userDataGridView.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
             this.userDataGridView.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ContextMenuInner;
             this.userDataGridView.Location = new System.Drawing.Point(12, 67);
             this.userDataGridView.Name = "userDataGridView";
+            this.userDataGridView.ReadOnly = true;
+            this.userDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userDataGridView.Size = new System.Drawing.Size(585, 427);
             this.userDataGridView.TabIndex = 0;
+            this.userDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserDataGridView_CellDoubleClick);
+            this.userDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.UserDataGridView_CellFormatting);
+            this.userDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.UserDataGridView_UserDeletedRow);
+            this.userDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.UserDataGridView_UserDeletingRow);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.searchComboBox);
             this.panel5.Controls.Add(this.refreshDataGridViewButton);
             this.panel5.Controls.Add(this.searchButton);
-            this.panel5.Controls.Add(this.deleteUserButton);
             this.panel5.Controls.Add(this.searchTextBox);
             this.panel5.Controls.Add(this.addUserButton);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -261,15 +271,6 @@ namespace CarRentalApp.View.UserControls
             this.searchButton.Values.Text = "Search";
             this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // deleteUserButton
-            // 
-            this.deleteUserButton.Location = new System.Drawing.Point(477, 26);
-            this.deleteUserButton.Name = "deleteUserButton";
-            this.deleteUserButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleOrange;
-            this.deleteUserButton.Size = new System.Drawing.Size(57, 25);
-            this.deleteUserButton.TabIndex = 0;
-            this.deleteUserButton.Values.Text = "delete";
-            // 
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(12, 26);
@@ -283,47 +284,69 @@ namespace CarRentalApp.View.UserControls
             // 
             // addUserButton
             // 
-            this.addUserButton.Location = new System.Drawing.Point(414, 26);
+            this.addUserButton.Location = new System.Drawing.Point(466, 26);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.addUserButton.Size = new System.Drawing.Size(57, 25);
             this.addUserButton.TabIndex = 0;
             this.addUserButton.Values.Text = "add";
+            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // RoleDataGridViewTextBoxColumn
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.MaxInputLength = 32;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.RoleDataGridViewTextBoxColumn.DataPropertyName = "Roles";
+            this.RoleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.RoleDataGridViewTextBoxColumn.Name = "RoleDataGridViewTextBoxColumn";
+            this.RoleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.RoleDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Width = 89;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.MaxInputLength = 32;
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 92;
             // 
             // cinDataGridViewTextBoxColumn
             // 
             this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
             this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
-            this.cinDataGridViewTextBoxColumn.MaxInputLength = 32;
             this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
+            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cinDataGridViewTextBoxColumn.Width = 54;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MaxInputLength = 64;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 65;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.MaxInputLength = 32;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 70;
             // 
             // userBindingSource
             // 
@@ -362,16 +385,9 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView userDataGridView;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchComboBox;
         private Panel panel5;
-        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private BindingSource userBindingSource;
         private ComponentFactory.Krypton.Toolkit.KryptonButton searchButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton addUserButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton refreshDataGridViewButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton deleteUserButton;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel usersCountLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel mangerUserCountLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel administratorUserCountLabel;
@@ -380,5 +396,13 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonHeader kryptonHeader1;
+        private BindingSource userBindingSource;
+        private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn RoleDataGridViewTextBoxColumn;
     }
 }
