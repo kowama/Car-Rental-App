@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
+using CarRentalApp.View.UserControls.Components;
 using ComponentFactory.Krypton.Navigator;
 
 namespace CarRentalApp.View.UserControls
@@ -54,7 +55,7 @@ namespace CarRentalApp.View.UserControls
 
         private void RentsDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (rentDataGridView.Rows[e.RowIndex].DataBoundItem == null) return;
+            if (e.RowIndex<0 || rentDataGridView.Rows[e.RowIndex].DataBoundItem == null) return;
 
             var row = rentDataGridView.Rows[e.RowIndex];
             row.HeaderCell.Value = $"{row.Index + 1}";

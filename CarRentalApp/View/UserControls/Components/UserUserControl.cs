@@ -90,6 +90,7 @@ namespace CarRentalApp.View.UserControls.Components
 
             _user.Username = usernameTextBox.Text;
             _user.Password = userPasswordTextBox.Text;
+            _user.Roles.Clear();
             _user.Roles.Add(_unitOfWork.Roles.GetRoleByName(userRoleComboBox.Text));
             _user.FirstName = userFirstNameTextBox.Text;
             _user.LastName = userLastNameTextBox.Text;

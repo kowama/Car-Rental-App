@@ -53,7 +53,7 @@ namespace CarRentalApp.View.Forms
         {
             if (!ValidateInputs()) return false;
 
-            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "kowama");
+            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "KoyeKoye");
 
             return true;
         }

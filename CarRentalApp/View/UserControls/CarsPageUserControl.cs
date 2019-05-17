@@ -198,9 +198,10 @@ namespace CarRentalApp.View.UserControls
 
         private void CarDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-                var car = (Car)carDataGridView.Rows[e.Row.Index].DataBoundItem;
+            var car = (Car) carDataGridView.Rows[e.Row.Index].DataBoundItem;
 
-            var result = MessageBox.Show(car.Resume, Resources.Are_you_Sure_to_Delete, MessageBoxButtons.YesNo,
+            var result = MessageBox.Show(car.Resume,
+                string.Format(Resources.UserDeletingRow__0__delete_confirm, nameof(Car)), MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
             if (result != DialogResult.Yes)
@@ -212,9 +213,11 @@ namespace CarRentalApp.View.UserControls
             if (car.Rents.Count != 0)
             {
                 e.Cancel = true;
-                MessageBox.Show(string.Format(Resources.Have_Rents_Delete_Them_First, car.Resume,car.Rents.Count),
-                    Resources.Unauthorized_delete_action, 
-                    MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    string.Format(Resources.UserDeletingRow_Car___0__have__1__Rents_delete_them_first, car.Resume,
+                        car.Rents.Count),
+                    Resources.Unauthorized_delete_action,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -225,9 +228,8 @@ namespace CarRentalApp.View.UserControls
             }
             catch (FormattedDbEntityValidationException exception)
             {
-                MessageBox.Show(exception.Message,
-                    Resources.database_Error,
-                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, Resources.UserDeletingRow_Database_Action_Error,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -235,11 +237,9 @@ namespace CarRentalApp.View.UserControls
         {
             if (e.RowIndex < 0 || e.RowIndex > carBindingSource.Count) return;
 
-            var selectedCar = (Car)carDataGridView.Rows[e.RowIndex].DataBoundItem;
+            var selectedCar = (Car) carDataGridView.Rows[e.RowIndex].DataBoundItem;
             var carForm = new CarForm(FormMode.View, OnChildFromClosed, selectedCar);
             carForm.Show();
         }
-
-        
     }
 }

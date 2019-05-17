@@ -75,7 +75,7 @@ namespace CarRentalApp.View.Forms
             // loginButton
             // 
             this.loginButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.loginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.loginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
             this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

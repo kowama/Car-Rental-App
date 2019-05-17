@@ -7,7 +7,7 @@ using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
 using CarRentalApp.View.Forms;
 
-namespace CarRentalApp.View.UserControls
+namespace CarRentalApp.View.UserControls.Components
 {
     public partial class RentUserControl : UserControl
     {
@@ -64,7 +64,7 @@ namespace CarRentalApp.View.UserControls
                     
                     saveButton.Visible = false;
                     nextButton.Visible = false;
-                    addNewClientButton.Visible = false;
+                    moreClientButton.Visible = false;
                     carFilterCheckBox.Visible = false;
                     validationLabel.Visible = false;
 
@@ -86,7 +86,7 @@ namespace CarRentalApp.View.UserControls
                     editButton.Visible = false;
                     checkButton.Visible = false;
 
-                    addNewClientButton.Visible = true;
+                    moreClientButton.Visible = true;
                     carFilterCheckBox.Visible = true;
                     rentCarComboBox.Enabled = true;
                     rentStartDateTimePicker.Enabled = true;
@@ -107,7 +107,7 @@ namespace CarRentalApp.View.UserControls
 
                     editButton.Visible = false;
                     cancelEditButton.Visible = false;
-                    addNewClientButton.Visible = true;
+                    moreClientButton.Visible = true;
                     carFilterCheckBox.Visible = true;
                     validationLabel.Visible = false;
                     rentClientComboBox.Enabled = true;
@@ -281,20 +281,23 @@ namespace CarRentalApp.View.UserControls
         private void OnCarFormClosed(Car theCar)
         {
             if(theCar == null) return;
+            RefreshDataBind();
+            rentCarComboBox.SelectedText = theCar.Resume;
 
         }
 
-        private void AddNewClient_Click(object sender, EventArgs e)
+        private void MoreClientButton_Click(object sender, EventArgs e)
         {
-            var clientForm = new ClientForm(FormMode.AddNew,OnClientFormClosed);
+            var client = _unitOfWork.Clients.GetByResume(rentClientComboBox.Text);
+            var clientForm = new ClientForm(client != null ? FormMode.View : FormMode.AddNew, OnClientFormClosed, client);
             clientForm.Show();
         }
 
-        private void ViewSelectedCarButton_Click(object sender, EventArgs e)
+        private void MoreCarButton_Click(object sender, EventArgs e)
         {
             var car = _unitOfWork.Cars.GetByResume(rentCarComboBox.Text);
-            var clientForm = new CarForm(FormMode.View,OnCarFormClosed ,car);
-            clientForm.Show();
+            var carForm = new CarForm(car != null ? FormMode.View : FormMode.AddNew,OnCarFormClosed ,car);
+            carForm.Show();
         }
 
         private void EditButton_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace CarRentalApp.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -61,66 +61,12 @@ namespace CarRentalApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you Sure to Delete.
-        /// </summary>
-        internal static string Are_you_Sure_to_Delete {
-            get {
-                return ResourceManager.GetString("Are_you_Sure_to_Delete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap car_picture_default {
             get {
                 object obj = ResourceManager.GetObject("car_picture_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client : {0} will be deleted !.
-        /// </summary>
-        internal static string Client____0__will_be_deleted {
-            get {
-                return ResourceManager.GetString("Client____0__will_be_deleted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client {0} have {1} Rents can&apos;t be deleted{2} Delete Rents first.
-        /// </summary>
-        internal static string Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first {
-            get {
-                return ResourceManager.GetString("Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are You sure to delete this client ?.
-        /// </summary>
-        internal static string client_delete_confirm {
-            get {
-                return ResourceManager.GetString("client_delete_confirm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Database Error.
-        /// </summary>
-        internal static string database_Error {
-            get {
-                return ResourceManager.GetString("database_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} Have {1} rent(s) delete them first !.
-        /// </summary>
-        internal static string Have_Rents_Delete_Them_First {
-            get {
-                return ResourceManager.GetString("Have_Rents_Delete_Them_First", resourceCulture);
             }
         }
         
@@ -134,20 +80,69 @@ namespace CarRentalApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User : {0}, {1} {2} Will be deleted.
+        ///   Looks up a localized string similar to {0} delete confirm ?.
         /// </summary>
-        internal static string User_0_1_2__Will_be_deleted {
+        internal static string UserDeletingRow__0__delete_confirm {
             get {
-                return ResourceManager.GetString("User_0_1_2__Will_be_deleted", resourceCulture);
+                return ResourceManager.GetString("UserDeletingRow__0__delete_confirm", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User:{0} has managed {1} rents {2} Delete Them First.
+        ///   Looks up a localized string similar to {0} : {1} will be deleted.
         /// </summary>
-        internal static string User_0_has_managed_1_rents_2_Delete_Them_First {
+        internal static string UserDeletingRow_0_1_will_be_deleted {
             get {
-                return ResourceManager.GetString("User_0_has_managed_1_rents_2_Delete_Them_First", resourceCulture);
+                return ResourceManager.GetString("UserDeletingRow_0_1_will_be_deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Car: {0} have {1} Rents!
+        ///Delete them first.
+        /// </summary>
+        internal static string UserDeletingRow_Car___0__have__1__Rents_delete_them_first {
+            get {
+                return ResourceManager.GetString("UserDeletingRow_Car___0__have__1__Rents_delete_them_first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classification: {0} Have {1} Cars! 
+        /// Delete them first.
+        /// </summary>
+        internal static string UserDeletingRow_Classification_0_have_1_delete_them_first {
+            get {
+                return ResourceManager.GetString("UserDeletingRow_Classification_0_have_1_delete_them_first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client : {0} have {1} Rents!
+        ///Delete theme first.
+        /// </summary>
+        internal static string UserDeletingRow_Client_0_have_1_Rents_delete_theme_first {
+            get {
+                return ResourceManager.GetString("UserDeletingRow_Client_0_have_1_Rents_delete_theme_first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database Action Error.
+        /// </summary>
+        internal static string UserDeletingRow_Database_Action_Error {
+            get {
+                return ResourceManager.GetString("UserDeletingRow_Database_Action_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User : {0} have {1} Rents
+        ///Delete theme first.
+        /// </summary>
+        internal static string UserDeletingRow_User_0_have_1_Rents_delete_theme_first {
+            get {
+                return ResourceManager.GetString("UserDeletingRow_User_0_have_1_Rents_delete_theme_first", resourceCulture);
             }
         }
     }

@@ -36,6 +36,14 @@ namespace CarRentalApp.View.UserControls
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.clientDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.addClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.searchFilterComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.printButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.ExportButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,19 +51,12 @@ namespace CarRentalApp.View.UserControls
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resumeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.refreshDataGridViewButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.addClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.searchFilterComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonHeader1
@@ -107,8 +108,7 @@ namespace CarRentalApp.View.UserControls
             this.driverLicenseDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.resumeDataGridViewTextBoxColumn});
+            this.addressDataGridViewTextBoxColumn});
             this.clientDataGridView.DataSource = this.clientBindingSource;
             this.clientDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.clientDataGridView.Location = new System.Drawing.Point(23, 149);
@@ -116,72 +116,12 @@ namespace CarRentalApp.View.UserControls
             this.clientDataGridView.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
             this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientDataGridView.Size = new System.Drawing.Size(1002, 502);
+            this.clientDataGridView.Size = new System.Drawing.Size(1002, 462);
             this.clientDataGridView.TabIndex = 2;
             this.clientDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientsDataGridView_CellDoubleClick);
             this.clientDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ClientsDataGridView_CellFormatting);
             this.clientDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.ClientDataGridView_UserDeletedRow);
             this.clientDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.ClientDataGridView_UserDeletingRow);
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cinDataGridViewTextBoxColumn
-            // 
-            this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
-            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
-            this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
-            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // driverLicenseDataGridViewTextBoxColumn
-            // 
-            this.driverLicenseDataGridViewTextBoxColumn.DataPropertyName = "DriverLicense";
-            this.driverLicenseDataGridViewTextBoxColumn.HeaderText = "Driver License";
-            this.driverLicenseDataGridViewTextBoxColumn.Name = "driverLicenseDataGridViewTextBoxColumn";
-            this.driverLicenseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // resumeDataGridViewTextBoxColumn
-            // 
-            this.resumeDataGridViewTextBoxColumn.DataPropertyName = "Resume";
-            this.resumeDataGridViewTextBoxColumn.HeaderText = "Resume";
-            this.resumeDataGridViewTextBoxColumn.Name = "resumeDataGridViewTextBoxColumn";
-            this.resumeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Client);
             // 
             // refreshDataGridViewButton
             // 
@@ -257,10 +197,85 @@ namespace CarRentalApp.View.UserControls
             this.label1.Text = "* Double click for more details\r\n* F2 to enter on edit mode\r\n* key del or suppr t" +
     "o delete a client\r\n";
             // 
+            // printButton
+            // 
+            this.printButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.printButton.Location = new System.Drawing.Point(916, 628);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(77, 25);
+            this.printButton.TabIndex = 11;
+            this.printButton.Values.Text = "print";
+            this.printButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportButton.Location = new System.Drawing.Point(807, 628);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(77, 25);
+            this.ExportButton.TabIndex = 12;
+            this.ExportButton.Values.Text = "export";
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cinDataGridViewTextBoxColumn
+            // 
+            this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
+            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
+            this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
+            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // driverLicenseDataGridViewTextBoxColumn
+            // 
+            this.driverLicenseDataGridViewTextBoxColumn.DataPropertyName = "DriverLicense";
+            this.driverLicenseDataGridViewTextBoxColumn.HeaderText = "Driver License";
+            this.driverLicenseDataGridViewTextBoxColumn.Name = "driverLicenseDataGridViewTextBoxColumn";
+            this.driverLicenseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Client);
+            // 
             // ClientsPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ExportButton);
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchFilterComboBox);
             this.Controls.Add(this.refreshDataGridViewButton);
@@ -276,8 +291,8 @@ namespace CarRentalApp.View.UserControls
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,6 +309,8 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonButton searchButton;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchFilterComboBox;
         private Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton printButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton ExportButton;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cinDataGridViewTextBoxColumn;
@@ -301,6 +318,5 @@ namespace CarRentalApp.View.UserControls
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn resumeDataGridViewTextBoxColumn;
     }
 }

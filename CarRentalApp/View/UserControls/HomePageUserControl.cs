@@ -1,39 +1,58 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using CarRentalApp.Core.domain;
+using CarRentalApp.Persistence;
+using System;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarRentalApp.View.UserControls
 {
     public partial class HomePageUserControl : UserControl
     {
+        private readonly UnitOfWork _unitOfWork;
         private readonly Random _rand = new Random();
         public HomePageUserControl()
         {
             InitializeComponent();
+            _unitOfWork = UnitOfWork.Instance;
         }
 
-        private void LoadUiChart()
+        private void UpdateChartUi()
+        {
+            monthlyTakingChart.Series[0].Points.Clear();
+            var months = Enumerable.Range(1, 12)
+                .Select(i => new {I = i, M = DateTimeFormatInfo.CurrentInfo?.GetMonthName(i)}).ToList();
+            foreach (var month in months)
+            {
+                var monthRentsCount = _rand.Next(0, 100);
+                monthlyTakingChart.Series[0].Points.AddXY(month.M, monthRentsCount);
+            }
+        }
+
+        private void UpdateIndicatorUi()
         {
             try
             {
-//                var canvas = new Canvas();
-//                var dataPoint = new DataPoint(BunifuDataViz._type.Bunifu_column);
-//                dataPoint.addLabely("JAN", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("FEB", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("MAR", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("APR", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("MAY", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("JUN", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("JUL", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("AUG", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("SEPT", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("OCT", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("NOV", _rand.Next(0, 500).ToString());
-//                dataPoint.addLabely("DEC", _rand.Next(0, 500).ToString());
-//
-//                canvas.addData(dataPoint);
-//                reportChartDataViz.colorSet.Add(Color.Coral);
-//                reportChartDataViz.Render(canvas);
+
+                var clientList = _unitOfWork.Clients.GetAll().Select(c=> new {c.Id, c.FullName,RentCount = c.Rents.Count}).ToList();
+                var top3Client = clientList.OrderByDescending(c => c.RentCount).Take(3).ToList();
+
+                var carList = _unitOfWork.Cars.GetAll().Select(c => new { c.Id,c.Name, RentCount= c.Rents.Count }).ToList();
+                var top3Cars = carList.OrderByDescending(c => c.RentCount).Take(3).ToList();
+
+                var userList = _unitOfWork.Users.GetAll().Select(u => new { u.Id,u.Username ,RentCount =u.Rents.Count }).ToList();
+                var top3User = userList.OrderByDescending(c => c.RentCount).Take(3).ToList();
+
+                top3ClientListBox.DataSource = top3Client;
+                top3CarListBox.DataSource = top3Cars;
+                top3EmployeeListBox.DataSource = top3User;
+
+                var rentsList = _unitOfWork.Rents.GetAll().ToList();
+                var rentsInPendingList = rentsList.Where(r => r.State == RentState.Pending).ToList();
+
+                rentsCountLabel.Text = rentsList.Count.ToString("N0");
+                rentsInPendingCountLabel.Text = rentsInPendingList.Count.ToString("N0");
+                clientsCountLabel.Text = clientList.Count.ToString("N0");
             }
             catch (Exception)
             {
@@ -43,13 +62,17 @@ namespace CarRentalApp.View.UserControls
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            LoadUiChart();
+            UpdateChartUi();
         }
 
         private void HomePageUserControl_Load(object sender, EventArgs e)
         {
+            UpdateChartUi();
+//            using (var waitForm = new WaitForm(UpdateIndicatorUi))
+//            {
+//                waitForm.ShowDialog(this);
+//            }
 
-            Task.Delay(1200).ContinueWith(task => { LoadUiChart(); });
         }
     }
 }

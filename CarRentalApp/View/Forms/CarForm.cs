@@ -11,12 +11,12 @@ namespace CarRentalApp.View.Forms
 {
     public partial class CarForm : Form
     {
-        private Car _car;
-        private FormMode _mode;
+        private readonly Point _firstControlLocation = new Point(40, 570);
         private readonly Action<Car> _onCloseCallBack;
         private readonly UnitOfWork _unitOfWork;
+        private Car _car;
+        private FormMode _mode;
         private bool _refreshParent;
-        private readonly Point _firstControlLocation = new Point(40, 570);
 
         public CarForm(FormMode mode, Action<Car> onCloseCallBack = null, Car car = null)
         {
@@ -88,11 +88,13 @@ namespace CarRentalApp.View.Forms
             return true;
         }
 
-        private void OnChildFromClosed(bool refresh = false)
+        private void OnClassificationFromClosed(Classification theClassification)
         {
-            if (refresh)
-                RefreshClassificationsDropDown();
+            if (theClassification == null) return;
+            RefreshClassificationComboBox();
+            carClassificationComboBox.Text = theClassification.Name;
         }
+
         private void UpdateControlsUi(bool saveCompleted = false)
         {
             validationLabel.Visible = false;
@@ -102,7 +104,7 @@ namespace CarRentalApp.View.Forms
                 case FormMode.View:
                     EditButton.Visible = true;
                     EditButton.Location = _firstControlLocation;
-                    addMoreButton.Visible =saveCompleted;
+                    addMoreButton.Visible = saveCompleted;
                     cancelEditButton.Visible = false;
                     saveButton.Visible = false;
                     break;
@@ -125,6 +127,7 @@ namespace CarRentalApp.View.Forms
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
             var state = _mode != FormMode.View;
             carNameTextBox.Enabled = state;
             carClassificationComboBox.Enabled = state;
@@ -138,20 +141,20 @@ namespace CarRentalApp.View.Forms
             carChoosePicturButton.Enabled = state;
         }
 
-
         private void UpdateCarInfoUi()
         {
             carNameTextBox.Text = _car.Name ?? string.Empty;
             carLicensePlateTextBox.Text = _car.LicensePlate ?? string.Empty;
             carPricePerDayNumericUpDown.Value = _car.PricePerDay;
-            carClassificationComboBox.SelectedItem = _car.Classification != null ? _car.Classification.Name : string.Empty;
+            carClassificationComboBox.SelectedItem =
+                _car.Classification != null ? _car.Classification.Name : string.Empty;
             carDescriptionTextBox.Text = _car.Description ?? string.Empty;
             carPictureBox.Image = _car.GetPicture();
             if (_car.NextDrainDate != null) carNextDrainDateTimePicker.Value = (DateTime) _car.NextDrainDate;
             if (_car.PurchaseDate != null) carPurchaseDateTimePicker.Value = (DateTime) _car.PurchaseDate;
         }
 
-        private void RefreshClassificationsDropDown()
+        private void RefreshClassificationComboBox()
         {
             var classifications = _unitOfWork.Classifications.GetAll().ToList();
             var classificationNames = new List<string>();
@@ -165,13 +168,15 @@ namespace CarRentalApp.View.Forms
 
         private void AddNewClassificationButton_Click(object sender, EventArgs e)
         {
-            var classificationForm = new ClassificationForm(OnChildFromClosed);
+            var classificationForm =
+                new ClassificationForm(carClassificationComboBox.Text == string.Empty ? FormMode.View : FormMode.Edit,
+                    OnClassificationFromClosed);
             classificationForm.Show();
         }
 
         private void CarForm_Load(object sender, EventArgs e)
         {
-            RefreshClassificationsDropDown();
+            RefreshClassificationComboBox();
             UpdateControlsUi();
             if (_mode != FormMode.AddNew)
                 UpdateCarInfoUi();
@@ -193,14 +198,13 @@ namespace CarRentalApp.View.Forms
                         _mode = FormMode.View;
                         UpdateControlsUi(true);
                         OnValidating("Successfully saved !", false);
-
-                     }
-                        catch (FormattedDbEntityValidationException exception)
+                    }
+                    catch (FormattedDbEntityValidationException exception)
                     {
                         OnValidating(exception.Message);
                     }
-                    break;
 
+                    break;
                 }
                 case FormMode.Edit:
                 {
@@ -211,12 +215,12 @@ namespace CarRentalApp.View.Forms
                         _refreshParent = true;
                         UpdateControlsUi(true);
                         OnValidating("Successfully updated !", false);
-
                     }
-                        catch (FormattedDbEntityValidationException exception)
+                    catch (FormattedDbEntityValidationException exception)
                     {
                         OnValidating(exception.Message);
                     }
+
                     break;
                 }
                 case FormMode.View:
@@ -226,17 +230,17 @@ namespace CarRentalApp.View.Forms
             }
         }
 
-        private  void EditButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             _mode = FormMode.Edit;
             UpdateControlsUi();
         }
+
         private void CancelEditButton_Click(object sender, EventArgs e)
         {
             _mode = FormMode.View;
             UpdateControlsUi();
             UpdateCarInfoUi();
-
         }
 
         private void CarChoosePictureButton_Click(object sender, EventArgs e)
@@ -258,14 +262,12 @@ namespace CarRentalApp.View.Forms
             catch (Exception)
             {
                 OnValidating("Picture not valid");
-
             }
         }
 
         private void CarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _onCloseCallBack?.Invoke(_refreshParent ? _car : null);
-
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -276,14 +278,13 @@ namespace CarRentalApp.View.Forms
         private void AddMoreButton_Click(object sender, EventArgs e)
         {
             _mode = FormMode.AddNew;
-            _car = new Car()
+            _car = new Car
             {
                 NextDrainDate = DateTime.Today,
-                PurchaseDate = DateTime.Today,
+                PurchaseDate = DateTime.Today
             };
             UpdateCarInfoUi();
             UpdateControlsUi();
-
         }
     }
 }

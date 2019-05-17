@@ -117,35 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="client_delete_confirm" xml:space="preserve">
-    <value>Are You sure to delete this client ?</value>
-  </data>
-  <data name="Are_you_Sure_to_Delete" xml:space="preserve">
-    <value>Are you Sure to Delete</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="car_picture_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car_picture_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="database_Error" xml:space="preserve">
-    <value>Database Error</value>
-  </data>
-  <data name="Have_Rents_Delete_Them_First" xml:space="preserve">
-    <value>{0} Have {1} rent(s) delete them first !</value>
-  </data>
   <data name="Unauthorized_delete_action" xml:space="preserve">
     <value>Unauthorized delete action</value>
   </data>
-  <data name="Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first" xml:space="preserve">
-    <value>Client {0} have {1} Rents can't be deleted{2} Delete Rents first</value>
+  <data name="UserDeletingRow__0__delete_confirm" xml:space="preserve">
+    <value>{0} delete confirm ?</value>
   </data>
-  <data name="Client____0__will_be_deleted" xml:space="preserve">
-    <value>Client : {0} will be deleted !</value>
+  <data name="UserDeletingRow_0_1_will_be_deleted" xml:space="preserve">
+    <value>{0} : {1} will be deleted</value>
   </data>
-  <data name="User_0_has_managed_1_rents_2_Delete_Them_First" xml:space="preserve">
-    <value>User:{0} has managed {1} rents {2} Delete Them First</value>
+  <data name="UserDeletingRow_Car___0__have__1__Rents_delete_them_first" xml:space="preserve">
+    <value>Car: {0} have {1} Rents!
+Delete them first</value>
   </data>
-  <data name="User_0_1_2__Will_be_deleted" xml:space="preserve">
-    <value>User : {0}, {1} {2} Will be deleted</value>
+  <data name="UserDeletingRow_Database_Action_Error" xml:space="preserve">
+    <value>Database Action Error</value>
+  </data>
+  <data name="UserDeletingRow_Classification_0_have_1_delete_them_first" xml:space="preserve">
+    <value>Classification: {0} Have {1} Cars! 
+ Delete them first</value>
+  </data>
+  <data name="UserDeletingRow_User_0_have_1_Rents_delete_theme_first" xml:space="preserve">
+    <value>User : {0} have {1} Rents
+Delete theme first</value>
+  </data>
+  <data name="UserDeletingRow_Client_0_have_1_Rents_delete_theme_first" xml:space="preserve">
+    <value>Client : {0} have {1} Rents!
+Delete theme first</value>
   </data>
 </root>

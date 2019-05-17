@@ -260,6 +260,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // kryptonHeader1
             // 
+            this.kryptonHeader1.HeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
             this.kryptonHeader1.Location = new System.Drawing.Point(23, 10);
             this.kryptonHeader1.Name = "kryptonHeader1";
             this.kryptonHeader1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
@@ -336,6 +337,7 @@ namespace CarRentalApp.View.UserControls
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(391, 507);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.SystemColors.Info;
+            this.kryptonPanel2.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel2.TabIndex = 9;
             // 
             // selectedCarRentsCountLabel

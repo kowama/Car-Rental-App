@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
@@ -6,6 +8,8 @@ using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
 using CarRentalApp.Properties;
 using CarRentalApp.View.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace CarRentalApp.View.UserControls
 {
@@ -23,7 +27,7 @@ namespace CarRentalApp.View.UserControls
 
         private void RefreshDataGridView()
         {
-            var clients = _unitOfWork.Clients.GetAll().OrderBy(c=>c.FirstName).ToList();
+            var clients = _unitOfWork.Clients.GetAll().OrderBy(c => c.FirstName).ToList();
             clientBindingSource.DataSource = clients;
         }
 
@@ -64,14 +68,13 @@ namespace CarRentalApp.View.UserControls
             foreach (DataGridViewRow row in clientDataGridView.Rows)
             {
                 var client = (Client) row.DataBoundItem;
-                if(client == null) continue;
+                if (client == null) continue;
 
                 if (theClient.Id == client.Id)
                 {
                     row.Selected = true;
                     return;
                 }
-                
             }
         }
 
@@ -166,9 +169,7 @@ namespace CarRentalApp.View.UserControls
 
             if (count > 0)
             {
-                MessageBox.Show(
-                    string.Format(Resources.Client__0__have__1__Rents_can_t_be_deleted_2__Delete_Rents_first,
-                        client.Resume, count, Environment.NewLine),
+                MessageBox.Show(string.Format(Resources.UserDeletingRow_Client_0_have_1_Rents_delete_theme_first, client.Resume, count),
                     Resources.Unauthorized_delete_action
                     , MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
@@ -176,8 +177,8 @@ namespace CarRentalApp.View.UserControls
             }
 
             var dialogResult = MessageBox.Show(
-                string.Format(Resources.Client____0__will_be_deleted, client.Resume,
-                    Environment.NewLine), Resources.client_delete_confirm, MessageBoxButtons.YesNo,
+                string.Format(Resources.UserDeletingRow_0_1_will_be_deleted, nameof(Client), client.Resume),
+                string.Format(Resources.UserDeletingRow__0__delete_confirm, nameof(Client)), MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
             if (dialogResult != DialogResult.Yes)
             {
@@ -189,6 +190,92 @@ namespace CarRentalApp.View.UserControls
             _unitOfWork.Complete();
         }
 
-        
+        public float[] GetTamañoColumnas(DataGridView dg)
+
+        {
+            var values = new float[dg.ColumnCount];
+
+            for (var i = 0; i < dg.ColumnCount; i++) values[i] = dg.Columns[i].Width;
+
+            return values;
+        }
+
+        public void GenerarDocumento(Document document)
+        {
+            //se crea un objeto PdfTable con el # de columnas del dataGridView
+
+
+            var datatable = new PdfPTable(clientDataGridView.ColumnCount);
+
+
+            //asignamos algunas propiedades para el diseño del pdf
+
+            datatable.DefaultCell.Padding = 3;
+
+            var headerwidths = GetTamañoColumnas(clientDataGridView);
+
+            datatable.SetWidths(headerwidths);
+            datatable.WidthPercentage = 100;
+            datatable.DefaultCell.BorderWidth = 2;
+            datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            //SE GENERA EL ENCABEZADO DE LA TABLA EN EL PDF
+
+            for (var i = 0; i < clientDataGridView.ColumnCount; i++)
+                datatable.AddCell(clientDataGridView.Columns[i].HeaderText);
+
+            datatable.HeaderRows = 1;
+            datatable.DefaultCell.BorderWidth = 1;
+
+            //SE GENERA EL CUERPO DEL PDF
+
+            for (var i = 0; i < clientDataGridView.RowCount; i++)
+
+            {
+                for (var j = 0; j < clientDataGridView.ColumnCount; j++)
+                    datatable.AddCell(clientDataGridView[j, i].Value.ToString());
+
+                datatable.CompleteRow();
+            }
+
+            //Add PdfTable to the doc
+
+
+            document.Add(datatable);
+        }
+
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var sfd = new SaveFileDialog
+                {
+                    Filter = @"Document PDF (*.pdf)|*.pdf",
+                    FileName = nameof(clientDataGridView) + DateTime.Now.ToString("yy-MM-dd-hh-mm-ss")
+                };
+
+                if (sfd.ShowDialog() != DialogResult.OK) return;
+
+                var doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
+                var file = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite,
+                    FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, file);
+                doc.Open();
+                GenerarDocumento(doc);
+                doc.Close();
+                Process.Start(sfd.FileName);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+            CsvUtils.SaveToCsv(clientDataGridView);
+        }
     }
 }

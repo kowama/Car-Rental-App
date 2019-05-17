@@ -25,19 +25,34 @@ namespace CarRentalApp.View.UserControls
         {
             var allUsers = _unitOfWork.Users.GetAll();
             userBindingSource.DataSource = allUsers.ToList();
+            UpdateUiChart();
         }
 
         private void UpdateUiChart()
         {
-            var usersCount = userBindingSource.Count;
-            var managersCount = userBindingSource.List
-                .OfType<User>()
-                .Count(u => u.HasRole(RoleName.Manager));
-            var administratorCount = usersCount - managersCount;
+            var usersList = userBindingSource.List.OfType<User>().ToList();
 
+            var usersCount = usersList.Count();
+            var managersCount = usersList.Count(u => u.HasRole(RoleName.Manager));
+            var administratorCount = usersCount - managersCount;
             usersCountLabel.Text = usersCount.ToString();
             mangerUserCountLabel.Text = managersCount.ToString();
             administratorUserCountLabel.Text = administratorCount.ToString();
+            //pie char
+            userRoleDistributionChart.Series[0].Points.Clear();
+            userRoleDistributionChart.Series[0].Points.AddXY(RoleName.Administrator, administratorCount);
+            userRoleDistributionChart.Series[0].Points.AddXY(RoleName.Manager, managersCount);
+            userRoleDistributionChart.Legends[0].Enabled = true;
+
+
+            //column chart
+            userRankingChart.Series[0].Points.Clear();
+            foreach (var user in usersList)
+            {
+                //ranking
+                userRankingChart.Series[0].Points.AddXY(user.Username, user.Rents.Count);
+
+            }
         }
 
         private void UsersPageUserControl_Load(object sender, EventArgs e)
@@ -118,7 +133,7 @@ namespace CarRentalApp.View.UserControls
             if (user == null) return;
 
             if (userDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(user.Roles)))
-                e.Value = user.Roles.First().Name;
+                e.Value = user.HasRole(RoleName.Manager) ? RoleName.Manager : RoleName.Administrator;
 
 
 
@@ -144,9 +159,7 @@ namespace CarRentalApp.View.UserControls
 
             if (count > 0)
             {
-                MessageBox.Show(
-                    string.Format(Resources.User_0_has_managed_1_rents_2_Delete_Them_First,
-                        user.Username + "," + user.FullName, count, Environment.NewLine),
+                MessageBox.Show(string.Format(Resources.UserDeletingRow_User_0_have_1_Rents_delete_theme_first, user.FullName, count),
                     Resources.Unauthorized_delete_action
                     , MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
@@ -154,8 +167,8 @@ namespace CarRentalApp.View.UserControls
             }
 
             var dialogResult = MessageBox.Show(
-                string.Format(Resources.User_0_1_2__Will_be_deleted, user.Username, user.FullName, Environment.NewLine),
-                Resources.Are_you_Sure_to_Delete, MessageBoxButtons.YesNo,
+                string.Format(Resources.UserDeletingRow_0_1_will_be_deleted, nameof(User),user.Username+" " +user.FullName),
+                string.Format(Resources.UserDeletingRow__0__delete_confirm,nameof(User)) ,MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
             if (dialogResult != DialogResult.Yes)
             {

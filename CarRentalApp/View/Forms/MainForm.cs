@@ -138,5 +138,10 @@ namespace CarRentalApp.View.Forms
             UnitOfWork.Instance.Dispose();
             Application.Exit();
         }
+
+        private void contentPannel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

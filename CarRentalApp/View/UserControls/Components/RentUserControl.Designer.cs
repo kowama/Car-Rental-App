@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace CarRentalApp.View.UserControls
+namespace CarRentalApp.View.UserControls.Components
 {
     partial class RentUserControl
     {
@@ -32,9 +32,12 @@ namespace CarRentalApp.View.UserControls
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.editButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.rentIdLabel = new System.Windows.Forms.Label();
-            this.addNewClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.moreCarButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.moreClientButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.carFilterCheckBox = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.validationLabel = new System.Windows.Forms.Label();
             this.rentStatusComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -53,7 +56,6 @@ namespace CarRentalApp.View.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.rentStartDateTimePicker = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.viewSelectedCarButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentStatusComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarComboBox)).BeginInit();
@@ -63,10 +65,12 @@ namespace CarRentalApp.View.UserControls
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.editButton);
             this.panel4.Controls.Add(this.rentIdLabel);
-            this.panel4.Controls.Add(this.viewSelectedCarButton);
-            this.panel4.Controls.Add(this.addNewClientButton);
+            this.panel4.Controls.Add(this.moreCarButton);
+            this.panel4.Controls.Add(this.moreClientButton);
             this.panel4.Controls.Add(this.carFilterCheckBox);
             this.panel4.Controls.Add(this.validationLabel);
             this.panel4.Controls.Add(this.rentStatusComboBox);
@@ -89,6 +93,26 @@ namespace CarRentalApp.View.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(493, 504);
             this.panel4.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(146, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Name, License Plate";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(146, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "First Name, Last Name, CIN";
             // 
             // editButton
             // 
@@ -113,19 +137,39 @@ namespace CarRentalApp.View.UserControls
             this.rentIdLabel.TabIndex = 8;
             this.rentIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // addNewClientButton
+            // moreCarButton
             // 
-            this.addNewClientButton.Location = new System.Drawing.Point(397, 68);
-            this.addNewClientButton.Name = "addNewClientButton";
-            this.addNewClientButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.addNewClientButton.Size = new System.Drawing.Size(60, 29);
-            this.addNewClientButton.TabIndex = 7;
-            this.addNewClientButton.Values.Text = "add";
-            this.addNewClientButton.Click += new System.EventHandler(this.AddNewClient_Click);
+            this.moreCarButton.Location = new System.Drawing.Point(397, 118);
+            this.moreCarButton.Name = "moreCarButton";
+            this.moreCarButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.moreCarButton.Size = new System.Drawing.Size(60, 29);
+            this.moreCarButton.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.moreCarButton.StateCommon.Back.Color2 = System.Drawing.Color.Blue;
+            this.moreCarButton.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
+            this.moreCarButton.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
+            this.moreCarButton.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.moreCarButton.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.moreCarButton.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.moreCarButton.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.moreCarButton.StatePressed.Content.LongText.Color1 = System.Drawing.Color.Blue;
+            this.moreCarButton.StatePressed.Content.LongText.Color2 = System.Drawing.Color.Blue;
+            this.moreCarButton.TabIndex = 7;
+            this.moreCarButton.Values.Text = "more";
+            this.moreCarButton.Click += new System.EventHandler(this.MoreCarButton_Click);
+            // 
+            // moreClientButton
+            // 
+            this.moreClientButton.Location = new System.Drawing.Point(397, 68);
+            this.moreClientButton.Name = "moreClientButton";
+            this.moreClientButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
+            this.moreClientButton.Size = new System.Drawing.Size(60, 29);
+            this.moreClientButton.TabIndex = 7;
+            this.moreClientButton.Values.Text = "more";
+            this.moreClientButton.Click += new System.EventHandler(this.MoreClientButton_Click);
             // 
             // carFilterCheckBox
             // 
-            this.carFilterCheckBox.Location = new System.Drawing.Point(149, 150);
+            this.carFilterCheckBox.Location = new System.Drawing.Point(149, 149);
             this.carFilterCheckBox.Name = "carFilterCheckBox";
             this.carFilterCheckBox.Size = new System.Drawing.Size(98, 20);
             this.carFilterCheckBox.TabIndex = 6;
@@ -313,21 +357,6 @@ namespace CarRentalApp.View.UserControls
             this.label5.TabIndex = 1;
             this.label5.Text = "Status";
             // 
-            // viewSelectedCarButton
-            // 
-            this.viewSelectedCarButton.Location = new System.Drawing.Point(397, 118);
-            this.viewSelectedCarButton.Name = "viewSelectedCarButton";
-            this.viewSelectedCarButton.Size = new System.Drawing.Size(60, 29);
-            this.viewSelectedCarButton.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
-            this.viewSelectedCarButton.StateCommon.Back.Color2 = System.Drawing.Color.Blue;
-            this.viewSelectedCarButton.StateCommon.Content.LongText.Color1 = System.Drawing.Color.White;
-            this.viewSelectedCarButton.StateCommon.Content.LongText.Color2 = System.Drawing.Color.White;
-            this.viewSelectedCarButton.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.viewSelectedCarButton.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.viewSelectedCarButton.TabIndex = 7;
-            this.viewSelectedCarButton.Values.Text = "view";
-            this.viewSelectedCarButton.Click += new System.EventHandler(this.ViewSelectedCarButton_Click);
-            // 
             // RentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,7 +393,7 @@ namespace CarRentalApp.View.UserControls
         private Label label5;
         private Label validationLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton saveButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton addNewClientButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton moreClientButton;
         private ComponentFactory.Krypton.Toolkit.KryptonCheckBox carFilterCheckBox;
         private ComponentFactory.Krypton.Toolkit.KryptonButton checkButton;
         private Label label6;
@@ -372,6 +401,8 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonButton editButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton cancelEditButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton finishedButton;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton viewSelectedCarButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton moreCarButton;
+        private Label label8;
+        private Label label7;
     }
 }

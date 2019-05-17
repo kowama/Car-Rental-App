@@ -33,10 +33,18 @@ namespace CarRentalApp.View.UserControls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersPageUserControl));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.userRoleDistributionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.userRankingChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -47,28 +55,30 @@ namespace CarRentalApp.View.UserControls
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.userDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.addUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.RoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.addUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userRoleDistributionChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRankingChart)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,19 +115,60 @@ namespace CarRentalApp.View.UserControls
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.userRoleDistributionChart);
+            this.panel4.Controls.Add(this.userRankingChart);
             this.panel4.Controls.Add(this.kryptonLabel3);
             this.panel4.Controls.Add(this.kryptonLabel2);
             this.panel4.Controls.Add(this.kryptonLabel1);
             this.panel4.Controls.Add(this.mangerUserCountLabel);
             this.panel4.Controls.Add(this.usersCountLabel);
             this.panel4.Controls.Add(this.administratorUserCountLabel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.ForeColor = System.Drawing.SystemColors.Control;
             this.panel4.Location = new System.Drawing.Point(614, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(430, 581);
             this.panel4.TabIndex = 1;
+            // 
+            // userRoleDistributionChart
+            // 
+            this.userRoleDistributionChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.userRoleDistributionChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.userRoleDistributionChart.Legends.Add(legend1);
+            this.userRoleDistributionChart.Location = new System.Drawing.Point(16, 245);
+            this.userRoleDistributionChart.Name = "userRoleDistributionChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Roles";
+            this.userRoleDistributionChart.Series.Add(series1);
+            this.userRoleDistributionChart.Size = new System.Drawing.Size(359, 223);
+            this.userRoleDistributionChart.TabIndex = 6;
+            this.userRoleDistributionChart.Text = "chart1";
+            // 
+            // userRankingChart
+            // 
+            this.userRankingChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea2.Name = "ChartArea1";
+            this.userRankingChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.userRankingChart.Legends.Add(legend2);
+            this.userRankingChart.Location = new System.Drawing.Point(16, 17);
+            this.userRankingChart.Name = "userRankingChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Rents";
+            this.userRankingChart.Series.Add(series2);
+            this.userRankingChart.Size = new System.Drawing.Size(359, 209);
+            this.userRankingChart.TabIndex = 6;
             // 
             // kryptonLabel3
             // 
@@ -238,6 +289,66 @@ namespace CarRentalApp.View.UserControls
             this.userDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.UserDataGridView_UserDeletedRow);
             this.userDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.UserDataGridView_UserDeletingRow);
             // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 92;
+            // 
+            // cinDataGridViewTextBoxColumn
+            // 
+            this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
+            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
+            this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
+            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cinDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // RoleDataGridViewTextBoxColumn
+            // 
+            this.RoleDataGridViewTextBoxColumn.DataPropertyName = "Roles";
+            this.RoleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.RoleDataGridViewTextBoxColumn.Name = "RoleDataGridViewTextBoxColumn";
+            this.RoleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.RoleDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(CarRentalApp.Core.domain.User);
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.searchComboBox);
@@ -292,66 +403,6 @@ namespace CarRentalApp.View.UserControls
             this.addUserButton.Values.Text = "add";
             this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
-            // RoleDataGridViewTextBoxColumn
-            // 
-            this.RoleDataGridViewTextBoxColumn.DataPropertyName = "Roles";
-            this.RoleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.RoleDataGridViewTextBoxColumn.Name = "RoleDataGridViewTextBoxColumn";
-            this.RoleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.RoleDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 92;
-            // 
-            // cinDataGridViewTextBoxColumn
-            // 
-            this.cinDataGridViewTextBoxColumn.DataPropertyName = "Cin";
-            this.cinDataGridViewTextBoxColumn.HeaderText = "Cin";
-            this.cinDataGridViewTextBoxColumn.Name = "cinDataGridViewTextBoxColumn";
-            this.cinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cinDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(CarRentalApp.Core.domain.User);
-            // 
             // UsersPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,13 +417,15 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userRoleDistributionChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRankingChart)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,5 +457,7 @@ namespace CarRentalApp.View.UserControls
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn RoleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart userRoleDistributionChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart userRankingChart;
     }
 }

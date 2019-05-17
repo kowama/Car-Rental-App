@@ -405,6 +405,7 @@ namespace CarRentalApp.View.Forms
             this.contentPannel.Name = "contentPannel";
             this.contentPannel.Size = new System.Drawing.Size(1052, 712);
             this.contentPannel.TabIndex = 1;
+            this.contentPannel.Paint += new System.Windows.Forms.PaintEventHandler(this.contentPannel_Paint);
             // 
             // MainForm
             // 
