@@ -221,7 +221,7 @@ namespace CarRentalApp.Core.Utils
                 doc.Open();
 
                 var titleFont = FontFactory.GetFont("Arial", 18, Font.BOLD);
-                var subTitleFont = FontFactory.GetFont("Arial", 14, Font.BOLD);
+//                var subTitleFont = FontFactory.GetFont("Arial", 14, Font.BOLD);
                 var boldTableFont = FontFactory.GetFont("Arial", 12, Font.BOLD);
                 var endingMessageFont = FontFactory.GetFont("Arial", 10, Font.ITALIC);
                 var bodyFont = FontFactory.GetFont("Arial", 12, Font.NORMAL);
@@ -332,7 +332,7 @@ namespace CarRentalApp.Core.Utils
 
         private static byte[] Encrypt(byte[] bytesToBeEncrypted, byte[] passwordBytes)
         {
-            byte[] encryptedBytes = null;
+            byte[] encryptedBytes;
 
             // Set your salt here, change it to meet your flavor:
             // The salt bytes must be at least 8 bytes.
@@ -340,18 +340,18 @@ namespace CarRentalApp.Core.Utils
 
             using (var ms = new MemoryStream())
             {
-                using (var AES = new RijndaelManaged())
+                using (var aes = new RijndaelManaged())
                 {
                     var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
 
-                    AES.KeySize = 256;
-                    AES.BlockSize = 128;
-                    AES.Key = key.GetBytes(AES.KeySize / 8);
-                    AES.IV = key.GetBytes(AES.BlockSize / 8);
+                    aes.KeySize = 256;
+                    aes.BlockSize = 128;
+                    aes.Key = key.GetBytes(aes.KeySize / 8);
+                    aes.IV = key.GetBytes(aes.BlockSize / 8);
 
-                    AES.Mode = CipherMode.CBC;
+                    aes.Mode = CipherMode.CBC;
 
-                    using (var cs = new CryptoStream(ms, AES.CreateEncryptor(), CryptoStreamMode.Write))
+                    using (var cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
                     {
                         cs.Write(bytesToBeEncrypted, 0, bytesToBeEncrypted.Length);
                         cs.Close();
@@ -366,7 +366,7 @@ namespace CarRentalApp.Core.Utils
 
         private static byte[] Decrypt(byte[] bytesToBeDecrypted, byte[] passwordBytes)
         {
-            byte[] decryptedBytes = null;
+            byte[] decryptedBytes;
 
             // Set your salt here, change it to meet your flavor:
             // The salt bytes must be at least 8 bytes.
