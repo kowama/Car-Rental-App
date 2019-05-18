@@ -19,6 +19,9 @@ namespace CarRentalApp.Persistence.EntityConfigurations
             HasIndex(u => u.Email)
                 .IsUnique();
 
+            Ignore(u => u.Password);
+
+            
 
             Property(u => u.Cin)
                 .IsRequired()
@@ -38,9 +41,10 @@ namespace CarRentalApp.Persistence.EntityConfigurations
             Property(u => u.LastName)
                 .HasMaxLength(32);
 
-            Property(u => u.Password)
+            Property(u => u.StoredPassword)
                 .HasMaxLength(128)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnName(nameof(User.Password));
 
             Property(u => u.Phone)
                 .HasMaxLength(32);

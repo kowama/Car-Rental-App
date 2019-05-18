@@ -53,7 +53,7 @@ namespace CarRentalApp.View.UserControls.Components
 
             if (userPasswordTextBox.Text.Trim().Length < 6)
             {
-                OnValidating("* Password must be a least 6 chars");
+                OnValidating("* StoredPassword must be a least 6 chars");
                 return false;
             }
 

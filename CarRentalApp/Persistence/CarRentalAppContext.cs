@@ -18,8 +18,8 @@ namespace CarRentalApp.Persistence
             : base("name=CarRentalAppContext")
         {
             Configuration.LazyLoadingEnabled = true;
-            Database.SetInitializer(new CarRentalDbInitializer());
-            Database.Initialize(true);
+//            Database.SetInitializer(new CarRentalDbInitializer());
+//            Database.Initialize(true);
 
         }
 

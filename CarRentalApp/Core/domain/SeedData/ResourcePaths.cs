@@ -1,31 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using ComponentFactory.Krypton.Toolkit;
 using CsvHelper.Configuration;
 
 namespace CarRentalApp.Core.domain.SeedData
 {
     public static class ResourcePaths
     {
-        private static string Prefix
-        {
-            get
-            {
-                // This will get the current WORKING directory (i.e. \bin\Debug)
-                var workingDirectory = Environment.CurrentDirectory;
-                // or: Directory.GetCurrentDirectory() gives the same result
-
-                // This will get the current PROJECT directory
-                return Directory.GetParent(workingDirectory).Parent?.FullName;
-
-            }
-        } 
-
         public static readonly string Clients = $"{Prefix}clients.csv";
         public static readonly string Classifications = $"{Prefix}classifications.csv";
         public static readonly string Cars = $"{Prefix}cars.csv";
+
+        private static string Prefix =>
+            "C:\\Users\\kowama\\Source\\Repos\\kowama\\Car-Rental-App\\CarRentalApp\\Core\\domain\\SeedData\\";
     }
 
     public sealed class ClientMap : ClassMap<Client>
@@ -50,8 +37,6 @@ namespace CarRentalApp.Core.domain.SeedData
 
     public sealed class CarMap : ClassMap<Car>
     {
-        public static List<Classification> Classifications { get; set; }
-
         public CarMap()
         {
             if (Classifications == null || !Classifications.Any())
@@ -70,6 +55,8 @@ namespace CarRentalApp.Core.domain.SeedData
             Map(c => c.CarImage).Ignore();
             Map(c => c.Classification).ConvertUsing(row => ReadNested(row.GetField(nameof(Car.Classification))));
         }
+
+        public static List<Classification> Classifications { get; set; }
 
         private static Classification ReadNested(string classificationName)
         {

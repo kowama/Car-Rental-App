@@ -1,5 +1,4 @@
-﻿using CarRentalApp.Core.domain;
-using CarRentalApp.Persistence;
+﻿using CarRentalApp.Persistence;
 using System;
 using System.Globalization;
 using System.Linq;

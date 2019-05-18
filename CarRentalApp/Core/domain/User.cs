@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using CarRentalApp.Core.Utils;
 
 namespace CarRentalApp.Core.domain
 {
@@ -9,8 +10,13 @@ namespace CarRentalApp.Core.domain
         public string FirstName { get; set; }
         public string Cin { get; set; }
         public string LastName { get; set; }
-        public string Password { get; set; }
 
+        public virtual string StoredPassword { get; set; }
+        public string Password
+        {
+            get => Cipher.Decrypt(StoredPassword);
+            set => StoredPassword = Cipher.Encrypt(value);
+        }
         public string Email  { get; set; }
         public string Phone  { get; set; }
 

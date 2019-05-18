@@ -307,7 +307,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 16);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Password*";
+            this.label6.Text = "StoredPassword*";
             // 
             // label8
             // 
