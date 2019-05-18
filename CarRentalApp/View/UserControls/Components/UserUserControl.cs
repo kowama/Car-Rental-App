@@ -1,10 +1,10 @@
-﻿using System;
+﻿using CarRentalApp.Core.domain;
+using CarRentalApp.Core.Utils;
+using CarRentalApp.Persistence;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using CarRentalApp.Core.domain;
-using CarRentalApp.Core.Utils;
-using CarRentalApp.Persistence;
 
 namespace CarRentalApp.View.UserControls.Components
 {
@@ -27,7 +27,7 @@ namespace CarRentalApp.View.UserControls.Components
             _mode = mode;
             _user = user ?? new User();
             _allowAdd = true;
-
+            userPasswordTextBox.UseSystemPasswordChar = true;
             userRoleComboBox.DataSource = _unitOfWork.Roles.GetAll().Select(r => r.Name).ToList();
         }
 
@@ -247,6 +247,9 @@ namespace CarRentalApp.View.UserControls.Components
         {
             _closeParent?.Invoke(_refreshParent ? _user : null);
         }
-
+        private void UserPasswordVisibleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            userPasswordTextBox.UseSystemPasswordChar = !userPasswordVisibleCheckBox.Checked;
+        }
     }
 }

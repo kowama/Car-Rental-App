@@ -295,7 +295,7 @@ namespace CarRentalApp.Core.Utils
     {
        
         
-        public static string Encrypt(string plainText, string password)
+        public static string Encrypt(string plainText, string password="secureSHa256")
         {
             if (plainText == null) return null;
 
@@ -313,7 +313,7 @@ namespace CarRentalApp.Core.Utils
             return Convert.ToBase64String(bytesEncrypted);
         }
 
-        public static string Decrypt(string encryptedText, string password)
+        public static string Decrypt(string encryptedText, string password = "secureSHa256")
         {
             if (encryptedText == null) return null;
 
@@ -336,7 +336,7 @@ namespace CarRentalApp.Core.Utils
 
             // Set your salt here, change it to meet your flavor:
             // The salt bytes must be at least 8 bytes.
-            var saltBytes = new byte[] {1, 2, 3, 4, 5, 6, 7, 8};
+            var saltBytes = new byte[] { 76, 88, 57, 07, 42, 244, 13, 48, 88 };
 
             using (var ms = new MemoryStream())
             {

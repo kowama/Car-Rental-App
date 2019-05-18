@@ -20,6 +20,7 @@ namespace CarRentalApp.Persistence
             Configuration.LazyLoadingEnabled = true;
             Database.SetInitializer(new CarRentalDbInitializer());
             Database.Initialize(true);
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -31,6 +32,9 @@ namespace CarRentalApp.Persistence
             modelBuilder.Configurations.Add(new RentConfiguration());
             modelBuilder.Configurations.Add(new RoleConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
+
+
         }
+     
     }
 }

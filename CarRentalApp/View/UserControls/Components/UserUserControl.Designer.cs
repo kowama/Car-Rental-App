@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.userPasswordVisibleCheckBox = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.userRoleComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.userPasswordTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.usernameTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -239,6 +240,7 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.userPasswordVisibleCheckBox);
             this.kryptonPanel1.Controls.Add(this.userRoleComboBox);
             this.kryptonPanel1.Controls.Add(this.userPasswordTextBox);
             this.kryptonPanel1.Controls.Add(this.usernameTextBox);
@@ -251,6 +253,15 @@
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.ControlDark;
             this.kryptonPanel1.TabIndex = 3;
+            // 
+            // userPasswordVisibleCheckBox
+            // 
+            this.userPasswordVisibleCheckBox.Location = new System.Drawing.Point(282, 85);
+            this.userPasswordVisibleCheckBox.Name = "userPasswordVisibleCheckBox";
+            this.userPasswordVisibleCheckBox.Size = new System.Drawing.Size(57, 20);
+            this.userPasswordVisibleCheckBox.TabIndex = 4;
+            this.userPasswordVisibleCheckBox.Values.Text = "visible";
+            this.userPasswordVisibleCheckBox.CheckedChanged += new System.EventHandler(this.UserPasswordVisibleCheckBox_CheckedChanged);
             // 
             // userRoleComboBox
             // 
@@ -352,5 +363,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox userPhoneTextBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox userPasswordVisibleCheckBox;
     }
 }
