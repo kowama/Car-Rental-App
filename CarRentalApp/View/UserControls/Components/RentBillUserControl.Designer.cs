@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace CarRentalApp.View.UserControls
+namespace CarRentalApp.View.UserControls.Components
 {
     partial class RentBillUserControl
     {
@@ -32,7 +32,6 @@ namespace CarRentalApp.View.UserControls
             this.panel4 = new System.Windows.Forms.Panel();
             this.billcomputedPriceLabel = new System.Windows.Forms.Label();
             this.BackLinkLabelButton = new System.Windows.Forms.LinkLabel();
-            this.billDetailsTextBox = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.BillAmountNumericUpDown = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.billManagedByLabel = new System.Windows.Forms.Label();
@@ -53,15 +52,16 @@ namespace CarRentalApp.View.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.billDetailsTextBox = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.billDetailsTextBox);
             this.panel4.Controls.Add(this.billcomputedPriceLabel);
             this.panel4.Controls.Add(this.BackLinkLabelButton);
-            this.panel4.Controls.Add(this.billDetailsTextBox);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.BillAmountNumericUpDown);
             this.panel4.Controls.Add(this.billManagedByLabel);
@@ -108,15 +108,6 @@ namespace CarRentalApp.View.UserControls
             this.BackLinkLabelButton.TabStop = true;
             this.BackLinkLabelButton.Text = "Back";
             this.BackLinkLabelButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BackButtonLabel_LinkClicked);
-            // 
-            // billDetailsTextBox
-            // 
-            this.billDetailsTextBox.Location = new System.Drawing.Point(50, 318);
-            this.billDetailsTextBox.MaxLength = 2048;
-            this.billDetailsTextBox.Name = "billDetailsTextBox";
-            this.billDetailsTextBox.Size = new System.Drawing.Size(356, 82);
-            this.billDetailsTextBox.TabIndex = 9;
-            this.billDetailsTextBox.Text = "";
             // 
             // label9
             // 
@@ -337,6 +328,16 @@ namespace CarRentalApp.View.UserControls
             this.label5.TabIndex = 1;
             this.label5.Text = "Amount";
             // 
+            // billDetailsTextBox
+            // 
+            this.billDetailsTextBox.Location = new System.Drawing.Point(50, 319);
+            this.billDetailsTextBox.MaxLength = 2048;
+            this.billDetailsTextBox.Name = "billDetailsTextBox";
+            this.billDetailsTextBox.Size = new System.Drawing.Size(356, 80);
+            this.billDetailsTextBox.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billDetailsTextBox.TabIndex = 12;
+            this.billDetailsTextBox.Text = "";
+            // 
             // RentBillUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +369,6 @@ namespace CarRentalApp.View.UserControls
         private Label billManagedByLabel;
         private Label billCarLabel;
         private Label billClientLabel;
-        private RichTextBox billDetailsTextBox;
         private Label label10;
         private Label billNumLabel;
         private Label label12;
@@ -378,5 +378,6 @@ namespace CarRentalApp.View.UserControls
         private ComponentFactory.Krypton.Toolkit.KryptonButton editButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton cancelEditButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton finishedButton;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox billDetailsTextBox;
     }
 }

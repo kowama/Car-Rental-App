@@ -16,6 +16,7 @@ namespace CarRentalApp.View.UserControls.Components
         private readonly Point _firstControlLocation = new Point(25, 463);
         private FormMode _mode;
         private bool _refreshParent;
+        private readonly bool _allowAdd;
 
         public UserUserControl(FormMode mode,Action<User> closeParent = null,  User user = null)
         {
@@ -25,8 +26,14 @@ namespace CarRentalApp.View.UserControls.Components
             _closeParent = closeParent;
             _mode = mode;
             _user = user ?? new User();
+            _allowAdd = true;
 
             userRoleComboBox.DataSource = _unitOfWork.Roles.GetAll().Select(r => r.Name).ToList();
+        }
+
+        public UserUserControl(FormMode mode, User user) : this(mode, null, user)
+        {
+            _allowAdd = false;
         }
 
         private void OnValidating(string message, bool error = true)
@@ -110,15 +117,15 @@ namespace CarRentalApp.View.UserControls.Components
                 case FormMode.View:
                     editButton.Visible = true;
                     editButton.Location = _firstControlLocation;
-                    addMoreButton.Visible = saveCompleted;
-                    closeButton.Visible = true;
+                    addMoreButton.Visible = saveCompleted && _allowAdd;
+                    closeButton.Visible =  _allowAdd;
                     saveButton.Visible = false;
                     cancelEditButton.Visible = false;
 
                     break;
 
                 case FormMode.Edit:
-                    closeButton.Visible = true;
+                    closeButton.Visible = _allowAdd;
                     saveButton.Visible = true;
                     saveButton.Location = _firstControlLocation;
                     cancelEditButton.Visible = true;
@@ -127,7 +134,7 @@ namespace CarRentalApp.View.UserControls.Components
                     break;
 
                 case FormMode.AddNew:
-                    closeButton.Visible = true;
+                    closeButton.Visible = _allowAdd;
                     saveButton.Visible = true;
                     saveButton.Location = _firstControlLocation;
                     cancelEditButton.Visible = false;
@@ -141,7 +148,7 @@ namespace CarRentalApp.View.UserControls.Components
             var isEnabled = _mode != FormMode.View;
             usernameTextBox.Enabled = isEnabled;
             userPasswordTextBox.Enabled = isEnabled;
-            userRoleComboBox.Enabled = isEnabled;
+            userRoleComboBox.Enabled = isEnabled && _allowAdd;
             userFirstNameTextBox.Enabled = isEnabled;
             userLastNameTextBox.Enabled = isEnabled;
             userCinTextBox.Enabled = isEnabled;

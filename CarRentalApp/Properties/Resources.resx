@@ -118,21 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="car_picture_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car_picture_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="app_logo_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\app_logo_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unauthorized_delete_action" xml:space="preserve">
-    <value>Unauthorized delete action</value>
-  </data>
-  <data name="UserDeletingRow__0__delete_confirm" xml:space="preserve">
-    <value>{0} delete confirm ?</value>
-  </data>
-  <data name="UserDeletingRow_0_1_will_be_deleted" xml:space="preserve">
-    <value>{0} : {1} will be deleted</value>
-  </data>
-  <data name="UserDeletingRow_Car___0__have__1__Rents_delete_them_first" xml:space="preserve">
-    <value>Car: {0} have {1} Rents!
-Delete them first</value>
+  <data name="UserDeletingRow_User_0_have_1_Rents_delete_theme_first" xml:space="preserve">
+    <value>User : {0} have {1} Rents
+Delete theme first</value>
   </data>
   <data name="UserDeletingRow_Database_Action_Error" xml:space="preserve">
     <value>Database Action Error</value>
@@ -141,12 +132,27 @@ Delete them first</value>
     <value>Classification: {0} Have {1} Cars! 
  Delete them first</value>
   </data>
-  <data name="UserDeletingRow_User_0_have_1_Rents_delete_theme_first" xml:space="preserve">
-    <value>User : {0} have {1} Rents
-Delete theme first</value>
+  <data name="UserDeletingRow__0__delete_confirm" xml:space="preserve">
+    <value>{0} delete confirm ?</value>
+  </data>
+  <data name="UserDeletingRow_Car___0__have__1__Rents_delete_them_first" xml:space="preserve">
+    <value>Car: {0} have {1} Rents!
+Delete them first</value>
+  </data>
+  <data name="Unauthorized_delete_action" xml:space="preserve">
+    <value>Unauthorized delete action</value>
+  </data>
+  <data name="UserDeletingRow_0_1_will_be_deleted" xml:space="preserve">
+    <value>{0} : {1} will be deleted</value>
   </data>
   <data name="UserDeletingRow_Client_0_have_1_Rents_delete_theme_first" xml:space="preserve">
     <value>Client : {0} have {1} Rents!
 Delete theme first</value>
+  </data>
+  <data name="car_picture_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_picture_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToPdf_Pdf_Generation_Error" xml:space="preserve">
+    <value>Pdf Generation Error</value>
   </data>
 </root>

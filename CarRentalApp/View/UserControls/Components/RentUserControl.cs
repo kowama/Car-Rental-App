@@ -51,6 +51,7 @@ namespace CarRentalApp.View.UserControls.Components
 
         private void UpdateControlsUi(bool saveCompleted = false)
         {
+            validationLabel.Visible = false;
             switch (_mode)
             {
                 case FormMode.View:
@@ -64,17 +65,7 @@ namespace CarRentalApp.View.UserControls.Components
                     
                     saveButton.Visible = false;
                     nextButton.Visible = false;
-                    moreClientButton.Visible = false;
-                    carFilterCheckBox.Visible = false;
-                    validationLabel.Visible = false;
-
-                    rentClientComboBox.Enabled = false;
-                    rentCarComboBox.Enabled = false;
-                    rentStartDateTimePicker.Enabled = false;
-                    rentEndDateTimePicker.Enabled = false;
-                    rentStatusComboBox.Enabled = false;
-
-                    break;
+                  break;
                 case FormMode.Edit:
                     saveButton.Visible = true;
                     saveButton.Location = _firstControlLocation;
@@ -86,14 +77,6 @@ namespace CarRentalApp.View.UserControls.Components
                     editButton.Visible = false;
                     checkButton.Visible = false;
 
-                    moreClientButton.Visible = true;
-                    carFilterCheckBox.Visible = true;
-                    rentCarComboBox.Enabled = true;
-                    rentStartDateTimePicker.Enabled = true;
-                    rentEndDateTimePicker.Enabled = true;
-                    rentStatusComboBox.Enabled = true;
-                    rentClientComboBox.Enabled = true;
-                    validationLabel.Visible = false;
 
                     break;
                 case FormMode.AddNew:
@@ -107,19 +90,22 @@ namespace CarRentalApp.View.UserControls.Components
 
                     editButton.Visible = false;
                     cancelEditButton.Visible = false;
-                    moreClientButton.Visible = true;
-                    carFilterCheckBox.Visible = true;
-                    validationLabel.Visible = false;
-                    rentClientComboBox.Enabled = true;
-                    rentCarComboBox.Enabled = true;
-                    rentStartDateTimePicker.Enabled = true;
-                    rentEndDateTimePicker.Enabled = true;
-                    rentStatusComboBox.Enabled = true;
+
                     break;
 
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            var isEnabled = _mode != FormMode.View;
+            moreClientButton.Enabled = isEnabled;
+            moreCarButton.Enabled = isEnabled;
+            carFilterCheckBox.Visible = isEnabled;
+            rentClientComboBox.Enabled = isEnabled;
+            rentCarComboBox.Enabled = isEnabled;
+            rentStartDateTimePicker.Enabled = isEnabled;
+            rentEndDateTimePicker.Enabled = isEnabled;
+            rentStatusComboBox.Enabled = isEnabled;
 
         }
 
@@ -133,7 +119,7 @@ namespace CarRentalApp.View.UserControls.Components
                 return;
             }
 
-            rentIdLabel.Text = _rent.RentId.ToString("N").ToUpper();
+            rentIdLabel.Text = _rent.RentId.ToString("D").ToUpper();
             rentStartDateTimePicker.Value = _rent.DateStart;
             if (_rent.DateEnd != null) rentEndDateTimePicker.Value = (DateTime) _rent.DateEnd;
             rentStartDateTimePicker.Value = _rent.DateStart;

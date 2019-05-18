@@ -4,9 +4,8 @@ using System.Windows.Forms;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
-using CarRentalApp.View.UserControls.Components;
 
-namespace CarRentalApp.View.UserControls
+namespace CarRentalApp.View.UserControls.Components
 {
     public partial class RentBillUserControl : UserControl
     {

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
@@ -8,8 +6,6 @@ using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
 using CarRentalApp.Properties;
 using CarRentalApp.View.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 
 namespace CarRentalApp.View.UserControls
 {
@@ -139,7 +135,6 @@ namespace CarRentalApp.View.UserControls
         private void ClientsDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (clientDataGridView.Rows[e.RowIndex].DataBoundItem == null) return;
-
             //display row index
             var row = clientDataGridView.Rows[e.RowIndex];
             row.HeaderCell.Value = $"{row.Index + 1}";
@@ -190,92 +185,15 @@ namespace CarRentalApp.View.UserControls
             _unitOfWork.Complete();
         }
 
-        public float[] GetTamañoColumnas(DataGridView dg)
-
-        {
-            var values = new float[dg.ColumnCount];
-
-            for (var i = 0; i < dg.ColumnCount; i++) values[i] = dg.Columns[i].Width;
-
-            return values;
-        }
-
-        public void GenerarDocumento(Document document)
-        {
-            //se crea un objeto PdfTable con el # de columnas del dataGridView
-
-
-            var datatable = new PdfPTable(clientDataGridView.ColumnCount);
-
-
-            //asignamos algunas propiedades para el diseño del pdf
-
-            datatable.DefaultCell.Padding = 3;
-
-            var headerwidths = GetTamañoColumnas(clientDataGridView);
-
-            datatable.SetWidths(headerwidths);
-            datatable.WidthPercentage = 100;
-            datatable.DefaultCell.BorderWidth = 2;
-            datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
-
-            //SE GENERA EL ENCABEZADO DE LA TABLA EN EL PDF
-
-            for (var i = 0; i < clientDataGridView.ColumnCount; i++)
-                datatable.AddCell(clientDataGridView.Columns[i].HeaderText);
-
-            datatable.HeaderRows = 1;
-            datatable.DefaultCell.BorderWidth = 1;
-
-            //SE GENERA EL CUERPO DEL PDF
-
-            for (var i = 0; i < clientDataGridView.RowCount; i++)
-
-            {
-                for (var j = 0; j < clientDataGridView.ColumnCount; j++)
-                    datatable.AddCell(clientDataGridView[j, i].Value.ToString());
-
-                datatable.CompleteRow();
-            }
-
-            //Add PdfTable to the doc
-
-
-            document.Add(datatable);
-        }
-
-
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var sfd = new SaveFileDialog
-                {
-                    Filter = @"Document PDF (*.pdf)|*.pdf",
-                    FileName = nameof(clientDataGridView) + DateTime.Now.ToString("yy-MM-dd-hh-mm-ss")
-                };
-
-                if (sfd.ShowDialog() != DialogResult.OK) return;
-
-                var doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
-                var file = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite,
-                    FileShare.ReadWrite);
-                PdfWriter.GetInstance(doc, file);
-                doc.Open();
-                GenerarDocumento(doc);
-                doc.Close();
-                Process.Start(sfd.FileName);
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           ExportUtils.ToPdf(clientDataGridView);
         }
+
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            CsvUtils.SaveToCsv(clientDataGridView);
+            ExportUtils.ToCsv(clientDataGridView);
         }
     }
 }

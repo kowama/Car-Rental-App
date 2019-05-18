@@ -33,11 +33,11 @@ namespace CarRentalApp.View.UserControls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentsPageUserControl));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
@@ -45,8 +45,8 @@ namespace CarRentalApp.View.UserControls
             this.pageContentNavigator = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.newRentPage = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.rentChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.kryptonMonthCalendar1 = new ComponentFactory.Krypton.Toolkit.KryptonMonthCalendar();
+            this.rentChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.newRentPageContentPanel = new System.Windows.Forms.Panel();
             this.rentsPage = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -56,10 +56,6 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.addNewCarButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.rentDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.NumberOfDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewRentPage = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.viewRentContenPanel = new System.Windows.Forms.Panel();
-            this.viewRentBillContenPanel = new System.Windows.Forms.Panel();
             this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +64,11 @@ namespace CarRentalApp.View.UserControls
             this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberOfDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewRentPage = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.viewRentContenPanel = new System.Windows.Forms.Panel();
+            this.viewRentBillContenPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,9 +83,9 @@ namespace CarRentalApp.View.UserControls
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewRentPage)).BeginInit();
             this.viewRentPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,7 +145,7 @@ namespace CarRentalApp.View.UserControls
             this.rentsPage,
             this.viewRentPage});
             this.pageContentNavigator.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.pageContentNavigator.SelectedIndex = 0;
+            this.pageContentNavigator.SelectedIndex = 1;
             this.pageContentNavigator.Size = new System.Drawing.Size(911, 545);
             this.pageContentNavigator.TabIndex = 0;
             this.pageContentNavigator.Text = "pageContentNavigator";
@@ -179,27 +179,6 @@ namespace CarRentalApp.View.UserControls
             this.panel3.Size = new System.Drawing.Size(335, 466);
             this.panel3.TabIndex = 3;
             // 
-            // rentChart
-            // 
-            this.rentChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.rentChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.rentChart.Legends.Add(legend2);
-            this.rentChart.Location = new System.Drawing.Point(15, 205);
-            this.rentChart.Name = "rentChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.RangeBar;
-            series2.Legend = "Legend1";
-            series2.Name = "Rents";
-            series2.YValuesPerPoint = 6;
-            this.rentChart.Series.Add(series2);
-            this.rentChart.Size = new System.Drawing.Size(296, 241);
-            this.rentChart.TabIndex = 2;
-            this.rentChart.Text = "chart1";
-            // 
             // kryptonMonthCalendar1
             // 
             this.kryptonMonthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -208,6 +187,27 @@ namespace CarRentalApp.View.UserControls
             this.kryptonMonthCalendar1.Name = "kryptonMonthCalendar1";
             this.kryptonMonthCalendar1.Size = new System.Drawing.Size(230, 184);
             this.kryptonMonthCalendar1.TabIndex = 1;
+            // 
+            // rentChart
+            // 
+            this.rentChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.rentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.rentChart.Legends.Add(legend1);
+            this.rentChart.Location = new System.Drawing.Point(15, 205);
+            this.rentChart.Name = "rentChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.RangeBar;
+            series1.Legend = "Legend1";
+            series1.Name = "Rents";
+            series1.YValuesPerPoint = 6;
+            this.rentChart.Series.Add(series1);
+            this.rentChart.Size = new System.Drawing.Size(296, 241);
+            this.rentChart.TabIndex = 2;
+            this.rentChart.Text = "chart1";
             // 
             // newRentPageContentPanel
             // 
@@ -327,51 +327,6 @@ namespace CarRentalApp.View.UserControls
             this.rentDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RentDataGridView_CellDoubleClick);
             this.rentDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.RentsDataGridView_CellFormatting);
             // 
-            // NumberOfDays
-            // 
-            this.NumberOfDays.DataPropertyName = "NumberOfDays";
-            this.NumberOfDays.HeaderText = "Number Of Days";
-            this.NumberOfDays.Name = "NumberOfDays";
-            this.NumberOfDays.ReadOnly = true;
-            this.NumberOfDays.Width = 91;
-            // 
-            // viewRentPage
-            // 
-            this.viewRentPage.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.viewRentPage.AutoScroll = true;
-            this.viewRentPage.Controls.Add(this.viewRentContenPanel);
-            this.viewRentPage.Controls.Add(this.viewRentBillContenPanel);
-            this.viewRentPage.Flags = 65534;
-            this.viewRentPage.LastVisibleSet = true;
-            this.viewRentPage.MinimumSize = new System.Drawing.Size(50, 50);
-            this.viewRentPage.Name = "viewRentPage";
-            this.viewRentPage.Size = new System.Drawing.Size(909, 466);
-            this.viewRentPage.Text = "View";
-            this.viewRentPage.TextDescription = "View rent in details, and make update";
-            this.viewRentPage.TextTitle = "View a rent";
-            this.viewRentPage.ToolTipTitle = "View a rent";
-            this.viewRentPage.UniqueName = "F1CC5E67D899430D1AB6E3C2EA2B205E";
-            // 
-            // viewRentContenPanel
-            // 
-            this.viewRentContenPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.viewRentContenPanel.AutoScroll = true;
-            this.viewRentContenPanel.Location = new System.Drawing.Point(12, 3);
-            this.viewRentContenPanel.Name = "viewRentContenPanel";
-            this.viewRentContenPanel.Size = new System.Drawing.Size(568, 348);
-            this.viewRentContenPanel.TabIndex = 3;
-            // 
-            // viewRentBillContenPanel
-            // 
-            this.viewRentBillContenPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.viewRentBillContenPanel.AutoScroll = true;
-            this.viewRentBillContenPanel.Location = new System.Drawing.Point(586, 3);
-            this.viewRentBillContenPanel.Name = "viewRentBillContenPanel";
-            this.viewRentBillContenPanel.Size = new System.Drawing.Size(568, 348);
-            this.viewRentBillContenPanel.TabIndex = 3;
-            // 
             // rentIdDataGridViewTextBoxColumn
             // 
             this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
@@ -402,7 +357,7 @@ namespace CarRentalApp.View.UserControls
             this.manageByDataGridViewTextBoxColumn.HeaderText = "Manage By";
             this.manageByDataGridViewTextBoxColumn.Name = "manageByDataGridViewTextBoxColumn";
             this.manageByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.manageByDataGridViewTextBoxColumn.Width = 95;
+            this.manageByDataGridViewTextBoxColumn.Width = 88;
             // 
             // billDataGridViewTextBoxColumn
             // 
@@ -418,33 +373,78 @@ namespace CarRentalApp.View.UserControls
             this.dateStartDataGridViewTextBoxColumn.HeaderText = "Date Start";
             this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
             this.dateStartDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateStartDataGridViewTextBoxColumn.Width = 87;
+            this.dateStartDataGridViewTextBoxColumn.Width = 81;
             // 
             // dateEndDataGridViewTextBoxColumn
             // 
             this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dateEndDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dateEndDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dateEndDataGridViewTextBoxColumn.HeaderText = "Date End";
             this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
             this.dateEndDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateEndDataGridViewTextBoxColumn.Width = 83;
+            this.dateEndDataGridViewTextBoxColumn.Width = 77;
             // 
             // stateDataGridViewTextBoxColumn
             // 
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.stateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.stateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.stateDataGridViewTextBoxColumn.HeaderText = "State";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
             this.stateDataGridViewTextBoxColumn.ReadOnly = true;
             this.stateDataGridViewTextBoxColumn.Width = 62;
             // 
+            // NumberOfDays
+            // 
+            this.NumberOfDays.DataPropertyName = "NumberOfDays";
+            this.NumberOfDays.HeaderText = "Number Of Days";
+            this.NumberOfDays.Name = "NumberOfDays";
+            this.NumberOfDays.ReadOnly = true;
+            this.NumberOfDays.Width = 91;
+            // 
             // rentBindingSource
             // 
             this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
+            // 
+            // viewRentPage
+            // 
+            this.viewRentPage.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.viewRentPage.AutoScroll = true;
+            this.viewRentPage.Controls.Add(this.viewRentContenPanel);
+            this.viewRentPage.Controls.Add(this.viewRentBillContenPanel);
+            this.viewRentPage.Flags = 65534;
+            this.viewRentPage.LastVisibleSet = true;
+            this.viewRentPage.MinimumSize = new System.Drawing.Size(50, 50);
+            this.viewRentPage.Name = "viewRentPage";
+            this.viewRentPage.Size = new System.Drawing.Size(909, 466);
+            this.viewRentPage.Text = "View";
+            this.viewRentPage.TextDescription = "View rent in details, and make update";
+            this.viewRentPage.TextTitle = "View a rent";
+            this.viewRentPage.ToolTipTitle = "View a rent";
+            this.viewRentPage.UniqueName = "F1CC5E67D899430D1AB6E3C2EA2B205E";
+            // 
+            // viewRentContenPanel
+            // 
+            this.viewRentContenPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.viewRentContenPanel.AutoScroll = true;
+            this.viewRentContenPanel.Location = new System.Drawing.Point(12, 3);
+            this.viewRentContenPanel.Name = "viewRentContenPanel";
+            this.viewRentContenPanel.Size = new System.Drawing.Size(568, 297);
+            this.viewRentContenPanel.TabIndex = 3;
+            // 
+            // viewRentBillContenPanel
+            // 
+            this.viewRentBillContenPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.viewRentBillContenPanel.AutoScroll = true;
+            this.viewRentBillContenPanel.Location = new System.Drawing.Point(586, 3);
+            this.viewRentBillContenPanel.Name = "viewRentBillContenPanel";
+            this.viewRentBillContenPanel.Size = new System.Drawing.Size(568, 297);
+            this.viewRentBillContenPanel.TabIndex = 3;
             // 
             // RentsPageUserControl
             // 
@@ -468,9 +468,9 @@ namespace CarRentalApp.View.UserControls
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewRentPage)).EndInit();
             this.viewRentPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -8,12 +8,13 @@ namespace CarRentalApp.View.Forms
     public partial class LoginFom : Form
     {
         private readonly UnitOfWork _unitOfWork;
-        public LoginFom( )
+
+        public LoginFom()
         {
             InitializeComponent();
-            _unitOfWork =UnitOfWork.Instance;
-
+            _unitOfWork = UnitOfWork.Instance;
         }
+
         private void OnValidating(string message, bool error = true)
         {
             validationLabel.ForeColor = !error ? Color.ForestGreen : Color.Red;
@@ -23,40 +24,52 @@ namespace CarRentalApp.View.Forms
 
         private bool ValidateInputs()
         {
-//            if (string.IsNullOrWhiteSpace(usernameTextBox.Text))
-//            {
-//                OnValidating("* Username is required");
-//                return false;
-//
-//            }
-//            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
-//            {
-//                OnValidating("* Password is required");
-//                return false;
-//
-//            }
+            if (string.IsNullOrWhiteSpace(usernameTextBox.Text))
+            {
+                OnValidating("* Username is required");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                OnValidating("* Password is required");
+                return false;
+            }
 
             return true;
         }
 
+        private void FakeLogin()
+        {
+            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u=>u.Username == "kowama");
+        }
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (!AuthUser()) return;
+//            if (!AuthUser()) return;
+            FakeLogin();
 
-            var mainForm = new MainForm() { Location = Location, StartPosition = FormStartPosition.Manual };
+            var mainForm = new MainForm {Location = Location, StartPosition = FormStartPosition.Manual};
             mainForm.Show();
             Hide();
-
         }
 
         private bool AuthUser()
         {
             if (!ValidateInputs()) return false;
 
-            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "KoyeKoye");
+            var theUser = _unitOfWork.Users.SingleOrDefault(u =>
+                u.Username == usernameTextBox.Text.Trim() && u.Password == passwordTextBox.Text.Trim());
+
+            if (theUser == null)
+            {
+                OnValidating("Invalid credentials");
+                return false;
+            }
+
+            Program.CurrentUser = theUser;
 
             return true;
         }
-        
     }
 }

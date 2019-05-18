@@ -43,8 +43,17 @@ namespace CarRentalApp.View.UserControls
         {
             if(theRent == null) return;
             pageContentNavigator.SelectedPage = rentsPage;
+            for (var i = 0; i < rentDataGridView.RowCount; i++)
+            {
+                var rent = (Rent) rentDataGridView.Rows[i].DataBoundItem;
 
-            //mark
+                if (rent.RentId != theRent.RentId) continue;
+
+                rentDataGridView.ClearSelection();
+                rentDataGridView.Rows[i].Selected = true;
+                return;
+            }
+
             
         }
 
@@ -65,30 +74,65 @@ namespace CarRentalApp.View.UserControls
             if (rent == null) return;
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.RentId)))
+            {
                 e.Value = rent.RentId.ToString("D").ToUpper();
+                   return;
+            }
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.Client)))
+            {
                 e.Value = rent.Client.FullName;
+                return;
+
+            }
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.Car)))
+            {
                 e.Value = rent.Car.Name;
+                return;
+
+            }
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.ManageBy)))
+            {
                 e.Value = rent.ManageBy.FullName;
+                return;
+
+            }
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.Bill)))
+            {
                 e.Value = rent.Bill != null ? rent.Bill.BillNumber.ToString("D").ToUpper() : string.Empty;
 
+                return;
+            }
+
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.State)))
+            {
                 e.Value = rent.State.ToString();
 
+                return;
+            }
+
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.DateStart)))
+            {
                 e.Value = rent.DateStart.ToString("dd/MM/yyyy");
+                return;
+            }
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.DateEnd)))
+            {
                 e.Value = rent.DateEnd != null ? rent.DateStart.ToString("dd/MM/yyyy") : string.Empty;
+                return;
+
+            }
+
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.NumberOfDays)))
+            {
                 e.Value = rent.NumberOfDays.ToString("N0");
+                return;
+
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

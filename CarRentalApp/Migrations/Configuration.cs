@@ -52,9 +52,9 @@ namespace CarRentalApp.Migrations
                 },
                 new User
                 {
-                    Username = "Medi1",
+                    Username = "mehdi",
                     FirstName = "Mehdi",
-                    LastName = "Lahk",
+                    LastName = "Lahkouil",
                     Cin = "C002057P",
                     Email = "l.mehdi@gmail.com",
                     Phone = "0691889223",
@@ -66,7 +66,7 @@ namespace CarRentalApp.Migrations
                 },
                 new User
                 {
-                    Username = "KoyeKoye",
+                    Username = "koye",
                     FirstName = "Verassou",
                     LastName = "Koye",
                     Cin = "L002297P",

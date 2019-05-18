@@ -63,10 +63,29 @@ namespace CarRentalApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap app_logo_black {
+            get {
+                object obj = ResourceManager.GetObject("app_logo_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car_picture_default {
             get {
                 object obj = ResourceManager.GetObject("car_picture_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pdf Generation Error.
+        /// </summary>
+        internal static string ToPdf_Pdf_Generation_Error {
+            get {
+                return ResourceManager.GetString("ToPdf_Pdf_Generation_Error", resourceCulture);
             }
         }
         

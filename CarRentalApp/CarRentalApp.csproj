@@ -406,6 +406,7 @@
     <None Include="Core\domain\SeedData\classifications.csv" />
     <None Include="Core\domain\SeedData\clients.csv" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CarRentalApp.Core.domain.Bill.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.Car.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.Classification.datasource" />
     <None Include="Properties\DataSources\CarRentalApp.Core.domain.Client.datasource" />
@@ -424,9 +425,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\car_picture_default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app_logo_black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

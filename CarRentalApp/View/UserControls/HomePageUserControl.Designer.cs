@@ -31,9 +31,9 @@ namespace CarRentalApp.View.UserControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageUserControl));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.rentsCountLabel = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@ namespace CarRentalApp.View.UserControls
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.top3EmployeeListBox = new ComponentFactory.Krypton.Toolkit.KryptonListBox();
-            this.top3ClientListBox = new ComponentFactory.Krypton.Toolkit.KryptonListBox();
             this.top3CarListBox = new ComponentFactory.Krypton.Toolkit.KryptonListBox();
+            this.top3ClientListBox = new ComponentFactory.Krypton.Toolkit.KryptonListBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -98,9 +98,9 @@ namespace CarRentalApp.View.UserControls
             this.rentsCountLabel.ForeColor = System.Drawing.Color.White;
             this.rentsCountLabel.Location = new System.Drawing.Point(35, 41);
             this.rentsCountLabel.Name = "rentsCountLabel";
-            this.rentsCountLabel.Size = new System.Drawing.Size(78, 31);
+            this.rentsCountLabel.Size = new System.Drawing.Size(46, 31);
             this.rentsCountLabel.TabIndex = 0;
-            this.rentsCountLabel.Text = "1000";
+            this.rentsCountLabel.Text = "35";
             // 
             // label7
             // 
@@ -147,7 +147,7 @@ namespace CarRentalApp.View.UserControls
             this.rentsInPendingCountLabel.Name = "rentsInPendingCountLabel";
             this.rentsInPendingCountLabel.Size = new System.Drawing.Size(46, 31);
             this.rentsInPendingCountLabel.TabIndex = 0;
-            this.rentsInPendingCountLabel.Text = "25";
+            this.rentsInPendingCountLabel.Text = "12";
             // 
             // label5
             // 
@@ -194,7 +194,7 @@ namespace CarRentalApp.View.UserControls
             this.clientsCountLabel.Name = "clientsCountLabel";
             this.clientsCountLabel.Size = new System.Drawing.Size(62, 31);
             this.clientsCountLabel.TabIndex = 0;
-            this.clientsCountLabel.Text = "650";
+            this.clientsCountLabel.Text = "192";
             // 
             // label1
             // 
@@ -224,16 +224,16 @@ namespace CarRentalApp.View.UserControls
             this.monthlyTakingChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea4.Name = "ChartArea1";
-            this.monthlyTakingChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.monthlyTakingChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.monthlyTakingChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.monthlyTakingChart.Legends.Add(legend2);
             this.monthlyTakingChart.Location = new System.Drawing.Point(63, 247);
             this.monthlyTakingChart.Name = "monthlyTakingChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Takings";
-            this.monthlyTakingChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Takings";
+            this.monthlyTakingChart.Series.Add(series2);
             this.monthlyTakingChart.Size = new System.Drawing.Size(547, 382);
             this.monthlyTakingChart.TabIndex = 7;
             this.monthlyTakingChart.Text = "chart1";
@@ -307,38 +307,38 @@ namespace CarRentalApp.View.UserControls
             // 
             this.top3EmployeeListBox.BorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ContextMenuItemHighlight;
             this.top3EmployeeListBox.Items.AddRange(new object[] {
-            "KARAMBIRIR Latif",
-            "KAYIRIKO Alimatou",
-            "BAMON Safiatou"});
+            "Karambiri Latif (17)",
+            "Alethea Ivankov (8)",
+            "Luther Prichet (7)"});
             this.top3EmployeeListBox.Location = new System.Drawing.Point(38, 314);
             this.top3EmployeeListBox.Name = "top3EmployeeListBox";
             this.top3EmployeeListBox.Size = new System.Drawing.Size(279, 81);
             this.top3EmployeeListBox.TabIndex = 9;
-            // 
-            // top3ClientListBox
-            // 
-            this.top3ClientListBox.BorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ContextMenuItemHighlight;
-            this.top3ClientListBox.Items.AddRange(new object[] {
-            "KARAMBIRIR Latif",
-            "KAYIRIKO Alimatou",
-            "BAMON Safiatou"});
-            this.top3ClientListBox.Location = new System.Drawing.Point(38, 193);
-            this.top3ClientListBox.Name = "top3ClientListBox";
-            this.top3ClientListBox.Size = new System.Drawing.Size(279, 81);
-            this.top3ClientListBox.TabIndex = 9;
             // 
             // top3CarListBox
             // 
             this.top3CarListBox.BorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ContextMenuItemHighlight;
             this.top3CarListBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.top3CarListBox.Items.AddRange(new object[] {
-            "KARAMBIRIR Latif",
-            "KAYIRIKO Alimatou",
-            "BAMON Safiatou"});
+            "Mercedes A3 (10)",
+            "Toyota Lander (8)",
+            "Sparky (5)"});
             this.top3CarListBox.Location = new System.Drawing.Point(38, 79);
             this.top3CarListBox.Name = "top3CarListBox";
             this.top3CarListBox.Size = new System.Drawing.Size(279, 81);
             this.top3CarListBox.TabIndex = 9;
+            // 
+            // top3ClientListBox
+            // 
+            this.top3ClientListBox.BorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ContextMenuItemHighlight;
+            this.top3ClientListBox.Items.AddRange(new object[] {
+            "Lillian Morgan (5)",
+            "Kayiriko Alimatou (3)",
+            "Bamon Safiatou (3)"});
+            this.top3ClientListBox.Location = new System.Drawing.Point(38, 193);
+            this.top3ClientListBox.Name = "top3ClientListBox";
+            this.top3ClientListBox.Size = new System.Drawing.Size(279, 81);
+            this.top3ClientListBox.TabIndex = 9;
             // 
             // HomePageUserControl
             // 
