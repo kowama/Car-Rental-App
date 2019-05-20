@@ -32,7 +32,7 @@ namespace CarRentalApp.View.Forms
 
             if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
             {
-                OnValidating("* StoredPassword is required");
+                OnValidating("* Password is required");
                 return false;
             }
 
@@ -41,12 +41,13 @@ namespace CarRentalApp.View.Forms
 
         private void FakeLogin()
         {
-            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u=>u.Username == "kowama");
+            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "kowama");
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (!AuthUser()) return;
+//            if (!AuthUser()) return;
+            FakeLogin();
 
             var mainForm = new MainForm {Location = Location, StartPosition = FormStartPosition.Manual};
             mainForm.Show();
@@ -57,7 +58,7 @@ namespace CarRentalApp.View.Forms
         {
             if (!ValidateInputs()) return false;
 
-            var theUser = _unitOfWork.Users.SingleOrDefault(u=>u.Username == usernameTextBox.Text.Trim());
+            var theUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == usernameTextBox.Text.Trim());
 
             if (theUser == null)
             {
@@ -74,6 +75,10 @@ namespace CarRentalApp.View.Forms
             Program.CurrentUser = theUser;
 
             return true;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

@@ -71,6 +71,7 @@ namespace CarRentalApp.View.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(421, 430);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // loginButton
             // 
@@ -122,7 +123,7 @@ namespace CarRentalApp.View.Forms
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 18);
             this.label4.TabIndex = 0;
-            this.label4.Text = "StoredPassword *";
+            this.label4.Text = "Password *";
             // 
             // label3
             // 

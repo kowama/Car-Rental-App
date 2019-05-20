@@ -12,7 +12,7 @@ namespace CarRentalApp.View.UserControls.Components
     {
         private readonly UnitOfWork _unitOfWork;
         private readonly Action<User> _closeParent;
-        private readonly User _user;
+        private User _user;
         private readonly Point _firstControlLocation = new Point(25, 463);
         private FormMode _mode;
         private bool _refreshParent;
@@ -158,15 +158,15 @@ namespace CarRentalApp.View.UserControls.Components
 
         private void UpdateUserInfoUi()
         {
-            usernameTextBox.Text = _user.Username;
-            userPasswordTextBox.Text = _user.Password;
+            usernameTextBox.Text = _user.Username??string.Empty;
+            userPasswordTextBox.Text = _user.Password??string.Empty;
             userRoleComboBox.Text = _user.HasRole(RoleName.Administrator)? 
                 RoleName.Administrator : RoleName.Manager;
-            userFirstNameTextBox.Text = _user.FirstName;
-            userLastNameTextBox.Text = _user.LastName;
-            userCinTextBox.Text = _user.Cin;
-            userPhoneTextBox.Text = _user.Phone;
-            userEmailTextBox.Text = _user.Email;
+            userFirstNameTextBox.Text = _user.FirstName??string.Empty;
+            userLastNameTextBox.Text = _user.LastName??string.Empty;
+            userCinTextBox.Text = _user.Cin??string.Empty;
+            userPhoneTextBox.Text = _user.Phone??string.Empty;
+            userEmailTextBox.Text = _user.Email??string.Empty;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -232,8 +232,10 @@ namespace CarRentalApp.View.UserControls.Components
 
         private void AddMoreButton_Click(object sender, EventArgs e)
         {
-
-
+            _user = new User();
+            _mode = FormMode.AddNew;
+            UpdateControlsUi();
+            UpdateUserInfoUi();
         }
 
         private void CancelEditButton_Click(object sender, EventArgs e)

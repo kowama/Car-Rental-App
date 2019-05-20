@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
@@ -32,28 +33,37 @@ namespace CarRentalApp.View.UserControls
             if (keyword == _searchTextBoxDefaultText)
                 keyword = string.Empty;
 
-            var clients = _unitOfWork.Clients.GetAll().ToList();
+            var allClients = _unitOfWork.Clients.GetAll().ToList();
             var all = searchFilterComboBox.SelectedIndex == searchFilterComboBox.Items.Count - 1;
             var filterBy = searchFilterComboBox.SelectedText;
 
-            var filteredUsers = clients.FindAll(c =>
-                c.FirstName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == firstNameDataGridViewTextBoxColumn.HeaderText || all)
-                || c.LastName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == lastNameDataGridViewTextBoxColumn.HeaderText || all)
-                || c.Cin.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == cinDataGridViewTextBoxColumn.HeaderText || all)
-                || c.Email.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == emailDataGridViewTextBoxColumn.HeaderText || all)
-                || c.Phone.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == phoneDataGridViewTextBoxColumn.HeaderText || all)
-                || c.DriverLicense.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == driverLicenseDataGridViewTextBoxColumn.HeaderText || all)
-                || c.Address.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
-                (filterBy == addressDataGridViewTextBoxColumn.HeaderText || all)
-            );
+            List<Client> filteredClients;
 
-            clientDataGridView.DataSource = filteredUsers.ToList();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                filteredClients = allClients.FindAll(c =>
+                    c.FirstName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == firstNameDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.LastName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == lastNameDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.Cin.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == cinDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.Email.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == emailDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.Phone.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == phoneDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.DriverLicense.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == driverLicenseDataGridViewTextBoxColumn.HeaderText || all)
+                    || c.Address.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == addressDataGridViewTextBoxColumn.HeaderText || all)
+                );
+            }
+            else
+            {
+                filteredClients = allClients;
+            }
+
+            clientDataGridView.DataSource = filteredClients;
         }
 
         private void OnClientFromClosed(Client theClient)

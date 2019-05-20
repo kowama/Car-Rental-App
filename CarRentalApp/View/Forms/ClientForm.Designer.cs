@@ -31,14 +31,24 @@ namespace CarRentalApp.View.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.detailsRightPanel = new System.Windows.Forms.Panel();
+            this.kryptonMonthCalendar1 = new ComponentFactory.Krypton.Toolkit.KryptonMonthCalendar();
+            this.fullSizecloseButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label10 = new System.Windows.Forms.Label();
             this.clientRentsCountLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.helpLabel = new System.Windows.Forms.Label();
             this.clientRentsDataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonMonthCalendar1 = new ComponentFactory.Krypton.Toolkit.KryptonMonthCalendar();
-            this.fullSizecloseButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manageByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberOfDaysDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,20 +70,10 @@ namespace CarRentalApp.View.Forms
             this.clientCinTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.clientLastNameTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.clientFirstNameTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manageByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberOfDaysDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsRightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientRentsDataGridView)).BeginInit();
-            this.formLeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
+            this.formLeftPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // detailsRightPanel
@@ -93,6 +93,24 @@ namespace CarRentalApp.View.Forms
             this.detailsRightPanel.Size = new System.Drawing.Size(385, 551);
             this.detailsRightPanel.TabIndex = 0;
             // 
+            // kryptonMonthCalendar1
+            // 
+            this.kryptonMonthCalendar1.Location = new System.Drawing.Point(63, 3);
+            this.kryptonMonthCalendar1.Name = "kryptonMonthCalendar1";
+            this.kryptonMonthCalendar1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kryptonMonthCalendar1.Size = new System.Drawing.Size(230, 184);
+            this.kryptonMonthCalendar1.TabIndex = 0;
+            // 
+            // fullSizecloseButton
+            // 
+            this.fullSizecloseButton.Location = new System.Drawing.Point(226, 498);
+            this.fullSizecloseButton.Name = "fullSizecloseButton";
+            this.fullSizecloseButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
+            this.fullSizecloseButton.Size = new System.Drawing.Size(129, 33);
+            this.fullSizecloseButton.TabIndex = 8;
+            this.fullSizecloseButton.Values.Text = "Close";
+            this.fullSizecloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -103,6 +121,7 @@ namespace CarRentalApp.View.Forms
             this.label10.Size = new System.Drawing.Size(59, 15);
             this.label10.TabIndex = 12;
             this.label10.Text = "10 / 200";
+            this.label10.Visible = false;
             // 
             // clientRentsCountLabel
             // 
@@ -175,23 +194,81 @@ namespace CarRentalApp.View.Forms
             this.clientRentsDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.ClientRentsDataGridView_UserDeletedRow);
             this.clientRentsDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.ClientRentsDataGridView_UserDeletingRow);
             // 
-            // kryptonMonthCalendar1
+            // rentIdDataGridViewTextBoxColumn
             // 
-            this.kryptonMonthCalendar1.Location = new System.Drawing.Point(63, 3);
-            this.kryptonMonthCalendar1.Name = "kryptonMonthCalendar1";
-            this.kryptonMonthCalendar1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonMonthCalendar1.Size = new System.Drawing.Size(230, 184);
-            this.kryptonMonthCalendar1.TabIndex = 0;
+            this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.HeaderText = "RentId";
+            this.rentIdDataGridViewTextBoxColumn.Name = "rentIdDataGridViewTextBoxColumn";
+            this.rentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rentIdDataGridViewTextBoxColumn.Width = 70;
             // 
-            // fullSizecloseButton
+            // carDataGridViewTextBoxColumn
             // 
-            this.fullSizecloseButton.Location = new System.Drawing.Point(226, 498);
-            this.fullSizecloseButton.Name = "fullSizecloseButton";
-            this.fullSizecloseButton.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.fullSizecloseButton.Size = new System.Drawing.Size(129, 33);
-            this.fullSizecloseButton.TabIndex = 8;
-            this.fullSizecloseButton.Values.Text = "Close";
-            this.fullSizecloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.carDataGridViewTextBoxColumn.DataPropertyName = "Car";
+            this.carDataGridViewTextBoxColumn.HeaderText = "Car";
+            this.carDataGridViewTextBoxColumn.Name = "carDataGridViewTextBoxColumn";
+            this.carDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // manageByDataGridViewTextBoxColumn
+            // 
+            this.manageByDataGridViewTextBoxColumn.DataPropertyName = "ManageBy";
+            this.manageByDataGridViewTextBoxColumn.HeaderText = "Manage By";
+            this.manageByDataGridViewTextBoxColumn.Name = "manageByDataGridViewTextBoxColumn";
+            this.manageByDataGridViewTextBoxColumn.ReadOnly = true;
+            this.manageByDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // billDataGridViewTextBoxColumn
+            // 
+            this.billDataGridViewTextBoxColumn.DataPropertyName = "Bill";
+            this.billDataGridViewTextBoxColumn.HeaderText = "Bill";
+            this.billDataGridViewTextBoxColumn.Name = "billDataGridViewTextBoxColumn";
+            this.billDataGridViewTextBoxColumn.ReadOnly = true;
+            this.billDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // dateStartDataGridViewTextBoxColumn
+            // 
+            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
+            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Date Start";
+            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            this.dateStartDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateStartDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // dateEndDataGridViewTextBoxColumn
+            // 
+            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
+            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Date End";
+            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
+            this.dateEndDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateEndDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stateDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // numberOfDaysDataGridViewTextBoxColumn
+            // 
+            this.numberOfDaysDataGridViewTextBoxColumn.DataPropertyName = "NumberOfDays";
+            this.numberOfDaysDataGridViewTextBoxColumn.HeaderText = "Number Of Days";
+            this.numberOfDaysDataGridViewTextBoxColumn.Name = "numberOfDaysDataGridViewTextBoxColumn";
+            this.numberOfDaysDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numberOfDaysDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // rentBindingSource
+            // 
+            this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
             // 
             // label1
             // 
@@ -424,82 +501,6 @@ namespace CarRentalApp.View.Forms
             this.clientFirstNameTextBox.Size = new System.Drawing.Size(259, 23);
             this.clientFirstNameTextBox.TabIndex = 1;
             // 
-            // rentBindingSource
-            // 
-            this.rentBindingSource.DataSource = typeof(CarRentalApp.Core.domain.Rent);
-            // 
-            // rentIdDataGridViewTextBoxColumn
-            // 
-            this.rentIdDataGridViewTextBoxColumn.DataPropertyName = "RentId";
-            this.rentIdDataGridViewTextBoxColumn.HeaderText = "RentId";
-            this.rentIdDataGridViewTextBoxColumn.Name = "rentIdDataGridViewTextBoxColumn";
-            this.rentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rentIdDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // carDataGridViewTextBoxColumn
-            // 
-            this.carDataGridViewTextBoxColumn.DataPropertyName = "Car";
-            this.carDataGridViewTextBoxColumn.HeaderText = "Car";
-            this.carDataGridViewTextBoxColumn.Name = "carDataGridViewTextBoxColumn";
-            this.carDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // clientDataGridViewTextBoxColumn
-            // 
-            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
-            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
-            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-            this.clientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // manageByDataGridViewTextBoxColumn
-            // 
-            this.manageByDataGridViewTextBoxColumn.DataPropertyName = "ManageBy";
-            this.manageByDataGridViewTextBoxColumn.HeaderText = "Manage By";
-            this.manageByDataGridViewTextBoxColumn.Name = "manageByDataGridViewTextBoxColumn";
-            this.manageByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.manageByDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // billDataGridViewTextBoxColumn
-            // 
-            this.billDataGridViewTextBoxColumn.DataPropertyName = "Bill";
-            this.billDataGridViewTextBoxColumn.HeaderText = "Bill";
-            this.billDataGridViewTextBoxColumn.Name = "billDataGridViewTextBoxColumn";
-            this.billDataGridViewTextBoxColumn.ReadOnly = true;
-            this.billDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // dateStartDataGridViewTextBoxColumn
-            // 
-            this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
-            this.dateStartDataGridViewTextBoxColumn.HeaderText = "Date Start";
-            this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
-            this.dateStartDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateStartDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // dateEndDataGridViewTextBoxColumn
-            // 
-            this.dateEndDataGridViewTextBoxColumn.DataPropertyName = "DateEnd";
-            this.dateEndDataGridViewTextBoxColumn.HeaderText = "Date End";
-            this.dateEndDataGridViewTextBoxColumn.Name = "dateEndDataGridViewTextBoxColumn";
-            this.dateEndDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateEndDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stateDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // numberOfDaysDataGridViewTextBoxColumn
-            // 
-            this.numberOfDaysDataGridViewTextBoxColumn.DataPropertyName = "NumberOfDays";
-            this.numberOfDaysDataGridViewTextBoxColumn.HeaderText = "Number Of Days";
-            this.numberOfDaysDataGridViewTextBoxColumn.Name = "numberOfDaysDataGridViewTextBoxColumn";
-            this.numberOfDaysDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberOfDaysDataGridViewTextBoxColumn.Width = 91;
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,9 +522,9 @@ namespace CarRentalApp.View.Forms
             this.detailsRightPanel.ResumeLayout(false);
             this.detailsRightPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientRentsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             this.formLeftPanel.ResumeLayout(false);
             this.formLeftPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

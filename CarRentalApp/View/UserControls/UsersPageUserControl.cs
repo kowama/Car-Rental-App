@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
@@ -11,14 +12,14 @@ namespace CarRentalApp.View.UserControls
 {
     public partial class UsersPageUserControl : UserControl
     {
-        private readonly string _defaultSearchTextBoxText;
+        private readonly string _searchTextBoxDefaultText;
         private readonly UnitOfWork _unitOfWork;
 
         public UsersPageUserControl()
         {
             InitializeComponent();
             _unitOfWork = UnitOfWork.Instance;
-            _defaultSearchTextBoxText = searchTextBox.Text;
+            _searchTextBoxDefaultText = searchTextBox.Text;
         }
 
         private void RefreshDataGridView()
@@ -59,36 +60,72 @@ namespace CarRentalApp.View.UserControls
         {
             RefreshDataGridView();
             UpdateUiChart();
+            searchFilterComboBox.DataSource = new[]
+            {
+                firstNameDataGridViewTextBoxColumn.HeaderText,
+                lastNameDataGridViewTextBoxColumn.HeaderText,
+                cinDataGridViewTextBoxColumn.HeaderText,
+                emailDataGridViewTextBoxColumn.HeaderText,
+                phoneDataGridViewTextBoxColumn.HeaderText,
+                RoleDataGridViewTextBoxColumn.HeaderText,
+                "All"
+            };
+            searchFilterComboBox.SelectedIndex = searchFilterComboBox.Items.Count - 1;
         }
 
+        private void Search(string keyword)
+        {
+            if (keyword == _searchTextBoxDefaultText)
+                keyword = string.Empty;
+
+            var allUsers = _unitOfWork.Users.GetAll().ToList();
+            var all = searchFilterComboBox.SelectedIndex == searchFilterComboBox.Items.Count - 1;
+            var filterBy = searchFilterComboBox.SelectedText;
+            List<User> filteredUsers;
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+                filteredUsers = allUsers.FindAll(u =>
+                    u.FirstName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == firstNameDataGridViewTextBoxColumn.HeaderText || all)
+                    || u.LastName.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == lastNameDataGridViewTextBoxColumn.HeaderText || all)
+                    || u.Cin.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == cinDataGridViewTextBoxColumn.HeaderText || all)
+                    ||u.Email.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == emailDataGridViewTextBoxColumn.HeaderText || all)
+                    || u.Phone.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == phoneDataGridViewTextBoxColumn.HeaderText || all)
+                    ||u.Roles.First().Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
+                    (filterBy == RoleDataGridViewTextBoxColumn.HeaderText || all)
+                );
+            else
+            {
+                filteredUsers = allUsers;
+            }
+
+            userBindingSource.DataSource = filteredUsers;
+        }
         private void SearchTextBox_Enter(object sender, EventArgs e)
         {
-            if (searchTextBox.Text == _defaultSearchTextBoxText)
+            if (searchTextBox.Text == _searchTextBoxDefaultText)
                 searchTextBox.Text = string.Empty;
         }
 
         private void SearchTextBox_Leave(object sender, EventArgs e)
         {
             if (searchTextBox.Text.Trim() == string.Empty)
-                searchTextBox.Text = _defaultSearchTextBoxText;
+                searchTextBox.Text = _searchTextBoxDefaultText;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            var keyWord = searchTextBox.Text;
+            Search(searchTextBox.Text.Trim());
 
-            var users = _unitOfWork.Users.GetAll().ToList();
-            var filteredUsers = users;
-
-            if (!(keyWord == string.Empty || keyWord == _defaultSearchTextBoxText))
-                filteredUsers = users.FindAll(u =>
-                    u.Username.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                    || u.FirstName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                    || u.LastName.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                    || u.Cin.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                    || u.Email.Contains(keyWord, StringComparison.OrdinalIgnoreCase)
-                    || u.Phone.Contains(keyWord, StringComparison.OrdinalIgnoreCase));
-            userBindingSource.DataSource = filteredUsers.ToList();
+        }
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Search(searchTextBox.Text.Trim());
         }
 
         private void RefreshDataGrid_Click(object sender, EventArgs e)
@@ -184,5 +221,7 @@ namespace CarRentalApp.View.UserControls
         {
             RefreshDataGridView();
         }
+
+       
     }
 }

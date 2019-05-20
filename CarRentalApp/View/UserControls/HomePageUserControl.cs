@@ -1,16 +1,18 @@
-﻿using CarRentalApp.Persistence;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using CarRentalApp.Persistence;
 using CarRentalApp.View.Forms;
 
 namespace CarRentalApp.View.UserControls
 {
     public partial class HomePageUserControl : UserControl
     {
-        private readonly UnitOfWork _unitOfWork;
         private readonly Random _rand = new Random();
+        private readonly UnitOfWork _unitOfWork;
+
         public HomePageUserControl()
         {
             InitializeComponent();
@@ -21,7 +23,13 @@ namespace CarRentalApp.View.UserControls
         {
             monthlyTakingChart.Series[0].Points.Clear();
             var months = Enumerable.Range(1, 12)
-                .Select(i => new {I = i, M = DateTimeFormatInfo.CurrentInfo?.GetMonthName(i)}).ToList();
+                .Select(i => new
+                {
+                    I = i,
+                    M = DateTimeFormatInfo.CurrentInfo != null
+                        ? DateTimeFormatInfo.CurrentInfo.GetMonthName(i)
+                        : DateTimeFormatInfo.InvariantInfo.GetMonthName(i)
+                }).ToList();
             foreach (var month in months)
             {
                 var monthRentsCount = _rand.Next(0, 100);
@@ -33,7 +41,6 @@ namespace CarRentalApp.View.UserControls
         {
             try
             {
-
                 //                var clientList = _unitOfWork.Clients.GetAll().Select(c=> new {c.Id, c.FullName,RentCount = c.Rents.Count}).ToList();
                 //                var top3Client = clientList.OrderByDescending(c => c.RentCount).Take(3).ToList();
                 //
@@ -53,11 +60,7 @@ namespace CarRentalApp.View.UserControls
                 //                rentsCountLabel.Text = rentsList.Count.ToString("N0");
                 //                rentsInPendingCountLabel.Text = rentsInPendingList.Count.ToString("N0");
                 //                clientsCountLabel.Text = clientList.Count.ToString("N0");
-                for (var i = 0; i < 20; i++)
-                {
-                    System.Threading.Thread.Sleep(100);
-                }
-
+                for (var i = 0; i < 20; i++) Thread.Sleep(100);
             }
             catch (Exception)
             {
@@ -77,7 +80,6 @@ namespace CarRentalApp.View.UserControls
             {
                 waitForm.ShowDialog(this);
             }
-
         }
     }
 }

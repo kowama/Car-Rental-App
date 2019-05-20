@@ -63,13 +63,13 @@ namespace CarRentalApp.View.UserControls
             if (keyword == _searchTextBoxDefaultText)
                 keyword = string.Empty;
 
-            var cars = _unitOfWork.Cars.GetAll().ToList();
+            var allCars = _unitOfWork.Cars.GetAll().ToList();
             var all = searchFilterComboBox.SelectedIndex == searchFilterComboBox.Items.Count - 1;
             var filterBy = searchFilterComboBox.SelectedText;
             List<Car> filteredCars;
 
             if (!string.IsNullOrEmpty(keyword))
-                filteredCars = cars.FindAll(c =>
+                filteredCars = allCars.FindAll(c =>
                     c.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
                     (filterBy == nameDataGridViewTextBoxColumn.HeaderText || all)
                     || c.LicensePlate.Contains(keyword, StringComparison.OrdinalIgnoreCase) &&
@@ -81,7 +81,10 @@ namespace CarRentalApp.View.UserControls
                     (filterBy == pricePerDayDataGridViewTextBoxColumn.HeaderText || all)
                 );
             else
-                filteredCars = cars;
+            {
+                filteredCars = allCars;
+
+            }
 
             carBindingSource.DataSource = filteredCars;
         }

@@ -64,7 +64,7 @@ namespace CarRentalApp.View.UserControls
             this.RoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.searchComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.searchFilterComboBox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.searchButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.searchTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.addUserButton = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -78,7 +78,7 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -351,7 +351,7 @@ namespace CarRentalApp.View.UserControls
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.searchComboBox);
+            this.panel5.Controls.Add(this.searchFilterComboBox);
             this.panel5.Controls.Add(this.refreshDataGridViewButton);
             this.panel5.Controls.Add(this.searchButton);
             this.panel5.Controls.Add(this.searchTextBox);
@@ -362,15 +362,15 @@ namespace CarRentalApp.View.UserControls
             this.panel5.Size = new System.Drawing.Size(608, 61);
             this.panel5.TabIndex = 4;
             // 
-            // searchComboBox
+            // searchFilterComboBox
             // 
-            this.searchComboBox.DropDownWidth = 121;
-            this.searchComboBox.Location = new System.Drawing.Point(262, 28);
-            this.searchComboBox.Name = "searchComboBox";
-            this.searchComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.searchComboBox.Size = new System.Drawing.Size(121, 21);
-            this.searchComboBox.TabIndex = 3;
-            this.searchComboBox.Text = "All";
+            this.searchFilterComboBox.DropDownWidth = 121;
+            this.searchFilterComboBox.Location = new System.Drawing.Point(262, 28);
+            this.searchFilterComboBox.Name = "searchFilterComboBox";
+            this.searchFilterComboBox.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.searchFilterComboBox.Size = new System.Drawing.Size(121, 21);
+            this.searchFilterComboBox.TabIndex = 3;
+            this.searchFilterComboBox.Text = "All";
             // 
             // searchButton
             // 
@@ -391,6 +391,7 @@ namespace CarRentalApp.View.UserControls
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.Text = "Enter a Keyword";
             this.searchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             this.searchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // addUserButton
@@ -425,7 +426,7 @@ namespace CarRentalApp.View.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchFilterComboBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,7 +437,7 @@ namespace CarRentalApp.View.UserControls
         private Panel panel4;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchTextBox;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView userDataGridView;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchComboBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox searchFilterComboBox;
         private Panel panel5;
         private ComponentFactory.Krypton.Toolkit.KryptonButton searchButton;
         private ComponentFactory.Krypton.Toolkit.KryptonButton addUserButton;
