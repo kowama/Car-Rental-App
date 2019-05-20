@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using CarRentalApp.Core.domain;
 using CarRentalApp.Core.Utils;
 using CarRentalApp.Persistence;
+using CarRentalApp.Properties;
 using CarRentalApp.View.UserControls.Components;
 using ComponentFactory.Krypton.Navigator;
 
@@ -90,20 +90,13 @@ namespace CarRentalApp.View.UserControls
         {
             var allRentsThisYear = _unitOfWork.Rents.GetAll().Where(r => r.DateStart.Year == DateTime.Now.Year);
 
-            var rentGroupedByMonths = allRentsThisYear.GroupBy(r => r.DateStart.Month, (k, rg) => new
-            {
-                month = k,
-                rents = rg.ToList()
-            }).ToList();
+            var rand = new Random();
 
-            foreach (var monthGroup in rentGroupedByMonths)
-            foreach (var rent in monthGroup.rents)
+            foreach (var rent in allRentsThisYear)
             {
-                rentsCalendar.SetSelectionRange(rent.DateStart, rent.DateEnd ?? rent.DateStart);
-//                rentChart.Series[0].Points.AddXY(DateTimeFormatInfo.InvariantInfo.GetMonthName(monthGroup.month),
-//                    rent.DateStart, rent.DateEnd);
-                rentChart.Series[0].Points.AddXY(rent.DateStart, rent.DateEnd);
-                }
+                rentsCalendar.SetSelectionRange(rent.DateStart, rent.DateEnd);
+                rentChart.Series[0].Points.AddXY(rand.Next(1, 10), rent.DateStart, rent.DateEnd);
+            }
         }
 
         private void Next(Control nextControl = null)
@@ -190,7 +183,7 @@ namespace CarRentalApp.View.UserControls
 
             if (rentDataGridView.Columns[e.ColumnIndex].DataPropertyName.Equals(nameof(Rent.DateEnd)))
             {
-                e.Value = rent.DateEnd != null ? rent.DateStart.ToString("dd/MM/yyyy") : string.Empty;
+                e.Value = rent.DateStart.ToString("dd/MM/yyyy");
                 return;
             }
 
@@ -256,6 +249,30 @@ namespace CarRentalApp.View.UserControls
         private void AddNewRentButton_Click(object sender, EventArgs e)
         {
             pageContentNavigator.SelectedPage = newRentPage;
+        }
+
+        private void RentDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            var rent = (Rent) e.Row.DataBoundItem;
+            var dialogResult = MessageBox.Show(
+                string.Format(Resources.UserDeletingRow_0_1_will_be_deleted, nameof(Rent),
+                    rent.RentId.ToString("D").ToUpper()+" \nIf its have bill it will be also deleted"),
+                string.Format(Resources.UserDeletingRow__0__delete_confirm, nameof(Rent)), MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialogResult != DialogResult.Yes)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            _unitOfWork.Rents.Remove(rent);
+            _unitOfWork.Complete();
+        }
+
+        private void RentDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            RefreshDataGridView();
         }
     }
 }

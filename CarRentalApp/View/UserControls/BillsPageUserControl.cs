@@ -83,7 +83,7 @@ namespace CarRentalApp.View.UserControls
             billManagedByLabel.Text = _bill.Rent.ManageBy.FullName;
             billCarLabel.Text = _bill.Rent.Car.Resume;
             billRentDateStartLabel.Text = _bill.Rent.DateStart.ToString("dd/MM/yyyy");
-            billRentDateEndLabel.Text = _bill.Rent.DateEnd?.ToString("dd/MM/yyyy");
+            billRentDateEndLabel.Text = _bill.Rent.DateEnd.ToString("dd/MM/yyyy");
             billAmountLabel.Text = _bill.Amount.ToString("N0");
             billDetailsLabel.Text = _bill.Details;
             billDateLabel.Text = _bill.Date.ToString("dd/MM/yyyy");

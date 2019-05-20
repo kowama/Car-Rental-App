@@ -21,23 +21,10 @@ namespace CarRentalApp.Core.domain
 
         public DateTime DateStart { get; set; }
 
-        public DateTime? DateEnd { get; set; }
+        public DateTime DateEnd { get; set; }
 
         public RentState State { get; set; }
 
-        public double NumberOfDays
-        {
-            get
-            {
-                if (DateEnd == null)
-                {
-                    return 0;
-                }
-
-                return ((TimeSpan)(DateEnd - DateStart)).TotalDays;
-
-            }
-        }
-
+        public double NumberOfDays => (DateEnd - DateStart).TotalDays;
     }
 }

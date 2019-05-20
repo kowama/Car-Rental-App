@@ -264,7 +264,7 @@ namespace CarRentalApp.Core.Utils
                 billBody.AddCell(new Phrase("Rent Date Start:", boldTableFont));
                 billBody.AddCell(bill.Rent.DateStart.ToString("dd/MM/yyyy"));
                 billBody.AddCell(new Phrase("Rent Date End:", boldTableFont));
-                billBody.AddCell(bill.Rent.DateEnd?.ToString("dd/MM/yyyy"));
+                billBody.AddCell(bill.Rent.DateEnd.ToString("dd/MM/yyyy"));
                 billBody.AddCell(new Phrase("Amount:", boldTableFont));
                 billBody.AddCell($"{bill.Amount:N0} MAD");
                 billBody.AddCell(new Phrase("Details:", boldTableFont));
