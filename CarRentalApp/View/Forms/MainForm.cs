@@ -139,9 +139,6 @@ namespace CarRentalApp.View.Forms
             Application.Exit();
         }
 
-        private void contentPannel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using CarRentalApp.Core.domain;
 using CarRentalApp.Persistence;
 using CarRentalApp.View.Forms;
 
