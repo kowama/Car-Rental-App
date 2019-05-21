@@ -1,4 +1,6 @@
+using System;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data.Entity.Migrations;
 using System.Globalization;
 using System.IO;
@@ -39,12 +41,12 @@ namespace CarRentalApp.Migrations
             context.Users.AddOrUpdate(u => u.Username,
                 new User
                 {
-                    Username = "kowama",
-                    FirstName = "Latif",
-                    LastName = "Karambiri",
-                    Cin = "L002257P",
-                    Email = "n.kowama@gmail.com",
-                    Phone = "0691025223",
+                    Username = "admin",
+                    FirstName = "John",
+                    LastName = "Doe",
+                    Cin = "L099057P",
+                    Email = "john.doe@gmail.com",
+                    Phone = "+212691025223",
                     Password = "123456",
                     Roles = new ObservableCollection<Role>
                     {
@@ -53,12 +55,12 @@ namespace CarRentalApp.Migrations
                 },
                 new User
                 {
-                    Username = "mehdi",
-                    FirstName = "Mehdi",
-                    LastName = "Lahkouil",
+                    Username = "manager1",
+                    FirstName = "Sieg",
+                    LastName = "Jager",
                     Cin = "C002057P",
-                    Email = "l.mehdi@gmail.com",
-                    Phone = "0691889223",
+                    Email = "j.jager@gmail.com",
+                    Phone = "212691025223",
                     Password = "123456",
                     Roles = new ObservableCollection<Role>
                     {
@@ -67,11 +69,11 @@ namespace CarRentalApp.Migrations
                 },
                 new User
                 {
-                    Username = "koye",
-                    FirstName = "Verassou",
-                    LastName = "Koye",
+                    Username = "manager2",
+                    FirstName = "John",
+                    LastName = "Turner",
                     Cin = "L002297P",
-                    Email = "kverassou7@gmail.com",
+                    Email = "john.turner@gmail.com",
                     Phone = "0691042236",
                     Password = "123456",
                     Roles = new ObservableCollection<Role>
@@ -79,6 +81,9 @@ namespace CarRentalApp.Migrations
                         managerRole
                     }
                 });
+
+            /**insertion of somme default data**/
+            if (!Convert.ToBoolean(ConfigurationManager.AppSettings["FeedWithData"])) return;
             //Clients
             var reader = new StreamReader(ResourcePaths.Clients);
             var csv = new CsvReader(reader);
@@ -86,7 +91,7 @@ namespace CarRentalApp.Migrations
             csv.Configuration.CultureInfo = CultureInfo.InvariantCulture;
             csv.Configuration.RegisterClassMap<ClientMap>();
             var clientsRecords = csv.GetRecords<Client>().ToArray();
-            context.Clients.AddOrUpdate(c => c.Id, clientsRecords);
+            context.Clients.AddOrUpdate(c => c.Cin, clientsRecords);
             //Classifications
             reader = new StreamReader(ResourcePaths.Classifications);
             csv = new CsvReader(reader);
@@ -94,7 +99,7 @@ namespace CarRentalApp.Migrations
             csv.Configuration.CultureInfo = CultureInfo.InvariantCulture;
             csv.Configuration.RegisterClassMap<ClassificationMap>();
             var classificationsRecords = csv.GetRecords<Classification>().ToArray();
-            context.Classifications.AddOrUpdate(c => c.Id, classificationsRecords);
+            context.Classifications.AddOrUpdate(c => c.Name, classificationsRecords);
             //Cars
             reader = new StreamReader(ResourcePaths.Cars);
             csv = new CsvReader(reader);
@@ -103,7 +108,7 @@ namespace CarRentalApp.Migrations
             CarMap.Classifications = classificationsRecords.ToList();
             csv.Configuration.RegisterClassMap<CarMap>();
             var carsRecords = csv.GetRecords<Car>().ToArray();
-            context.Cars.AddOrUpdate(c => c.Id, carsRecords);
+            context.Cars.AddOrUpdate(c => c.LicensePlate, carsRecords);
         }
     }
 }

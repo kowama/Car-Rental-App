@@ -108,9 +108,10 @@ namespace CarRentalApp.View.UserControls
             ExportUtils.ToPdf(_bill);
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 
 }

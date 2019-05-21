@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using CsvHelper.Configuration;
 
@@ -11,8 +12,7 @@ namespace CarRentalApp.Core.domain.SeedData
         public static readonly string Classifications = $"{Prefix}classifications.csv";
         public static readonly string Cars = $"{Prefix}cars.csv";
 
-        private static string Prefix =>
-            "C:\\Users\\kowama\\Source\\Repos\\kowama\\Car-Rental-App\\CarRentalApp\\Core\\domain\\SeedData\\";
+        private static string Prefix => ConfigurationManager.AppSettings["FeedDataPath"];
     }
 
     public sealed class ClientMap : ClassMap<Client>

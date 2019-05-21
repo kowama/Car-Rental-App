@@ -65,7 +65,7 @@ namespace CarRentalApp.View.UserControls
 
         private void LoadingScreen()
         {
-            for (var i = 0; i < 30; i++) Thread.Sleep(100);
+            for (var i = 0; i < 20; i++) Thread.Sleep(100);
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)

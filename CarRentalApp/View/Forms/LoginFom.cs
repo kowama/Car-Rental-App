@@ -41,7 +41,7 @@ namespace CarRentalApp.View.Forms
 
         private void FakeLogin()
         {
-            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "kowama");
+            Program.CurrentUser = _unitOfWork.Users.SingleOrDefault(u => u.Username == "admin");
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
