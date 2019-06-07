@@ -10,7 +10,7 @@
 - generate bill as pdf
 - export customers list as pdf or excel document
 - make some statisic about rents, customers, and employees performance
-##### Demo [link on  youtube](https://www.youtube.com/channel/UCommN-GE1xT3AaL9N_9wPBg)
+##### Demo [link on  youtube](https://www.youtube.com/watch?v=QqxHhAdk3Ts)
 
 ### screenshot
 **Login screen** 
